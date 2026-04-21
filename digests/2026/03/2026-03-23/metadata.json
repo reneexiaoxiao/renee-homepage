@@ -1,0 +1,16 @@
+{
+  "id": "2026-03-23-ie-ai-journey",
+  "title": "#Learn&Digest/36：IEG AI应用启示录——从隐性知识到同行治理",
+  "date": "2026-03-23",
+  "category": "ai",
+  "categoryLabel": "AI与企业",
+  "tags": ["AI战略", "组织转型", "治理模式", "IEG"],
+  "excerpt": "世界银行内部独立评估小组（IEG）的AI战略探索，揭示AI在知识密集型组织中的渗透速度比想象中慢，核心是「判断力」难以被AI替代。提出5级成熟度模型和同行治理模式。",
+  "images": {
+    "cover": "cover.jpg",
+    "cards": ["01.jpg", "02.jpg", "03.jpg"],
+    "longForm": null
+  },
+  "author": "Renee",
+  "readTime": "10 分钟"
+}

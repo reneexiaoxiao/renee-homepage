@@ -1,0 +1,16 @@
+{
+  "id": "2024-03-19-ark-bigideas",
+  "title": "ARK Big Ideas 2026：九大颠覆性技术投资图谱",
+  "date": "2024-03-19",
+  "category": "tech",
+  "categoryLabel": "前沿科技与宏观",
+  "tags": ["ARK", "投资趋势", "前沿科技"],
+  "excerpt": "ARK年度报告发布，从AI到机器人，从基因编辑到航天技术，九大技术领域的投资机遇与风险图谱...",
+  "images": {
+    "cover": "cover.jpg",
+    "cards": ["01.jpg", "02.jpg", "03.jpg"],
+    "longForm": "long-form.jpg"
+  },
+  "author": "Renee",
+  "readTime": "12 分钟"
+}

@@ -1,0 +1,16 @@
+{
+  "id": "2024-03-20-anthropic-workforce",
+  "title": "Anthropic劳动力市场报告：AI时代的人才进化论",
+  "date": "2024-03-20",
+  "category": "workforce",
+  "categoryLabel": "劳动力与职场",
+  "tags": ["劳动力市场", "AI影响", "技能变革"],
+  "excerpt": "Anthropic最新报告揭示：AI正在重塑劳动力市场。高薪技能受到的冲击最大，而人际互动类工作反而变得更重要...",
+  "images": {
+    "cover": "cover.jpg",
+    "cards": ["01.jpg", "02.jpg", "03.jpg"],
+    "longForm": "long-form.jpg"
+  },
+  "author": "Renee",
+  "readTime": "10 分钟"
+}

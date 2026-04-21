@@ -1,0 +1,16 @@
+{
+  "id": "2024-03-21-agentic-ai",
+  "title": "Agentic AI 十大趋势：当AI成为主动的代理人",
+  "date": "2024-03-21",
+  "category": "ai",
+  "categoryLabel": "AI与企业",
+  "tags": ["Agentic AI", "AI趋势", "智能体"],
+  "excerpt": "AI正在从被动工具转向主动代理人。Agentic AI不仅能理解指令，更能自主规划、执行和验证。这十大趋势将重新定义人机协作的未来...",
+  "images": {
+    "cover": "cover.jpg",
+    "cards": ["01.jpg", "02.jpg", "03.jpg"],
+    "longForm": "long-form.jpg"
+  },
+  "author": "Renee",
+  "readTime": "8 分钟"
+}
