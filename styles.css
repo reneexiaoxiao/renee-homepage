@@ -60,6 +60,7 @@
     --radius-md: 8px;
     --radius-lg: 16px;
     --radius-full: 9999px;
+    color-scheme: light dark;
 }
 
 /* Dark Mode - 墨色主题 */
@@ -82,6 +83,99 @@
         --glass-border: rgba(255, 255, 255, 0.05);
         --glass-shadow: rgba(0, 0, 0, 0.2);
         --glass-shadow-hover: rgba(0, 0, 0, 0.3);
+    }
+
+    body {
+        background-image:
+            radial-gradient(circle at top right, rgba(184, 84, 80, 0.12), transparent 24%),
+            repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(255, 255, 255, 0.018) 2px,
+                rgba(255, 255, 255, 0.018) 4px
+            );
+    }
+
+    .page-progress {
+        background: rgba(255, 255, 255, 0.08);
+    }
+
+    .hero-story-link,
+    .career-step-meta span,
+    .speaking-card-tag,
+    .thinking-card-topic,
+    .career-panel-tags span,
+    .tag,
+    .filter-btn,
+    .speaking-card-index,
+    .speaking-entry-btn {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.1);
+        color: var(--color-text);
+    }
+
+    .stage-chapter,
+    .story-visual,
+    .career-panel,
+    .career-step-card,
+    .career-step-point,
+    .speaking-entry,
+    .speaking-stat,
+    .thinking-card,
+    .contact-qr-card,
+    .storyboard-card,
+    .project-card,
+    .digest-card,
+    .digest-migration-note,
+    .contact-info,
+    .contact-quote {
+        background: rgba(37, 36, 32, 0.82);
+        border-color: rgba(255, 255, 255, 0.08);
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.22);
+    }
+
+    .story-lab,
+    .about,
+    .career,
+    .learn-digest,
+    .speaking,
+    .thinking,
+    .vibe-coding,
+    .contact,
+    .story-epilogue {
+        background:
+            radial-gradient(circle at top right, rgba(184, 84, 80, 0.12), transparent 22%),
+            linear-gradient(180deg, rgba(26, 25, 21, 0.96), rgba(21, 20, 17, 0.98));
+    }
+
+    .hero-avatar img,
+    .contact-qr-image,
+    .speaking-entry-media {
+        border-color: rgba(255, 255, 255, 0.08);
+        box-shadow: 0 16px 28px rgba(0, 0, 0, 0.28);
+    }
+
+    .filter-btn.active,
+    .speaking-card-link,
+    .thinking-card-link,
+    .speaking-media-link {
+        background: var(--color-accent);
+        border-color: var(--color-accent);
+        color: #fff;
+    }
+
+    .thinking-card-link.is-disabled {
+        background: rgba(255, 255, 255, 0.08);
+        color: var(--color-text-light);
+    }
+
+    .contact-qr-image {
+        background: rgba(255, 255, 255, 0.96);
+    }
+
+    .footer {
+        border-top-color: rgba(255, 255, 255, 0.08);
     }
 }
 
@@ -2987,10 +3081,56 @@ ul {
     }
 
     :root {
+        --nav-height: 62px;
         --spacing-lg: 1.5rem;
         --spacing-xl: 2rem;
         --spacing-2xl: 3rem;
         --spacing-3xl: 4rem;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .nav-content {
+        padding: 0 1rem;
+    }
+
+    .section-header {
+        margin-bottom: 1.5rem;
+    }
+
+    .section-title {
+        font-size: clamp(1.8rem, 8vw, 2.25rem);
+    }
+
+    .section-subtitle {
+        font-size: 0.78rem;
+        letter-spacing: 0.16em;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: calc(var(--nav-height) + 1.25rem) 0 2rem;
+    }
+
+    .hero-content {
+        gap: 1.2rem;
+    }
+
+    .hero-avatar img {
+        width: 108px;
+        height: 108px;
+    }
+
+    .hero-tagline {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-story-link {
+        width: 100%;
+        max-width: 14rem;
     }
 
     .nav-links {
@@ -3086,12 +3226,23 @@ ul {
 
     /* Digest Gallery - Mobile */
     .digest-filters {
-        gap: var(--spacing-xs);
+        gap: 0.55rem;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 0.2rem;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .digest-filters::-webkit-scrollbar {
+        display: none;
     }
 
     .filter-btn {
         font-size: 0.8125rem;
-        padding: var(--spacing-xs) var(--spacing-sm);
+        padding: 0.65rem 0.95rem;
+        white-space: nowrap;
+        flex: 0 0 auto;
     }
 
     .modal-content {
@@ -3156,6 +3307,10 @@ ul {
         align-items: flex-start;
     }
 
+    .speaking-card-identity {
+        flex-wrap: wrap;
+    }
+
     .speaking-card-event {
         white-space: normal;
     }
@@ -3168,7 +3323,7 @@ ul {
     .speaking-entry-media,
     .speaking-timeline-item:nth-child(even) .speaking-entry-media {
         max-width: none;
-        transform: rotate(-2.5deg);
+        transform: none;
     }
 
     .digest-sidebar,
@@ -3179,6 +3334,16 @@ ul {
     .career-steps {
         overflow: visible;
         padding-right: 0;
+    }
+
+    .contact-qr-card {
+        grid-template-columns: 1fr;
+        justify-items: start;
+    }
+
+    .contact-qr-image {
+        width: 132px;
+        justify-self: start;
     }
 
     .career,
@@ -3227,12 +3392,16 @@ ul {
 }
 
 @media (max-width: 480px) {
+    .container {
+        padding: 0 0.9rem;
+    }
+
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.85rem;
     }
 
     .hero-quote {
-        font-size: 1.0625rem;
+        font-size: 1rem;
     }
 
     .career-step,
@@ -3265,7 +3434,7 @@ ul {
     }
 
     .digest-card {
-        flex-basis: 82vw;
+        flex-basis: 86vw;
     }
 
     .speaking-carousel {
@@ -3287,6 +3456,20 @@ ul {
     .contact-qr-card,
     .digest-migration-note {
         padding: var(--spacing-md);
+    }
+
+    .speaking-stat {
+        min-height: auto;
+    }
+
+    .speaking-card-title {
+        font-size: 1.08rem;
+    }
+
+    .speaking-card-desc,
+    .thinking-card-desc,
+    .contact-qr-desc {
+        font-size: 0.9rem;
     }
 }
 
