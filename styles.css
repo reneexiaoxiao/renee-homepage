@@ -1,7 +1,9 @@
 /* ===== Font Face ===== */
 @font-face {
     font-family: 'ZhongHuaXinHuo';
-    src: url('./fonts/中华薪火体.ttf') format('truetype');
+    src:
+        url('./fonts/zhonghuaxinhuo-subset.woff2') format('woff2'),
+        url('./fonts/中华薪火体.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
