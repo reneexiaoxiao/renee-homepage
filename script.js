@@ -752,24 +752,84 @@ const speakingGalleryData = [
 
 const thinkingData = [
     {
-        status: 'building',
-        statusLabel: '建设中',
-        title: '企业 AI 落地的一线观察',
-        desc: '把我在客户成功、培训、黑客松和咨询项目里看到的共性卡点，慢慢沉淀成一份可读的经验索引。',
-        format: '案例观察 / 连载索引',
-        topics: ['组织阻力', '场景设计', '落地复盘'],
-        href: '',
-        cta: '持续整理'
+        status: 'live',
+        statusLabel: '飞书文档',
+        title: 'OpenClaw 打造个人办公助理',
+        desc: '复旦 EMBA 校友专属的一份实操手册，把个人办公助理怎么搭、怎么用讲得很具体。',
+        format: '飞书 Wiki / 方法手册',
+        topics: ['OpenClaw', '个人助理', 'EMBA'],
+        href: 'https://bytedance.larkoffice.com/wiki/GfzXwpYMSiLdi4kSaAycPqw7n4O',
+        cta: '打开文档'
     },
     {
         status: 'live',
-        statusLabel: '先看样本',
-        title: '#Learn&Digest 作为思考样本库',
-        desc: '在更完整的“思考手记”上线前，这一部分可以先作为我的观察路径和写作手感样本。',
-        format: '现有内容 / 可立即浏览',
-        topics: ['样本入口', '每日思考', '阅读输出'],
-        href: '#learn-digest',
-        cta: '查看样本'
+        statusLabel: '飞书文档',
+        title: '为什么你的企业需要一个 Skill 管理平台？',
+        desc: '从企业规模化复用的角度，解释为什么 Skill 不只是 prompt 集合，而会变成组织能力的基础设施。',
+        format: '飞书文档 / 观点文章',
+        topics: ['Skill 平台', '组织能力', '企业 AI'],
+        href: 'https://bytedance.larkoffice.com/docx/IBIBdHJcfodpvMxjxsMc67xKnXe',
+        cta: '打开文档'
+    },
+    {
+        status: 'live',
+        statusLabel: '飞书文档',
+        title: '高管数字分身 · aily 智能伙伴的养虾手册',
+        desc: '把高管数字分身的养成方法、使用边界和真实场景写成了一份更容易上手的说明书。',
+        format: '飞书 Wiki / 使用手册',
+        topics: ['Aily', '数字分身', '高管助手'],
+        href: 'https://bytedance.larkoffice.com/wiki/PtDGwjxQ3iXGqJk80tGcnLhwn7e',
+        cta: '打开文档'
+    },
+    {
+        status: 'live',
+        statusLabel: '飞书文档',
+        title: '高管数字分身 · 专属 aily 定时任务 & 提示词模板',
+        desc: '把高频定时任务和提示词模板整理成一套可以直接借用的高管工作台配置。',
+        format: '飞书 Wiki / 模板库',
+        topics: ['定时任务', '提示词模板', 'Aily'],
+        href: 'https://bytedance.larkoffice.com/wiki/MjxXwCmNeiIgKLkdVvJcvVS0nof',
+        cta: '打开文档'
+    },
+    {
+        status: 'building',
+        statusLabel: '片段随记',
+        title: '从 Prompt 到 Harness：AI 开始接上人的上下文之后',
+        desc: '以前像拿滴管从河里取水，现在更像把系统真正接上人的信息脉络。关键不只是调 prompt，而是认知的显化、上传与对齐。',
+        format: '元认知 / 元 AI',
+        topics: ['Harness Engineering', '认知上传', '对齐'],
+        href: '',
+        cta: '片段随记'
+    },
+    {
+        status: 'building',
+        statusLabel: '片段随记',
+        title: '技术和想法都不稀缺，愿力与迭代才稀缺',
+        desc: 'AI 创业小酒馆活动后的一个提醒：在起步阶段，真正稀缺的不是技术和点子，而是你是否愿意持续去做、收反馈、迭代并积累。',
+        format: '元认知 / 自我提醒',
+        topics: ['创业', '愿力', '迭代'],
+        href: '',
+        cta: '片段随记'
+    },
+    {
+        status: 'building',
+        statusLabel: '片段随记',
+        title: '从 Workflow Data Gravity 到 Decision Fabric',
+        desc: '两篇文章都指向同一个方向：企业软件正在从卖工具转向卖结果，而真正的护城河会沉淀在一次次 agent 执行后的决策路径里。',
+        format: '阅读联想 / 产品脑洞',
+        topics: ['OpenClaw', 'Agent', '飞书'],
+        href: '',
+        cta: '片段随记'
+    },
+    {
+        status: 'building',
+        statusLabel: '片段随记',
+        title: '先让 Aily 跑第一版，再由人做判断和拍板',
+        desc: '最近在模板类任务上形成的新习惯：先让 agent 拉齐背景、给出初稿，人类再做判断和微调。它已经不只是偷懒技巧，而是一种新的协作方式。',
+        format: '工作流观察 / AI 协作',
+        topics: ['Aily', '模板任务', '协作方式'],
+        href: '',
+        cta: '片段随记'
     }
 ];
 

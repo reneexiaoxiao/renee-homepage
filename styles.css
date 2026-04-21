@@ -2695,7 +2695,7 @@ ul {
 .thinking-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--spacing-lg);
+    gap: var(--spacing-md);
 }
 
 .thinking-chapter,
@@ -2707,8 +2707,8 @@ ul {
 .thinking-card {
     display: flex;
     flex-direction: column;
-    min-height: 228px;
-    padding: var(--spacing-lg);
+    min-height: 208px;
+    padding: 1.15rem;
     border-radius: var(--radius-lg);
     background: var(--color-card-bg);
     border: 1px solid var(--color-border);
@@ -2723,7 +2723,7 @@ ul {
 
 .thinking-card-status {
     align-self: flex-start;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: 0.75rem;
 }
 
 .thinking-card-status.live {
@@ -2737,14 +2737,16 @@ ul {
 }
 
 .thinking-card-title {
-    font-size: 1.125rem;
-    margin-bottom: var(--spacing-sm);
+    font-size: 1.02rem;
+    line-height: 1.4;
+    margin-bottom: 0.55rem;
 }
 
 .thinking-card-desc {
     color: var(--color-text-muted);
-    font-size: 0.9375rem;
-    margin-bottom: var(--spacing-md);
+    font-size: 0.89rem;
+    line-height: 1.6;
+    margin-bottom: 0.85rem;
 }
 
 .thinking-card-topics {
@@ -2752,7 +2754,7 @@ ul {
     flex-wrap: wrap;
     gap: var(--spacing-xs);
     margin-top: auto;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: 0.75rem;
 }
 
 .thinking-card-footer {
@@ -2763,7 +2765,7 @@ ul {
 }
 
 .thinking-card-format {
-    font-size: 0.8125rem;
+    font-size: 0.78rem;
     color: var(--color-text-light);
 }
 
