@@ -1026,13 +1026,14 @@ ul {
 
 .personality-tags {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--spacing-md);
 }
 
 .personality-tag {
     padding: 0.7rem 0.8rem;
     font-size: 0.84rem;
+    line-height: 1.45;
     background: var(--color-card-bg);
     border-radius: var(--radius-md);
     color: var(--color-text-muted);
