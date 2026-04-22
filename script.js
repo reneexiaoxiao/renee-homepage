@@ -752,6 +752,7 @@ const speakingGalleryData = [
 
 const thinkingData = [
     {
+        id: 'openclaw-assistant',
         status: 'live',
         statusLabel: '飞书文档',
         title: 'OpenClaw 打造个人办公助理',
@@ -762,6 +763,7 @@ const thinkingData = [
         cta: '打开文档'
     },
     {
+        id: 'skill-platform',
         status: 'live',
         statusLabel: '飞书文档',
         title: '为什么你的企业需要一个 Skill 管理平台？',
@@ -772,6 +774,7 @@ const thinkingData = [
         cta: '打开文档'
     },
     {
+        id: 'aily-handbook',
         status: 'live',
         statusLabel: '飞书文档',
         title: '高管数字分身 · aily 智能伙伴的养虾手册',
@@ -782,6 +785,7 @@ const thinkingData = [
         cta: '打开文档'
     },
     {
+        id: 'aily-templates',
         status: 'live',
         statusLabel: '飞书文档',
         title: '高管数字分身 · 专属 aily 定时任务 & 提示词模板',
@@ -792,44 +796,79 @@ const thinkingData = [
         cta: '打开文档'
     },
     {
+        id: 'harness-engineering',
         status: 'building',
         statusLabel: '片段随记',
         title: '从 Prompt 到 Harness：AI 开始接上人的上下文之后',
-        desc: '以前像拿滴管从河里取水，现在更像把系统真正接上人的信息脉络。关键不只是调 prompt，而是认知的显化、上传与对齐。',
+        desc: '关键词：Harness Engineering / 认知显化 / 对齐。不是更大的滴管，而是把系统真正接上人的上下文。',
         format: '元认知 / 元 AI',
         topics: ['Harness Engineering', '认知上传', '对齐'],
         href: '',
-        cta: '片段随记'
+        cta: '阅读全文',
+        fullText: `
+            <p>#1-Area/元认知 #AI/元AI</p>
+            <p>以前 prompt engineering 和 context engineering 就像拿着滴管去河里面取水，不过是小滴管变成了大滴管甚至管道。</p>
+            <p>但现在 harness engineering 是完全不一样的，尤其是结合飞书或者 OpenClaw 或者 Notion 或者 Obsidian 之类的各处主人信息，那就像阿凡达里面那个辫子和龙连在一起，就可以翱翔了。</p>
+            <p>一开始给 AI 几个模糊的标签，AI 能懂你一点，大概按照你的标签去交互，没关系，重要的是建立起系统，过程中不断给反馈，优化迭代，就会越来越像你。这个过程的核心是自己的认知的显化和上传以及对齐。</p>
+            <p>人和人的关系就像黑暗中并肩行走，永远无法真的知道对方和自己的真实全貌，但不断加深互相的了解和纠正共同前进，就够了，未来人和 AI 也是。</p>
+        `
     },
     {
+        id: 'startup-will',
         status: 'building',
         statusLabel: '片段随记',
         title: '技术和想法都不稀缺，愿力与迭代才稀缺',
-        desc: 'AI 创业小酒馆活动后的一个提醒：在起步阶段，真正稀缺的不是技术和点子，而是你是否愿意持续去做、收反馈、迭代并积累。',
+        desc: '关键词：愿力 / 反馈 / 迭代。起步阶段真正稀缺的，不是技术和想法，而是你会不会真的去做。',
         format: '元认知 / 自我提醒',
         topics: ['创业', '愿力', '迭代'],
         href: '',
-        cta: '片段随记'
+        cta: '阅读全文',
+        fullText: `
+            <p>#1-Area/元认知</p>
+            <p>昨天参加一个 AI 创业小酒馆的活动，分享结束后聚在一起聊天，有一位朋友说自己有个创业想法，但是没有技术能力，想找个有技术的一起做，又担心自己的可控性。</p>
+            <p>我说：“现在这个时代做什么想什么都很容易，只有你真的发这个愿去做这件事情，一步步收集反馈，迭代，有所积累之后才是稀缺的，在最一开始，技术本身、想法本身，这些都不稀缺。”</p>
+            <p>这句话也想送给我自己。</p>
+        `
     },
     {
+        id: 'workflow-data-gravity',
         status: 'building',
         statusLabel: '片段随记',
         title: '从 Workflow Data Gravity 到 Decision Fabric',
-        desc: '两篇文章都指向同一个方向：企业软件正在从卖工具转向卖结果，而真正的护城河会沉淀在一次次 agent 执行后的决策路径里。',
+        desc: '关键词：Workflow Data Gravity / Decision Fabric / 飞书窗口期。两篇文章一起看，会把“卖结果”这件事照得更清楚。',
         format: '阅读联想 / 产品脑洞',
         topics: ['OpenClaw', 'Agent', '飞书'],
         href: '',
-        cta: '片段随记'
+        cta: '阅读全文',
+        fullText: `
+            <p>分享两篇最近读到的好文，都指向同一个方向，放一起看特别有启发。</p>
+            <p>第一篇：《OpenClaw 是一个信号｜2026 Long-Horizon Agent 投资地图》——全景梳理了 AI Agent 赛道，核心判断是企业软件正在从“卖工具”转向“卖结果”，Agent 的终局是直接替代人力交付业务成果。文中提出的 Workflow Data Gravity 概念很值得琢磨：模型能力会趋同，但每次 Agent 执行任务积累下来的边界情况、修正记录和决策路径不会——这才是真正的护城河，客户用得越久越换不掉。</p>
+            <p>第二篇：From Copilot to Autopilot.pdf（中文翻译版：从副驾驶到自动驾驶：构建自主型企业的架构蓝图）——用四层架构（引擎 → 编排层 → 驾驶舱 → 飞行员）描述了从“AI辅助”到“AI自治”的路径，提出 Decision Fabric（决策织网） 的概念，和第一篇的 Workflow Data Gravity 完全对应。</p>
+            <p>借此开开脑洞想象下：飞书如何在这个窗口期卡住身位？</p>
+            <p>现在 Aily 和 AI 工作流已经能做一些自动化和定时任务了，但坦白讲，配置门槛还比较高，体验也偏通用——更多是“你教会它，它才会干”，而不是“它懂你，所以替你干”。如果往前再走一步，飞书能不能变成一个不需要专门配置、懂用户的工作上下文、持续在替用户运转的产品？</p>
+            <p>消息流：AI 持续学习你的角色和业务关系，主动帮你分层未读——哪些需要你立刻回复、哪些讨论已有结论只需知晓、哪个你答应跟进的事项已经沉了三天没人推动。</p>
+            <p>文档：你打开时上次会议要点已经整理好了，相关资料和上下游文档已经关联进来，自动 highlight 哪些变更是你本人应该关注的，哪些数据和最新情况有出入需要你确认。</p>
+            <p>日历：AI 综合项目状态和风险信号，发现某个项目出现延期风险且两周没有同步了，主动建议拉会，把相关人、待讨论问题和背景材料都准备好，你点确认就行。</p>
+            <p>审批：对发起人，AI 预判材料可能不全，提前提醒补齐再提交，减少来回打回的摩擦；对审批人，AI 基于历史同类审批和公司政策，给出风险提示和建议判断，让审批从“逐条人工核对”变成“确认 AI 预判”。</p>
+            <p>最好的界面是正在消失的界面。人从操作者变成指挥官——这就是两篇文章共同指向的方向。而飞书天然沉淀的沟通、审批、业务数据，恰恰就是让这个飞轮转起来的燃料。窗口期不会太长，谁先把这些数据跑成 Workflow Data Gravity，谁就拿到了下一张船票。</p>
+        `
     },
     {
+        id: 'aily-template-habit',
         status: 'building',
         statusLabel: '片段随记',
         title: '先让 Aily 跑第一版，再由人做判断和拍板',
-        desc: '最近在模板类任务上形成的新习惯：先让 agent 拉齐背景、给出初稿，人类再做判断和微调。它已经不只是偷懒技巧，而是一种新的协作方式。',
+        desc: '关键词：模板任务 / agent 初稿 / 人做判断。先让 Aily 跑一版，正在变成一种新的协作手感。',
         format: '工作流观察 / AI 协作',
         topics: ['Aily', '模板任务', '协作方式'],
         href: '',
-        cta: '片段随记'
+        cta: '阅读全文',
+        fullText: `
+            <p>最近在所有收到的填各种模板（客户档案、复盘、总结之类）的任务上，我已经养成一个新习惯：先把需求丢给 Aily 跑一版，再在它产出的基础上修改。</p>
+            <p>结果发现一件事：Aily 在基于模板生成有效文档上现在真的越来越能干了，很多信息它能自己从群聊、文档里扒出来，比我到处翻记录快太多，只要原模板结构清晰，基本只要稍微调整下就可用。</p>
+            <p>再一想，这好像不只是“偷个懒”的小技巧，其实完全可以变成一种新的协作和思考方式：分发任务的人往前多走一步，把背景和目标整理成一段提示词；接任务的人用自己的 Aily 跑一遍，再做判断和微调，人和 agent 各自干最值钱的那部分。</p>
+            <p>开始畅想下个阶段 Aily 也变成个会抢活的小助手，识别聊天中有任务自动弹出按钮“需不需要我帮你做？”，先替我们拆解并完成 80%，人类再做那 20% 的判断和拍板。</p>
+        `
     }
 ];
 
@@ -1121,8 +1160,10 @@ function renderThinkingCards() {
             <div class="thinking-card-footer">
                 <span class="thinking-card-format">${item.format}</span>
                 ${item.href
-                    ? `<a class="thinking-card-link" href="${item.href}">${item.cta}</a>`
-                    : `<span class="thinking-card-link is-disabled">${item.cta}</span>`
+                    ? `<a class="thinking-card-link" href="${item.href}" target="_blank" rel="noopener noreferrer">${item.cta}</a>`
+                    : item.fullText
+                        ? `<button class="thinking-card-link" type="button" onclick="openThinkingModal('${item.id}')">${item.cta}</button>`
+                        : `<span class="thinking-card-link is-disabled">${item.cta}</span>`
                 }
             </div>
         </article>
@@ -1130,6 +1171,43 @@ function renderThinkingCards() {
 
     bindSmoothScroll(grid);
     observeAnimatedElements(grid);
+}
+
+function openThinkingModal(thinkingId) {
+    const entry = thinkingData.find(item => item.id === thinkingId);
+    if (!entry || !entry.fullText) return;
+
+    const modal = document.getElementById('thinkingModal');
+    const modalBody = document.getElementById('thinkingModalBody');
+    if (!modal || !modalBody) return;
+
+    modalBody.innerHTML = `
+        <div class="modal-header">
+            <div class="modal-date">${entry.format}</div>
+            <h2 class="modal-title">${entry.title}</h2>
+            <div class="modal-tags">
+                ${entry.topics.map(topic => `<span class="digest-card-tag">${topic}</span>`).join('')}
+            </div>
+        </div>
+        <div class="modal-text">
+            ${entry.fullText}
+        </div>
+    `;
+
+    modal.classList.add('active');
+    updateBodyModalState();
+}
+
+function closeThinkingModal() {
+    const modal = document.getElementById('thinkingModal');
+    if (!modal) return;
+    modal.classList.remove('active');
+    updateBodyModalState();
+}
+
+function updateBodyModalState() {
+    const hasOpenModal = document.querySelector('.digest-modal.active');
+    document.body.style.overflow = hasOpenModal ? 'hidden' : '';
 }
 
 // Render digest cards
@@ -1338,20 +1416,21 @@ function openDigestModal(digestId) {
     `;
 
     modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
+    updateBodyModalState();
 }
 
 // Close digest modal
 function closeDigestModal() {
     const modal = document.getElementById('digestModal');
     modal.classList.remove('active');
-    document.body.style.overflow = '';
+    updateBodyModalState();
 }
 
 // Close modal on ESC key
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         closeDigestModal();
+        closeThinkingModal();
     }
 });
 
