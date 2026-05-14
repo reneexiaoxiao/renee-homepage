@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 不会替代人，但会拉开两种组织 | Renee Zhang</title>
+    <meta name="description" content="一份关于 AI 时代企业资产、私有智能与组织变革的思考笔记。">
+    <link rel="preload" href="../fonts/zhonghuaxinhuo-subset.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        body.article-page {
+            background:
+                radial-gradient(circle at top right, rgba(184, 84, 80, 0.12), transparent 26rem),
+                radial-gradient(circle at 12% 36rem, rgba(71, 111, 94, 0.1), transparent 22rem),
+                var(--color-bg);
+        }
+
+        .article-shell {
+            width: min(1120px, calc(100% - 2rem));
+            margin: 0 auto;
+            padding: calc(var(--nav-height) + 3.5rem) 0 5rem;
+        }
+
+        .article-hero {
+            display: grid;
+            grid-template-columns: minmax(0, 1.05fr) minmax(18rem, 0.55fr);
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: end;
+            min-height: 72vh;
+            padding: 4rem 0 3rem;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .article-kicker {
+            color: var(--color-accent);
+            font-family: var(--font-sans);
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 1.1rem;
+        }
+
+        .article-title {
+            font-size: clamp(2.8rem, 8vw, 6.6rem);
+            line-height: 0.98;
+            letter-spacing: 0;
+            max-width: 9.8em;
+            margin-bottom: 1.4rem;
+        }
+
+        .article-subtitle {
+            max-width: 48rem;
+            color: var(--color-text-muted);
+            font-size: clamp(1.05rem, 1.7vw, 1.28rem);
+            line-height: 1.9;
+        }
+
+        .article-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+            margin-top: 2rem;
+        }
+
+        .article-meta span,
+        .article-pill {
+            display: inline-flex;
+            align-items: center;
+            min-height: 2.1rem;
+            padding: 0.35rem 0.78rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-full);
+            background: rgba(250, 247, 240, 0.68);
+            color: var(--color-text-muted);
+            font-size: 0.82rem;
+        }
+
+        .article-hero-card {
+            padding: 1.35rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            background: rgba(250, 247, 240, 0.72);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.06);
+        }
+
+        .article-hero-card strong {
+            display: block;
+            font-size: clamp(2.6rem, 7vw, 5.2rem);
+            line-height: 1;
+            color: var(--color-accent);
+            margin-bottom: 0.85rem;
+        }
+
+        .article-hero-card p {
+            color: var(--color-text-muted);
+            font-size: 0.98rem;
+            line-height: 1.8;
+            margin-bottom: 0;
+        }
+
+        .article-layout {
+            display: grid;
+            grid-template-columns: 15rem minmax(0, 1fr);
+            gap: clamp(2rem, 5vw, 4rem);
+            margin-top: 3.8rem;
+        }
+
+        .article-toc {
+            position: sticky;
+            top: calc(var(--nav-height) + 1.5rem);
+            align-self: start;
+            padding: 1rem;
+            border-left: 2px solid var(--color-border);
+        }
+
+        .article-toc p {
+            color: var(--color-text-light);
+            font-family: var(--font-sans);
+            font-size: 0.72rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 0.9rem;
+        }
+
+        .article-toc a {
+            display: block;
+            color: var(--color-text-muted);
+            font-size: 0.92rem;
+            line-height: 1.5;
+            margin-bottom: 0.75rem;
+        }
+
+        .article-body {
+            max-width: 760px;
+        }
+
+        .article-lead {
+            padding: 1.3rem 1.5rem;
+            border-left: 4px solid var(--color-accent);
+            background: rgba(250, 247, 240, 0.72);
+            color: var(--color-text);
+            font-size: 1.12rem;
+            line-height: 1.95;
+            margin-bottom: 3.2rem;
+        }
+
+        .article-section {
+            margin: 0 0 4rem;
+            scroll-margin-top: calc(var(--nav-height) + 1.5rem);
+        }
+
+        .article-section h2 {
+            display: flex;
+            gap: 0.9rem;
+            align-items: baseline;
+            font-size: clamp(1.75rem, 4vw, 3rem);
+            line-height: 1.18;
+            margin-bottom: 1.4rem;
+        }
+
+        .article-section h2 span {
+            color: var(--color-accent);
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .article-section h3 {
+            font-size: 1.24rem;
+            margin: 2.1rem 0 0.75rem;
+        }
+
+        .article-body p {
+            color: var(--color-text-muted);
+            font-size: 1.02rem;
+            line-height: 2;
+        }
+
+        .article-body strong {
+            color: var(--color-text);
+            font-weight: 600;
+        }
+
+        .article-quote,
+        .article-callout {
+            margin: 2rem 0;
+            padding: 1.35rem 1.5rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            background: rgba(255, 255, 255, 0.36);
+        }
+
+        .article-quote {
+            font-size: 1.25rem;
+            line-height: 1.85;
+            color: var(--color-text);
+        }
+
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+            margin: 1.6rem 0 2.2rem;
+        }
+
+        .article-card {
+            padding: 1.1rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            background: var(--color-card-bg);
+        }
+
+        .article-card b {
+            display: block;
+            color: var(--color-text);
+            margin-bottom: 0.45rem;
+        }
+
+        .article-card p {
+            font-size: 0.92rem;
+            line-height: 1.75;
+            margin-bottom: 0;
+        }
+
+        .article-table {
+            overflow-x: auto;
+            margin: 1.6rem 0 2.2rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            background: rgba(250, 247, 240, 0.72);
+        }
+
+        .article-table table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 680px;
+        }
+
+        .article-table th,
+        .article-table td {
+            padding: 0.9rem 1rem;
+            border: 1px solid var(--color-border);
+            text-align: left;
+            vertical-align: top;
+            color: var(--color-text-muted);
+            font-size: 0.93rem;
+            line-height: 1.6;
+        }
+
+        .article-table th {
+            color: var(--color-text);
+            background: rgba(184, 84, 80, 0.08);
+            font-weight: 600;
+        }
+
+        .level-list {
+            display: grid;
+            gap: 1rem;
+            margin: 1.4rem 0 2rem;
+        }
+
+        .level-item {
+            padding: 1.2rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            background: linear-gradient(145deg, rgba(250, 247, 240, 0.86), rgba(237, 232, 220, 0.7));
+        }
+
+        .level-item h3 {
+            margin: 0 0 0.7rem;
+        }
+
+        .level-item p {
+            margin-bottom: 0.55rem;
+        }
+
+        .article-actions {
+            counter-reset: action;
+            display: grid;
+            gap: 0.85rem;
+            margin-top: 1.4rem;
+        }
+
+        .article-actions li {
+            counter-increment: action;
+            position: relative;
+            padding: 1rem 1rem 1rem 3.2rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            background: rgba(250, 247, 240, 0.7);
+            color: var(--color-text-muted);
+            line-height: 1.75;
+        }
+
+        .article-actions li::before {
+            content: counter(action);
+            position: absolute;
+            left: 1rem;
+            top: 1rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: var(--color-accent);
+            color: #fff;
+            font-family: var(--font-sans);
+            font-size: 0.78rem;
+        }
+
+        .article-footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .article-back {
+            display: inline-flex;
+            align-items: center;
+            min-height: 2.7rem;
+            padding: 0.55rem 1rem;
+            border-radius: var(--radius-full);
+            background: var(--color-text);
+            color: var(--color-bg);
+            font-size: 0.9rem;
+        }
+
+        .article-back:hover {
+            background: var(--color-accent);
+            color: var(--color-bg);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body.article-page {
+                background:
+                    radial-gradient(circle at top right, rgba(184, 84, 80, 0.16), transparent 26rem),
+                    radial-gradient(circle at 12% 36rem, rgba(71, 111, 94, 0.16), transparent 22rem),
+                    var(--color-bg);
+            }
+
+            .article-meta span,
+            .article-pill,
+            .article-hero-card,
+            .article-lead,
+            .article-quote,
+            .article-callout,
+            .article-card,
+            .level-item,
+            .article-actions li,
+            .article-table {
+                background: rgba(37, 36, 32, 0.82);
+            }
+        }
+
+        @media (max-width: 860px) {
+            .article-shell {
+                width: min(100% - 1.25rem, 760px);
+                padding-top: calc(var(--nav-height) + 1.2rem);
+            }
+
+            .article-hero {
+                grid-template-columns: 1fr;
+                min-height: auto;
+                padding: 2.4rem 0;
+            }
+
+            .article-layout {
+                grid-template-columns: 1fr;
+                margin-top: 2.2rem;
+            }
+
+            .article-toc {
+                position: static;
+                display: flex;
+                gap: 0.8rem;
+                overflow-x: auto;
+                border-left: none;
+                border-bottom: 1px solid var(--color-border);
+                padding: 0 0 1rem;
+            }
+
+            .article-toc p {
+                display: none;
+            }
+
+            .article-toc a {
+                flex: 0 0 auto;
+                margin-bottom: 0;
+            }
+
+            .article-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .article-section h2 {
+                display: block;
+            }
+
+            .article-section h2 span {
+                display: block;
+                margin-bottom: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="article-page">
+    <div class="page-progress" aria-hidden="true">
+        <span class="page-progress-bar" id="pageProgressBar"></span>
+    </div>
+
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="../index.html#hero" class="nav-logo">R</a>
+            <div class="nav-links">
+                <a href="../index.html#about">关于</a>
+                <a href="../index.html#learn-digest">#Learn&amp;Digest</a>
+                <a href="../index.html#thinking">思考手记</a>
+                <a href="../index.html#contact">联系</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="article-shell">
+        <header class="article-hero">
+            <div>
+                <p class="article-kicker">Field Notes / AI Organization</p>
+                <h1 class="article-title">AI 不会替代人，但会拉开两种组织</h1>
+                <p class="article-subtitle">一份关于 AI 时代企业资产与组织变革的思考笔记。不是为任何产品讲话，也不是与任何厂商站队，只是在 AI 转型一线走了两年后，我愿意相信、也愿意拿出来讨论的几个判断。</p>
+                <div class="article-meta">
+                    <span>Renee Zhang</span>
+                    <span>2026.05</span>
+                    <span>约 12 分钟阅读</span>
+                    <span>企业 AI / 组织能力 / 私有智能</span>
+                </div>
+            </div>
+            <aside class="article-hero-card">
+                <strong>沉</strong>
+                <p>AI 时代的企业价值，不是调用了多少智能，而是沉淀了多少智能。能买到的，最多让你不掉队；能长在业务里的，才会变成复利。</p>
+            </aside>
+        </header>
+
+        <div class="article-layout">
+            <aside class="article-toc" aria-label="文章目录">
+                <p>Contents</p>
+                <a href="#intro">引子</a>
+                <a href="#utility">模型水电化</a>
+                <a href="#two-intelligence">两种智能</a>
+                <a href="#capability">组织能力</a>
+                <a href="#levels">诊断尺子</a>
+                <a href="#management">管理动作</a>
+                <a href="#constant">不变之事</a>
+                <a href="#truth">真正分水岭</a>
+            </aside>
+
+            <article class="article-body">
+                <section class="article-lead" id="intro">
+                    过去两年，我在一线接触了不少正在推 AI 转型的企业。从零售、制造、金融、专业服务，到半导体、汽车，它们的规模、预算和成熟度各不相同，但有一件事惊人一致：他们都花了不少钱在 AI 上，员工也都在用 AI，可企业本身并没有明显变强。
+                </section>
+
+                <section class="article-section">
+                    <p>动作都做了，KPI 上也能交差：买了哪些大模型、部署了几个 AI 应用、多少比例的员工“用过 AI”。但如果你问一件更锐利的事：</p>
+                    <div class="article-quote">这家公司因为 AI，多生产了哪些护城河？</div>
+                    <p>几乎所有人的表情都会凝住一秒。这是一件值得被认真对待的事。我一直在想：为什么？这篇文章，是我的阶段性回答。</p>
+                </section>
+
+                <section class="article-section" id="utility">
+                    <h2><span>01</span>当模型变成水电，企业的分水岭在哪里</h2>
+                    <p>五年前，一家企业能不能用上 AI，本身就是一种区分。今天不是了。模型 API 越来越便宜，也越来越“都能买”：Claude、GPT、Gemini、文心、豆包，你能调用的东西，你的对手大概率也能。</p>
+                    <div class="article-callout">
+                        <p><strong>一旦一种能力是市场通用可触达的，它就不可能构成企业的核心竞争力。</strong></p>
+                    </div>
+                    <p>如果你只是“用了 Claude”“部署了大模型”“上线一个 AI 助手”，你只是让自己不掉队。你的对手同样可以在三个月内把这些动作陈列一遍。</p>
+                    <p>真正能让你领先的，只能是那些从自己业务里长出来的、别人买不到的东西。云计算平权了服务器，拉开企业的是你怎么用云；SaaS 平权了软件，拉开企业的是你怎么重组流程；大模型正在平权 AI 能力，拉开企业的会是你怎么让 AI 沉淀成只属于你的东西。</p>
+                    <p><strong>能买到的，就永远不是资产。</strong></p>
+                </section>
+
+                <section class="article-section" id="two-intelligence">
+                    <h2><span>02</span>两种智能：租用，还是沉淀</h2>
+                    <p>我愿意把 AI 时代企业拥有的“智能”分成两种。这个区分看起来简单，但几乎能解释我看到的所有组织差距。</p>
+                    <div class="article-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>维度</th>
+                                    <th>租用智能</th>
+                                    <th>沉淀智能</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>形式</td>
+                                    <td>调用通用模型或通用 Agent</td>
+                                    <td>私有 Skill、私有工作流、私有知识库</td>
+                                </tr>
+                                <tr>
+                                    <td>报表上</td>
+                                    <td>“用了 AI”</td>
+                                    <td>“用 AI 多生产了 X”</td>
+                                </tr>
+                                <tr>
+                                    <td>停付费后</td>
+                                    <td>能力归零</td>
+                                    <td>能力还在</td>
+                                </tr>
+                                <tr>
+                                    <td>员工离职</td>
+                                    <td>个人 prompt 和技巧会被带走</td>
+                                    <td>被沉淀为公司资产，带不走</td>
+                                </tr>
+                                <tr>
+                                    <td>竞品复制</td>
+                                    <td>能，买一份就行</td>
+                                    <td>不能，因为长在你的业务里</td>
+                                </tr>
+                                <tr>
+                                    <td>随时间</td>
+                                    <td>起点高，但曲线平</td>
+                                    <td>起点低，但越用越厚</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p>这个区分背后的论点是：<strong>AI 时代的企业价值，不是调用了多少智能，而是沉淀了多少智能。</strong></p>
+                    <p>这不是新问题。你可以拿 BPO 的发展史来看。2000 年左右，很多企业把 IT、财务、客服外包。起初这带来巨大的成本和效率优势；不到五年，它就变成标配。真正拉开距离的，是那些知道“哪些能力不肯外包”的企业。</p>
+                    <p>今天对 AI 也一样。谁都能把智能外包给通用模型，赢家是那些知道哪些能力不能外包、必须在组织里长出来的人。</p>
+                </section>
+
+                <section class="article-section" id="capability">
+                    <h2><span>03</span>重新理解 AI 时代的组织能力</h2>
+                    <p>这是我近半年最重要的认知转变。过去我们理解的组织能力，大致有三层：人、流程与 SOP、信息与数据。三十年的企业管理书、咨询方法论，都是在这三层上反复优化。</p>
+                    <p>AI 时代要加上一层：<strong>私有智能。</strong>也就是企业自己的 Skill、Agent、私有工作流和私有知识。</p>
+                    <div class="article-quote">如果说上一个时代的组织变革，是给企业搭肌肉、血液和血管，那么 AI 时代的组织变革，是给企业搭骨骼。</div>
+                    <p>“骨骼”不是修辞。它意味着这不是锦上添花，而是决定未来 N 个 AI 能不能在企业里站起来、能不能协同的结构性能力。</p>
+                    <p>大部分企业今天还在用前三层的逻辑推 AI：叫 HR 招 AI 人才，买个 AI 软件，让企业服务台拼一个调用量看板。这些动作并非无用，但它们更像是在加肌肉。骨骼那一层，常常被默默外包给了模型厂商。</p>
+                    <p>三年之后，那些只加肌肉、没搭骨骼的公司，会发现自己走路越来越重，跳起来越来越难。</p>
+                </section>
+
+                <section class="article-section" id="levels">
+                    <h2><span>04</span>一把诊断尺子：L1 / L2 / L2.5 / L3</h2>
+                    <p>这是我自己提出的一套分级方法。它能把“AI 用得怎么样”这个虚问题，变成一个可以盘点、可以写进 OKR、可以被管理的问题。</p>
+                    <div class="level-list">
+                        <div class="level-item">
+                            <h3>L1 · 个人效率 Skill</h3>
+                            <p><strong>典型场景：</strong>总结、改写、会议纪要、文档生成、邮件润色、PPT 起草。</p>
+                            <p><strong>关键问题：</strong>结果停在个人 chat 窗口里，prompt 和技巧跟着人走，企业沉淀为 0。</p>
+                            <p><strong>升级钥匙：</strong>从个人在用什么 Skill，变成团队或部门共用同一个 Skill。</p>
+                        </div>
+                        <div class="level-item">
+                            <h3>L2 · 业务场景 Skill</h3>
+                            <p><strong>典型场景：</strong>销售建联助手、门店巡检助手、客服质检助手、招聘初筛助手、合同初审助手。</p>
+                            <p><strong>关键问题：</strong>开始引入私有上下文，但通常只读不写，用完产生的新经验没地方去。</p>
+                            <p><strong>升级钥匙：</strong>从单次跑得好，走到跑一万次都不出错。</p>
+                        </div>
+                        <div class="level-item">
+                            <h3>L2.5 · 工业级 Skill</h3>
+                            <p><strong>典型场景：</strong>批量客服意图分类、营销文案规模化生成、合规初审、商品描述批量改写、合同 OCR 与校验。</p>
+                            <p><strong>关键问题：</strong>它已经有评测集、错误率上限、版本管理、回滚机制和运行监控，但通常仍然只读不写。</p>
+                            <p><strong>升级钥匙：</strong>从批量稳定执行，走到执行完之后回写闭环。</p>
+                        </div>
+                        <div class="level-item">
+                            <h3>L3 · 组织资产 Skill</h3>
+                            <p><strong>典型场景：</strong>客户经营 Skill、合同风险管理 Skill、项目复盘 Skill、产品缺陷归因 Skill、客户健康度评估 Skill。</p>
+                            <p><strong>关键问题：</strong>它能调企业系统、调知识库、调历史决策记录，并且把执行结果写回系统。</p>
+                            <p><strong>升级钥匙：</strong>从单一 Skill 长成 Skill 网络，多个 L3 能互相调用、组合，把整段业务流程 AI 化。</p>
+                        </div>
+                    </div>
+                    <div class="article-callout">
+                        <p><strong>Skill 最危险的认知陷阱是：单次跑得好，不等于规模化能跑好。</strong></p>
+                        <p>一个 Skill 在 demo 里跑 5 个 case 都对，不代表上线后跑 1 万次也稳定。L2 到 L2.5，是企业 AI 从 demo 文化走到工程文化的门槛。</p>
+                    </div>
+                    <p>跨过 L2.5，需要四个不性感但非常关键的工程动作：评测集、错误率上限、版本管理与 AB 测试、运行时监控。没有这些，所有 L2 Skill 都会卡在试点里。</p>
+                    <p>L3 的判定线几乎只有一条：<strong>能不能回写。</strong>能读企业数据，也能写回企业数据，才会形成闭环；下一次基于更新后的数据跑，智能才会随时间增厚。</p>
+                </section>
+
+                <section class="article-section" id="management">
+                    <h2><span>05</span>管理者真正要做的几件事</h2>
+                    <div class="article-grid">
+                        <div class="article-card">
+                            <b>重新定义交付物</b>
+                            <p>不要只问上线了几个 AI 助手、员工使用率是多少。要问今年沉淀了几个 L3 Skill，被多少场景复用，近三个月回写了多少次。</p>
+                        </div>
+                        <div class="article-card">
+                            <b>设立 Skill 创作官</b>
+                            <p>AI 时代需要有人能把业务专家脑子里的招式变成 Skill。他不一定是工程师，但要懂上下文、边界、例外和回写。</p>
+                        </div>
+                        <div class="article-card">
+                            <b>重写 OKR 的 AI 部分</b>
+                            <p>从“推动全员使用 AI”，改成“沉淀 N 个 L3 私有 Skill”“通过 L2.5 工程门槛的 Skill 数”“AI 闭环重构的业务节点数”。</p>
+                        </div>
+                        <div class="article-card">
+                            <b>警惕 AI 中台陷阱</b>
+                            <p>Skill 必须长在业务上下文里。更健康的路径是联邦制：中央提供标准、安全、平台和复盘，各 BU 自己创作和运营。</p>
+                        </div>
+                    </div>
+                    <h3>护好上下文这个被低估的资产</h3>
+                    <p>企业 AI 最大的痛点从来不是没模型，而是没上下文。你刚开完的会说了什么、和客户聊了什么、过去三个月的决策路径是什么、现在业务里谁负责什么，这些才是真正决定 AI 能不能贴近业务的东西。</p>
+                    <p>传统公司的上下文是间歇的、散落的、需要专人整理后入库的。一旦需要“整理后录入”，几乎必然失败，因为业务在跑，没人有时间补录。</p>
+                    <p>AI 时代的管理者要问的不是“我们怎么多录入一点”，而是：<strong>业务发生的同时，上下文能不能自然被对齐、被沉淀？</strong></p>
+                </section>
+
+                <section class="article-section" id="constant">
+                    <h2><span>06</span>不变的四件事</h2>
+                    <p>Skill 也好，Agent 也好，今天还没出现的新名词也好，未来三到五年，这些名词都会变。但有四件事不会变，它们是企业作为组织的根本需求。</p>
+                    <div class="article-grid">
+                        <div class="article-card">
+                            <b>团队协作</b>
+                            <p>人和人怎么配合。</p>
+                        </div>
+                        <div class="article-card">
+                            <b>业务流转</b>
+                            <p>事情怎么一步步推进。</p>
+                        </div>
+                        <div class="article-card">
+                            <b>知识沉淀</b>
+                            <p>经验怎么变成组织资产。</p>
+                        </div>
+                        <div class="article-card">
+                            <b>上下文沉淀</b>
+                            <p>业务发生时的活语境怎么留存。</p>
+                        </div>
+                    </div>
+                    <p>不管未来形态叫 Skill、Agent、工作流，还是一个还没出现的新名字，企业真正需要的不是又一个 AI 工具，而是让私有能力持续沉淀的土壤。</p>
+                </section>
+
+                <section class="article-section" id="truth">
+                    <h2><span>07</span>一个不舒服的真相</h2>
+                    <p>这几年关于 AI 的叙事，最热闹的是“AI 会不会替代人”。我诚实认为，这是一个被错误定位的问题。</p>
+                    <div class="article-quote">AI 不会替代人。但它会拉开两种组织。</div>
+                    <p>一种组织，会把每个员工用 AI 跑出来的东西，慢慢沉淀下来，变成三年后别人看不懂、也拿不走的那部分。</p>
+                    <p>另一种组织，每个员工都在用 AI，但三年后公司除了“大家都习惯了用 ChatGPT”以外，什么也没多出来。</p>
+                    <p>这两种公司上周看起来差不多。三年后在同一个赛道上，它们已经不是同一个物种。区别不在于谁买了更强的模型，不在于谁堆了更多 AI 人才，甚至不在于谁的员工 AI 使用率更高。区别只在一件事上：<strong>这家公司是不是在努力让 AI 跑出来的智能沉淀为组织资产。</strong></p>
+                    <p>不是买。是沉。</p>
+                </section>
+
+                <section class="article-section">
+                    <h2><span>END</span>本周就能开始的三件事</h2>
+                    <ol class="article-actions">
+                        <li>拿 L1 / L2 / L2.5 / L3 在你公司或部门里做一次诚实盘点。你可能会发现，真实进展比对外讲的少很多。</li>
+                        <li>选一个能闭环的场景作为起点，比如合同审核、客服质检、周报组装。能闭环，是唯一重要的标准。</li>
+                        <li>重写周会里你问团队的那个问题：从“本周你们用了多少 AI”，变成“本周你们沉淀了什么从今以后别人能拿走的东西”。</li>
+                    </ol>
+                    <div class="article-callout">
+                        <p>AI 的水位每个月都在涨。有些组织会学会冲浪，把每一波浪都换成只属于自己的动能。另一些组织会站在原地，看着水位涨上来，以为“我也在水里”就是“我也在冲浪”。三年后，他们才发现自己只是被淹了。</p>
+                    </div>
+                </section>
+
+                <footer class="article-footer">
+                    <a class="article-back" href="../index.html#thinking">返回思考手记</a>
+                </footer>
+            </article>
+        </div>
+    </main>
+
+    <script>
+        const pageProgressBar = document.getElementById('pageProgressBar');
+        function updatePageProgress() {
+            if (!pageProgressBar) return;
+            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = maxScroll > 0 ? (window.scrollY / maxScroll) * 100 : 0;
+            pageProgressBar.style.width = `${Math.min(Math.max(progress, 0), 100)}%`;
+        }
+        window.addEventListener('scroll', updatePageProgress, { passive: true });
+        window.addEventListener('resize', updatePageProgress);
+        updatePageProgress();
+    </script>
+</body>
+</html>
