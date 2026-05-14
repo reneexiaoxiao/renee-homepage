@@ -1215,9 +1215,9 @@ function renderDigestCards(filter = 'all') {
 
     gallery.innerHTML = filteredData.map(digest => {
         // 准备卡片要显示的所有图片（封面 + 卡片图）
-        const cardImages = digest.images.cards ?
+        const cardImages = (digest.images.cards ?
             [digest.images.cover, ...digest.images.cards] :
-            [digest.images.cover];
+            [digest.images.cover]).filter(Boolean);
 
         return `
             <div class="digest-card" onclick="openDigestModal('${digest.id}')">
@@ -1377,9 +1377,9 @@ function openDigestModal(digestId) {
     const modalBody = document.getElementById('modalBody');
 
     // 准备所有图片（封面 + 卡片图）
-    const allImages = digest.images.cards ?
+    const allImages = (digest.images.cards ?
         [digest.images.cover, ...digest.images.cards] :
-        [digest.images.cover];
+        [digest.images.cover]).filter(Boolean);
 
     modalBody.innerHTML = `
         <div class="modal-header">
