@@ -187,17 +187,54 @@
 
         .article-quote,
         .article-callout {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.55rem;
             margin: 2rem 0;
-            padding: 1.35rem 1.5rem;
+            min-height: 8.5rem;
+            padding: 1.6rem 1.75rem;
             border: 1px solid var(--color-border);
             border-radius: var(--radius-lg);
             background: rgba(255, 255, 255, 0.36);
+            text-align: center;
         }
 
-        .article-quote {
-            font-size: 1.25rem;
+        .article-quote,
+        .article-callout p {
+            font-size: 1.12rem;
             line-height: 1.85;
             color: var(--color-text);
+            margin-bottom: 0;
+        }
+
+        .article-quote strong,
+        .article-callout strong {
+            font-size: inherit;
+            line-height: inherit;
+        }
+
+        .article-figure {
+            margin: 2rem 0 2.4rem;
+        }
+
+        .article-figure img {
+            display: block;
+            width: 100%;
+            border-radius: calc(var(--radius-lg) + 4px);
+            border: 1px solid rgba(232, 228, 218, 0.85);
+            background: var(--color-card-bg);
+            box-shadow: 0 22px 44px rgba(0, 0, 0, 0.07);
+        }
+
+        .article-figure figcaption {
+            max-width: 42rem;
+            margin: 0.85rem auto 0;
+            color: var(--color-text-light);
+            font-size: 0.85rem;
+            line-height: 1.7;
+            text-align: center;
         }
 
         .article-grid {
@@ -354,6 +391,11 @@
             .article-table {
                 background: rgba(37, 36, 32, 0.82);
             }
+
+            .article-figure img {
+                border-color: rgba(255, 255, 255, 0.08);
+                box-shadow: 0 22px 44px rgba(0, 0, 0, 0.24);
+            }
         }
 
         @media (max-width: 860px) {
@@ -394,6 +436,17 @@
 
             .article-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .article-quote,
+            .article-callout {
+                min-height: 7rem;
+                padding: 1.25rem;
+            }
+
+            .article-quote,
+            .article-callout p {
+                font-size: 1rem;
             }
 
             .article-section h2 {
@@ -470,6 +523,10 @@
                 <section class="article-section" id="utility">
                     <h2><span>01</span>当模型变成水电，企业的分水岭在哪里</h2>
                     <p>五年前，一家企业能不能用上 AI，本身就是一种区分。今天不是了。模型 API 越来越便宜，也越来越“都能买”：Claude、GPT、Gemini、文心、豆包，你能调用的东西，你的对手大概率也能。</p>
+                    <figure class="article-figure">
+                        <img src="ai-organizational-assets/utility-vs-asset.png" alt="通用 AI 能力像水电一样流向不同组织，而私有资产在业务中沉淀">
+                        <figcaption>当模型能力变成水电，企业差异不再来自“能不能接入”，而来自能不能把流过业务的智能沉淀下来。</figcaption>
+                    </figure>
                     <div class="article-callout">
                         <p><strong>一旦一种能力是市场通用可触达的，它就不可能构成企业的核心竞争力。</strong></p>
                     </div>
@@ -481,6 +538,10 @@
                 <section class="article-section" id="two-intelligence">
                     <h2><span>02</span>两种智能：租用，还是沉淀</h2>
                     <p>我愿意把 AI 时代企业拥有的“智能”分成两种。这个区分看起来简单，但几乎能解释我看到的所有组织差距。</p>
+                    <figure class="article-figure">
+                        <img src="ai-organizational-assets/rented-vs-compounding.png" alt="租用智能像插头短暂取用，沉淀智能像珍珠在组织内持续增厚">
+                        <figcaption>一边是随用随取、停用归零的租用智能；另一边是越用越厚、逐渐成为组织资产的沉淀智能。</figcaption>
+                    </figure>
                     <div class="article-table">
                         <table>
                             <thead>
@@ -534,6 +595,10 @@
                     <p>这是我近半年最重要的认知转变。过去我们理解的组织能力，大致有三层：人、流程与 SOP、信息与数据。三十年的企业管理书、咨询方法论，都是在这三层上反复优化。</p>
                     <p>AI 时代要加上一层：<strong>私有智能。</strong>也就是企业自己的 Skill、Agent、私有工作流和私有知识。</p>
                     <div class="article-quote">如果说上一个时代的组织变革，是给企业搭肌肉、血液和血管，那么 AI 时代的组织变革，是给企业搭骨骼。</div>
+                    <figure class="article-figure">
+                        <img src="ai-organizational-assets/organizational-skeleton.png" alt="组织中心形成骨骼结构，连接人员、知识、流程和数据">
+                        <figcaption>私有智能不是贴在组织外面的工具，而是让人员、流程、知识和数据真正协同起来的骨架。</figcaption>
+                    </figure>
                     <p>“骨骼”不是修辞。它意味着这不是锦上添花，而是决定未来 N 个 AI 能不能在企业里站起来、能不能协同的结构性能力。</p>
                     <p>大部分企业今天还在用前三层的逻辑推 AI：叫 HR 招 AI 人才，买个 AI 软件，让企业服务台拼一个调用量看板。这些动作并非无用，但它们更像是在加肌肉。骨骼那一层，常常被默默外包给了模型厂商。</p>
                     <p>三年之后，那些只加肌肉、没搭骨骼的公司，会发现自己走路越来越重，跳起来越来越难。</p>
@@ -542,6 +607,10 @@
                 <section class="article-section" id="levels">
                     <h2><span>04</span>一把诊断尺子：L1 / L2 / L2.5 / L3</h2>
                     <p>这是我自己提出的一套分级方法。它能把“AI 用得怎么样”这个虚问题，变成一个可以盘点、可以写进 OKR、可以被管理的问题。</p>
+                    <figure class="article-figure">
+                        <img src="ai-organizational-assets/l1-l3-maturity.png" alt="从 L1 到 L3 的 AI 组织成熟度阶梯">
+                        <figcaption>从个人效率到组织资产，中间真正难跨越的不是概念，而是工程化、稳定性和回写闭环。</figcaption>
+                    </figure>
                     <div class="level-list">
                         <div class="level-item">
                             <h3>L1 · 个人效率 Skill</h3>
@@ -646,6 +715,10 @@
                     <div class="article-callout">
                         <p>AI 的水位每个月都在涨。有些组织会学会冲浪，把每一波浪都换成只属于自己的动能。另一些组织会站在原地，看着水位涨上来，以为“我也在水里”就是“我也在冲浪”。三年后，他们才发现自己只是被淹了。</p>
                     </div>
+                    <figure class="article-figure">
+                        <img src="ai-organizational-assets/rising-water.png" alt="AI 水位上涨，一边组织沉淀能力冲浪，另一边组织被信息浪潮淹没">
+                        <figcaption>同样站在 AI 浪潮里，有的组织把每一次使用变成动能，有的组织只是被水位托起来又淹没。</figcaption>
+                    </figure>
                 </section>
 
                 <footer class="article-footer">
