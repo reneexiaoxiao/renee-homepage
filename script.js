@@ -470,11 +470,9 @@ const digestData = [
         tags: ['Agentic AI', 'AI趋势', '智能体'],
         excerpt: 'AI正在从被动工具转向主动代理人。Agentic AI不仅能理解指令，更能自主规划、执行和验证。这十大趋势将重新定义人机协作的未来...',
         images: {
-            cover: 'digests/2024/03/2024-03-21-agentic-ai/images/cover.jpg',
-            cards: ['digests/2024/03/2024-03-21-agentic-ai/images/01.jpg',
-                     'digests/2024/03/2024-03-21-agentic-ai/images/02.jpg',
-                     'digests/2024/03/2024-03-21-agentic-ai/images/03.jpg'],
-            longForm: 'digests/2024/03/2024-03-21-agentic-ai/images/long-form.jpg'
+            cover: '',
+            cards: [],
+            longForm: null
         },
         author: 'Renee',
         readTime: '8 分钟',
@@ -511,11 +509,9 @@ const digestData = [
         tags: ['劳动力市场', 'AI影响', '技能变革'],
         excerpt: 'Anthropic最新报告揭示：AI正在重塑劳动力市场。高薪技能受到的冲击最大，而人际互动类工作反而变得更重要...',
         images: {
-            cover: 'digests/2024/03/2024-03-20-anthropic-workforce/images/cover.jpg',
-            cards: ['digests/2024/03/2024-03-20-anthropic-workforce/images/01.jpg',
-                     'digests/2024/03/2024-03-20-anthropic-workforce/images/02.jpg',
-                     'digests/2024/03/2024-03-20-anthropic-workforce/images/03.jpg'],
-            longForm: 'digests/2024/03/2024-03-20-anthropic-workforce/images/long-form.jpg'
+            cover: '',
+            cards: [],
+            longForm: null
         },
         author: 'Renee',
         readTime: '10 分钟',
@@ -530,11 +526,9 @@ const digestData = [
         tags: ['ARK', '投资趋势', '前沿科技'],
         excerpt: 'ARK年度报告发布，从AI到机器人，从基因编辑到航天技术，九大技术领域的投资机遇与风险图谱...',
         images: {
-            cover: 'digests/2024/03/2024-03-19-ark-bigideas/images/cover.jpg',
-            cards: ['digests/2024/03/2024-03-19-ark-bigideas/images/01.jpg',
-                     'digests/2024/03/2024-03-19-ark-bigideas/images/02.jpg',
-                     'digests/2024/03/2024-03-19-ark-bigideas/images/03.jpg'],
-            longForm: 'digests/2024/03/2024-03-19-ark-bigideas/images/long-form.jpg'
+            cover: '',
+            cards: [],
+            longForm: null
         },
         author: 'Renee',
         readTime: '12 分钟',
