@@ -2,8 +2,16 @@
 @font-face {
     font-family: 'ZhongHuaXinHuo';
     src:
-        url('./fonts/zhonghuaxinhuo-subset.woff2') format('woff2'),
-        url('./fonts/中华薪火体.ttf') format('truetype');
+        url('./fonts/zhonghuaxinhuo-subset.woff2?v=20260515-font2') format('woff2'),
+        url('./fonts/中华薪火体.ttf?v=20260515-font2') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ZhongHuaXinHuoFull';
+    src: url('./fonts/中华薪火体.ttf?v=20260515-font2') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -32,7 +40,7 @@
     --glass-shadow-hover: rgba(0, 0, 0, 0.08);
 
     /* Typography */
-    --font-serif: 'ZhongHuaXinHuo', 'Noto Serif SC', serif;
+    --font-serif: 'ZhongHuaXinHuo', 'ZhongHuaXinHuoFull', 'Noto Serif SC', serif;
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
     /* Spacing */
@@ -221,7 +229,7 @@ html {
 }
 
 body {
-    font-family: 'ZhongHuaXinHuo', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'ZhongHuaXinHuo', 'ZhongHuaXinHuoFull', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     background-color: var(--color-bg);
     /* 纸质纹理效果 */
     background-image:
