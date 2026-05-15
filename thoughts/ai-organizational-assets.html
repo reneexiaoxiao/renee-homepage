@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles.css?v=20260515-mobile1">
     <style>
         body.article-page {
             background:
@@ -486,15 +486,83 @@
         }
 
         @media (max-width: 860px) {
+            html,
+            body.article-page {
+                max-width: 100%;
+                overflow-x: hidden;
+            }
+
             .article-shell {
-                width: min(100% - 1.25rem, 760px);
+                width: calc(100% - 1.25rem);
+                max-width: 760px;
                 padding-top: calc(var(--nav-height) + 1.2rem);
+                overflow-x: clip;
             }
 
             .article-hero {
                 grid-template-columns: 1fr;
                 min-height: auto;
                 padding: 2.4rem 0;
+                gap: 1.35rem;
+                width: 100%;
+                min-width: 0;
+            }
+
+            .article-hero > *,
+            .article-layout,
+            .article-body,
+            .article-section,
+            .article-lead,
+            .article-figure,
+            .article-callout,
+            .article-quote,
+            .article-table,
+            .level-list,
+            .article-grid,
+            .concept-carousel {
+                width: 100%;
+                max-width: 100%;
+                min-width: 0;
+            }
+
+            .article-title {
+                max-width: 100%;
+                font-size: clamp(2.45rem, 13vw, 3.85rem);
+                line-height: 1.08;
+                overflow-wrap: anywhere;
+                word-break: break-word;
+            }
+
+            .article-subtitle {
+                font-size: 1rem;
+                line-height: 1.9;
+            }
+
+            .article-meta {
+                gap: 0.55rem;
+                margin-top: 1.35rem;
+            }
+
+            .article-meta span,
+            .article-pill {
+                min-height: 2rem;
+                font-size: 0.78rem;
+            }
+
+            .article-hero-card {
+                padding: 1.05rem;
+                border-radius: var(--radius-md);
+            }
+
+            .article-hero-card strong {
+                font-size: clamp(2rem, 15vw, 3rem);
+                text-align: center;
+            }
+
+            .article-hero-card p {
+                font-size: 0.94rem;
+                line-height: 1.78;
+                text-align: center;
             }
 
             .article-layout {
@@ -507,9 +575,17 @@
                 display: flex;
                 gap: 0.8rem;
                 overflow-x: auto;
+                overscroll-behavior-x: contain;
+                scrollbar-width: none;
                 border-left: none;
                 border-bottom: 1px solid var(--color-border);
                 padding: 0 0 1rem;
+                max-width: 100%;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .article-toc::-webkit-scrollbar {
+                display: none;
             }
 
             .article-toc p {
@@ -519,6 +595,13 @@
             .article-toc a {
                 flex: 0 0 auto;
                 margin-bottom: 0;
+                min-height: 2.15rem;
+                padding: 0.42rem 0.68rem;
+                border: 1px solid var(--color-border);
+                border-radius: var(--radius-full);
+                background: rgba(250, 247, 240, 0.64);
+                font-size: 0.84rem;
+                line-height: 1.2;
             }
 
             .article-grid {
@@ -529,6 +612,7 @@
                 margin-left: -0.2rem;
                 margin-right: -0.2rem;
                 padding: 0.75rem;
+                overflow: hidden;
             }
 
             .concept-carousel-header {
@@ -541,7 +625,25 @@
             }
 
             .concept-slide {
-                flex-basis: 92%;
+                flex: 0 0 86%;
+                min-width: 0;
+            }
+
+            .concept-carousel-track {
+                width: 100%;
+                max-width: 100%;
+                padding-inline: 0.05rem;
+            }
+
+            .concept-slide figcaption {
+                padding: 0.8rem;
+                font-size: 0.82rem;
+                line-height: 1.65;
+            }
+
+            .concept-label {
+                margin: 0 0 0.35rem;
+                display: inline-flex;
             }
 
             .article-quote,
@@ -557,11 +659,83 @@
 
             .article-section h2 {
                 display: block;
+                font-size: clamp(1.65rem, 8vw, 2.35rem);
+                line-height: 1.26;
             }
 
             .article-section h2 span {
                 display: block;
                 margin-bottom: 0.5rem;
+            }
+
+            .article-body p {
+                font-size: 0.98rem;
+                line-height: 1.92;
+            }
+
+            .article-lead {
+                padding: 1.05rem 1.1rem;
+                font-size: 1rem;
+                line-height: 1.9;
+                margin-bottom: 2.4rem;
+            }
+
+            .article-card,
+            .level-item,
+            .article-actions li {
+                border-radius: var(--radius-md);
+            }
+
+            .article-table {
+                max-width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .article-table table {
+                min-width: 560px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .article-shell {
+                width: calc(100% - 1rem);
+                padding-top: calc(var(--nav-height) + 0.75rem);
+                padding-bottom: 3.4rem;
+            }
+
+            .article-hero {
+                padding: 1.8rem 0 2rem;
+            }
+
+            .article-kicker {
+                font-size: 0.72rem;
+                line-height: 1.45;
+                letter-spacing: 0.07em;
+            }
+
+            .article-title {
+                font-size: clamp(2.15rem, 15vw, 3.35rem);
+            }
+
+            .article-figure {
+                margin: 1.55rem 0 2rem;
+            }
+
+            .article-figure img {
+                border-radius: var(--radius-md);
+            }
+
+            .article-section {
+                margin-bottom: 3rem;
+            }
+
+            .article-actions li {
+                padding: 0.95rem 0.95rem 0.95rem 2.8rem;
+            }
+
+            .article-actions li::before {
+                left: 0.85rem;
             }
         }
     </style>
