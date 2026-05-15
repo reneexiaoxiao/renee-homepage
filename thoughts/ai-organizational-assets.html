@@ -237,6 +237,88 @@
             text-align: center;
         }
 
+        .concept-carousel {
+            margin: 2rem 0 2.8rem;
+            padding: 1rem;
+            border: 1px solid var(--color-border);
+            border-radius: calc(var(--radius-lg) + 4px);
+            background: rgba(250, 247, 240, 0.72);
+        }
+
+        .concept-carousel-header {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 0.9rem;
+        }
+
+        .concept-carousel-header p {
+            color: var(--color-text-light);
+            font-size: 0.86rem;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        .concept-carousel-title {
+            display: block;
+            color: var(--color-text);
+            font-size: 1.05rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .concept-carousel-hint {
+            flex: 0 0 auto;
+            color: var(--color-accent);
+            font-family: var(--font-sans);
+            font-size: 0.78rem;
+        }
+
+        .concept-carousel-track {
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            overscroll-behavior-x: contain;
+            scroll-snap-type: x mandatory;
+            scrollbar-color: rgba(184, 84, 80, 0.34) transparent;
+            padding-bottom: 0.6rem;
+        }
+
+        .concept-slide {
+            flex: 0 0 min(100%, 720px);
+            scroll-snap-align: center;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 18px 38px rgba(0, 0, 0, 0.06);
+        }
+
+        .concept-slide img {
+            display: block;
+            width: 100%;
+        }
+
+        .concept-slide figcaption {
+            padding: 0.9rem 1rem 1rem;
+            color: var(--color-text-muted);
+            font-size: 0.88rem;
+            line-height: 1.7;
+            text-align: left;
+        }
+
+        .concept-label {
+            display: inline-flex;
+            align-items: center;
+            min-height: 1.55rem;
+            margin-right: 0.45rem;
+            padding: 0.2rem 0.48rem;
+            border-radius: var(--radius-sm);
+            background: rgba(184, 84, 80, 0.12);
+            color: var(--color-accent);
+            font-size: 0.76rem;
+        }
+
         .article-grid {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -396,6 +478,11 @@
                 border-color: rgba(255, 255, 255, 0.08);
                 box-shadow: 0 22px 44px rgba(0, 0, 0, 0.24);
             }
+
+            .concept-carousel,
+            .concept-slide {
+                background: rgba(37, 36, 32, 0.82);
+            }
         }
 
         @media (max-width: 860px) {
@@ -438,6 +525,25 @@
                 grid-template-columns: 1fr;
             }
 
+            .concept-carousel {
+                margin-left: -0.2rem;
+                margin-right: -0.2rem;
+                padding: 0.75rem;
+            }
+
+            .concept-carousel-header {
+                display: block;
+            }
+
+            .concept-carousel-hint {
+                display: block;
+                margin-top: 0.45rem;
+            }
+
+            .concept-slide {
+                flex-basis: 92%;
+            }
+
             .article-quote,
             .article-callout {
                 min-height: 7rem;
@@ -467,12 +573,12 @@
 
     <nav class="nav">
         <div class="nav-content">
-            <a href="../index.html#hero" class="nav-logo">R</a>
+            <a href="http://152.32.132.169/#hero" class="nav-logo">R</a>
             <div class="nav-links">
-                <a href="../index.html#about">关于</a>
-                <a href="../index.html#learn-digest">#Learn&amp;Digest</a>
-                <a href="../index.html#thinking">思考手记</a>
-                <a href="../index.html#contact">联系</a>
+                <a href="http://152.32.132.169/#about">关于</a>
+                <a href="http://152.32.132.169/#learn-digest">#Learn&amp;Digest</a>
+                <a href="http://152.32.132.169/#thinking">思考手记</a>
+                <a href="http://152.32.132.169/#contact">联系</a>
             </div>
         </div>
     </nav>
@@ -641,6 +747,33 @@
                         <p><strong>Skill 最危险的认知陷阱是：单次跑得好，不等于规模化能跑好。</strong></p>
                         <p>一个 Skill 在 demo 里跑 5 个 case 都对，不代表上线后跑 1 万次也稳定。L2 到 L2.5，是企业 AI 从 demo 文化走到工程文化的门槛。</p>
                     </div>
+                    <div class="concept-carousel" aria-label="L1 到 L3 企业 AI 能力概念图">
+                        <div class="concept-carousel-header">
+                            <p>
+                                <strong class="concept-carousel-title">概念图：把 L1 到 L3 变成可管理对象</strong>
+                                下面四张图是对“Skill 资产化”的产品化想象，用来辅助理解盘点、管理、诊断和落地路径。
+                            </p>
+                            <span class="concept-carousel-hint">横向滑动查看</span>
+                        </div>
+                        <div class="concept-carousel-track">
+                            <figure class="concept-slide">
+                                <img src="ai-organizational-assets/concepts/skill-map.png" alt="概念图：企业 Skill 分布地图">
+                                <figcaption><span class="concept-label">概念图 01</span>企业 Skill 分布地图：把不同部门的 AI 能力按等级、频次和覆盖范围可视化。</figcaption>
+                            </figure>
+                            <figure class="concept-slide">
+                                <img src="ai-organizational-assets/concepts/skill-ledger.png" alt="概念图：企业 Skill 管理台账">
+                                <figcaption><span class="concept-label">概念图 02</span>企业 Skill 管理台账：像管理资产一样管理 Skill 的负责人、版本、状态、权限和运营数据。</figcaption>
+                            </figure>
+                            <figure class="concept-slide">
+                                <img src="ai-organizational-assets/concepts/l1-l3-dashboard.png" alt="概念图：L1 到 L3 能力诊断看板">
+                                <figcaption><span class="concept-label">概念图 03</span>L1 到 L3 能力诊断看板：把等级差异、升级条件和业务价值放在同一个视图里。</figcaption>
+                            </figure>
+                            <figure class="concept-slide">
+                                <img src="ai-organizational-assets/concepts/quarterly-roadmap.png" alt="概念图：从 L1 到 L3 的季度落地路径">
+                                <figcaption><span class="concept-label">概念图 04</span>季度落地路径：从盘点现状、跑出 L2、跨过 L2.5，到沉淀第一个 L3。</figcaption>
+                            </figure>
+                        </div>
+                    </div>
                     <p>跨过 L2.5，需要四个不性感但非常关键的工程动作：评测集、错误率上限、版本管理与 AB 测试、运行时监控。没有这些，所有 L2 Skill 都会卡在试点里。</p>
                     <p>L3 的判定线几乎只有一条：<strong>能不能回写。</strong>能读企业数据，也能写回企业数据，才会形成闭环；下一次基于更新后的数据跑，智能才会随时间增厚。</p>
                 </section>
@@ -722,7 +855,7 @@
                 </section>
 
                 <footer class="article-footer">
-                    <a class="article-back" href="../index.html#thinking">返回思考手记</a>
+                    <a class="article-back" href="http://152.32.132.169/#thinking">返回思考手记</a>
                 </footer>
             </article>
         </div>
