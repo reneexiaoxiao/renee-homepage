@@ -753,7 +753,7 @@ const thinkingData = [
         desc: '从“租用智能”到“沉淀智能”，重新定义 AI 时代企业真正该积累的组织资产。',
         format: '思考长文 / 企业 AI',
         topics: ['组织资产', '私有智能', 'Skill'],
-        href: 'http://renezhang.fun/thoughts/ai-organizational-assets.html',
+        href: 'https://renezhang.fun/thoughts/ai-organizational-assets.html',
         cta: '阅读全文'
     },
     {
