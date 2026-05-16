@@ -3010,6 +3010,42 @@ ul {
     box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
 }
 
+.project-preview-money {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 0.72rem;
+}
+
+.money-path {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid rgba(184, 84, 80, 0.16);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.64);
+    color: var(--color-text);
+    font-size: 0.86rem;
+    font-weight: 600;
+    padding: 0.58rem 0.76rem;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+}
+
+.money-path::after {
+    content: "";
+    width: 1.8rem;
+    height: 0.42rem;
+    border-radius: 999px;
+    background: rgba(184, 84, 80, 0.22);
+}
+
+.money-path-flow {
+    transform: translateX(0.9rem);
+}
+
+.money-path-growth {
+    transform: translateX(0.25rem);
+}
+
 .project-card-body {
     display: flex;
     flex-direction: column;
