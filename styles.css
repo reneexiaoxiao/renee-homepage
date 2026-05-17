@@ -2185,17 +2185,7 @@ ul {
     height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
-    padding: 0 0.15rem 0 0;
-}
-
-.speaking-timeline::before {
-    content: '';
-    position: absolute;
-    top: 0.3rem;
-    bottom: 0;
-    left: 4.2rem;
-    width: 2px;
-    background: linear-gradient(180deg, rgba(184, 84, 80, 0.08), rgba(184, 84, 80, 0.22), rgba(184, 84, 80, 0.08));
+    padding: 0 0.25rem 0 0;
 }
 
 .speaking-timeline::-webkit-scrollbar {
@@ -2206,56 +2196,94 @@ ul {
     background: rgba(26, 25, 21, 0.14);
 }
 
-.speaking-timeline-item {
-    position: relative;
-    display: grid;
-    grid-template-columns: 3.35rem minmax(0, 1fr);
-    gap: 0.9rem;
-    align-items: start;
-    padding: 0 0 0.95rem;
+.speaking-year-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
 }
 
-.speaking-timeline-item::before {
-    content: '';
-    position: absolute;
-    top: 0.48rem;
-    left: calc(4.2rem - 7px);
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background: var(--color-accent);
-    box-shadow: 0 0 0 7px rgba(184, 84, 80, 0.1);
+.speaking-year-group + .speaking-year-group {
+    margin-top: 1.05rem;
 }
 
-.speaking-timeline-year {
-    display: inline-flex;
+.speaking-year-heading {
+    display: flex;
     align-items: center;
-    justify-content: flex-start;
-    height: 1.7rem;
-    color: var(--color-text-light);
-    font-size: 0.76rem;
+    justify-content: space-between;
+    gap: 0.85rem;
+    padding: 0 0.18rem;
+}
+
+.speaking-year-heading h3 {
+    margin: 0;
+    color: var(--color-text);
+    font-size: 1.12rem;
     letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding-top: 0.05rem;
+}
+
+.speaking-year-heading span {
+    color: var(--color-text-light);
+    font-size: 0.78rem;
+    white-space: nowrap;
+}
+
+.speaking-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.85rem;
+    align-items: stretch;
 }
 
 .speaking-entry {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(250px, 340px);
-    gap: 1rem;
-    align-items: start;
-    padding: 0.92rem 0.95rem 0.92rem 1rem;
-    border-radius: 24px;
+    grid-template-columns: 6.3rem minmax(0, 1fr);
+    height: 9.2rem;
+    min-height: 9.2rem;
+    overflow: hidden;
+    border-radius: 18px;
     background: rgba(255, 255, 255, 0.54);
     border: 1px solid rgba(255, 255, 255, 0.62);
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.04);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.speaking-card {
+    min-width: 0;
+}
+
+.speaking-card:hover .speaking-entry {
+    transform: translateY(-4px);
+    border-color: rgba(184, 84, 80, 0.2);
+    box-shadow: 0 18px 34px rgba(0, 0, 0, 0.07);
+}
+
+.speaking-card-featured {
+    grid-column: span 2;
+}
+
+.speaking-card-featured .speaking-entry {
+    display: grid;
+    grid-template-columns: minmax(0, 0.98fr) minmax(0, 1.12fr);
+    height: 12.4rem;
+    min-height: 12.4rem;
+}
+
+.speaking-card-featured .speaking-entry-visual {
+    order: 2;
+    height: 100%;
+}
+
+.speaking-card-featured .speaking-entry-copy {
+    order: 1;
 }
 
 .speaking-entry-copy {
     display: flex;
     flex-direction: column;
-    gap: 0.62rem;
+    gap: 0.48rem;
     min-width: 0;
+    padding: 0.82rem 0.86rem;
+    flex: 1;
 }
 
 .speaking-card-topline {
@@ -2302,36 +2330,37 @@ ul {
 }
 
 .speaking-card-event {
-    font-size: 0.87rem;
+    font-size: 0.78rem;
     color: var(--color-text-light);
-    white-space: nowrap;
+    line-height: 1.45;
 }
 
 .speaking-entry-visual {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: stretch;
+    height: 100%;
     min-width: 0;
+    background: rgba(237, 232, 220, 0.62);
 }
 
 .speaking-entry-media {
     position: relative;
     width: 100%;
-    max-width: 340px;
-    aspect-ratio: 4 / 5;
+    max-width: none;
+    height: 100%;
+    min-height: 100%;
+    aspect-ratio: auto;
     background: var(--color-border);
     overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 18px 32px rgba(0, 0, 0, 0.1);
-    transform: rotate(-2.4deg);
+    border-radius: 0;
+    box-shadow: none;
+    transform: none;
 }
 
-.speaking-timeline-item:nth-child(even) .speaking-entry-visual {
-    justify-content: flex-start;
-}
-
-.speaking-timeline-item:nth-child(even) .speaking-entry-media {
-    transform: rotate(2.2deg);
+.speaking-card-featured .speaking-entry-media {
+    height: 100%;
+    aspect-ratio: auto;
 }
 
 .speaking-entry-media img {
@@ -2343,7 +2372,7 @@ ul {
 }
 
 .speaking-card:hover .speaking-entry-media img {
-    transform: scale(1.04);
+    transform: scale(1.035);
 }
 
 .speaking-entry-track {
@@ -2360,16 +2389,24 @@ ul {
 }
 
 .speaking-card-title {
-    font-size: 1.18rem;
-    line-height: 1.34;
+    font-size: 0.98rem;
+    line-height: 1.42;
     margin-bottom: 0;
 }
 
 .speaking-card-desc {
-    font-size: 0.9rem;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    font-size: 0.84rem;
     color: var(--color-text-muted);
     margin-bottom: 0;
     line-height: 1.58;
+}
+
+.speaking-card-featured .speaking-card-desc {
+    -webkit-line-clamp: 3;
 }
 
 .speaking-card-tags {
@@ -2393,6 +2430,7 @@ ul {
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 0.65rem;
+    margin-top: auto;
     padding-top: 0.15rem;
 }
 
@@ -3816,28 +3854,20 @@ ul {
         grid-template-columns: 1fr;
     }
 
-    .speaking-timeline-item {
+    .speaking-card-grid {
         grid-template-columns: 1fr;
         gap: 0.8rem;
-        padding-left: 1.6rem;
     }
 
-    .speaking-timeline::before {
-        left: 0.45rem;
+    .speaking-card-featured {
+        grid-column: auto;
     }
 
-    .speaking-timeline-item::before {
-        left: 0.08rem;
-    }
-
-    .speaking-timeline-year {
-        height: auto;
-        padding-top: 0;
-    }
-
+    .speaking-card-featured .speaking-entry,
     .speaking-entry {
         grid-template-columns: 1fr;
-        padding: 0.95rem;
+        display: flex;
+        min-height: auto;
     }
 
     .speaking-card-topline {
@@ -3852,15 +3882,16 @@ ul {
         white-space: normal;
     }
 
-    .speaking-entry-visual,
-    .speaking-timeline-item:nth-child(even) .speaking-entry-visual {
-        justify-content: flex-start;
+    .speaking-card-featured .speaking-entry-visual,
+    .speaking-entry-visual {
+        order: 0;
+        height: auto;
     }
 
-    .speaking-entry-media,
-    .speaking-timeline-item:nth-child(even) .speaking-entry-media {
+    .speaking-card-featured .speaking-entry-media,
+    .speaking-entry-media {
+        aspect-ratio: 16 / 10;
         max-width: none;
-        transform: none;
     }
 
     .digest-sidebar,

@@ -931,34 +931,60 @@ function renderSpeakingCards() {
         `;
     }
 
-    grid.innerHTML = speakingData.map((item, index) => `
-        <article class="speaking-timeline-item speaking-card">
-            <div class="speaking-timeline-year">${item.year}</div>
-            <div class="speaking-entry">
-                <div class="speaking-entry-copy">
-                    <div class="speaking-card-topline">
-                        <div class="speaking-card-identity">
-                            <span class="speaking-card-type">${item.type}</span>
-                            <span class="speaking-card-index">${String(index + 1).padStart(2, '0')}</span>
-                        </div>
-                        <span class="speaking-card-event">${item.event}</span>
-                    </div>
-                    <h3 class="speaking-card-title">${item.title}</h3>
-                    <p class="speaking-card-desc">${item.desc}</p>
-                    <div class="speaking-card-footer">
-                        <div class="speaking-card-tags">
-                            ${item.tags.map(tag => `<span class="speaking-card-tag">${tag}</span>`).join('')}
-                        </div>
-                        ${item.href ? `
-                            <a class="speaking-card-link" href="${toUrl(item.href)}" target="_blank" rel="noopener noreferrer">
-                                ${item.cta || '查看详情'}
-                            </a>
-                        ` : ''}
-                    </div>
-                </div>
-                ${renderSpeakingMedia(item, index)}
+    const yearGroups = speakingData.reduce((groups, item, index) => {
+        const currentGroup = groups.find(group => group.year === item.year);
+        const entry = { ...item, originalIndex: index };
+
+        if (currentGroup) {
+            currentGroup.items.push(entry);
+        } else {
+            groups.push({ year: item.year, items: [entry] });
+        }
+
+        return groups;
+    }, []);
+
+    grid.innerHTML = yearGroups.map(group => `
+        <section class="speaking-year-group" aria-labelledby="speaking-year-${group.year}">
+            <div class="speaking-year-heading">
+                <h3 id="speaking-year-${group.year}">${group.year}</h3>
+                <span>${group.items.length} 条记录</span>
             </div>
-        </article>
+            <div class="speaking-card-grid">
+                ${group.items.map((item, groupIndex) => {
+                    const isFeatured = groupIndex === 0;
+
+                    return `
+                        <article class="speaking-card ${isFeatured ? 'speaking-card-featured' : ''}">
+                            <div class="speaking-entry">
+                                ${renderSpeakingMedia(item, item.originalIndex)}
+                                <div class="speaking-entry-copy">
+                                    <div class="speaking-card-topline">
+                                        <div class="speaking-card-identity">
+                                            <span class="speaking-card-type">${item.type}</span>
+                                            <span class="speaking-card-index">${String(item.originalIndex + 1).padStart(2, '0')}</span>
+                                        </div>
+                                        <span class="speaking-card-event">${item.event}</span>
+                                    </div>
+                                    <h3 class="speaking-card-title">${item.title}</h3>
+                                    <p class="speaking-card-desc">${item.desc}</p>
+                                    <div class="speaking-card-footer">
+                                        <div class="speaking-card-tags">
+                                            ${item.tags.map(tag => `<span class="speaking-card-tag">${tag}</span>`).join('')}
+                                        </div>
+                                        ${item.href ? `
+                                            <a class="speaking-card-link" href="${toUrl(item.href)}" target="_blank" rel="noopener noreferrer">
+                                                ${item.cta || '查看详情'}
+                                            </a>
+                                        ` : ''}
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    `;
+                }).join('')}
+            </div>
+        </section>
     `).join('');
 
     initSpeakingEntryCarousels();
