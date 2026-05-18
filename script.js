@@ -130,9 +130,14 @@ const translations = {
         '关注我的小红书': 'follow my Xiaohongshu',
         '每天留下一个标题、一组标签，也留下一次真实的输入。': 'A title, a few tags, and one real piece of input every day.',
         '全部': 'All',
+        '📌 每日打卡': 'Daily Notes',
         '🤖 AI与企业': 'AI and Enterprise',
         '🌍 劳动力与职场': 'Workforce',
         '🚀 前沿科技与宏观': 'Frontier Tech',
+        '每日报告': 'Daily Report',
+        'AI生成': 'AI Generated',
+        '学习打卡': 'Learning Notes',
+        '每日报告打卡': 'Daily Report Notes',
         'AI与企业': 'AI and Enterprise',
         '劳动力与职场': 'Workforce',
         '前沿科技与宏观': 'Frontier Tech',
@@ -242,6 +247,7 @@ function tList(list = []) {
 
 function siteAssetPath(path) {
     if (!path || path.startsWith('http') || path.startsWith('#') || path.startsWith('/')) return path;
+    if (window.location.protocol === 'file:') return encodeURI(path);
     return `/${encodeURI(path)}`;
 }
 
@@ -763,6 +769,1124 @@ if (footerText) {
 
 // Sample digest data (will be loaded from actual digests folder in production)
 const digestData = [
+    {
+            "id": "2026-05-15-daily-report",
+            "title": "#Learn&Digest：2026年5月15日 每日报告打卡",
+            "titleEn": "#Learn&Digest: 2026-05-15 Daily Report Notes",
+            "date": "2026-05-15",
+            "category": "daily",
+            "categoryLabel": "每日报告打卡",
+            "categoryLabelEn": "Daily Notes",
+            "tags": [
+                    "每日报告",
+                    "AI生成",
+                    "学习打卡"
+            ],
+            "tagsEn": [
+                    "Daily Report",
+                    "AI Generated",
+                    "Learning Notes"
+            ],
+            "excerpt": "2026年5月15日 的每日阅读与报告打卡图片，共 4 张。",
+            "excerptEn": "2026-05-15 daily reading and report-note images, 4 in total.",
+            "images": {
+                    "cover": "digests/2026/05/2026-05-15-daily-report/images/01.jpg",
+                    "cards": [
+                            "digests/2026/05/2026-05-15-daily-report/images/02.jpg",
+                            "digests/2026/05/2026-05-15-daily-report/images/03.jpg",
+                            "digests/2026/05/2026-05-15-daily-report/images/04.jpg"
+                    ],
+                    "longForm": null
+            },
+            "author": "Renee",
+            "readTime": "2 分钟",
+            "content": "<p>2026年5月15日 的每日阅读与报告打卡图片已按同日主题整理。点击上方图片可以逐张查看这一组 AI 生成的视觉笔记。</p>"
+    },
+    {
+            "id": "2026-05-12-daily-report",
+            "title": "#Learn&Digest：2026年5月12日 每日报告打卡",
+            "titleEn": "#Learn&Digest: 2026-05-12 Daily Report Notes",
+            "date": "2026-05-12",
+            "category": "daily",
+            "categoryLabel": "每日报告打卡",
+            "categoryLabelEn": "Daily Notes",
+            "tags": [
+                    "每日报告",
+                    "AI生成",
+                    "学习打卡"
+            ],
+            "tagsEn": [
+                    "Daily Report",
+                    "AI Generated",
+                    "Learning Notes"
+            ],
+            "excerpt": "2026年5月12日 的每日阅读与报告打卡图片，共 8 张。",
+            "excerptEn": "2026-05-12 daily reading and report-note images, 8 in total.",
+            "images": {
+                    "cover": "digests/2026/05/2026-05-12-daily-report/images/01.jpg",
+                    "cards": [
+                            "digests/2026/05/2026-05-12-daily-report/images/02.jpg",
+                            "digests/2026/05/2026-05-12-daily-report/images/03.jpg",
+                            "digests/2026/05/2026-05-12-daily-report/images/04.jpg",
+                            "digests/2026/05/2026-05-12-daily-report/images/05.jpg",
+                            "digests/2026/05/2026-05-12-daily-report/images/06.jpg",
+                            "digests/2026/05/2026-05-12-daily-report/images/07.jpg",
+                            "digests/2026/05/2026-05-12-daily-report/images/08.jpg"
+                    ],
+                    "longForm": null
+            },
+            "author": "Renee",
+            "readTime": "4 分钟",
+            "content": "<p>2026年5月12日 的每日阅读与报告打卡图片已按同日主题整理。点击上方图片可以逐张查看这一组 AI 生成的视觉笔记。</p>"
+    },
+    {
+            "id": "2026-05-11-daily-report",
+            "title": "#Learn&Digest：2026年5月11日 每日报告打卡",
+            "titleEn": "#Learn&Digest: 2026-05-11 Daily Report Notes",
+            "date": "2026-05-11",
+            "category": "daily",
+            "categoryLabel": "每日报告打卡",
+            "categoryLabelEn": "Daily Notes",
+            "tags": [
+                    "每日报告",
+                    "AI生成",
+                    "学习打卡"
+            ],
+            "tagsEn": [
+                    "Daily Report",
+                    "AI Generated",
+                    "Learning Notes"
+            ],
+            "excerpt": "2026年5月11日 的每日阅读与报告打卡图片，共 4 张。",
+            "excerptEn": "2026-05-11 daily reading and report-note images, 4 in total.",
+            "images": {
+                    "cover": "digests/2026/05/2026-05-11-daily-report/images/01.jpg",
+                    "cards": [
+                            "digests/2026/05/2026-05-11-daily-report/images/02.jpg",
+                            "digests/2026/05/2026-05-11-daily-report/images/03.jpg",
+                            "digests/2026/05/2026-05-11-daily-report/images/04.jpg"
+                    ],
+                    "longForm": null
+            },
+            "author": "Renee",
+            "readTime": "2 分钟",
+            "content": "<p>2026年5月11日 的每日阅读与报告打卡图片已按同日主题整理。点击上方图片可以逐张查看这一组 AI 生成的视觉笔记。</p>"
+    },
+    {
+            "id": "2026-05-07-daily-report",
+            "title": "#Learn&Digest：2026年5月7日 每日报告打卡",
+            "titleEn": "#Learn&Digest: 2026-05-07 Daily Report Notes",
+            "date": "2026-05-07",
+            "category": "daily",
+            "categoryLabel": "每日报告打卡",
+            "categoryLabelEn": "Daily Notes",
+            "tags": [
+                    "每日报告",
+                    "AI生成",
+                    "学习打卡"
+            ],
+            "tagsEn": [
+                    "Daily Report",
+                    "AI Generated",
+                    "Learning Notes"
+            ],
+            "excerpt": "2026年5月7日 的每日阅读与报告打卡图片，共 5 张。",
+            "excerptEn": "2026-05-07 daily reading and report-note images, 5 in total.",
+            "images": {
+                    "cover": "digests/2026/05/2026-05-07-daily-report/images/01.jpg",
+                    "cards": [
+                            "digests/2026/05/2026-05-07-daily-report/images/02.jpg",
+                            "digests/2026/05/2026-05-07-daily-report/images/03.jpg",
+                            "digests/2026/05/2026-05-07-daily-report/images/04.jpg",
+                            "digests/2026/05/2026-05-07-daily-report/images/05.jpg"
+                    ],
+                    "longForm": null
+            },
+            "author": "Renee",
+            "readTime": "3 分钟",
+            "content": "<p>2026年5月7日 的每日阅读与报告打卡图片已按同日主题整理。点击上方图片可以逐张查看这一组 AI 生成的视觉笔记。</p>"
+    },
+    {
+            "id": "2026-05-05-daily-report",
+            "title": "#Learn&Digest：2026年5月5日 每日报告打卡",
+            "titleEn": "#Learn&Digest: 2026-05-05 Daily Report Notes",
+            "date": "2026-05-05",
+            "category": "daily",
+            "categoryLabel": "每日报告打卡",
+            "categoryLabelEn": "Daily Notes",
+            "tags": [
+                    "每日报告",
+                    "AI生成",
+                    "学习打卡"
+            ],
+            "tagsEn": [
+                    "Daily Report",
+                    "AI Generated",
+                    "Learning Notes"
+            ],
+            "excerpt": "2026年5月5日 的每日阅读与报告打卡图片，共 5 张。",
+            "excerptEn": "2026-05-05 daily reading and report-note images, 5 in total.",
+            "images": {
+                    "cover": "digests/2026/05/2026-05-05-daily-report/images/01.jpg",
+                    "cards": [
+                            "digests/2026/05/2026-05-05-daily-report/images/02.jpg",
+                            "digests/2026/05/2026-05-05-daily-report/images/03.jpg",
+                            "digests/2026/05/2026-05-05-daily-report/images/04.jpg",
+                            "digests/2026/05/2026-05-05-daily-report/images/05.jpg"
+                    ],
+                    "longForm": null
+            },
+            "author": "Renee",
+            "readTime": "3 分钟",
+            "content": "<p>2026年5月5日 的每日阅读与报告打卡图片已按同日主题整理。点击上方图片可以逐张查看这一组 AI 生成的视觉笔记。</p>"
+    },
+    {
+            "id": "2026-04-30-daily-report",
+            "title": "#Learn&Digest：2026年4月30日 每日报告打卡",
+            "titleEn": "#Learn&Digest: 2026-04-30 Daily Report Notes",
+            "date": "2026-04-30",
+            "category": "daily",
+            "categoryLabel": "每日报告打卡",
+            "categoryLabelEn": "Daily Notes",
+            "tags": [
+                    "每日报告",
+                    "AI生成",
+                    "学习打卡"
+            ],
+            "tagsEn": [
+                    "Daily Report",
+                    "AI Generated",
+                    "Learning Notes"
+            ],
+            "excerpt": "2026年4月30日 的每日阅读与报告打卡图片，共 3 张。",
+            "excerptEn": "2026-04-30 daily reading and report-note images, 3 in total.",
+            "images": {
+                    "cover": "digests/2026/04/2026-04-30-daily-report/images/01.jpg",
+                    "cards": [
+                            "digests/2026/04/2026-04-30-daily-report/images/02.jpg",
+                            "digests/2026/04/2026-04-30-daily-report/images/03.jpg"
+                    ],
+                    "longForm": null
+            },
+            "author": "Renee",
+            "readTime": "2 分钟",
+            "content": "<p>2026年4月30日 的每日阅读与报告打卡图片已按同日主题整理。点击上方图片可以逐张查看这一组 AI 生成的视觉笔记。</p>"
+    },
+    {
+            "id": "2026-04-27-daily-report",
+            "title": "#Learn&Digest：2026年4月27日 每日报告打卡",
+            "titleEn": "#Learn&Digest: 2026-04-27 Daily Report Notes",
+            "date": "2026-04-27",
+            "category": "daily",
+            "categoryLabel": "每日报告打卡",
+            "categoryLabelEn": "Daily Notes",
+            "tags": [
+                    "每日报告",
+                    "AI生成",
+                    "学习打卡"
+            ],
+            "tagsEn": [
+                    "Daily Report",
+                    "AI Generated",
+                    "Learning Notes"
+            ],
+            "excerpt": "2026年4月27日 的每日阅读与报告打卡图片，共 2 张。",
+            "excerptEn": "2026-04-27 daily reading and report-note images, 2 in total.",
+            "images": {
+                    "cover": "digests/2026/04/2026-04-27-daily-report/images/01.jpg",
+                    "cards": [
+                            "digests/2026/04/2026-04-27-daily-report/images/02.jpg"
+                    ],
+                    "longForm": null
+            },
+            "author": "Renee",
+            "readTime": "1 分钟",
+            "content": "<p>2026年4月27日 的每日阅读与报告打卡图片已按同日主题整理。点击上方图片可以逐张查看这一组 AI 生成的视觉笔记。</p>"
+    },
+    {
+            "id": "2026-04-24-daily-report",
+            "title": "#Learn&Digest：2026年4月24日 每日报告打卡",
+            "titleEn": "#Learn&Digest: 2026-04-24 Daily Report Notes",
+            "date": "2026-04-24",
+            "category": "daily",
+            "categoryLabel": "每日报告打卡",
+            "categoryLabelEn": "Daily Notes",
+            "tags": [
+                    "每日报告",
+                    "AI生成",
+                    "学习打卡"
+            ],
+            "tagsEn": [
+                    "Daily Report",
+                    "AI Generated",
+                    "Learning Notes"
+            ],
+            "excerpt": "2026年4月24日 的每日阅读与报告打卡图片，共 4 张。",
+            "excerptEn": "2026-04-24 daily reading and report-note images, 4 in total.",
+            "images": {
+                    "cover": "digests/2026/04/2026-04-24-daily-report/images/01.jpg",
+                    "cards": [
+                            "digests/2026/04/2026-04-24-daily-report/images/02.jpg",
+                            "digests/2026/04/2026-04-24-daily-report/images/03.jpg",
+                            "digests/2026/04/2026-04-24-daily-report/images/04.jpg"
+                    ],
+                    "longForm": null
+            },
+            "author": "Renee",
+            "readTime": "2 分钟",
+            "content": "<p>2026年4月24日 的每日阅读与报告打卡图片已按同日主题整理。点击上方图片可以逐张查看这一组 AI 生成的视觉笔记。</p>"
+    },
+    {
+            "id": "2026-04-23-daily-report",
+            "title": "#Learn&Digest：2026年4月23日 每日报告打卡",
+            "titleEn": "#Learn&Digest: 2026-04-23 Daily Report Notes",
+            "date": "2026-04-23",
+            "category": "daily",
+            "categoryLabel": "每日报告打卡",
+            "categoryLabelEn": "Daily Notes",
+            "tags": [
+                    "每日报告",
+                    "AI生成",
+                    "学习打卡"
+            ],
+            "tagsEn": [
+                    "Daily Report",
+                    "AI Generated",
+                    "Learning Notes"
+            ],
+            "excerpt": "2026年4月23日 的每日阅读与报告打卡图片，共 5 张。",
+            "excerptEn": "2026-04-23 daily reading and report-note images, 5 in total.",
+            "images": {
+                    "cover": "digests/2026/04/2026-04-23-daily-report/images/01.jpg",
+                    "cards": [
+                            "digests/2026/04/2026-04-23-daily-report/images/02.jpg",
+                            "digests/2026/04/2026-04-23-daily-report/images/03.jpg",
+                            "digests/2026/04/2026-04-23-daily-report/images/04.jpg",
+                            "digests/2026/04/2026-04-23-daily-report/images/05.jpg"
+                    ],
+                    "longForm": null
+            },
+            "author": "Renee",
+            "readTime": "3 分钟",
+            "content": "<p>2026年4月23日 的每日阅读与报告打卡图片已按同日主题整理。点击上方图片可以逐张查看这一组 AI 生成的视觉笔记。</p>"
+    },
+    {
+            "id": "2026-04-22-daily-report",
+            "title": "#Learn&Digest：2026年4月22日 每日报告打卡",
+            "titleEn": "#Learn&Digest: 2026-04-22 Daily Report Notes",
+            "date": "2026-04-22",
+            "category": "daily",
+            "categoryLabel": "每日报告打卡",
+            "categoryLabelEn": "Daily Notes",
+            "tags": [
+                    "每日报告",
+                    "AI生成",
+                    "学习打卡"
+            ],
+            "tagsEn": [
+                    "Daily Report",
+                    "AI Generated",
+                    "Learning Notes"
+            ],
+            "excerpt": "2026年4月22日 的每日阅读与报告打卡图片，共 2 张。",
+            "excerptEn": "2026-04-22 daily reading and report-note images, 2 in total.",
+            "images": {
+                    "cover": "digests/2026/04/2026-04-22-daily-report/images/01.jpg",
+                    "cards": [
+                            "digests/2026/04/2026-04-22-daily-report/images/02.jpg"
+                    ],
+                    "longForm": null
+            },
+            "author": "Renee",
+            "readTime": "1 分钟",
+            "content": "<p>2026年4月22日 的每日阅读与报告打卡图片已按同日主题整理。点击上方图片可以逐张查看这一组 AI 生成的视觉笔记。</p>"
+    },
+    {
+            "id": "2026-04-21-daily-report",
+            "title": "#Learn&Digest：2026年4月21日 每日报告打卡",
+            "titleEn": "#Learn&Digest: 2026-04-21 Daily Report Notes",
+            "date": "2026-04-21",
+            "category": "daily",
+            "categoryLabel": "每日报告打卡",
+            "categoryLabelEn": "Daily Notes",
+            "tags": [
+                    "每日报告",
+                    "AI生成",
+                    "学习打卡"
+            ],
+            "tagsEn": [
+                    "Daily Report",
+                    "AI Generated",
+                    "Learning Notes"
+            ],
+            "excerpt": "2026年4月21日 的每日阅读与报告打卡图片，共 3 张。",
+            "excerptEn": "2026-04-21 daily reading and report-note images, 3 in total.",
+            "images": {
+                    "cover": "digests/2026/04/2026-04-21-daily-report/images/01.jpg",
+                    "cards": [
+                            "digests/2026/04/2026-04-21-daily-report/images/02.jpg",
+                            "digests/2026/04/2026-04-21-daily-report/images/03.jpg"
+                    ],
+                    "longForm": null
+            },
+            "author": "Renee",
+            "readTime": "2 分钟",
+            "content": "<p>2026年4月21日 的每日阅读与报告打卡图片已按同日主题整理。点击上方图片可以逐张查看这一组 AI 生成的视觉笔记。</p>"
+    },
+    {
+            "id": "2026-04-19-daily-report",
+            "title": "#Learn&Digest：2026年4月19日 每日报告打卡",
+            "titleEn": "#Learn&Digest: 2026-04-19 Daily Report Notes",
+            "date": "2026-04-19",
+            "category": "daily",
+            "categoryLabel": "每日报告打卡",
+            "categoryLabelEn": "Daily Notes",
+            "tags": [
+                    "每日报告",
+                    "AI生成",
+                    "学习打卡"
+            ],
+            "tagsEn": [
+                    "Daily Report",
+                    "AI Generated",
+                    "Learning Notes"
+            ],
+            "excerpt": "2026年4月19日 的每日阅读与报告打卡图片，共 5 张。",
+            "excerptEn": "2026-04-19 daily reading and report-note images, 5 in total.",
+            "images": {
+                    "cover": "digests/2026/04/2026-04-19-daily-report/images/01.jpg",
+                    "cards": [
+                            "digests/2026/04/2026-04-19-daily-report/images/02.jpg",
+                            "digests/2026/04/2026-04-19-daily-report/images/03.jpg",
+                            "digests/2026/04/2026-04-19-daily-report/images/04.jpg",
+                            "digests/2026/04/2026-04-19-daily-report/images/05.jpg"
+                    ],
+                    "longForm": null
+            },
+            "author": "Renee",
+            "readTime": "3 分钟",
+            "content": "<p>2026年4月19日 的每日阅读与报告打卡图片已按同日主题整理。点击上方图片可以逐张查看这一组 AI 生成的视觉笔记。</p>"
+    },
+    {
+            "id": "2026-04-17-daily-report",
+            "title": "#Learn&Digest：2026年4月17日 每日报告打卡",
+            "titleEn": "#Learn&Digest: 2026-04-17 Daily Report Notes",
+            "date": "2026-04-17",
+            "category": "daily",
+            "categoryLabel": "每日报告打卡",
+            "categoryLabelEn": "Daily Notes",
+            "tags": [
+                    "每日报告",
+                    "AI生成",
+                    "学习打卡"
+            ],
+            "tagsEn": [
+                    "Daily Report",
+                    "AI Generated",
+                    "Learning Notes"
+            ],
+            "excerpt": "2026年4月17日 的每日阅读与报告打卡图片，共 11 张。",
+            "excerptEn": "2026-04-17 daily reading and report-note images, 11 in total.",
+            "images": {
+                    "cover": "digests/2026/04/2026-04-17-daily-report/images/01.jpg",
+                    "cards": [
+                            "digests/2026/04/2026-04-17-daily-report/images/02.jpg",
+                            "digests/2026/04/2026-04-17-daily-report/images/03.jpg",
+                            "digests/2026/04/2026-04-17-daily-report/images/04.jpg",
+                            "digests/2026/04/2026-04-17-daily-report/images/05.jpg",
+                            "digests/2026/04/2026-04-17-daily-report/images/06.jpg",
+                            "digests/2026/04/2026-04-17-daily-report/images/07.jpg",
+                            "digests/2026/04/2026-04-17-daily-report/images/08.jpg",
+                            "digests/2026/04/2026-04-17-daily-report/images/09.jpg",
+                            "digests/2026/04/2026-04-17-daily-report/images/10.jpg",
+                            "digests/2026/04/2026-04-17-daily-report/images/11.jpg"
+                    ],
+                    "longForm": null
+            },
+            "author": "Renee",
+            "readTime": "6 分钟",
+            "content": "<p>2026年4月17日 的每日阅读与报告打卡图片已按同日主题整理。点击上方图片可以逐张查看这一组 AI 生成的视觉笔记。</p>"
+    },
+    {
+            "id": "2026-04-16-daily-report",
+            "title": "#Learn&Digest：2026年4月16日 每日报告打卡",
+            "titleEn": "#Learn&Digest: 2026-04-16 Daily Report Notes",
+            "date": "2026-04-16",
+            "category": "daily",
+            "categoryLabel": "每日报告打卡",
+            "categoryLabelEn": "Daily Notes",
+            "tags": [
+                    "每日报告",
+                    "AI生成",
+                    "学习打卡"
+            ],
+            "tagsEn": [
+                    "Daily Report",
+                    "AI Generated",
+                    "Learning Notes"
+            ],
+            "excerpt": "2026年4月16日 的每日阅读与报告打卡图片，共 3 张。",
+            "excerptEn": "2026-04-16 daily reading and report-note images, 3 in total.",
+            "images": {
+                    "cover": "digests/2026/04/2026-04-16-daily-report/images/01.jpg",
+                    "cards": [
+                            "digests/2026/04/2026-04-16-daily-report/images/02.jpg",
+                            "digests/2026/04/2026-04-16-daily-report/images/03.jpg"
+                    ],
+                    "longForm": null
+            },
+            "author": "Renee",
+            "readTime": "2 分钟",
+            "content": "<p>2026年4月16日 的每日阅读与报告打卡图片已按同日主题整理。点击上方图片可以逐张查看这一组 AI 生成的视觉笔记。</p>"
+    },
+    {
+            "id": "2026-04-15-daily-report",
+            "title": "#Learn&Digest：2026年4月15日 每日报告打卡",
+            "titleEn": "#Learn&Digest: 2026-04-15 Daily Report Notes",
+            "date": "2026-04-15",
+            "category": "daily",
+            "categoryLabel": "每日报告打卡",
+            "categoryLabelEn": "Daily Notes",
+            "tags": [
+                    "每日报告",
+                    "AI生成",
+                    "学习打卡"
+            ],
+            "tagsEn": [
+                    "Daily Report",
+                    "AI Generated",
+                    "Learning Notes"
+            ],
+            "excerpt": "2026年4月15日 的每日阅读与报告打卡图片，共 5 张。",
+            "excerptEn": "2026-04-15 daily reading and report-note images, 5 in total.",
+            "images": {
+                    "cover": "digests/2026/04/2026-04-15-daily-report/images/01.jpg",
+                    "cards": [
+                            "digests/2026/04/2026-04-15-daily-report/images/02.jpg",
+                            "digests/2026/04/2026-04-15-daily-report/images/03.jpg",
+                            "digests/2026/04/2026-04-15-daily-report/images/04.jpg",
+                            "digests/2026/04/2026-04-15-daily-report/images/05.jpg"
+                    ],
+                    "longForm": null
+            },
+            "author": "Renee",
+            "readTime": "3 分钟",
+            "content": "<p>2026年4月15日 的每日阅读与报告打卡图片已按同日主题整理。点击上方图片可以逐张查看这一组 AI 生成的视觉笔记。</p>"
+    },
+    {
+            "id": "2026-04-14-daily-report",
+            "title": "#Learn&Digest：2026年4月14日 每日报告打卡",
+            "titleEn": "#Learn&Digest: 2026-04-14 Daily Report Notes",
+            "date": "2026-04-14",
+            "category": "daily",
+            "categoryLabel": "每日报告打卡",
+            "categoryLabelEn": "Daily Notes",
+            "tags": [
+                    "每日报告",
+                    "AI生成",
+                    "学习打卡"
+            ],
+            "tagsEn": [
+                    "Daily Report",
+                    "AI Generated",
+                    "Learning Notes"
+            ],
+            "excerpt": "2026年4月14日 的每日阅读与报告打卡图片，共 1 张。",
+            "excerptEn": "2026-04-14 daily reading and report-note images, 1 in total.",
+            "images": {
+                    "cover": "digests/2026/04/2026-04-14-daily-report/images/01.jpg",
+                    "cards": [],
+                    "longForm": null
+            },
+            "author": "Renee",
+            "readTime": "1 分钟",
+            "content": "<p>2026年4月14日 的每日阅读与报告打卡图片已按同日主题整理。点击上方图片可以逐张查看这一组 AI 生成的视觉笔记。</p>"
+    },
+    {
+            "id": "2026-04-13-daily-report",
+            "title": "#Learn&Digest：2026年4月13日 每日报告打卡",
+            "titleEn": "#Learn&Digest: 2026-04-13 Daily Report Notes",
+            "date": "2026-04-13",
+            "category": "daily",
+            "categoryLabel": "每日报告打卡",
+            "categoryLabelEn": "Daily Notes",
+            "tags": [
+                    "每日报告",
+                    "AI生成",
+                    "学习打卡"
+            ],
+            "tagsEn": [
+                    "Daily Report",
+                    "AI Generated",
+                    "Learning Notes"
+            ],
+            "excerpt": "2026年4月13日 的每日阅读与报告打卡图片，共 5 张。",
+            "excerptEn": "2026-04-13 daily reading and report-note images, 5 in total.",
+            "images": {
+                    "cover": "digests/2026/04/2026-04-13-daily-report/images/01.jpg",
+                    "cards": [
+                            "digests/2026/04/2026-04-13-daily-report/images/02.jpg",
+                            "digests/2026/04/2026-04-13-daily-report/images/03.jpg",
+                            "digests/2026/04/2026-04-13-daily-report/images/04.jpg",
+                            "digests/2026/04/2026-04-13-daily-report/images/05.jpg"
+                    ],
+                    "longForm": null
+            },
+            "author": "Renee",
+            "readTime": "3 分钟",
+            "content": "<p>2026年4月13日 的每日阅读与报告打卡图片已按同日主题整理。点击上方图片可以逐张查看这一组 AI 生成的视觉笔记。</p>"
+    },
+    {
+            "id": "2026-04-09-daily-report",
+            "title": "#Learn&Digest：2026年4月9日 每日报告打卡",
+            "titleEn": "#Learn&Digest: 2026-04-09 Daily Report Notes",
+            "date": "2026-04-09",
+            "category": "daily",
+            "categoryLabel": "每日报告打卡",
+            "categoryLabelEn": "Daily Notes",
+            "tags": [
+                    "每日报告",
+                    "AI生成",
+                    "学习打卡"
+            ],
+            "tagsEn": [
+                    "Daily Report",
+                    "AI Generated",
+                    "Learning Notes"
+            ],
+            "excerpt": "2026年4月9日 的每日阅读与报告打卡图片，共 1 张。",
+            "excerptEn": "2026-04-09 daily reading and report-note images, 1 in total.",
+            "images": {
+                    "cover": "digests/2026/04/2026-04-09-daily-report/images/01.jpg",
+                    "cards": [],
+                    "longForm": null
+            },
+            "author": "Renee",
+            "readTime": "1 分钟",
+            "content": "<p>2026年4月9日 的每日阅读与报告打卡图片已按同日主题整理。点击上方图片可以逐张查看这一组 AI 生成的视觉笔记。</p>"
+    },
+    {
+            "id": "2026-04-08-daily-report",
+            "title": "#Learn&Digest：2026年4月8日 每日报告打卡",
+            "titleEn": "#Learn&Digest: 2026-04-08 Daily Report Notes",
+            "date": "2026-04-08",
+            "category": "daily",
+            "categoryLabel": "每日报告打卡",
+            "categoryLabelEn": "Daily Notes",
+            "tags": [
+                    "每日报告",
+                    "AI生成",
+                    "学习打卡"
+            ],
+            "tagsEn": [
+                    "Daily Report",
+                    "AI Generated",
+                    "Learning Notes"
+            ],
+            "excerpt": "2026年4月8日 的每日阅读与报告打卡图片，共 2 张。",
+            "excerptEn": "2026-04-08 daily reading and report-note images, 2 in total.",
+            "images": {
+                    "cover": "digests/2026/04/2026-04-08-daily-report/images/01.jpg",
+                    "cards": [
+                            "digests/2026/04/2026-04-08-daily-report/images/02.jpg"
+                    ],
+                    "longForm": null
+            },
+            "author": "Renee",
+            "readTime": "1 分钟",
+            "content": "<p>2026年4月8日 的每日阅读与报告打卡图片已按同日主题整理。点击上方图片可以逐张查看这一组 AI 生成的视觉笔记。</p>"
+    },
+    {
+            "id": "2026-04-07-daily-report",
+            "title": "#Learn&Digest：2026年4月7日 每日报告打卡",
+            "titleEn": "#Learn&Digest: 2026-04-07 Daily Report Notes",
+            "date": "2026-04-07",
+            "category": "daily",
+            "categoryLabel": "每日报告打卡",
+            "categoryLabelEn": "Daily Notes",
+            "tags": [
+                    "每日报告",
+                    "AI生成",
+                    "学习打卡"
+            ],
+            "tagsEn": [
+                    "Daily Report",
+                    "AI Generated",
+                    "Learning Notes"
+            ],
+            "excerpt": "2026年4月7日 的每日阅读与报告打卡图片，共 1 张。",
+            "excerptEn": "2026-04-07 daily reading and report-note images, 1 in total.",
+            "images": {
+                    "cover": "digests/2026/04/2026-04-07-daily-report/images/01.jpg",
+                    "cards": [],
+                    "longForm": null
+            },
+            "author": "Renee",
+            "readTime": "1 分钟",
+            "content": "<p>2026年4月7日 的每日阅读与报告打卡图片已按同日主题整理。点击上方图片可以逐张查看这一组 AI 生成的视觉笔记。</p>"
+    },
+    {
+            "id": "2026-04-01-daily-report",
+            "title": "#Learn&Digest：2026年4月1日 每日报告打卡",
+            "titleEn": "#Learn&Digest: 2026-04-01 Daily Report Notes",
+            "date": "2026-04-01",
+            "category": "daily",
+            "categoryLabel": "每日报告打卡",
+            "categoryLabelEn": "Daily Notes",
+            "tags": [
+                    "每日报告",
+                    "AI生成",
+                    "学习打卡"
+            ],
+            "tagsEn": [
+                    "Daily Report",
+                    "AI Generated",
+                    "Learning Notes"
+            ],
+            "excerpt": "2026年4月1日 的每日阅读与报告打卡图片，共 8 张。",
+            "excerptEn": "2026-04-01 daily reading and report-note images, 8 in total.",
+            "images": {
+                    "cover": "digests/2026/04/2026-04-01-daily-report/images/01.jpg",
+                    "cards": [
+                            "digests/2026/04/2026-04-01-daily-report/images/02.jpg",
+                            "digests/2026/04/2026-04-01-daily-report/images/03.jpg",
+                            "digests/2026/04/2026-04-01-daily-report/images/04.jpg",
+                            "digests/2026/04/2026-04-01-daily-report/images/05.jpg",
+                            "digests/2026/04/2026-04-01-daily-report/images/06.jpg",
+                            "digests/2026/04/2026-04-01-daily-report/images/07.jpg",
+                            "digests/2026/04/2026-04-01-daily-report/images/08.jpg"
+                    ],
+                    "longForm": null
+            },
+            "author": "Renee",
+            "readTime": "4 分钟",
+            "content": "<p>2026年4月1日 的每日阅读与报告打卡图片已按同日主题整理。点击上方图片可以逐张查看这一组 AI 生成的视觉笔记。</p>"
+    },
+    {
+            "id": "2026-03-27-daily-report",
+            "title": "#Learn&Digest：2026年3月27日 每日报告打卡",
+            "titleEn": "#Learn&Digest: 2026-03-27 Daily Report Notes",
+            "date": "2026-03-27",
+            "category": "daily",
+            "categoryLabel": "每日报告打卡",
+            "categoryLabelEn": "Daily Notes",
+            "tags": [
+                    "每日报告",
+                    "AI生成",
+                    "学习打卡"
+            ],
+            "tagsEn": [
+                    "Daily Report",
+                    "AI Generated",
+                    "Learning Notes"
+            ],
+            "excerpt": "2026年3月27日 的每日阅读与报告打卡图片，共 6 张。",
+            "excerptEn": "2026-03-27 daily reading and report-note images, 6 in total.",
+            "images": {
+                    "cover": "digests/2026/03/2026-03-27-daily-report/images/01.jpg",
+                    "cards": [
+                            "digests/2026/03/2026-03-27-daily-report/images/02.jpg",
+                            "digests/2026/03/2026-03-27-daily-report/images/03.jpg",
+                            "digests/2026/03/2026-03-27-daily-report/images/04.jpg",
+                            "digests/2026/03/2026-03-27-daily-report/images/05.jpg",
+                            "digests/2026/03/2026-03-27-daily-report/images/06.jpg"
+                    ],
+                    "longForm": null
+            },
+            "author": "Renee",
+            "readTime": "3 分钟",
+            "content": "<p>2026年3月27日 的每日阅读与报告打卡图片已按同日主题整理。点击上方图片可以逐张查看这一组 AI 生成的视觉笔记。</p>"
+    },
+    {
+            "id": "2026-03-26-daily-report",
+            "title": "#Learn&Digest：2026年3月26日 每日报告打卡",
+            "titleEn": "#Learn&Digest: 2026-03-26 Daily Report Notes",
+            "date": "2026-03-26",
+            "category": "daily",
+            "categoryLabel": "每日报告打卡",
+            "categoryLabelEn": "Daily Notes",
+            "tags": [
+                    "每日报告",
+                    "AI生成",
+                    "学习打卡"
+            ],
+            "tagsEn": [
+                    "Daily Report",
+                    "AI Generated",
+                    "Learning Notes"
+            ],
+            "excerpt": "2026年3月26日 的每日阅读与报告打卡图片，共 1 张。",
+            "excerptEn": "2026-03-26 daily reading and report-note images, 1 in total.",
+            "images": {
+                    "cover": "digests/2026/03/2026-03-26-daily-report/images/01.jpg",
+                    "cards": [],
+                    "longForm": null
+            },
+            "author": "Renee",
+            "readTime": "1 分钟",
+            "content": "<p>2026年3月26日 的每日阅读与报告打卡图片已按同日主题整理。点击上方图片可以逐张查看这一组 AI 生成的视觉笔记。</p>"
+    },
+    {
+            "id": "2026-03-24-daily-report",
+            "title": "#Learn&Digest：2026年3月24日 每日报告打卡",
+            "titleEn": "#Learn&Digest: 2026-03-24 Daily Report Notes",
+            "date": "2026-03-24",
+            "category": "daily",
+            "categoryLabel": "每日报告打卡",
+            "categoryLabelEn": "Daily Notes",
+            "tags": [
+                    "每日报告",
+                    "AI生成",
+                    "学习打卡"
+            ],
+            "tagsEn": [
+                    "Daily Report",
+                    "AI Generated",
+                    "Learning Notes"
+            ],
+            "excerpt": "2026年3月24日 的每日阅读与报告打卡图片，共 4 张。",
+            "excerptEn": "2026-03-24 daily reading and report-note images, 4 in total.",
+            "images": {
+                    "cover": "digests/2026/03/2026-03-24-daily-report/images/01.jpg",
+                    "cards": [
+                            "digests/2026/03/2026-03-24-daily-report/images/02.jpg",
+                            "digests/2026/03/2026-03-24-daily-report/images/03.jpg",
+                            "digests/2026/03/2026-03-24-daily-report/images/04.jpg"
+                    ],
+                    "longForm": null
+            },
+            "author": "Renee",
+            "readTime": "2 分钟",
+            "content": "<p>2026年3月24日 的每日阅读与报告打卡图片已按同日主题整理。点击上方图片可以逐张查看这一组 AI 生成的视觉笔记。</p>"
+    },
+    {
+            "id": "2026-03-23-daily-report",
+            "title": "#Learn&Digest：2026年3月23日 每日报告打卡",
+            "titleEn": "#Learn&Digest: 2026-03-23 Daily Report Notes",
+            "date": "2026-03-23",
+            "category": "daily",
+            "categoryLabel": "每日报告打卡",
+            "categoryLabelEn": "Daily Notes",
+            "tags": [
+                    "每日报告",
+                    "AI生成",
+                    "学习打卡"
+            ],
+            "tagsEn": [
+                    "Daily Report",
+                    "AI Generated",
+                    "Learning Notes"
+            ],
+            "excerpt": "2026年3月23日 的每日阅读与报告打卡图片，共 1 张。",
+            "excerptEn": "2026-03-23 daily reading and report-note images, 1 in total.",
+            "images": {
+                    "cover": "digests/2026/03/2026-03-23-daily-report/images/01.jpg",
+                    "cards": [],
+                    "longForm": null
+            },
+            "author": "Renee",
+            "readTime": "1 分钟",
+            "content": "<p>2026年3月23日 的每日阅读与报告打卡图片已按同日主题整理。点击上方图片可以逐张查看这一组 AI 生成的视觉笔记。</p>"
+    },
+    {
+            "id": "2026-03-19-daily-report",
+            "title": "#Learn&Digest：2026年3月19日 每日报告打卡",
+            "titleEn": "#Learn&Digest: 2026-03-19 Daily Report Notes",
+            "date": "2026-03-19",
+            "category": "daily",
+            "categoryLabel": "每日报告打卡",
+            "categoryLabelEn": "Daily Notes",
+            "tags": [
+                    "每日报告",
+                    "AI生成",
+                    "学习打卡"
+            ],
+            "tagsEn": [
+                    "Daily Report",
+                    "AI Generated",
+                    "Learning Notes"
+            ],
+            "excerpt": "2026年3月19日 的每日阅读与报告打卡图片，共 6 张。",
+            "excerptEn": "2026-03-19 daily reading and report-note images, 6 in total.",
+            "images": {
+                    "cover": "digests/2026/03/2026-03-19-daily-report/images/01.jpg",
+                    "cards": [
+                            "digests/2026/03/2026-03-19-daily-report/images/02.jpg",
+                            "digests/2026/03/2026-03-19-daily-report/images/03.jpg",
+                            "digests/2026/03/2026-03-19-daily-report/images/04.jpg",
+                            "digests/2026/03/2026-03-19-daily-report/images/05.jpg",
+                            "digests/2026/03/2026-03-19-daily-report/images/06.jpg"
+                    ],
+                    "longForm": null
+            },
+            "author": "Renee",
+            "readTime": "3 分钟",
+            "content": "<p>2026年3月19日 的每日阅读与报告打卡图片已按同日主题整理。点击上方图片可以逐张查看这一组 AI 生成的视觉笔记。</p>"
+    },
+    {
+            "id": "2026-03-17-daily-report",
+            "title": "#Learn&Digest：2026年3月17日 每日报告打卡",
+            "titleEn": "#Learn&Digest: 2026-03-17 Daily Report Notes",
+            "date": "2026-03-17",
+            "category": "daily",
+            "categoryLabel": "每日报告打卡",
+            "categoryLabelEn": "Daily Notes",
+            "tags": [
+                    "每日报告",
+                    "AI生成",
+                    "学习打卡"
+            ],
+            "tagsEn": [
+                    "Daily Report",
+                    "AI Generated",
+                    "Learning Notes"
+            ],
+            "excerpt": "2026年3月17日 的每日阅读与报告打卡图片，共 4 张。",
+            "excerptEn": "2026-03-17 daily reading and report-note images, 4 in total.",
+            "images": {
+                    "cover": "digests/2026/03/2026-03-17-daily-report/images/01.jpg",
+                    "cards": [
+                            "digests/2026/03/2026-03-17-daily-report/images/02.jpg",
+                            "digests/2026/03/2026-03-17-daily-report/images/03.jpg",
+                            "digests/2026/03/2026-03-17-daily-report/images/04.jpg"
+                    ],
+                    "longForm": null
+            },
+            "author": "Renee",
+            "readTime": "2 分钟",
+            "content": "<p>2026年3月17日 的每日阅读与报告打卡图片已按同日主题整理。点击上方图片可以逐张查看这一组 AI 生成的视觉笔记。</p>"
+    },
+    {
+            "id": "2026-03-16-daily-report",
+            "title": "#Learn&Digest：2026年3月16日 每日报告打卡",
+            "titleEn": "#Learn&Digest: 2026-03-16 Daily Report Notes",
+            "date": "2026-03-16",
+            "category": "daily",
+            "categoryLabel": "每日报告打卡",
+            "categoryLabelEn": "Daily Notes",
+            "tags": [
+                    "每日报告",
+                    "AI生成",
+                    "学习打卡"
+            ],
+            "tagsEn": [
+                    "Daily Report",
+                    "AI Generated",
+                    "Learning Notes"
+            ],
+            "excerpt": "2026年3月16日 的每日阅读与报告打卡图片，共 2 张。",
+            "excerptEn": "2026-03-16 daily reading and report-note images, 2 in total.",
+            "images": {
+                    "cover": "digests/2026/03/2026-03-16-daily-report/images/01.jpg",
+                    "cards": [
+                            "digests/2026/03/2026-03-16-daily-report/images/02.jpg"
+                    ],
+                    "longForm": null
+            },
+            "author": "Renee",
+            "readTime": "1 分钟",
+            "content": "<p>2026年3月16日 的每日阅读与报告打卡图片已按同日主题整理。点击上方图片可以逐张查看这一组 AI 生成的视觉笔记。</p>"
+    },
+    {
+            "id": "2026-03-15-daily-report",
+            "title": "#Learn&Digest：2026年3月15日 每日报告打卡",
+            "titleEn": "#Learn&Digest: 2026-03-15 Daily Report Notes",
+            "date": "2026-03-15",
+            "category": "daily",
+            "categoryLabel": "每日报告打卡",
+            "categoryLabelEn": "Daily Notes",
+            "tags": [
+                    "每日报告",
+                    "AI生成",
+                    "学习打卡"
+            ],
+            "tagsEn": [
+                    "Daily Report",
+                    "AI Generated",
+                    "Learning Notes"
+            ],
+            "excerpt": "2026年3月15日 的每日阅读与报告打卡图片，共 3 张。",
+            "excerptEn": "2026-03-15 daily reading and report-note images, 3 in total.",
+            "images": {
+                    "cover": "digests/2026/03/2026-03-15-daily-report/images/01.jpg",
+                    "cards": [
+                            "digests/2026/03/2026-03-15-daily-report/images/02.jpg",
+                            "digests/2026/03/2026-03-15-daily-report/images/03.jpg"
+                    ],
+                    "longForm": null
+            },
+            "author": "Renee",
+            "readTime": "2 分钟",
+            "content": "<p>2026年3月15日 的每日阅读与报告打卡图片已按同日主题整理。点击上方图片可以逐张查看这一组 AI 生成的视觉笔记。</p>"
+    },
+    {
+            "id": "2026-03-14-daily-report",
+            "title": "#Learn&Digest：2026年3月14日 每日报告打卡",
+            "titleEn": "#Learn&Digest: 2026-03-14 Daily Report Notes",
+            "date": "2026-03-14",
+            "category": "daily",
+            "categoryLabel": "每日报告打卡",
+            "categoryLabelEn": "Daily Notes",
+            "tags": [
+                    "每日报告",
+                    "AI生成",
+                    "学习打卡"
+            ],
+            "tagsEn": [
+                    "Daily Report",
+                    "AI Generated",
+                    "Learning Notes"
+            ],
+            "excerpt": "2026年3月14日 的每日阅读与报告打卡图片，共 2 张。",
+            "excerptEn": "2026-03-14 daily reading and report-note images, 2 in total.",
+            "images": {
+                    "cover": "digests/2026/03/2026-03-14-daily-report/images/01.jpg",
+                    "cards": [
+                            "digests/2026/03/2026-03-14-daily-report/images/02.jpg"
+                    ],
+                    "longForm": null
+            },
+            "author": "Renee",
+            "readTime": "1 分钟",
+            "content": "<p>2026年3月14日 的每日阅读与报告打卡图片已按同日主题整理。点击上方图片可以逐张查看这一组 AI 生成的视觉笔记。</p>"
+    },
+    {
+            "id": "2026-03-12-daily-report",
+            "title": "#Learn&Digest：2026年3月12日 每日报告打卡",
+            "titleEn": "#Learn&Digest: 2026-03-12 Daily Report Notes",
+            "date": "2026-03-12",
+            "category": "daily",
+            "categoryLabel": "每日报告打卡",
+            "categoryLabelEn": "Daily Notes",
+            "tags": [
+                    "每日报告",
+                    "AI生成",
+                    "学习打卡"
+            ],
+            "tagsEn": [
+                    "Daily Report",
+                    "AI Generated",
+                    "Learning Notes"
+            ],
+            "excerpt": "2026年3月12日 的每日阅读与报告打卡图片，共 9 张。",
+            "excerptEn": "2026-03-12 daily reading and report-note images, 9 in total.",
+            "images": {
+                    "cover": "digests/2026/03/2026-03-12-daily-report/images/01.jpg",
+                    "cards": [
+                            "digests/2026/03/2026-03-12-daily-report/images/02.jpg",
+                            "digests/2026/03/2026-03-12-daily-report/images/03.jpg",
+                            "digests/2026/03/2026-03-12-daily-report/images/04.jpg",
+                            "digests/2026/03/2026-03-12-daily-report/images/05.jpg",
+                            "digests/2026/03/2026-03-12-daily-report/images/06.jpg",
+                            "digests/2026/03/2026-03-12-daily-report/images/07.jpg",
+                            "digests/2026/03/2026-03-12-daily-report/images/08.jpg",
+                            "digests/2026/03/2026-03-12-daily-report/images/09.jpg"
+                    ],
+                    "longForm": null
+            },
+            "author": "Renee",
+            "readTime": "5 分钟",
+            "content": "<p>2026年3月12日 的每日阅读与报告打卡图片已按同日主题整理。点击上方图片可以逐张查看这一组 AI 生成的视觉笔记。</p>"
+    },
+    {
+            "id": "2026-03-11-daily-report",
+            "title": "#Learn&Digest：2026年3月11日 每日报告打卡",
+            "titleEn": "#Learn&Digest: 2026-03-11 Daily Report Notes",
+            "date": "2026-03-11",
+            "category": "daily",
+            "categoryLabel": "每日报告打卡",
+            "categoryLabelEn": "Daily Notes",
+            "tags": [
+                    "每日报告",
+                    "AI生成",
+                    "学习打卡"
+            ],
+            "tagsEn": [
+                    "Daily Report",
+                    "AI Generated",
+                    "Learning Notes"
+            ],
+            "excerpt": "2026年3月11日 的每日阅读与报告打卡图片，共 4 张。",
+            "excerptEn": "2026-03-11 daily reading and report-note images, 4 in total.",
+            "images": {
+                    "cover": "digests/2026/03/2026-03-11-daily-report/images/01.jpg",
+                    "cards": [
+                            "digests/2026/03/2026-03-11-daily-report/images/02.jpg",
+                            "digests/2026/03/2026-03-11-daily-report/images/03.jpg",
+                            "digests/2026/03/2026-03-11-daily-report/images/04.jpg"
+                    ],
+                    "longForm": null
+            },
+            "author": "Renee",
+            "readTime": "2 分钟",
+            "content": "<p>2026年3月11日 的每日阅读与报告打卡图片已按同日主题整理。点击上方图片可以逐张查看这一组 AI 生成的视觉笔记。</p>"
+    },
+    {
+            "id": "2026-03-10-daily-report",
+            "title": "#Learn&Digest：2026年3月10日 每日报告打卡",
+            "titleEn": "#Learn&Digest: 2026-03-10 Daily Report Notes",
+            "date": "2026-03-10",
+            "category": "daily",
+            "categoryLabel": "每日报告打卡",
+            "categoryLabelEn": "Daily Notes",
+            "tags": [
+                    "每日报告",
+                    "AI生成",
+                    "学习打卡"
+            ],
+            "tagsEn": [
+                    "Daily Report",
+                    "AI Generated",
+                    "Learning Notes"
+            ],
+            "excerpt": "2026年3月10日 的每日阅读与报告打卡图片，共 4 张。",
+            "excerptEn": "2026-03-10 daily reading and report-note images, 4 in total.",
+            "images": {
+                    "cover": "digests/2026/03/2026-03-10-daily-report/images/01.jpg",
+                    "cards": [
+                            "digests/2026/03/2026-03-10-daily-report/images/02.jpg",
+                            "digests/2026/03/2026-03-10-daily-report/images/03.jpg",
+                            "digests/2026/03/2026-03-10-daily-report/images/04.jpg"
+                    ],
+                    "longForm": null
+            },
+            "author": "Renee",
+            "readTime": "2 分钟",
+            "content": "<p>2026年3月10日 的每日阅读与报告打卡图片已按同日主题整理。点击上方图片可以逐张查看这一组 AI 生成的视觉笔记。</p>"
+    },
+    {
+            "id": "2026-03-08-daily-report",
+            "title": "#Learn&Digest：2026年3月8日 每日报告打卡",
+            "titleEn": "#Learn&Digest: 2026-03-08 Daily Report Notes",
+            "date": "2026-03-08",
+            "category": "daily",
+            "categoryLabel": "每日报告打卡",
+            "categoryLabelEn": "Daily Notes",
+            "tags": [
+                    "每日报告",
+                    "AI生成",
+                    "学习打卡"
+            ],
+            "tagsEn": [
+                    "Daily Report",
+                    "AI Generated",
+                    "Learning Notes"
+            ],
+            "excerpt": "2026年3月8日 的每日阅读与报告打卡图片，共 4 张。",
+            "excerptEn": "2026-03-08 daily reading and report-note images, 4 in total.",
+            "images": {
+                    "cover": "digests/2026/03/2026-03-08-daily-report/images/01.jpg",
+                    "cards": [
+                            "digests/2026/03/2026-03-08-daily-report/images/02.jpg",
+                            "digests/2026/03/2026-03-08-daily-report/images/03.jpg",
+                            "digests/2026/03/2026-03-08-daily-report/images/04.jpg"
+                    ],
+                    "longForm": null
+            },
+            "author": "Renee",
+            "readTime": "2 分钟",
+            "content": "<p>2026年3月8日 的每日阅读与报告打卡图片已按同日主题整理。点击上方图片可以逐张查看这一组 AI 生成的视觉笔记。</p>"
+    },
     {
         id: '2026-03-23-ie-ai-journey',
         title: '#Learn&Digest/36：IEG AI应用启示录——从隐性知识到同行治理',
