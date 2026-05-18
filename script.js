@@ -1,10 +1,19 @@
 // ===== Language Toggle =====
 const LANG_STORAGE_KEY = 'renee-lang';
 const supportedLanguages = ['zh', 'en'];
-let currentLanguage = supportedLanguages.includes(localStorage.getItem('renee-lang'))
-    ? localStorage.getItem('renee-lang')
-    : 'zh';
 let renderActiveCareerPanel = null;
+
+function isEnglishRoute() {
+    return window.location.pathname.replace(/\/+$/, '') === '/en';
+}
+
+function getStoredLanguage() {
+    if (isEnglishRoute()) return 'en';
+    const storedLanguage = localStorage.getItem(LANG_STORAGE_KEY);
+    return supportedLanguages.includes(storedLanguage) ? storedLanguage : 'zh';
+}
+
+let currentLanguage = getStoredLanguage();
 
 const translations = {
     en: {
@@ -231,6 +240,11 @@ function tList(list = []) {
     return list.map(value => t(value));
 }
 
+function siteAssetPath(path) {
+    if (!path || path.startsWith('http') || path.startsWith('#') || path.startsWith('/')) return path;
+    return `/${encodeURI(path)}`;
+}
+
 function translateTextNodes(root = document.body) {
     if (!root) return;
     const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
@@ -290,6 +304,16 @@ function updateLanguageToggle() {
     });
 }
 
+function syncLanguageRoute(language) {
+    if (!window.history?.replaceState) return;
+    const targetPath = language === 'en' ? '/en/' : '/';
+    const targetUrl = `${targetPath}${window.location.hash || ''}`;
+    const currentUrl = `${window.location.pathname}${window.location.hash || ''}`;
+    if (currentUrl !== targetUrl) {
+        window.history.replaceState(null, '', targetUrl);
+    }
+}
+
 function applyStaticTranslations() {
     applyLanguageMeta();
     applyHtmlTranslations();
@@ -308,6 +332,7 @@ function setLanguage(language) {
     if (!supportedLanguages.includes(language) || language === currentLanguage) return;
     currentLanguage = language;
     localStorage.setItem('renee-lang', language);
+    syncLanguageRoute(language);
     refreshLocalizedDynamicContent();
     applyStaticTranslations();
 }
@@ -1316,7 +1341,7 @@ function renderSpeakingCards() {
 
     function toUrl(path) {
         if (!path) return '';
-        return path.startsWith('http') || path.startsWith('#') ? path : encodeURI(path);
+        return siteAssetPath(path);
     }
 
     function renderSpeakingMedia(item, index) {
@@ -1476,8 +1501,8 @@ function initSpeakingEntryCarousels() {
 }
 
 function createSpeakingMediaMarkup(item) {
-    const href = item.href ? (item.href.startsWith('http') ? item.href : encodeURI(item.href)) : '';
-    const image = item.image ? encodeURI(item.image) : '';
+    const href = item.href ? siteAssetPath(item.href) : '';
+    const image = item.image ? siteAssetPath(item.image) : '';
 
     if (item.image) {
         return `
@@ -1687,7 +1712,7 @@ function renderDigestCards(filter = 'all') {
         // 准备卡片要显示的所有图片（封面 + 卡片图）
         const cardImages = (digest.images.cards ?
             [digest.images.cover, ...digest.images.cards] :
-            [digest.images.cover]).filter(Boolean);
+            [digest.images.cover]).filter(Boolean).map(siteAssetPath);
 
         return `
             <div class="digest-card" onclick="openDigestModal('${digest.id}')">
@@ -1852,7 +1877,7 @@ function openDigestModal(digestId) {
     // 准备所有图片（封面 + 卡片图）
     const allImages = (digest.images.cards ?
         [digest.images.cover, ...digest.images.cards] :
-        [digest.images.cover]).filter(Boolean);
+        [digest.images.cover]).filter(Boolean).map(siteAssetPath);
 
     modalBody.innerHTML = `
         <div class="modal-header">
@@ -1873,7 +1898,7 @@ function openDigestModal(digestId) {
 
         ${digest.images.longForm ? `
             <div class="modal-longform">
-                <img src="${digest.images.longForm}" alt="${currentLanguage === 'en' ? 'Long-form image' : '文字长图'}" onerror="this.parentElement.style.display='none'">
+                <img src="${siteAssetPath(digest.images.longForm)}" alt="${currentLanguage === 'en' ? 'Long-form image' : '文字长图'}" onerror="this.parentElement.style.display='none'">
             </div>
         ` : ''}
 
