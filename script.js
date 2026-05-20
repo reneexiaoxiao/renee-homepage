@@ -2243,51 +2243,6 @@ function renderSpeakingCards() {
         return siteAssetPath(path);
     }
 
-    function renderSpeakingMedia(item, index) {
-        const images = (item.images || []).map(toUrl).filter(Boolean);
-        if (images.length === 0) {
-            return '<div class="speaking-entry-visual"></div>';
-        }
-
-        if (images.length === 1) {
-            return `
-                <div class="speaking-entry-visual">
-                    <div class="speaking-entry-media">
-                        <img src="${images[0]}" alt="${tItem(item, 'title')}">
-                    </div>
-                </div>
-            `;
-        }
-
-        return `
-            <div class="speaking-entry-visual">
-                <div class="speaking-entry-media speaking-entry-carousel" data-carousel-id="speaking-${index}">
-                    <div class="speaking-entry-track">
-                        ${images.map((image, imageIndex) => `
-                            <div class="speaking-entry-slide" data-index="${imageIndex}">
-                                <img src="${image}" alt="${tItem(item, 'title')} ${imageIndex + 1}">
-                            </div>
-                        `).join('')}
-                    </div>
-                    <div class="speaking-entry-controls">
-                        <button class="speaking-entry-btn prev" type="button" aria-label="${currentLanguage === 'en' ? 'Previous image' : '上一张'}">‹</button>
-                        <div class="speaking-entry-indicators">
-                            ${images.map((_, imageIndex) => `
-                                <button
-                                    class="speaking-entry-indicator ${imageIndex === 0 ? 'active' : ''}"
-                                    type="button"
-                                    data-index="${imageIndex}"
-                                    aria-label="${currentLanguage === 'en' ? `View image ${imageIndex + 1}` : `查看第 ${imageIndex + 1} 张`}"
-                                ></button>
-                            `).join('')}
-                        </div>
-                        <button class="speaking-entry-btn next" type="button" aria-label="${currentLanguage === 'en' ? 'Next image' : '下一张'}">›</button>
-                    </div>
-                </div>
-            </div>
-        `;
-    }
-
     const yearGroups = speakingData.reduce((groups, item, index) => {
         const currentGroup = groups.find(group => group.year === item.year);
         const entry = { ...item, originalIndex: index };
@@ -2301,50 +2256,67 @@ function renderSpeakingCards() {
         return groups;
     }, []);
 
-    grid.innerHTML = yearGroups.map(group => `
-        <section class="speaking-year-group" aria-labelledby="speaking-year-${group.year}">
-            <div class="speaking-year-heading">
-                <h3 id="speaking-year-${group.year}">${group.year}</h3>
-                <span>${group.items.length} ${currentLanguage === 'en' ? 'records' : '条记录'}</span>
-            </div>
-            <div class="speaking-card-grid">
-                ${group.items.map((item, groupIndex) => {
-                    const isFeatured = groupIndex === 0;
+    const totalRecords = speakingData.length;
 
-                    return `
-                        <article class="speaking-card ${isFeatured ? 'speaking-card-featured' : ''}">
-                            <div class="speaking-entry">
-                                ${renderSpeakingMedia(item, item.originalIndex)}
-                                <div class="speaking-entry-copy">
-                                    <div class="speaking-card-topline">
-                                        <div class="speaking-card-identity">
-                                            <span class="speaking-card-type">${tItem(item, 'type')}</span>
-                                            <span class="speaking-card-index">${String(item.originalIndex + 1).padStart(2, '0')}</span>
-                                        </div>
-                                        <span class="speaking-card-event">${tItem(item, 'event')}</span>
+    grid.innerHTML = `
+        <div class="speaking-ticket-archive">
+            <div class="speaking-ticket-intro">
+                <p class="speaking-ticket-kicker">${currentLanguage === 'en' ? 'Ticket Archive' : '活动票根档案'}</p>
+                <h3>${currentLanguage === 'en' ? 'Every public moment leaves a trace.' : '每一次公开表达，都留下一张现场票根。'}</h3>
+                <p>${currentLanguage === 'en'
+                    ? `${totalRecords} curated records across talks, classrooms, salons, and hosted events.`
+                    : `${totalRecords} 条公开记录，串起舞台、课堂、沙龙和主办活动。`
+                }</p>
+            </div>
+            ${yearGroups.map(group => `
+                <section class="speaking-ticket-year-rail" aria-labelledby="speaking-year-${group.year}">
+                    <div class="speaking-ticket-year">
+                        <h3 id="speaking-year-${group.year}">${group.year}</h3>
+                        <span>${group.items.length} ${currentLanguage === 'en' ? 'tickets' : '张票根'}</span>
+                    </div>
+                    <div class="speaking-ticket-stack">
+                        ${group.items.map((item, groupIndex) => {
+                            const images = (item.images || []).map(toUrl).filter(Boolean);
+                            const firstImage = images[0] || '';
+                            const eventText = tItem(item, 'event');
+                            const eventDate = eventText.split('·')[0].trim();
+                            const isFeatured = groupIndex === 0;
+
+                            return `
+                                <article class="speaking-ticket-stub ${isFeatured ? 'speaking-ticket-featured' : ''}">
+                                    <div class="speaking-ticket-hole" aria-hidden="true"></div>
+                                    <div class="speaking-ticket-photo">
+                                        ${firstImage ? `<img src="${firstImage}" alt="${tItem(item, 'title')}">` : ''}
+                                        <span>${String(item.originalIndex + 1).padStart(2, '0')}</span>
                                     </div>
-                                    <h3 class="speaking-card-title">${tItem(item, 'title')}</h3>
-                                    <p class="speaking-card-desc">${tItem(item, 'desc')}</p>
-                                    <div class="speaking-card-footer">
-                                        <div class="speaking-card-tags">
+                                    <div class="speaking-ticket-copy">
+                                        <div class="speaking-ticket-meta">
+                                            <span>${eventDate}</span>
+                                            <span>${tItem(item, 'type')}</span>
+                                        </div>
+                                        <h3>${tItem(item, 'title')}</h3>
+                                        <p>${tItem(item, 'desc')}</p>
+                                        <div class="speaking-ticket-tags">
                                             ${(item.tagsEn && currentLanguage === 'en' ? item.tagsEn : tList(item.tags)).map(tag => `<span class="speaking-card-tag">${tag}</span>`).join('')}
                                         </div>
+                                    </div>
+                                    <div class="speaking-ticket-action">
+                                        <span>${images.length} ${currentLanguage === 'en' ? 'images' : '张图'}</span>
                                         ${item.href ? `
                                             <a class="speaking-card-link" href="${toUrl(item.href)}" target="_blank" rel="noopener noreferrer">
                                                 ${tItem(item, 'cta') || (currentLanguage === 'en' ? 'View Details' : '查看详情')}
                                             </a>
                                         ` : ''}
                                     </div>
-                                </div>
-                            </div>
-                        </article>
-                    `;
-                }).join('')}
-            </div>
-        </section>
-    `).join('');
+                                </article>
+                            `;
+                        }).join('')}
+                    </div>
+                </section>
+            `).join('')}
+        </div>
+    `;
 
-    initSpeakingEntryCarousels();
     observeAnimatedElements(grid);
 }
 
@@ -2607,14 +2579,18 @@ function renderDigestCards(filter = 'all') {
         ? digestData
         : digestData.filter(item => item.category === filter);
 
-    gallery.innerHTML = filteredData.map(digest => {
+    const cardsMarkup = filteredData.map((digest, digestIndex) => {
         // 准备卡片要显示的所有图片（封面 + 卡片图）
         const cardImages = (digest.images.cards ?
             [digest.images.cover, ...digest.images.cards] :
             [digest.images.cover]).filter(Boolean).map(siteAssetPath);
 
         return `
-            <div class="digest-card" onclick="openDigestModal('${digest.id}')">
+            <div class="digest-card digest-rail-card" onclick="openDigestModal('${digest.id}')">
+                <div class="digest-rail-card-meta">
+                    <span>${formatDate(digest.date)}</span>
+                    <span>${String(digestIndex + 1).padStart(2, '0')} · ${cardImages.length} ${currentLanguage === 'en' ? 'images' : '张图'}</span>
+                </div>
                 <div class="digest-card-cover">
                     <div class="digest-card-carousel" data-card-id="${digest.id}">
                         <div class="digest-card-carousel-track">
@@ -2644,6 +2620,21 @@ function renderDigestCards(filter = 'all') {
             </div>
         `;
     }).join('');
+
+    gallery.innerHTML = `
+        <div class="digest-rail-shell">
+            <div class="digest-rail-header">
+                <div>
+                    <p class="digest-rail-kicker">#Learn&Digest</p>
+                    <h3>${currentLanguage === 'en' ? 'Daily visual notes in motion' : '每日打卡视觉滑廊'}</h3>
+                </div>
+                <span class="digest-rail-count">${filteredData.length} ${currentLanguage === 'en' ? 'sets' : '组'}</span>
+            </div>
+            <div class="digest-rail-track">
+                ${cardsMarkup || `<p class="digest-rail-empty">${currentLanguage === 'en' ? 'No notes in this category yet.' : '这个分类下还没有打卡。'}</p>`}
+            </div>
+        </div>
+    `;
 
     // 初始化卡片轮播
     initCardCarousels();

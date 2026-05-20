@@ -129,6 +129,8 @@
     .career-step-card,
     .career-step-point,
     .speaking-entry,
+    .speaking-ticket-intro,
+    .speaking-ticket-stub,
     .speaking-stat,
     .thinking-card,
     .contact-qr-card,
@@ -159,7 +161,8 @@
 
     .hero-avatar img,
     .contact-qr-image,
-    .speaking-entry-media {
+    .speaking-entry-media,
+    .speaking-ticket-photo {
         border-color: rgba(255, 255, 255, 0.08);
         box-shadow: 0 16px 28px rgba(0, 0, 0, 0.28);
     }
@@ -1672,24 +1675,78 @@ ul {
 
 /* Digest Gallery - Horizontal Rail */
 .digest-gallery {
-    display: flex;
-    gap: var(--spacing-md);
+    display: block;
     margin-bottom: 0;
-    padding-bottom: 0.35rem;
-    overflow-x: auto;
-    overflow-y: hidden;
+    padding-bottom: 0;
+    overflow: hidden;
     min-height: 0;
     flex: 1;
+}
+
+.digest-rail-shell {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    height: 100%;
+    gap: 0.85rem;
+}
+
+.digest-rail-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0 0.25rem;
+}
+
+.digest-rail-kicker {
+    margin: 0 0 0.18rem;
+    color: var(--color-accent);
+    font-size: 0.76rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.digest-rail-header h3 {
+    margin: 0;
+    font-size: clamp(1.25rem, 1.8vw, 1.85rem);
+    line-height: 1.12;
+}
+
+.digest-rail-count {
+    flex: 0 0 auto;
+    padding: 0.42rem 0.78rem;
+    border: 1px solid rgba(26, 25, 21, 0.08);
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.46);
+    color: var(--color-text-muted);
+    font-size: 0.78rem;
+    white-space: nowrap;
+}
+
+.digest-rail-track {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+    gap: var(--spacing-md);
+    padding: 0.1rem 0.25rem 0.45rem;
+    overflow-x: auto;
+    overflow-y: hidden;
     align-items: stretch;
     scroll-snap-type: x proximity;
 }
 
-.digest-gallery::-webkit-scrollbar {
+.digest-rail-track::-webkit-scrollbar {
     height: 8px;
 }
 
-.digest-gallery::-webkit-scrollbar-thumb {
+.digest-rail-track::-webkit-scrollbar-thumb {
     background: rgba(26, 25, 21, 0.14);
+}
+
+.digest-rail-empty {
+    align-self: center;
+    color: var(--color-text-muted);
 }
 
 /* Digest Card */
@@ -1705,6 +1762,37 @@ ul {
     transition: transform var(--transition-fast), box-shadow var(--transition-fast);
     animation: fadeInUp 0.6s ease-out backwards;
     scroll-snap-align: start;
+}
+
+.digest-rail-card {
+    border: 1px solid rgba(26, 25, 21, 0.08);
+    box-shadow: 0 10px 24px rgba(26, 25, 21, 0.05);
+}
+
+.digest-rail-card:nth-child(even) {
+    transform: translateY(0.45rem);
+}
+
+.digest-rail-card:hover,
+.digest-rail-card:nth-child(even):hover {
+    transform: translateY(-4px);
+}
+
+.digest-rail-card-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.65rem;
+    padding: 0.65rem 0.75rem;
+    border-bottom: 1px solid rgba(26, 25, 21, 0.08);
+    color: var(--color-text-muted);
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+}
+
+.digest-rail-card-meta span:last-child {
+    color: var(--color-accent);
+    white-space: nowrap;
 }
 
 .digest-card:nth-child(1) { animation-delay: 0.05s; }
@@ -2542,6 +2630,232 @@ ul {
 .speaking-entry-indicator.active {
     width: 1.4rem;
     background: rgba(255, 255, 255, 0.96);
+}
+
+.speaking-ticket-archive {
+    display: flex;
+    flex-direction: column;
+    gap: 1.05rem;
+    min-height: 0;
+}
+
+.speaking-ticket-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: 0.85rem 1.25rem;
+    padding: 0.9rem 1rem;
+    border: 1px solid rgba(26, 25, 21, 0.08);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.speaking-ticket-kicker {
+    grid-column: 1 / -1;
+    margin: 0;
+    color: var(--color-accent);
+    font-size: 0.76rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.speaking-ticket-intro h3 {
+    margin: 0;
+    font-size: clamp(1.15rem, 1.6vw, 1.55rem);
+    line-height: 1.18;
+}
+
+.speaking-ticket-intro p:last-child {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    line-height: 1.58;
+}
+
+.speaking-ticket-year-rail {
+    display: grid;
+    grid-template-columns: minmax(5.5rem, 0.18fr) minmax(0, 1fr);
+    gap: 0.9rem;
+    align-items: start;
+}
+
+.speaking-ticket-year {
+    position: sticky;
+    top: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.72rem 0.1rem;
+    color: var(--color-text);
+}
+
+.speaking-ticket-year h3 {
+    margin: 0;
+    font-size: clamp(1.25rem, 2vw, 1.7rem);
+    line-height: 1;
+    letter-spacing: 0.08em;
+}
+
+.speaking-ticket-year span {
+    color: var(--color-text-light);
+    font-size: 0.76rem;
+}
+
+.speaking-ticket-stack {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.speaking-ticket-stub {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(7.5rem, 0.28fr) minmax(0, 1fr) auto;
+    gap: 0.9rem;
+    align-items: stretch;
+    min-height: 9.4rem;
+    padding: 0.78rem 1rem 0.78rem 0.78rem;
+    border: 1px solid rgba(26, 25, 21, 0.1);
+    border-radius: 15px;
+    background:
+        radial-gradient(circle at right center, transparent 0 0.76rem, rgba(255, 255, 255, 0.44) 0.78rem),
+        rgba(255, 255, 255, 0.44);
+    box-shadow: 0 12px 26px rgba(26, 25, 21, 0.045);
+    overflow: hidden;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.speaking-ticket-stub:nth-child(2n) {
+    transform: rotate(0.35deg);
+}
+
+.speaking-ticket-stub:nth-child(2n + 1) {
+    transform: rotate(-0.25deg);
+}
+
+.speaking-ticket-stub:hover {
+    transform: translateY(-3px) rotate(0deg);
+    border-color: rgba(184, 84, 80, 0.26);
+    box-shadow: 0 18px 32px rgba(26, 25, 21, 0.075);
+}
+
+.speaking-ticket-featured {
+    min-height: 11.5rem;
+    background:
+        radial-gradient(circle at right center, transparent 0 0.76rem, rgba(250, 247, 240, 0.58) 0.78rem),
+        linear-gradient(120deg, rgba(255, 255, 255, 0.62), rgba(184, 84, 80, 0.08));
+}
+
+.speaking-ticket-hole {
+    position: absolute;
+    right: -0.78rem;
+    top: 50%;
+    width: 1.55rem;
+    height: 1.55rem;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    background: var(--color-bg);
+    box-shadow: inset 0 0 0 1px rgba(26, 25, 21, 0.08);
+}
+
+.speaking-ticket-photo {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    min-height: 7.8rem;
+    border-radius: 11px;
+    overflow: hidden;
+    background:
+        linear-gradient(145deg, rgba(26, 25, 21, 0.12), rgba(184, 84, 80, 0.16)),
+        var(--color-border);
+}
+
+.speaking-ticket-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform var(--transition-normal);
+}
+
+.speaking-ticket-stub:hover .speaking-ticket-photo img {
+    transform: scale(1.04);
+}
+
+.speaking-ticket-photo span {
+    position: absolute;
+    left: 0.55rem;
+    top: 0.55rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2rem;
+    padding: 0.25rem 0.48rem;
+    border-radius: var(--radius-full);
+    background: rgba(26, 25, 21, 0.72);
+    color: #fff;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+}
+
+.speaking-ticket-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    min-width: 0;
+}
+
+.speaking-ticket-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.48rem;
+    flex-wrap: wrap;
+    color: var(--color-accent);
+    font-size: 0.76rem;
+}
+
+.speaking-ticket-meta span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.65rem;
+    padding: 0.18rem 0.56rem;
+    border-radius: var(--radius-full);
+    background: rgba(184, 84, 80, 0.1);
+}
+
+.speaking-ticket-copy h3 {
+    margin: 0;
+    font-size: 1.02rem;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+}
+
+.speaking-ticket-copy p {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: 0.84rem;
+    line-height: 1.55;
+    overflow-wrap: anywhere;
+}
+
+.speaking-ticket-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-top: auto;
+}
+
+.speaking-ticket-action {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 0.75rem;
+    min-width: 6.5rem;
+    padding-right: 0.2rem;
+}
+
+.speaking-ticket-action > span {
+    color: var(--color-text-light);
+    font-size: 0.76rem;
+    white-space: nowrap;
 }
 
 .showcase-kicker,
@@ -3906,6 +4220,54 @@ ul {
         grid-template-columns: 1fr;
     }
 
+    .digest-rail-shell {
+        padding: 0.85rem;
+    }
+
+    .digest-rail-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.55rem;
+    }
+
+    .digest-rail-card {
+        flex-basis: min(76vw, 19rem);
+    }
+
+    .speaking-ticket-intro,
+    .speaking-ticket-year-rail,
+    .speaking-ticket-stub {
+        grid-template-columns: 1fr;
+    }
+
+    .speaking-ticket-year {
+        position: relative;
+        top: auto;
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: space-between;
+        padding: 0.25rem 0.1rem 0;
+    }
+
+    .speaking-ticket-stub,
+    .speaking-ticket-stub:nth-child(2n),
+    .speaking-ticket-stub:nth-child(2n + 1) {
+        transform: none;
+    }
+
+    .speaking-ticket-photo {
+        aspect-ratio: 16 / 10;
+        min-height: 11rem;
+    }
+
+    .speaking-ticket-action {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        min-width: 0;
+        padding-right: 0;
+    }
+
     .speaking-card-grid {
         grid-template-columns: 1fr;
         gap: 0.8rem;
@@ -4200,6 +4562,21 @@ ul {
 
     .digest-card {
         flex-basis: 86vw;
+    }
+
+    .digest-rail-card {
+        flex-basis: min(84vw, 18rem);
+    }
+
+    .speaking-ticket-intro,
+    .speaking-ticket-stub {
+        border-radius: 12px;
+        padding: 0.82rem;
+    }
+
+    .speaking-ticket-action {
+        align-items: flex-start;
+        flex-direction: column;
     }
 
     .speaking-carousel {
