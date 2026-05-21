@@ -907,69 +907,6 @@ const digestData = [
             "content": "<p>2026年5月7日 的每日阅读与报告打卡图片已按同日主题整理。点击上方图片可以逐张查看这一组 AI 生成的视觉笔记。</p>"
     },
     {
-            "id": "2026-04-30-daily-report",
-            "title": "内格罗尼：一杯鸡尾酒的结构",
-            "titleEn": "Negroni: The Structure of a Cocktail",
-            "date": "2026-04-30",
-            "category": "life-method",
-            "categoryLabel": "生活与方法",
-            "categoryLabelEn": "Life and Methods",
-            "tags": [
-                    "鸡尾酒",
-                    "结构拆解",
-                    "生活灵感"
-            ],
-            "tagsEn": [
-                    "Cocktail",
-                    "Structure",
-                    "Life Notes"
-            ],
-            "excerpt": "2026年4月30日 的每日阅读与报告打卡图片，共 3 张。",
-            "excerptEn": "2026-04-30 daily reading and report-note images, 3 in total.",
-            "images": {
-                    "cover": "digests/2026/04/2026-04-30-daily-report/images/01.jpg",
-                    "cards": [
-                            "digests/2026/04/2026-04-30-daily-report/images/02.jpg",
-                            "digests/2026/04/2026-04-30-daily-report/images/03.jpg"
-                    ],
-                    "longForm": null
-            },
-            "author": "Renee",
-            "readTime": "2 分钟",
-            "content": "<p>2026年4月30日 的每日阅读与报告打卡图片已按同日主题整理。点击上方图片可以逐张查看这一组 AI 生成的视觉笔记。</p>"
-    },
-    {
-            "id": "2026-04-27-daily-report",
-            "title": "手相解读指南",
-            "titleEn": "Palm Reading Guide",
-            "date": "2026-04-27",
-            "category": "life-method",
-            "categoryLabel": "生活与方法",
-            "categoryLabelEn": "Life and Methods",
-            "tags": [
-                    "手相解读",
-                    "信息设计",
-                    "趣味实验"
-            ],
-            "tagsEn": [
-                    "Palm Reading",
-                    "Information Design",
-                    "Playful Experiment"
-            ],
-            "excerpt": "2026年4月27日 的每日阅读与报告打卡图片，共 2 张。",
-            "excerptEn": "2026-04-27 daily reading and report-note images, 2 in total.",
-            "images": {
-                    "cover": "digests/2026/04/2026-04-27-daily-report/images/01.jpg",
-                    "cards": [
-                            "digests/2026/04/2026-04-27-daily-report/images/02.jpg"
-                    ],
-                    "longForm": null
-            },
-            "author": "Renee",
-            "readTime": "1 分钟",
-            "content": "<p>2026年4月27日 的每日阅读与报告打卡图片已按同日主题整理。点击上方图片可以逐张查看这一组 AI 生成的视觉笔记。</p>"
-    },
-    {
             "id": "2026-04-24-daily-report",
             "title": "AI 对就业：重塑远大于替代",
             "titleEn": "AI and Jobs: Reshaping More Than Replacing",
@@ -1001,40 +938,6 @@ const digestData = [
             "author": "Renee",
             "readTime": "2 分钟",
             "content": "<p>2026年4月24日 的每日阅读与报告打卡图片已按同日主题整理。点击上方图片可以逐张查看这一组 AI 生成的视觉笔记。</p>"
-    },
-    {
-            "id": "2026-04-23-daily-report",
-            "title": "我允许事情更顺利",
-            "titleEn": "I Allow Things to Become Easier",
-            "date": "2026-04-23",
-            "category": "life-method",
-            "categoryLabel": "生活与方法",
-            "categoryLabelEn": "Life and Methods",
-            "tags": [
-                    "顺利感",
-                    "自我允许",
-                    "生活心法"
-            ],
-            "tagsEn": [
-                    "Ease",
-                    "Self Permission",
-                    "Life Method"
-            ],
-            "excerpt": "2026年4月23日 的每日阅读与报告打卡图片，共 5 张。",
-            "excerptEn": "2026-04-23 daily reading and report-note images, 5 in total.",
-            "images": {
-                    "cover": "digests/2026/04/2026-04-23-daily-report/images/01.jpg",
-                    "cards": [
-                            "digests/2026/04/2026-04-23-daily-report/images/02.jpg",
-                            "digests/2026/04/2026-04-23-daily-report/images/03.jpg",
-                            "digests/2026/04/2026-04-23-daily-report/images/04.jpg",
-                            "digests/2026/04/2026-04-23-daily-report/images/05.jpg"
-                    ],
-                    "longForm": null
-            },
-            "author": "Renee",
-            "readTime": "3 分钟",
-            "content": "<p>2026年4月23日 的每日阅读与报告打卡图片已按同日主题整理。点击上方图片可以逐张查看这一组 AI 生成的视觉笔记。</p>"
     },
     {
             "id": "2026-04-22-daily-report",
@@ -1380,16 +1283,15 @@ const digestData = [
                     "Central Hub",
                     "Org Collaboration"
             ],
-            "excerpt": "2026年3月27日 的每日阅读与报告打卡图片，共 6 张。",
-            "excerptEn": "2026-03-27 daily reading and report-note images, 6 in total.",
+            "excerpt": "2026年3月27日 的每日阅读与报告打卡图片，共 5 张。",
+            "excerptEn": "2026-03-27 daily reading and report-note images, 5 in total.",
             "images": {
                     "cover": "digests/2026/03/2026-03-27-daily-report/images/01.jpg",
                     "cards": [
                             "digests/2026/03/2026-03-27-daily-report/images/02.jpg",
                             "digests/2026/03/2026-03-27-daily-report/images/03.jpg",
                             "digests/2026/03/2026-03-27-daily-report/images/04.jpg",
-                            "digests/2026/03/2026-03-27-daily-report/images/05.jpg",
-                            "digests/2026/03/2026-03-27-daily-report/images/06.jpg"
+                            "digests/2026/03/2026-03-27-daily-report/images/05.jpg"
                     ],
                     "longForm": null
             },
@@ -1557,44 +1459,6 @@ const digestData = [
             "author": "Renee",
             "readTime": "1 分钟",
             "content": "<p>2026年3月14日 的每日阅读与报告打卡图片已按同日主题整理。点击上方图片可以逐张查看这一组 AI 生成的视觉笔记。</p>"
-    },
-    {
-            "id": "2026-03-12-daily-report",
-            "title": "飞书使用手册",
-            "titleEn": "Feishu Usage Handbook",
-            "date": "2026-03-12",
-            "category": "ai-tools",
-            "categoryLabel": "工具与智能体",
-            "categoryLabelEn": "Tools and Agents",
-            "tags": [
-                    "飞书手册",
-                    "协作工具",
-                    "知识管理"
-            ],
-            "tagsEn": [
-                    "Feishu Handbook",
-                    "Collaboration Tools",
-                    "Knowledge Management"
-            ],
-            "excerpt": "2026年3月12日 的每日阅读与报告打卡图片，共 9 张。",
-            "excerptEn": "2026-03-12 daily reading and report-note images, 9 in total.",
-            "images": {
-                    "cover": "digests/2026/03/2026-03-12-daily-report/images/01.jpg",
-                    "cards": [
-                            "digests/2026/03/2026-03-12-daily-report/images/02.jpg",
-                            "digests/2026/03/2026-03-12-daily-report/images/03.jpg",
-                            "digests/2026/03/2026-03-12-daily-report/images/04.jpg",
-                            "digests/2026/03/2026-03-12-daily-report/images/05.jpg",
-                            "digests/2026/03/2026-03-12-daily-report/images/06.jpg",
-                            "digests/2026/03/2026-03-12-daily-report/images/07.jpg",
-                            "digests/2026/03/2026-03-12-daily-report/images/08.jpg",
-                            "digests/2026/03/2026-03-12-daily-report/images/09.jpg"
-                    ],
-                    "longForm": null
-            },
-            "author": "Renee",
-            "readTime": "5 分钟",
-            "content": "<p>2026年3月12日 的每日阅读与报告打卡图片已按同日主题整理。点击上方图片可以逐张查看这一组 AI 生成的视觉笔记。</p>"
     },
     {
             "id": "2026-03-10-daily-report",
@@ -2157,7 +2021,7 @@ function renderSpeakingCards() {
 
                             return `
                                 <article class="speaking-ticket-stub ${isFeatured ? 'speaking-ticket-featured' : ''}">
-                                    <div class="speaking-ticket-hole" aria-hidden="true"></div>
+                                    <div class="speaking-ticket-edge" aria-hidden="true"></div>
                                     <div class="speaking-ticket-photo">
                                         ${firstImage ? `<img src="${firstImage}" alt="${tItem(item, 'title')}">` : ''}
                                         <span>${String(item.originalIndex + 1).padStart(2, '0')}</span>
@@ -2174,6 +2038,8 @@ function renderSpeakingCards() {
                                         </div>
                                     </div>
                                     <div class="speaking-ticket-action">
+                                        <div class="speaking-ticket-perforation" aria-hidden="true"></div>
+                                        <span class="speaking-ticket-admit">ADMIT</span>
                                         <span>${images.length} ${currentLanguage === 'en' ? 'images' : '张图'}</span>
                                         ${item.href ? `
                                             <a class="speaking-card-link" href="${toUrl(item.href)}" target="_blank" rel="noopener noreferrer">

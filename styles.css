@@ -2635,7 +2635,7 @@ ul {
 .speaking-ticket-archive {
     display: flex;
     flex-direction: column;
-    gap: 1.05rem;
+    gap: 1rem;
     min-height: 0;
 }
 
@@ -2673,8 +2673,8 @@ ul {
 
 .speaking-ticket-year-rail {
     display: grid;
-    grid-template-columns: minmax(5.5rem, 0.18fr) minmax(0, 1fr);
-    gap: 0.9rem;
+    grid-template-columns: minmax(7rem, 0.18fr) minmax(0, 1fr);
+    gap: 1.05rem;
     align-items: start;
 }
 
@@ -2683,14 +2683,14 @@ ul {
     top: 0.25rem;
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
-    padding: 0.72rem 0.1rem;
+    gap: 0.35rem;
+    padding: 1.1rem 0.1rem;
     color: var(--color-text);
 }
 
 .speaking-ticket-year h3 {
     margin: 0;
-    font-size: clamp(1.25rem, 2vw, 1.7rem);
+    font-size: clamp(1.7rem, 3.2vw, 2.65rem);
     line-height: 1;
     letter-spacing: 0.08em;
 }
@@ -2702,34 +2702,89 @@ ul {
 
 .speaking-ticket-stack {
     display: grid;
-    gap: 0.75rem;
+    gap: 0.45rem;
+    padding: 0.45rem 0.8rem 0.8rem 0.15rem;
 }
 
 .speaking-ticket-stub {
     position: relative;
     display: grid;
-    grid-template-columns: clamp(11rem, 24%, 15rem) minmax(0, 1fr) minmax(5.6rem, max-content);
-    gap: 1.15rem;
+    grid-template-columns: clamp(10.5rem, 25%, 15rem) minmax(0, 1fr) clamp(5.7rem, 12%, 7.2rem);
+    gap: 1rem;
     align-items: stretch;
-    min-height: 9.4rem;
-    padding: 0.82rem 1.05rem 0.82rem 0.82rem;
-    border: 1px solid rgba(26, 25, 21, 0.1);
-    border-radius: 15px;
+    min-height: 8.9rem;
+    max-width: 61rem;
+    padding: 0.72rem 0.95rem 0.72rem 0.72rem;
+    border: 1px solid rgba(112, 95, 70, 0.22);
+    border-radius: 10px;
     background:
-        radial-gradient(circle at right center, transparent 0 0.76rem, rgba(255, 255, 255, 0.44) 0.78rem),
-        rgba(255, 255, 255, 0.44);
-    box-shadow: 0 12px 26px rgba(26, 25, 21, 0.045);
-    overflow: hidden;
+        radial-gradient(circle at right center, transparent 0 0.82rem, rgba(251, 247, 239, 0.96) 0.84rem),
+        linear-gradient(90deg, rgba(184, 84, 80, 0.12) 0 0.5rem, transparent 0.5rem),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(244, 233, 216, 0.92));
+    box-shadow: 0 14px 28px rgba(73, 56, 35, 0.09);
+    color: #1A1915;
+    overflow: visible;
     isolation: isolate;
     transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
 }
 
+.speaking-ticket-stub::before,
+.speaking-ticket-stub::after {
+    content: '';
+    position: absolute;
+    right: clamp(5.7rem, 12%, 7.2rem);
+    z-index: 3;
+    width: 1.15rem;
+    height: 1.15rem;
+    border-radius: 50%;
+    background: rgba(245, 241, 232, 0.98);
+    border: 1px solid rgba(112, 95, 70, 0.14);
+    transform: translateX(50%);
+}
+
+.speaking-ticket-stub::before {
+    top: -0.58rem;
+}
+
+.speaking-ticket-stub::after {
+    bottom: -0.58rem;
+}
+
+.speaking-ticket-edge {
+    position: absolute;
+    left: 0.18rem;
+    top: 0.72rem;
+    bottom: 0.72rem;
+    width: 0.18rem;
+    border-radius: 999px;
+    background: var(--color-accent);
+    opacity: 0.68;
+}
+
 .speaking-ticket-stub:nth-child(2n) {
-    transform: rotate(0.35deg);
+    justify-self: end;
+    transform: translateX(-0.25rem) rotate(1.1deg);
 }
 
 .speaking-ticket-stub:nth-child(2n + 1) {
-    transform: rotate(-0.25deg);
+    justify-self: start;
+    transform: translateX(0.35rem) rotate(-0.85deg);
+}
+
+.speaking-ticket-stub:nth-child(3n) {
+    background:
+        radial-gradient(circle at right center, transparent 0 0.82rem, #1f1e1a 0.84rem),
+        linear-gradient(90deg, rgba(184, 84, 80, 0.78) 0 0.5rem, transparent 0.5rem),
+        linear-gradient(135deg, #2a2924, #1d1c18);
+    border-color: rgba(255, 255, 255, 0.12);
+    color: #F5F1E8;
+}
+
+.speaking-ticket-stub:nth-child(4n) {
+    background:
+        radial-gradient(circle at right center, transparent 0 0.82rem, rgba(241, 224, 207, 0.98) 0.84rem),
+        linear-gradient(90deg, rgba(26, 25, 21, 0.2) 0 0.5rem, transparent 0.5rem),
+        linear-gradient(135deg, #f5eadb, #ead4bd);
 }
 
 .speaking-ticket-stub:hover {
@@ -2739,22 +2794,11 @@ ul {
 }
 
 .speaking-ticket-featured {
-    min-height: 11.5rem;
+    min-height: 10.4rem;
     background:
-        radial-gradient(circle at right center, transparent 0 0.76rem, rgba(250, 247, 240, 0.58) 0.78rem),
-        linear-gradient(120deg, rgba(255, 255, 255, 0.62), rgba(184, 84, 80, 0.08));
-}
-
-.speaking-ticket-hole {
-    position: absolute;
-    right: -0.78rem;
-    top: 50%;
-    width: 1.55rem;
-    height: 1.55rem;
-    border-radius: 50%;
-    transform: translateY(-50%);
-    background: var(--color-bg);
-    box-shadow: inset 0 0 0 1px rgba(26, 25, 21, 0.08);
+        radial-gradient(circle at right center, transparent 0 0.82rem, rgba(251, 247, 239, 0.98) 0.84rem),
+        linear-gradient(90deg, rgba(184, 84, 80, 0.32) 0 0.5rem, transparent 0.5rem),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(244, 226, 211, 0.96));
 }
 
 .speaking-ticket-photo {
@@ -2762,11 +2806,12 @@ ul {
     z-index: 1;
     aspect-ratio: 16 / 10;
     min-height: 7.8rem;
-    border-radius: 11px;
+    border-radius: 8px;
     overflow: hidden;
     background:
         linear-gradient(145deg, rgba(26, 25, 21, 0.12), rgba(184, 84, 80, 0.16)),
         var(--color-border);
+    box-shadow: 0 10px 22px rgba(26, 25, 21, 0.12);
 }
 
 .speaking-ticket-photo img {
@@ -2802,7 +2847,8 @@ ul {
     z-index: 2;
     display: flex;
     flex-direction: column;
-    gap: 0.45rem;
+    gap: 0.48rem;
+    padding: 0.15rem 0 0.12rem;
     min-width: 0;
 }
 
@@ -2811,7 +2857,7 @@ ul {
     align-items: center;
     gap: 0.48rem;
     flex-wrap: wrap;
-    color: var(--color-accent);
+    color: currentColor;
     font-size: 0.76rem;
 }
 
@@ -2821,22 +2867,32 @@ ul {
     min-height: 1.65rem;
     padding: 0.18rem 0.56rem;
     border-radius: var(--radius-full);
-    background: rgba(184, 84, 80, 0.1);
+    background: rgba(184, 84, 80, 0.12);
+    color: var(--color-accent);
+}
+
+.speaking-ticket-stub:nth-child(3n) .speaking-ticket-meta span {
+    background: rgba(255, 255, 255, 0.08);
+    color: #f0d9d7;
 }
 
 .speaking-ticket-copy h3 {
     margin: 0;
-    font-size: 1.02rem;
+    font-size: clamp(1.02rem, 1.35vw, 1.22rem);
     line-height: 1.35;
     overflow-wrap: anywhere;
 }
 
 .speaking-ticket-copy p {
     margin: 0;
-    color: var(--color-text-muted);
+    color: rgba(26, 25, 21, 0.62);
     font-size: 0.84rem;
     line-height: 1.55;
     overflow-wrap: anywhere;
+}
+
+.speaking-ticket-stub:nth-child(3n) .speaking-ticket-copy p {
+    color: rgba(245, 241, 232, 0.7);
 }
 
 .speaking-ticket-tags {
@@ -2855,13 +2911,41 @@ ul {
     justify-content: space-between;
     gap: 0.75rem;
     min-width: 6.5rem;
-    padding-right: 0.2rem;
+    padding: 0.15rem 0 0.15rem 0.85rem;
+    border-left: 1px dashed rgba(112, 95, 70, 0.28);
 }
 
 .speaking-ticket-action > span {
-    color: var(--color-text-light);
+    color: rgba(26, 25, 21, 0.48);
     font-size: 0.76rem;
     white-space: nowrap;
+}
+
+.speaking-ticket-admit {
+    writing-mode: vertical-rl;
+    align-self: center;
+    margin: auto 0;
+    color: rgba(184, 84, 80, 0.58);
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+}
+
+.speaking-ticket-perforation {
+    position: absolute;
+    left: -1px;
+    top: 0.55rem;
+    bottom: 0.55rem;
+    border-left: 1px dashed rgba(112, 95, 70, 0.32);
+}
+
+.speaking-ticket-stub:nth-child(3n) .speaking-ticket-action {
+    border-left-color: rgba(255, 255, 255, 0.18);
+}
+
+.speaking-ticket-stub:nth-child(3n) .speaking-ticket-action > span {
+    color: rgba(245, 241, 232, 0.6);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -2879,13 +2963,22 @@ ul {
             linear-gradient(120deg, rgba(42, 39, 34, 0.98), rgba(55, 38, 35, 0.98));
     }
 
-    .speaking-ticket-hole {
+    .speaking-ticket-stub::before,
+    .speaking-ticket-stub::after {
         background: #1A1915;
-        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.08);
     }
 
     .speaking-ticket-meta span {
         background: rgba(184, 84, 80, 0.16);
+    }
+
+    .speaking-ticket-perforation {
+        border-left-color: rgba(255, 255, 255, 0.18);
+    }
+
+    .speaking-ticket-admit {
+        color: rgba(240, 217, 215, 0.72);
     }
 
     .speaking-ticket-copy p,
@@ -4288,7 +4381,22 @@ ul {
     .speaking-ticket-stub,
     .speaking-ticket-stub:nth-child(2n),
     .speaking-ticket-stub:nth-child(2n + 1) {
+        justify-self: stretch;
+        max-width: none;
         transform: none;
+    }
+
+    .speaking-ticket-stub::before,
+    .speaking-ticket-stub::after {
+        display: none;
+    }
+
+    .speaking-ticket-edge {
+        top: 0.72rem;
+        bottom: auto;
+        left: 0.82rem;
+        width: 3.6rem;
+        height: 0.18rem;
     }
 
     .speaking-ticket-photo {
@@ -4301,7 +4409,18 @@ ul {
         align-items: center;
         justify-content: space-between;
         min-width: 0;
-        padding-right: 0;
+        padding: 0.72rem 0 0;
+        border-left: 0;
+        border-top: 1px dashed rgba(112, 95, 70, 0.24);
+    }
+
+    .speaking-ticket-perforation {
+        display: none;
+    }
+
+    .speaking-ticket-admit {
+        writing-mode: horizontal-tb;
+        margin: 0;
     }
 
     .speaking-card-grid {
@@ -4613,6 +4732,7 @@ ul {
     .speaking-ticket-action {
         align-items: flex-start;
         flex-direction: column;
+        gap: 0.55rem;
     }
 
     .speaking-carousel {
