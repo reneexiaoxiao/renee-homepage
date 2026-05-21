@@ -771,21 +771,21 @@ if (footerText) {
 const digestData = [
     {
             "id": "2026-05-15-daily-report",
-            "title": "#Learn&Digest：2026年5月15日 每日报告打卡",
-            "titleEn": "#Learn&Digest: 2026-05-15 Daily Report Notes",
+            "title": "企业 SKU 分析脑图",
+            "titleEn": "Enterprise SKU Analysis Map",
             "date": "2026-05-15",
-            "category": "daily",
-            "categoryLabel": "每日报告打卡",
-            "categoryLabelEn": "Daily Notes",
+            "category": "ai-org",
+            "categoryLabel": "AI与组织",
+            "categoryLabelEn": "AI and Organizations",
             "tags": [
-                    "每日报告",
-                    "AI生成",
-                    "学习打卡"
+                    "企业分析",
+                    "SKU策略",
+                    "AI图解"
             ],
             "tagsEn": [
-                    "Daily Report",
-                    "AI Generated",
-                    "Learning Notes"
+                    "Business Analysis",
+                    "SKU Strategy",
+                    "AI Visuals"
             ],
             "excerpt": "2026年5月15日 的每日阅读与报告打卡图片，共 4 张。",
             "excerptEn": "2026-05-15 daily reading and report-note images, 4 in total.",
@@ -804,21 +804,21 @@ const digestData = [
     },
     {
             "id": "2026-05-12-daily-report",
-            "title": "#Learn&Digest：2026年5月12日 每日报告打卡",
-            "titleEn": "#Learn&Digest: 2026-05-12 Daily Report Notes",
+            "title": "从数字化到智能化的企业系统：论文图解",
+            "titleEn": "From Digitalization to Intelligent Enterprise Systems",
             "date": "2026-05-12",
-            "category": "daily",
-            "categoryLabel": "每日报告打卡",
-            "categoryLabelEn": "Daily Notes",
+            "category": "ai-org",
+            "categoryLabel": "AI与组织",
+            "categoryLabelEn": "AI and Organizations",
             "tags": [
-                    "每日报告",
-                    "AI生成",
-                    "学习打卡"
+                    "数字化转型",
+                    "企业系统",
+                    "组织智能"
             ],
             "tagsEn": [
-                    "Daily Report",
-                    "AI Generated",
-                    "Learning Notes"
+                    "Digital Transformation",
+                    "Enterprise Systems",
+                    "Organizational Intelligence"
             ],
             "excerpt": "2026年5月12日 的每日阅读与报告打卡图片，共 8 张。",
             "excerptEn": "2026-05-12 daily reading and report-note images, 8 in total.",
@@ -841,21 +841,21 @@ const digestData = [
     },
     {
             "id": "2026-05-11-daily-report",
-            "title": "#Learn&Digest：2026年5月11日 每日报告打卡",
-            "titleEn": "#Learn&Digest: 2026-05-11 Daily Report Notes",
+            "title": "LLMs Corrupt Your Documents When You Delegate",
+            "titleEn": "LLMs Corrupt Your Documents When You Delegate",
             "date": "2026-05-11",
-            "category": "daily",
-            "categoryLabel": "每日报告打卡",
-            "categoryLabelEn": "Daily Notes",
+            "category": "ai-tools",
+            "categoryLabel": "工具与智能体",
+            "categoryLabelEn": "Tools and Agents",
             "tags": [
-                    "每日报告",
-                    "AI生成",
-                    "学习打卡"
+                    "LLM委托",
+                    "文档污染",
+                    "智能体风险"
             ],
             "tagsEn": [
-                    "Daily Report",
-                    "AI Generated",
-                    "Learning Notes"
+                    "LLM Delegation",
+                    "Document Drift",
+                    "Agent Risk"
             ],
             "excerpt": "2026年5月11日 的每日阅读与报告打卡图片，共 4 张。",
             "excerptEn": "2026-05-11 daily reading and report-note images, 4 in total.",
@@ -874,21 +874,21 @@ const digestData = [
     },
     {
             "id": "2026-05-07-daily-report",
-            "title": "#Learn&Digest：2026年5月7日 每日报告打卡",
-            "titleEn": "#Learn&Digest: 2026-05-07 Daily Report Notes",
+            "title": "AI Layout Fight：图文排版实战",
+            "titleEn": "AI Layout Fight: Visual Layout Practice",
             "date": "2026-05-07",
-            "category": "daily",
-            "categoryLabel": "每日报告打卡",
-            "categoryLabelEn": "Daily Notes",
+            "category": "ai-tools",
+            "categoryLabel": "工具与智能体",
+            "categoryLabelEn": "Tools and Agents",
             "tags": [
-                    "每日报告",
-                    "AI生成",
-                    "学习打卡"
+                    "AI排版",
+                    "提示词实验",
+                    "视觉表达"
             ],
             "tagsEn": [
-                    "Daily Report",
-                    "AI Generated",
-                    "Learning Notes"
+                    "AI Layout",
+                    "Prompt Experiment",
+                    "Visual Expression"
             ],
             "excerpt": "2026年5月7日 的每日阅读与报告打卡图片，共 5 张。",
             "excerptEn": "2026-05-07 daily reading and report-note images, 5 in total.",
@@ -908,21 +908,21 @@ const digestData = [
     },
     {
             "id": "2026-04-30-daily-report",
-            "title": "#Learn&Digest：2026年4月30日 每日报告打卡",
-            "titleEn": "#Learn&Digest: 2026-04-30 Daily Report Notes",
+            "title": "内格罗尼：一杯鸡尾酒的结构",
+            "titleEn": "Negroni: The Structure of a Cocktail",
             "date": "2026-04-30",
-            "category": "daily",
-            "categoryLabel": "每日报告打卡",
-            "categoryLabelEn": "Daily Notes",
+            "category": "life-method",
+            "categoryLabel": "生活与方法",
+            "categoryLabelEn": "Life and Methods",
             "tags": [
-                    "每日报告",
-                    "AI生成",
-                    "学习打卡"
+                    "鸡尾酒",
+                    "结构拆解",
+                    "生活灵感"
             ],
             "tagsEn": [
-                    "Daily Report",
-                    "AI Generated",
-                    "Learning Notes"
+                    "Cocktail",
+                    "Structure",
+                    "Life Notes"
             ],
             "excerpt": "2026年4月30日 的每日阅读与报告打卡图片，共 3 张。",
             "excerptEn": "2026-04-30 daily reading and report-note images, 3 in total.",
@@ -940,21 +940,21 @@ const digestData = [
     },
     {
             "id": "2026-04-27-daily-report",
-            "title": "#Learn&Digest：2026年4月27日 每日报告打卡",
-            "titleEn": "#Learn&Digest: 2026-04-27 Daily Report Notes",
+            "title": "手相解读指南",
+            "titleEn": "Palm Reading Guide",
             "date": "2026-04-27",
-            "category": "daily",
-            "categoryLabel": "每日报告打卡",
-            "categoryLabelEn": "Daily Notes",
+            "category": "life-method",
+            "categoryLabel": "生活与方法",
+            "categoryLabelEn": "Life and Methods",
             "tags": [
-                    "每日报告",
-                    "AI生成",
-                    "学习打卡"
+                    "手相解读",
+                    "信息设计",
+                    "趣味实验"
             ],
             "tagsEn": [
-                    "Daily Report",
-                    "AI Generated",
-                    "Learning Notes"
+                    "Palm Reading",
+                    "Information Design",
+                    "Playful Experiment"
             ],
             "excerpt": "2026年4月27日 的每日阅读与报告打卡图片，共 2 张。",
             "excerptEn": "2026-04-27 daily reading and report-note images, 2 in total.",
@@ -971,21 +971,21 @@ const digestData = [
     },
     {
             "id": "2026-04-24-daily-report",
-            "title": "#Learn&Digest：2026年4月24日 每日报告打卡",
-            "titleEn": "#Learn&Digest: 2026-04-24 Daily Report Notes",
+            "title": "AI 对就业：重塑远大于替代",
+            "titleEn": "AI and Jobs: Reshaping More Than Replacing",
             "date": "2026-04-24",
-            "category": "daily",
-            "categoryLabel": "每日报告打卡",
-            "categoryLabelEn": "Daily Notes",
+            "category": "work-efficiency",
+            "categoryLabel": "职场与效率",
+            "categoryLabelEn": "Work and Efficiency",
             "tags": [
-                    "每日报告",
-                    "AI生成",
-                    "学习打卡"
+                    "AI就业",
+                    "岗位重塑",
+                    "职场变化"
             ],
             "tagsEn": [
-                    "Daily Report",
-                    "AI Generated",
-                    "Learning Notes"
+                    "AI Jobs",
+                    "Role Redesign",
+                    "Workplace Change"
             ],
             "excerpt": "2026年4月24日 的每日阅读与报告打卡图片，共 4 张。",
             "excerptEn": "2026-04-24 daily reading and report-note images, 4 in total.",
@@ -1004,21 +1004,21 @@ const digestData = [
     },
     {
             "id": "2026-04-23-daily-report",
-            "title": "#Learn&Digest：2026年4月23日 每日报告打卡",
-            "titleEn": "#Learn&Digest: 2026-04-23 Daily Report Notes",
+            "title": "我允许事情更顺利",
+            "titleEn": "I Allow Things to Become Easier",
             "date": "2026-04-23",
-            "category": "daily",
-            "categoryLabel": "每日报告打卡",
-            "categoryLabelEn": "Daily Notes",
+            "category": "life-method",
+            "categoryLabel": "生活与方法",
+            "categoryLabelEn": "Life and Methods",
             "tags": [
-                    "每日报告",
-                    "AI生成",
-                    "学习打卡"
+                    "顺利感",
+                    "自我允许",
+                    "生活心法"
             ],
             "tagsEn": [
-                    "Daily Report",
-                    "AI Generated",
-                    "Learning Notes"
+                    "Ease",
+                    "Self Permission",
+                    "Life Method"
             ],
             "excerpt": "2026年4月23日 的每日阅读与报告打卡图片，共 5 张。",
             "excerptEn": "2026-04-23 daily reading and report-note images, 5 in total.",
@@ -1038,21 +1038,21 @@ const digestData = [
     },
     {
             "id": "2026-04-22-daily-report",
-            "title": "#Learn&Digest：2026年4月22日 每日报告打卡",
-            "titleEn": "#Learn&Digest: 2026-04-22 Daily Report Notes",
+            "title": "AI 工具 vs AI 运营层",
+            "titleEn": "AI Tools vs AI Operations Layer",
             "date": "2026-04-22",
-            "category": "daily",
-            "categoryLabel": "每日报告打卡",
-            "categoryLabelEn": "Daily Notes",
+            "category": "ai-org",
+            "categoryLabel": "AI与组织",
+            "categoryLabelEn": "AI and Organizations",
             "tags": [
-                    "每日报告",
-                    "AI生成",
-                    "学习打卡"
+                    "AI运营层",
+                    "工具架构",
+                    "企业AI"
             ],
             "tagsEn": [
-                    "Daily Report",
-                    "AI Generated",
-                    "Learning Notes"
+                    "AI Ops Layer",
+                    "Tool Architecture",
+                    "Enterprise AI"
             ],
             "excerpt": "2026年4月22日 的每日阅读与报告打卡图片，共 2 张。",
             "excerptEn": "2026-04-22 daily reading and report-note images, 2 in total.",
@@ -1069,21 +1069,21 @@ const digestData = [
     },
     {
             "id": "2026-04-21-daily-report",
-            "title": "#Learn&Digest：2026年4月21日 每日报告打卡",
-            "titleEn": "#Learn&Digest: 2026-04-21 Daily Report Notes",
+            "title": "从人数到智效",
+            "titleEn": "From Headcount to Intelligence Efficiency",
             "date": "2026-04-21",
-            "category": "daily",
-            "categoryLabel": "每日报告打卡",
-            "categoryLabelEn": "Daily Notes",
+            "category": "work-efficiency",
+            "categoryLabel": "职场与效率",
+            "categoryLabelEn": "Work and Efficiency",
             "tags": [
-                    "每日报告",
-                    "AI生成",
-                    "学习打卡"
+                    "组织效率",
+                    "智效",
+                    "岗位结构"
             ],
             "tagsEn": [
-                    "Daily Report",
-                    "AI Generated",
-                    "Learning Notes"
+                    "Org Efficiency",
+                    "Intelligence Efficiency",
+                    "Role Structure"
             ],
             "excerpt": "2026年4月21日 的每日阅读与报告打卡图片，共 3 张。",
             "excerptEn": "2026-04-21 daily reading and report-note images, 3 in total.",
@@ -1101,21 +1101,21 @@ const digestData = [
     },
     {
             "id": "2026-04-19-daily-report",
-            "title": "#Learn&Digest：2026年4月19日 每日报告打卡",
-            "titleEn": "#Learn&Digest: 2026-04-19 Daily Report Notes",
+            "title": "充裕时代的稀缺悖论",
+            "titleEn": "The Scarcity Paradox in an Age of Abundance",
             "date": "2026-04-19",
-            "category": "daily",
-            "categoryLabel": "每日报告打卡",
-            "categoryLabelEn": "Daily Notes",
+            "category": "tech-business",
+            "categoryLabel": "产业与商业",
+            "categoryLabelEn": "Industries and Business",
             "tags": [
-                    "每日报告",
-                    "AI生成",
-                    "学习打卡"
+                    "稀缺悖论",
+                    "App经济",
+                    "供给过剩"
             ],
             "tagsEn": [
-                    "Daily Report",
-                    "AI Generated",
-                    "Learning Notes"
+                    "Scarcity Paradox",
+                    "App Economy",
+                    "Abundance"
             ],
             "excerpt": "2026年4月19日 的每日阅读与报告打卡图片，共 5 张。",
             "excerptEn": "2026-04-19 daily reading and report-note images, 5 in total.",
@@ -1135,21 +1135,21 @@ const digestData = [
     },
     {
             "id": "2026-04-17-daily-report",
-            "title": "#Learn&Digest：2026年4月17日 每日报告打卡",
-            "titleEn": "#Learn&Digest: 2026-04-17 Daily Report Notes",
+            "title": "18 个未来竞技场",
+            "titleEn": "18 Future Arenas",
             "date": "2026-04-17",
-            "category": "daily",
-            "categoryLabel": "每日报告打卡",
-            "categoryLabelEn": "Daily Notes",
+            "category": "tech-business",
+            "categoryLabel": "产业与商业",
+            "categoryLabelEn": "Industries and Business",
             "tags": [
-                    "每日报告",
-                    "AI生成",
-                    "学习打卡"
+                    "未来产业",
+                    "技术赛道",
+                    "投资地图"
             ],
             "tagsEn": [
-                    "Daily Report",
-                    "AI Generated",
-                    "Learning Notes"
+                    "Future Industries",
+                    "Tech Arenas",
+                    "Investment Map"
             ],
             "excerpt": "2026年4月17日 的每日阅读与报告打卡图片，共 11 张。",
             "excerptEn": "2026-04-17 daily reading and report-note images, 11 in total.",
@@ -1175,21 +1175,21 @@ const digestData = [
     },
     {
             "id": "2026-04-14-daily-report",
-            "title": "#Learn&Digest：2026年4月14日 每日报告打卡",
-            "titleEn": "#Learn&Digest: 2026-04-14 Daily Report Notes",
+            "title": "Harness Engineering：三相可扩展性框架",
+            "titleEn": "Harness Engineering: A Three-Phase Scaling Framework",
             "date": "2026-04-14",
-            "category": "daily",
-            "categoryLabel": "每日报告打卡",
-            "categoryLabelEn": "Daily Notes",
+            "category": "ai-tools",
+            "categoryLabel": "工具与智能体",
+            "categoryLabelEn": "Tools and Agents",
             "tags": [
-                    "每日报告",
-                    "AI生成",
-                    "学习打卡"
+                    "Agent工程",
+                    "扩展框架",
+                    "系统设计"
             ],
             "tagsEn": [
-                    "Daily Report",
-                    "AI Generated",
-                    "Learning Notes"
+                    "Agent Engineering",
+                    "Scaling Framework",
+                    "System Design"
             ],
             "excerpt": "2026年4月14日 的每日阅读与报告打卡图片，共 1 张。",
             "excerptEn": "2026-04-14 daily reading and report-note images, 1 in total.",
@@ -1204,21 +1204,21 @@ const digestData = [
     },
     {
             "id": "2026-04-13-daily-report",
-            "title": "#Learn&Digest：2026年4月13日 每日报告打卡",
-            "titleEn": "#Learn&Digest: 2026-04-13 Daily Report Notes",
+            "title": "冰山下潜：从答案到真问题",
+            "titleEn": "Below the Iceberg: From Answers to Real Questions",
             "date": "2026-04-13",
-            "category": "daily",
-            "categoryLabel": "每日报告打卡",
-            "categoryLabelEn": "Daily Notes",
+            "category": "life-method",
+            "categoryLabel": "生活与方法",
+            "categoryLabelEn": "Life and Methods",
             "tags": [
-                    "每日报告",
-                    "AI生成",
-                    "学习打卡"
+                    "问题定义",
+                    "认知方法",
+                    "深度思考"
             ],
             "tagsEn": [
-                    "Daily Report",
-                    "AI Generated",
-                    "Learning Notes"
+                    "Problem Framing",
+                    "Thinking Method",
+                    "Deep Thinking"
             ],
             "excerpt": "2026年4月13日 的每日阅读与报告打卡图片，共 5 张。",
             "excerptEn": "2026-04-13 daily reading and report-note images, 5 in total.",
@@ -1238,21 +1238,21 @@ const digestData = [
     },
     {
             "id": "2026-04-09-daily-report",
-            "title": "#Learn&Digest：2026年4月9日 每日报告打卡",
-            "titleEn": "#Learn&Digest: 2026-04-09 Daily Report Notes",
+            "title": "The Vanishing Guardrails：消失的安全承诺",
+            "titleEn": "The Vanishing Guardrails",
             "date": "2026-04-09",
-            "category": "daily",
-            "categoryLabel": "每日报告打卡",
-            "categoryLabelEn": "Daily Notes",
+            "category": "ai-tools",
+            "categoryLabel": "工具与智能体",
+            "categoryLabelEn": "Tools and Agents",
             "tags": [
-                    "每日报告",
-                    "AI生成",
-                    "学习打卡"
+                    "AI安全",
+                    "护栏退化",
+                    "模型治理"
             ],
             "tagsEn": [
-                    "Daily Report",
-                    "AI Generated",
-                    "Learning Notes"
+                    "AI Safety",
+                    "Guardrails",
+                    "Model Governance"
             ],
             "excerpt": "2026年4月9日 的每日阅读与报告打卡图片，共 1 张。",
             "excerptEn": "2026-04-09 daily reading and report-note images, 1 in total.",
@@ -1267,21 +1267,21 @@ const digestData = [
     },
     {
             "id": "2026-04-08-daily-report",
-            "title": "#Learn&Digest：2026年4月8日 每日报告打卡",
-            "titleEn": "#Learn&Digest: 2026-04-08 Daily Report Notes",
+            "title": "The BLIP：五天之内一场政变与反政变",
+            "titleEn": "The BLIP: A Five-Day Coup and Counter-Coup",
             "date": "2026-04-08",
-            "category": "daily",
-            "categoryLabel": "每日报告打卡",
-            "categoryLabelEn": "Daily Notes",
+            "category": "ai-tools",
+            "categoryLabel": "工具与智能体",
+            "categoryLabelEn": "Tools and Agents",
             "tags": [
-                    "每日报告",
-                    "AI生成",
-                    "学习打卡"
+                    "AI安全",
+                    "组织博弈",
+                    "OpenAI"
             ],
             "tagsEn": [
-                    "Daily Report",
-                    "AI Generated",
-                    "Learning Notes"
+                    "AI Safety",
+                    "Organizational Conflict",
+                    "OpenAI"
             ],
             "excerpt": "2026年4月8日 的每日阅读与报告打卡图片，共 2 张。",
             "excerptEn": "2026-04-08 daily reading and report-note images, 2 in total.",
@@ -1298,21 +1298,21 @@ const digestData = [
     },
     {
             "id": "2026-04-07-daily-report",
-            "title": "#Learn&Digest：2026年4月7日 每日报告打卡",
-            "titleEn": "#Learn&Digest: 2026-04-07 Daily Report Notes",
+            "title": "The Founding Promise：安全守护者的诞生",
+            "titleEn": "The Founding Promise: Birth of a Safety Guardian",
             "date": "2026-04-07",
-            "category": "daily",
-            "categoryLabel": "每日报告打卡",
-            "categoryLabelEn": "Daily Notes",
+            "category": "ai-tools",
+            "categoryLabel": "工具与智能体",
+            "categoryLabelEn": "Tools and Agents",
             "tags": [
-                    "每日报告",
-                    "AI生成",
-                    "学习打卡"
+                    "AI安全",
+                    "OpenAI历史",
+                    "治理承诺"
             ],
             "tagsEn": [
-                    "Daily Report",
-                    "AI Generated",
-                    "Learning Notes"
+                    "AI Safety",
+                    "OpenAI History",
+                    "Governance Promise"
             ],
             "excerpt": "2026年4月7日 的每日阅读与报告打卡图片，共 1 张。",
             "excerptEn": "2026-04-07 daily reading and report-note images, 1 in total.",
@@ -1327,21 +1327,21 @@ const digestData = [
     },
     {
             "id": "2026-04-01-daily-report",
-            "title": "#Learn&Digest：2026年4月1日 每日报告打卡",
-            "titleEn": "#Learn&Digest: 2026-04-01 Daily Report Notes",
+            "title": "机器人行业的七重挑战",
+            "titleEn": "Seven Challenges in Robotics",
             "date": "2026-04-01",
-            "category": "daily",
-            "categoryLabel": "每日报告打卡",
-            "categoryLabelEn": "Daily Notes",
+            "category": "tech-business",
+            "categoryLabel": "产业与商业",
+            "categoryLabelEn": "Industries and Business",
             "tags": [
-                    "每日报告",
-                    "AI生成",
-                    "学习打卡"
+                    "机器人产业",
+                    "技术挑战",
+                    "产品交付"
             ],
             "tagsEn": [
-                    "Daily Report",
-                    "AI Generated",
-                    "Learning Notes"
+                    "Robotics",
+                    "Technical Challenges",
+                    "Product Delivery"
             ],
             "excerpt": "2026年4月1日 的每日阅读与报告打卡图片，共 8 张。",
             "excerptEn": "2026-04-01 daily reading and report-note images, 8 in total.",
@@ -1364,21 +1364,21 @@ const digestData = [
     },
     {
             "id": "2026-03-27-daily-report",
-            "title": "#Learn&Digest：2026年3月27日 每日报告打卡",
-            "titleEn": "#Learn&Digest: 2026-03-27 Daily Report Notes",
+            "title": "百川归海：从 AI 孤岛到元枢组",
+            "titleEn": "Rivers to the Sea: From AI Islands to a Central Hub",
             "date": "2026-03-27",
-            "category": "daily",
-            "categoryLabel": "每日报告打卡",
-            "categoryLabelEn": "Daily Notes",
+            "category": "ai-org",
+            "categoryLabel": "AI与组织",
+            "categoryLabelEn": "AI and Organizations",
             "tags": [
-                    "每日报告",
-                    "AI生成",
-                    "学习打卡"
+                    "AI中台",
+                    "元枢组",
+                    "组织协同"
             ],
             "tagsEn": [
-                    "Daily Report",
-                    "AI Generated",
-                    "Learning Notes"
+                    "AI Platform",
+                    "Central Hub",
+                    "Org Collaboration"
             ],
             "excerpt": "2026年3月27日 的每日阅读与报告打卡图片，共 6 张。",
             "excerptEn": "2026-03-27 daily reading and report-note images, 6 in total.",
@@ -1399,21 +1399,21 @@ const digestData = [
     },
     {
             "id": "2026-03-26-daily-report",
-            "title": "#Learn&Digest：2026年3月26日 每日报告打卡",
-            "titleEn": "#Learn&Digest: 2026-03-26 Daily Report Notes",
+            "title": "雾中群山，看似繁荣",
+            "titleEn": "Mountains in the Mist: Apparent Prosperity",
             "date": "2026-03-26",
-            "category": "daily",
-            "categoryLabel": "每日报告打卡",
-            "categoryLabelEn": "Daily Notes",
+            "category": "tech-business",
+            "categoryLabel": "产业与商业",
+            "categoryLabelEn": "Industries and Business",
             "tags": [
-                    "每日报告",
-                    "AI生成",
-                    "学习打卡"
+                    "云厂商",
+                    "AI泡沫",
+                    "商业繁荣"
             ],
             "tagsEn": [
-                    "Daily Report",
-                    "AI Generated",
-                    "Learning Notes"
+                    "Cloud Vendors",
+                    "AI Bubble",
+                    "Business Growth"
             ],
             "excerpt": "2026年3月26日 的每日阅读与报告打卡图片，共 1 张。",
             "excerptEn": "2026-03-26 daily reading and report-note images, 1 in total.",
@@ -1428,21 +1428,21 @@ const digestData = [
     },
     {
             "id": "2026-03-24-daily-report",
-            "title": "#Learn&Digest：2026年3月24日 每日报告打卡",
-            "titleEn": "#Learn&Digest: 2026-03-24 Daily Report Notes",
+            "title": "冲击全景：这次不是 2022",
+            "titleEn": "Shock Panorama: This Is Not 2022",
             "date": "2026-03-24",
-            "category": "daily",
-            "categoryLabel": "每日报告打卡",
-            "categoryLabelEn": "Daily Notes",
+            "category": "tech-business",
+            "categoryLabel": "产业与商业",
+            "categoryLabelEn": "Industries and Business",
             "tags": [
-                    "每日报告",
-                    "AI生成",
-                    "学习打卡"
+                    "宏观冲击",
+                    "油价",
+                    "经济周期"
             ],
             "tagsEn": [
-                    "Daily Report",
-                    "AI Generated",
-                    "Learning Notes"
+                    "Macro Shock",
+                    "Oil Price",
+                    "Economic Cycle"
             ],
             "excerpt": "2026年3月24日 的每日阅读与报告打卡图片，共 4 张。",
             "excerptEn": "2026-03-24 daily reading and report-note images, 4 in total.",
@@ -1461,21 +1461,21 @@ const digestData = [
     },
     {
             "id": "2026-03-19-daily-report",
-            "title": "#Learn&Digest：2026年3月19日 每日报告打卡",
-            "titleEn": "#Learn&Digest: 2026-03-19 Daily Report Notes",
+            "title": "谁在 AI 的靶心上？",
+            "titleEn": "Who Is in AI’s Crosshairs?",
             "date": "2026-03-19",
-            "category": "daily",
-            "categoryLabel": "每日报告打卡",
-            "categoryLabelEn": "Daily Notes",
+            "category": "work-efficiency",
+            "categoryLabel": "职场与效率",
+            "categoryLabelEn": "Work and Efficiency",
             "tags": [
-                    "每日报告",
-                    "AI生成",
-                    "学习打卡"
+                    "AI影响",
+                    "岗位风险",
+                    "职业变化"
             ],
             "tagsEn": [
-                    "Daily Report",
-                    "AI Generated",
-                    "Learning Notes"
+                    "AI Impact",
+                    "Job Risk",
+                    "Career Change"
             ],
             "excerpt": "2026年3月19日 的每日阅读与报告打卡图片，共 6 张。",
             "excerptEn": "2026-03-19 daily reading and report-note images, 6 in total.",
@@ -1496,21 +1496,21 @@ const digestData = [
     },
     {
             "id": "2026-03-17-daily-report",
-            "title": "#Learn&Digest：2026年3月17日 每日报告打卡",
-            "titleEn": "#Learn&Digest: 2026-03-17 Daily Report Notes",
+            "title": "AI 的信任危机",
+            "titleEn": "AI’s Trust Crisis",
             "date": "2026-03-17",
-            "category": "daily",
-            "categoryLabel": "每日报告打卡",
-            "categoryLabelEn": "Daily Notes",
+            "category": "ai-org",
+            "categoryLabel": "AI与组织",
+            "categoryLabelEn": "AI and Organizations",
             "tags": [
-                    "每日报告",
-                    "AI生成",
-                    "学习打卡"
+                    "AI信任",
+                    "医疗决策",
+                    "风险分层"
             ],
             "tagsEn": [
-                    "Daily Report",
-                    "AI Generated",
-                    "Learning Notes"
+                    "AI Trust",
+                    "Medical Decisions",
+                    "Risk Triage"
             ],
             "excerpt": "2026年3月17日 的每日阅读与报告打卡图片，共 4 张。",
             "excerptEn": "2026-03-17 daily reading and report-note images, 4 in total.",
@@ -1529,21 +1529,21 @@ const digestData = [
     },
     {
             "id": "2026-03-14-daily-report",
-            "title": "#Learn&Digest：2026年3月14日 每日报告打卡",
-            "titleEn": "#Learn&Digest: 2026-03-14 Daily Report Notes",
+            "title": "大加速 The Great Acceleration",
+            "titleEn": "The Great Acceleration",
             "date": "2026-03-14",
-            "category": "daily",
-            "categoryLabel": "每日报告打卡",
-            "categoryLabelEn": "Daily Notes",
+            "category": "tech-business",
+            "categoryLabel": "产业与商业",
+            "categoryLabelEn": "Industries and Business",
             "tags": [
-                    "每日报告",
-                    "AI生成",
-                    "学习打卡"
+                    "AI加速",
+                    "技术扩散",
+                    "宏观变化"
             ],
             "tagsEn": [
-                    "Daily Report",
-                    "AI Generated",
-                    "Learning Notes"
+                    "AI Acceleration",
+                    "Tech Diffusion",
+                    "Macro Change"
             ],
             "excerpt": "2026年3月14日 的每日阅读与报告打卡图片，共 2 张。",
             "excerptEn": "2026-03-14 daily reading and report-note images, 2 in total.",
@@ -1560,21 +1560,21 @@ const digestData = [
     },
     {
             "id": "2026-03-12-daily-report",
-            "title": "#Learn&Digest：2026年3月12日 每日报告打卡",
-            "titleEn": "#Learn&Digest: 2026-03-12 Daily Report Notes",
+            "title": "飞书使用手册",
+            "titleEn": "Feishu Usage Handbook",
             "date": "2026-03-12",
-            "category": "daily",
-            "categoryLabel": "每日报告打卡",
-            "categoryLabelEn": "Daily Notes",
+            "category": "ai-tools",
+            "categoryLabel": "工具与智能体",
+            "categoryLabelEn": "Tools and Agents",
             "tags": [
-                    "每日报告",
-                    "AI生成",
-                    "学习打卡"
+                    "飞书手册",
+                    "协作工具",
+                    "知识管理"
             ],
             "tagsEn": [
-                    "Daily Report",
-                    "AI Generated",
-                    "Learning Notes"
+                    "Feishu Handbook",
+                    "Collaboration Tools",
+                    "Knowledge Management"
             ],
             "excerpt": "2026年3月12日 的每日阅读与报告打卡图片，共 9 张。",
             "excerptEn": "2026-03-12 daily reading and report-note images, 9 in total.",
@@ -1598,21 +1598,21 @@ const digestData = [
     },
     {
             "id": "2026-03-10-daily-report",
-            "title": "#Learn&Digest：2026年3月10日 每日报告打卡",
-            "titleEn": "#Learn&Digest: 2026-03-10 Daily Report Notes",
+            "title": "AI 越强大，人味越值钱",
+            "titleEn": "The Stronger AI Gets, the More Human Taste Matters",
             "date": "2026-03-10",
-            "category": "daily",
-            "categoryLabel": "每日报告打卡",
-            "categoryLabelEn": "Daily Notes",
+            "category": "work-efficiency",
+            "categoryLabel": "职场与效率",
+            "categoryLabelEn": "Work and Efficiency",
             "tags": [
-                    "每日报告",
-                    "AI生成",
-                    "学习打卡"
+                    "人味价值",
+                    "人机协作",
+                    "表达"
             ],
             "tagsEn": [
-                    "Daily Report",
-                    "AI Generated",
-                    "Learning Notes"
+                    "Human Taste",
+                    "Human-AI Collaboration",
+                    "Expression"
             ],
             "excerpt": "2026年3月10日 的每日阅读与报告打卡图片，共 4 张。",
             "excerptEn": "2026-03-10 daily reading and report-note images, 4 in total.",
@@ -1631,21 +1631,21 @@ const digestData = [
     },
     {
             "id": "2026-03-08-daily-report",
-            "title": "#Learn&Digest：2026年3月8日 每日报告打卡",
-            "titleEn": "#Learn&Digest: 2026-03-08 Daily Report Notes",
+            "title": "资本火箭与商业化发动机",
+            "titleEn": "Capital Rockets and Commercialization Engines",
             "date": "2026-03-08",
-            "category": "daily",
-            "categoryLabel": "每日报告打卡",
-            "categoryLabelEn": "Daily Notes",
+            "category": "tech-business",
+            "categoryLabel": "产业与商业",
+            "categoryLabelEn": "Industries and Business",
             "tags": [
-                    "每日报告",
-                    "AI生成",
-                    "学习打卡"
+                    "商业化",
+                    "专利产业",
+                    "技术转化"
             ],
             "tagsEn": [
-                    "Daily Report",
-                    "AI Generated",
-                    "Learning Notes"
+                    "Commercialization",
+                    "Patent Economy",
+                    "Tech Transfer"
             ],
             "excerpt": "2026年3月8日 的每日阅读与报告打卡图片，共 4 张。",
             "excerptEn": "2026-03-08 daily reading and report-note images, 4 in total.",
@@ -1662,124 +1662,7 @@ const digestData = [
             "readTime": "2 分钟",
             "content": "<p>2026年3月8日 的每日阅读与报告打卡图片已按同日主题整理。点击上方图片可以逐张查看这一组 AI 生成的视觉笔记。</p>"
     },
-    {
-        id: '2026-03-23-ie-ai-journey',
-        title: '#Learn&Digest/36：IEG AI应用启示录——从隐性知识到同行治理',
-        date: '2026-03-23',
-        category: 'ai',
-        categoryLabel: 'AI与企业',
-        tags: ['AI战略', '组织转型', '治理模式', 'IEG'],
-        excerpt: '世界银行内部独立评估小组（IEG）的AI战略探索，揭示AI在知识密集型组织中的渗透速度比想象中慢，核心是「判断力」难以被AI替代。提出5级成熟度模型和同行治理模式。',
-        images: {
-            cover: 'digests/2026/03/2026-03-23/images/cover.jpg',
-            cards: ['digests/2026/03/2026-03-23/images/01.jpg',
-                     'digests/2026/03/2026-03-23/images/02.jpg',
-                     'digests/2026/03/2026-03-23/images/03.jpg'],
-            longForm: null
-        },
-        author: 'Renee',
-        readTime: '10 分钟',
-        content: `<h3>核心洞察</h3>
-<p>IEG从2018年就开始探索用AI做评估了——比ChatGPT诞生早了整整4年。他们用过判别式AI做文本挖掘，用过地理空间AI分析卫星图像，甚至用计算机视觉评估城市扩张的经济影响。但这些探索，长期以来都是各团队各自为战、摸着石头过河。直到2026年，他们才第一次把这些散落的经验、教训和隐性知识，凝结成一份正式的战略文件。</p>
-<p>背后原因是「显性知识」和「隐性知识」之前的转化成本。AI在组织中的应用，最难的从来不是技术本身，而是把一个人、一个小团队摸索出来的经验，变成整个组织都能复用的标准化流程。这个转化过程，需要足够多的失败案例作为「学费」，也需要足够的组织共识作为「基础设施」。</p>
-<h3>认知1：战略从泥土里长出来</h3>
-<p>如果你的企业也在探索AI，不要着急写战略。先让一线团队大胆试错，积累足够的隐性知识，等到「痛点」和「甜蜜点」都足够清晰了，再把它固化成战略，效果远好于自上而下的「纸上谈兵」。真正的战略，不是从PPT里长出来的，是从一线的泥土里长出来的。</p>
-<h3>认知2：AI成熟度5级模型</h3>
-<p>IEG给自己设计了一个5级成熟度模型，但自己才在第二层，看起来AI在知识密集型组织中的渗透速度，还比我们想象的慢。不是因为技术不够好，而是因为评估工作的核心是「判断力」——对发展效果的判断、对数据质量的判断、对因果关系的判断。这些判断力，目前还无法被AI完全替代。</p>
-<p>如果AI在你的组织里应用得太快，那你可还得看一下，究竟有多少是别人用AI复刻不了的？自己的组织的核心竞争力是什么？一定得留有一些AI无法触及到的核心判断力，或者只有自己有的私域知识，是捏在手上的。不然以后可能就会陷入内卷竞争，不断被AI挤压。</p>
-<p><strong>AI时代的竞争力 = AI加速的效率 × AI触不到的壁垒</strong>，两个乘数，缺一个都不行。</p>
-<h3>认知3：混合中间地带</h3>
-<p>IEG在报告中明确提出了一个核心理念：The sweet spot for IEG's use of AI lies in a hybrid space——AI应用的最佳位置，是一个「混合中间地带」。在这个空间里，AI工具被有控制地、有针对性地用于补充或增强传统评估方法，而非取代它们。</p>
-<h3>认知4：同行治理模型</h3>
-<p>最前沿的AI治理，不靠「层级管控」，靠「同行自治」。IEG提出了一个非常新颖的治理模型：Peer Governance（同行治理），也叫「集体自治」。他们要成立一个AI审查委员会（AIRB），成员不是高管，而是一个跨职能的同行团队——数据科学家、评估团队负责人、经理、方法论顾问、知识管理人员——大家轮换任期，共同制定标准、审查风险、分享经验。</p>
-<h3>认知5：价值创造公式</h3>
-<p>AI的价值创造公式 = <strong>AI能力 × 人类判断力 × 组织制度</strong>。AI能力在飞速提升，但如果人类判断力退化（过度依赖AI），或组织制度滞后（没有质量保证机制），那乘出来的结果反而可能变差。</p>
-<p>所以，AI时代对人的要求不是降低了，而是升高了——从「执行者」升级为「设计者、解释者、守门人」。</p>
-<p>不要问「AI会取代我的哪些工作」，要问「AI会让我做哪些以前做不了的工作」。主动把自己从「执行层」升维到「决策层」，你就不会被AI淘汰，反而会因为AI而变得更有价值。</p>
-<p><strong>AI不会淘汰人，但会淘汰那些不愿意「升维」的人。</strong></p>
-<h3>行动清单</h3>
-<ul>
-<li><strong>盘点隐性知识：</strong>盘点你的团队或公司过去一年所有的AI实验和探索，整理成一份「隐性知识清单」，看看哪些经验值得固化为流程</li>
-<li><strong>AI成熟度体检：</strong>用IEG的5级成熟度模型，给自己的团队做一次「AI成熟度体检」，诚实打分，并确定未来6个月的目标等级</li>
-<li><strong>找混合甜蜜点：</strong>找出你业务中的3个「混合甜蜜点」——AI能处理80%标准化工作、人类负责20%高价值判断的环节</li>
-<li><strong>AI人才审计：</strong>做一次「AI人才审计」：团队里有多少人能独立使用AI工具完成核心业务？比例低于20%就启动培训计划</li>
-<li><strong>建立AI实践小组：</strong>在团队内部建立一个非正式的「AI实践小组」，每两周分享一次各自的AI使用经验和踩坑教训</li>
-<li><strong>任务升维迁移：</strong>列出你当前工作中3项「可被AI接管的执行任务」和3项「AI时代你可以升维做的高价值任务」，开始有意识地迁移时间和精力</li>
-</ul>`
-    },
-    {
-        id: '2024-03-21-agentic-ai',
-        title: 'Agentic AI 十大趋势：当AI成为主动的代理人',
-        date: '2024-03-21',
-        category: 'ai',
-        categoryLabel: 'AI与企业',
-        tags: ['Agentic AI', 'AI趋势', '智能体'],
-        excerpt: 'AI正在从被动工具转向主动代理人。Agentic AI不仅能理解指令，更能自主规划、执行和验证。这十大趋势将重新定义人机协作的未来...',
-        images: {
-            cover: '',
-            cards: [],
-            longForm: null
-        },
-        author: 'Renee',
-        readTime: '8 分钟',
-        content: `<h3>核心洞察</h3>
-<p>AI正在经历从被动工具到主动代理人的范式转移。这种转变不仅仅是技术升级，更是人机关系的根本重构。</p>
-<h3>十大趋势</h3>
-<ul>
-<li><strong>从Copilot到Autopilot：</strong>AI不再只是副驾驶，而是能够独立完成复杂任务的自主代理人。</li>
-<li><strong>多Agent协作：</strong>多个AI智能体像团队一样协同工作，各自专攻不同领域。</li>
-<li><strong>持续学习能力：</strong>Agent能够在执行任务中持续学习和优化，而非依赖一次性训练。</li>
-<li><strong>工具使用能力：</strong>Agent能够自主选择和使用各种工具来完成目标。</li>
-<li><strong>长期规划能力：</strong>从单步响应转向多步推理和长期目标规划。</li>
-<li><strong>记忆与上下文：</strong>Agent拥有持久记忆，能够在长期交互中积累和运用知识。</li>
-<li><strong>自我验证与反思：</strong>Agent能够审视自己的输出，发现并修正错误。</li>
-<li><strong>人机协作新范式：</strong>人类从操作者变为监督者和战略决策者。</li>
-<li><strong>安全与可控性：</strong>随着Agent自主性增强，确保其行为符合人类价值观变得至关重要。</li>
-<li><strong>企业级应用爆发：</strong>Agent将从实验走向大规模企业应用。</li>
-</ul>
-<h3>行动清单</h3>
-<ul>
-<li><strong>重新思考工作流程：</strong>识别哪些环节可以交给Agent自主完成</li>
-<li><strong>建立监督机制：</strong>设计Agent行为的监控和干预体系</li>
-<li><strong>投资Agent基础设施：</strong>构建支持多Agent协作的技术平台</li>
-<li><strong>培养新技能：</strong>从"如何做"转向"如何设计Agent"</li>
-<li><strong>关注安全边界：</strong>明确Agent的权限和限制条件</li>
-</ul>`
-    },
-    {
-        id: '2024-03-20-anthropic-workforce',
-        title: 'Anthropic劳动力市场报告：AI时代的人才进化论',
-        date: '2024-03-20',
-        category: 'workforce',
-        categoryLabel: '劳动力与职场',
-        tags: ['劳动力市场', 'AI影响', '技能变革'],
-        excerpt: 'Anthropic最新报告揭示：AI正在重塑劳动力市场。高薪技能受到的冲击最大，而人际互动类工作反而变得更重要...',
-        images: {
-            cover: '',
-            cards: [],
-            longForm: null
-        },
-        author: 'Renee',
-        readTime: '10 分钟',
-        content: `<p>Anthropic最新报告揭示：AI正在重塑劳动力市场。高薪技能受到的冲击最大，而人际互动类工作反而变得更重要...</p>`
-    },
-    {
-        id: '2024-03-19-ark-bigideas',
-        title: 'ARK Big Ideas 2026：九大颠覆性技术投资图谱',
-        date: '2024-03-19',
-        category: 'tech',
-        categoryLabel: '前沿科技与宏观',
-        tags: ['ARK', '投资趋势', '前沿科技'],
-        excerpt: 'ARK年度报告发布，从AI到机器人，从基因编辑到航天技术，九大技术领域的投资机遇与风险图谱...',
-        images: {
-            cover: '',
-            cards: [],
-            longForm: null
-        },
-        author: 'Renee',
-        readTime: '12 分钟',
-        content: `<p>ARK年度报告发布，从AI到机器人，从基因编辑到航天技术，九大技术领域的投资机遇与风险图谱...</p>`
-    }
+
 ];
 
 const speakingData = [
@@ -2061,7 +1944,7 @@ const thinkingData = [
         formatEn: 'Long Essay / Enterprise AI',
         topics: ['组织资产', '私有智能', 'Skill'],
         topicsEn: ['Organizational Assets', 'Private Intelligence', 'Skill'],
-        href: 'https://renezhang.fun/thoughts/ai-organizational-assets.html',
+        href: 'https://renezhang.fun/thoughts/ai-organizational-assets/',
         cta: '阅读全文',
         ctaEn: 'Read Essay'
     },
@@ -2256,18 +2139,8 @@ function renderSpeakingCards() {
         return groups;
     }, []);
 
-    const totalRecords = speakingData.length;
-
     grid.innerHTML = `
         <div class="speaking-ticket-archive">
-            <div class="speaking-ticket-intro">
-                <p class="speaking-ticket-kicker">${currentLanguage === 'en' ? 'Ticket Archive' : '活动票根档案'}</p>
-                <h3>${currentLanguage === 'en' ? 'Every public moment leaves a trace.' : '每一次公开表达，都留下一张现场票根。'}</h3>
-                <p>${currentLanguage === 'en'
-                    ? `${totalRecords} curated records across talks, classrooms, salons, and hosted events.`
-                    : `${totalRecords} 条公开记录，串起舞台、课堂、沙龙和主办活动。`
-                }</p>
-            </div>
             ${yearGroups.map(group => `
                 <section class="speaking-ticket-year-rail" aria-labelledby="speaking-year-${group.year}">
                     <div class="speaking-ticket-year">
@@ -2623,13 +2496,6 @@ function renderDigestCards(filter = 'all') {
 
     gallery.innerHTML = `
         <div class="digest-rail-shell">
-            <div class="digest-rail-header">
-                <div>
-                    <p class="digest-rail-kicker">#Learn&Digest</p>
-                    <h3>${currentLanguage === 'en' ? 'Daily visual notes in motion' : '每日打卡视觉滑廊'}</h3>
-                </div>
-                <span class="digest-rail-count">${filteredData.length} ${currentLanguage === 'en' ? 'sets' : '组'}</span>
-            </div>
             <div class="digest-rail-track">
                 ${cardsMarkup || `<p class="digest-rail-empty">${currentLanguage === 'en' ? 'No notes in this category yet.' : '这个分类下还没有打卡。'}</p>`}
             </div>
