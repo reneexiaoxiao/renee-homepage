@@ -2014,24 +2014,43 @@ function renderSpeakingCards() {
                     <div class="speaking-ticket-stack">
                         ${group.items.map((item, groupIndex) => {
                             const images = (item.images || []).map(toUrl).filter(Boolean);
-                            const firstImage = images[0] || '';
+                            const hasCarousel = images.length > 1;
                             const eventText = tItem(item, 'event');
                             const eventDate = eventText.split('·')[0].trim();
                             const isFeatured = groupIndex === 0;
+                            const title = tItem(item, 'title');
 
                             return `
                                 <article class="speaking-ticket-stub ${isFeatured ? 'speaking-ticket-featured' : ''}">
                                     <div class="speaking-ticket-edge" aria-hidden="true"></div>
-                                    <div class="speaking-ticket-photo">
-                                        ${firstImage ? `<img src="${firstImage}" alt="${tItem(item, 'title')}">` : ''}
-                                        <span>${String(item.originalIndex + 1).padStart(2, '0')}</span>
+                                    <div class="speaking-ticket-photo speaking-ticket-carousel ${hasCarousel ? 'is-carousel' : ''}" data-ticket-carousel>
+                                        ${images.length ? `
+                                            <div class="speaking-ticket-track">
+                                                ${images.map((image, imageIndex) => `
+                                                    <figure class="speaking-ticket-slide">
+                                                        <img src="${image}" alt="${title} ${imageIndex + 1}">
+                                                    </figure>
+                                                `).join('')}
+                                            </div>
+                                        ` : ''}
+                                        <span class="speaking-ticket-index">${String(item.originalIndex + 1).padStart(2, '0')}</span>
+                                        ${hasCarousel ? `
+                                            <button class="speaking-ticket-nav prev" type="button" data-ticket-prev aria-label="${currentLanguage === 'en' ? 'Previous image' : '上一张图片'}">‹</button>
+                                            <button class="speaking-ticket-nav next" type="button" data-ticket-next aria-label="${currentLanguage === 'en' ? 'Next image' : '下一张图片'}">›</button>
+                                            <div class="speaking-ticket-dots" aria-hidden="true">
+                                                ${images.map((_, imageIndex) => `
+                                                    <button class="speaking-ticket-dot ${imageIndex === 0 ? 'active' : ''}" type="button" data-ticket-slide="${imageIndex}" tabindex="-1"></button>
+                                                `).join('')}
+                                            </div>
+                                            <span class="speaking-ticket-count" data-ticket-count>1 / ${images.length}</span>
+                                        ` : ''}
                                     </div>
                                     <div class="speaking-ticket-copy">
                                         <div class="speaking-ticket-meta">
                                             <span>${eventDate}</span>
                                             <span>${tItem(item, 'type')}</span>
                                         </div>
-                                        <h3>${tItem(item, 'title')}</h3>
+                                        <h3>${title}</h3>
                                         <p>${tItem(item, 'desc')}</p>
                                         <div class="speaking-ticket-tags">
                                             ${(item.tagsEn && currentLanguage === 'en' ? item.tagsEn : tList(item.tags)).map(tag => `<span class="speaking-card-tag">${tag}</span>`).join('')}
@@ -2056,7 +2075,58 @@ function renderSpeakingCards() {
         </div>
     `;
 
+    initSpeakingTicketCarousels(grid);
     observeAnimatedElements(grid);
+}
+
+function initSpeakingTicketCarousels(root = document) {
+    root.querySelectorAll('[data-ticket-carousel]').forEach(carousel => {
+        const track = carousel.querySelector('.speaking-ticket-track');
+        const slides = carousel.querySelectorAll('.speaking-ticket-slide');
+        const dots = carousel.querySelectorAll('.speaking-ticket-dot');
+        const count = carousel.querySelector('[data-ticket-count]');
+        const prevBtn = carousel.querySelector('[data-ticket-prev]');
+        const nextBtn = carousel.querySelector('[data-ticket-next]');
+
+        if (!track || slides.length <= 1) return;
+
+        let currentIndex = 0;
+
+        function updateCarousel(index) {
+            currentIndex = (index + slides.length) % slides.length;
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            dots.forEach((dot, dotIndex) => {
+                dot.classList.toggle('active', dotIndex === currentIndex);
+            });
+            if (count) {
+                count.textContent = `${currentIndex + 1} / ${slides.length}`;
+            }
+        }
+
+        prevBtn?.addEventListener('click', (event) => {
+            event.stopPropagation();
+            updateCarousel(currentIndex - 1);
+        });
+
+        nextBtn?.addEventListener('click', (event) => {
+            event.stopPropagation();
+            updateCarousel(currentIndex + 1);
+        });
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', (event) => {
+                event.stopPropagation();
+                updateCarousel(Number(dot.dataset.ticketSlide || 0));
+            });
+        });
+
+        carousel.addEventListener('click', (event) => {
+            if (event.target.closest('button')) return;
+            updateCarousel(currentIndex + 1);
+        });
+
+        updateCarousel(0);
+    });
 }
 
 function initSpeakingEntryCarousels() {
