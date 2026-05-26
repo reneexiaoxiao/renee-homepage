@@ -216,23 +216,25 @@
         }
 
         .article-figure {
-            margin: 2rem 0 2.4rem;
+            width: 100%;
+            max-width: min(100%, 38rem);
+            margin: 1.65rem auto 2.15rem;
         }
 
         .article-figure img {
             display: block;
             width: 100%;
-            border-radius: calc(var(--radius-lg) + 4px);
-            border: 1px solid rgba(232, 228, 218, 0.85);
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(232, 228, 218, 0.68);
             background: var(--color-card-bg);
-            box-shadow: 0 22px 44px rgba(0, 0, 0, 0.07);
+            box-shadow: 0 12px 26px rgba(0, 0, 0, 0.045);
         }
 
         .article-figure figcaption {
-            max-width: 42rem;
-            margin: 0.85rem auto 0;
+            max-width: 34rem;
+            margin: 0.7rem auto 0;
             color: var(--color-text-light);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             line-height: 1.7;
             text-align: center;
         }
@@ -476,7 +478,7 @@
 
             .article-figure img {
                 border-color: rgba(255, 255, 255, 0.08);
-                box-shadow: 0 22px 44px rgba(0, 0, 0, 0.24);
+                box-shadow: 0 12px 26px rgba(0, 0, 0, 0.2);
             }
 
             .concept-carousel,
@@ -719,7 +721,7 @@
             }
 
             .article-figure {
-                margin: 1.55rem 0 2rem;
+                margin: 1.35rem auto 1.8rem;
             }
 
             .article-figure img {
