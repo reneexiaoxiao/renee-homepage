@@ -1796,6 +1796,23 @@ const speakingGalleryData = [
 
 const thinkingData = [
     {
+        id: 'ai-collaboration-constitution',
+        status: 'live',
+        statusLabel: '在线长文',
+        statusLabelEn: 'Live Essay',
+        title: '在 AI 什么都能做的时代，我给自己立了一部「协作宪法」',
+        titleEn: 'A Collaboration Constitution for the Age of Omnipresent AI',
+        desc: '从“训练我 / 显化我”和“我的浓度”出发，给自己定下什么亲自做、什么交给 AI 的边界。',
+        descEn: 'A personal constitution for deciding what to keep human and what to delegate to AI.',
+        format: '思考长文 / AI 协作',
+        formatEn: 'Long Essay / AI Collaboration',
+        topics: ['协作宪法', '训练我/显化我', 'AI 边界'],
+        topicsEn: ['Collaboration Constitution', 'Training / Manifesting', 'AI Boundary'],
+        href: 'https://renezhang.fun/thoughts/ai-collaboration-constitution/',
+        cta: '阅读全文',
+        ctaEn: 'Read Essay'
+    },
+    {
         id: 'ai-organizational-assets',
         status: 'live',
         statusLabel: '在线长文',

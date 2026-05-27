@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>在 AI 什么都能做的时代，我给自己立了一部「协作宪法」 | Renee Zhang</title>
+    <meta name="description" content="一份关于 AI 时代个人边界、能力训练与人机协作分工的分享版长文。">
+    <link rel="canonical" href="https://renezhang.fun/thoughts/ai-collaboration-constitution/">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="在 AI 什么都能做的时代，我给自己立了一部「协作宪法」">
+    <meta property="og:description" content="从「训练我 / 显化我」和「我的浓度」出发，决定什么亲自做、什么交给 AI。">
+    <meta property="og:url" content="https://renezhang.fun/thoughts/ai-collaboration-constitution/">
+    <meta property="og:image" content="https://renezhang.fun/thoughts/ai-collaboration-constitution/decision-axis.jpg">
+    <meta name="theme-color" content="#F6F2EA">
+    <link rel="preload" href="../../fonts/zhonghuaxinhuo-subset.woff2?v=20260515-font2" as="font" type="font/woff2" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css?v=20260521-curation1">
+    <style>
+        body.article-page {
+            background:
+                linear-gradient(135deg, rgba(246, 242, 234, 0.96), rgba(238, 242, 237, 0.92) 42%, rgba(247, 240, 232, 0.96)),
+                var(--color-bg);
+        }
+
+        .page-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 120;
+            width: 100%;
+            height: 3px;
+            background: transparent;
+        }
+
+        .page-progress-bar {
+            display: block;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(90deg, #b85450, #517c66, #d6a247);
+        }
+
+        .constitution-shell {
+            width: min(1100px, calc(100% - 2rem));
+            margin: 0 auto;
+            padding: calc(var(--nav-height) + 2.2rem) 0 4rem;
+        }
+
+        .constitution-hero {
+            display: grid;
+            grid-template-columns: minmax(0, 1.08fr) minmax(19rem, 0.7fr);
+            gap: clamp(1.6rem, 4vw, 3.4rem);
+            align-items: end;
+            min-height: 58vh;
+            padding: 2.6rem 0 2.2rem;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .article-kicker {
+            color: var(--color-accent);
+            font-family: var(--font-sans);
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 0.85rem;
+        }
+
+        .constitution-title {
+            max-width: 10.6em;
+            margin-bottom: 1rem;
+            font-size: clamp(2.45rem, 6.4vw, 5.1rem);
+            line-height: 1.08;
+            letter-spacing: 0;
+        }
+
+        .constitution-subtitle {
+            max-width: 49rem;
+            color: var(--color-text-muted);
+            font-size: clamp(1rem, 1.45vw, 1.16rem);
+            line-height: 1.78;
+        }
+
+        .article-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.35rem;
+        }
+
+        .article-meta span,
+        .article-pill {
+            display: inline-flex;
+            align-items: center;
+            min-height: 1.9rem;
+            padding: 0.25rem 0.65rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-full);
+            background: rgba(255, 253, 248, 0.68);
+            color: var(--color-text-muted);
+            font-family: var(--font-sans);
+            font-size: 0.78rem;
+        }
+
+        .manifesto-panel {
+            position: relative;
+            padding: 1rem;
+            border: 1px solid rgba(88, 72, 58, 0.16);
+            border-radius: var(--radius-lg);
+            background: rgba(255, 253, 248, 0.72);
+            box-shadow: 0 16px 42px rgba(88, 72, 58, 0.08);
+        }
+
+        .manifesto-panel::before {
+            content: "";
+            position: absolute;
+            inset: 0.62rem;
+            pointer-events: none;
+            border: 1px solid rgba(184, 84, 80, 0.16);
+            border-radius: calc(var(--radius-lg) - 5px);
+        }
+
+        .manifesto-panel h2 {
+            position: relative;
+            margin: 0 0 0.75rem;
+            color: var(--color-text);
+            font-family: var(--font-sans);
+            font-size: 0.82rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .manifesto-word {
+            position: relative;
+            display: block;
+            margin: 0 0 0.75rem;
+            color: var(--color-accent);
+            font-size: clamp(2.35rem, 6vw, 4.15rem);
+            line-height: 0.98;
+        }
+
+        .manifesto-panel p {
+            position: relative;
+            color: var(--color-text-muted);
+            font-size: 0.94rem;
+            line-height: 1.68;
+        }
+
+        .manifesto-rule {
+            position: relative;
+            display: grid;
+            gap: 0.42rem;
+            margin-top: 0.8rem;
+        }
+
+        .manifesto-rule span {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 0.55rem 0.7rem;
+            border-radius: var(--radius-sm);
+            background: rgba(81, 124, 102, 0.1);
+            color: var(--color-text);
+            font-size: 0.86rem;
+        }
+
+        .article-layout {
+            display: grid;
+            grid-template-columns: 15rem minmax(0, 1fr);
+            gap: clamp(1.6rem, 4vw, 3.25rem);
+            margin-top: 2.8rem;
+        }
+
+        .article-toc {
+            position: sticky;
+            top: calc(var(--nav-height) + 1.4rem);
+            align-self: start;
+            padding: 0.8rem 0.85rem;
+            border-left: 2px solid var(--color-border);
+        }
+
+        .article-toc p {
+            margin-bottom: 0.75rem;
+            color: var(--color-text-light);
+            font-family: var(--font-sans);
+            font-size: 0.72rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .article-toc a {
+            display: block;
+            margin-bottom: 0.56rem;
+            color: var(--color-text-muted);
+            font-size: 0.88rem;
+            line-height: 1.42;
+        }
+
+        .article-body {
+            max-width: 740px;
+        }
+
+        .article-lead {
+            margin-bottom: 2.35rem;
+            padding: 1.05rem 1.25rem;
+            border-left: 4px solid var(--color-accent);
+            background: rgba(255, 253, 248, 0.72);
+            color: var(--color-text);
+            font-size: 1.04rem;
+            line-height: 1.8;
+        }
+
+        .article-section {
+            margin: 0 0 3.15rem;
+            scroll-margin-top: calc(var(--nav-height) + 1.5rem);
+        }
+
+        .article-section h2 {
+            display: flex;
+            gap: 0.9rem;
+            align-items: baseline;
+            margin-bottom: 0.95rem;
+            font-size: clamp(1.55rem, 3.3vw, 2.55rem);
+            line-height: 1.2;
+        }
+
+        .article-section h2 span {
+            color: var(--color-accent);
+            font-family: var(--font-sans);
+            font-size: 0.82rem;
+            font-weight: 700;
+        }
+
+        .article-section h3 {
+            margin: 1.45rem 0 0.55rem;
+            font-size: 1.14rem;
+        }
+
+        .article-body p,
+        .article-body li {
+            color: var(--color-text-muted);
+            font-size: 0.98rem;
+            line-height: 1.82;
+        }
+
+        .article-body ul,
+        .article-body ol {
+            display: grid;
+            gap: 0.25rem;
+            margin: 0.75rem 0 1.12rem;
+            padding-left: 1.2rem;
+        }
+
+        .article-body strong {
+            color: var(--color-text);
+            font-weight: 600;
+        }
+
+        .article-quote,
+        .article-callout {
+            margin: 1.4rem 0;
+            padding: 1.08rem 1.22rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            background: rgba(255, 253, 248, 0.66);
+            color: var(--color-text);
+        }
+
+        .article-quote {
+            font-size: 1.06rem;
+            line-height: 1.68;
+            text-align: center;
+        }
+
+        .article-callout p {
+            margin-bottom: 0;
+            color: var(--color-text);
+            font-size: 1.01rem;
+            line-height: 1.68;
+        }
+
+        .article-figure {
+            width: min(100%, 33rem);
+            margin: 1.05rem auto 1.45rem;
+        }
+
+        .article-figure img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border: 1px solid rgba(88, 72, 58, 0.14);
+            border-radius: var(--radius-md);
+            background: rgba(255, 253, 248, 0.7);
+            box-shadow: 0 10px 24px rgba(88, 72, 58, 0.07);
+        }
+
+        .article-figure figcaption {
+            max-width: 32rem;
+            margin: 0.55rem auto 0;
+            color: var(--color-text-light);
+            font-size: 0.78rem;
+            line-height: 1.55;
+            text-align: center;
+        }
+
+        .signal-list {
+            display: grid;
+            gap: 0.62rem;
+            margin: 1rem 0 1.45rem;
+            padding: 0;
+            list-style: none;
+        }
+
+        .signal-list li {
+            padding: 0.82rem 0.9rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            background: rgba(255, 253, 248, 0.58);
+        }
+
+        .axis-map {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.8rem;
+            margin: 1.15rem 0 1.45rem;
+        }
+
+        .axis-card {
+            padding: 0.92rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            background: rgba(255, 253, 248, 0.7);
+        }
+
+        .axis-card b {
+            display: block;
+            margin-bottom: 0.55rem;
+            color: var(--color-text);
+            font-size: 0.98rem;
+        }
+
+        .axis-row {
+            display: grid;
+            gap: 0.42rem;
+        }
+
+        .axis-row span {
+            display: block;
+            padding: 0.54rem 0.68rem;
+            border-radius: var(--radius-sm);
+            background: rgba(81, 124, 102, 0.1);
+            color: var(--color-text-muted);
+            font-size: 0.88rem;
+            line-height: 1.46;
+        }
+
+        .axis-row .warm {
+            background: rgba(184, 84, 80, 0.1);
+        }
+
+        .axis-row .gold {
+            background: rgba(214, 162, 71, 0.14);
+        }
+
+        .article-table {
+            overflow-x: auto;
+            margin: 1.15rem 0 1.55rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            background: rgba(255, 253, 248, 0.7);
+        }
+
+        .article-table table {
+            width: 100%;
+            min-width: 670px;
+            border-collapse: collapse;
+        }
+
+        .article-table th,
+        .article-table td {
+            padding: 0.72rem 0.82rem;
+            border: 1px solid var(--color-border);
+            color: var(--color-text-muted);
+            font-size: 0.89rem;
+            line-height: 1.48;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .article-table th {
+            color: var(--color-text);
+            background: rgba(184, 84, 80, 0.08);
+            font-weight: 600;
+        }
+
+        .tier-label {
+            display: inline-flex;
+            align-items: center;
+            min-height: 1.45rem;
+            padding: 0.14rem 0.46rem;
+            border-radius: var(--radius-sm);
+            color: #fff;
+            font-family: var(--font-sans);
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+
+        .tier-1 { background: #b85450; }
+        .tier-2 { background: #c97842; }
+        .tier-3 { background: #d6a247; }
+        .tier-4 { background: #517c66; }
+        .tier-5 { background: #687078; }
+
+        .tier-stack {
+            display: grid;
+            gap: 0.74rem;
+            margin: 1.12rem 0 1.65rem;
+        }
+
+        .tier-card {
+            padding: 0.92rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            background: rgba(255, 253, 248, 0.7);
+        }
+
+        .tier-card header {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.55rem;
+            align-items: center;
+            margin-bottom: 0.48rem;
+        }
+
+        .tier-card h3 {
+            margin: 0;
+        }
+
+        .tier-card p {
+            margin-bottom: 0.34rem;
+        }
+
+        .tier-card ul {
+            margin-bottom: 0;
+        }
+
+        .warning-note {
+            margin-top: 0.72rem;
+            padding: 0.66rem 0.78rem;
+            border-radius: var(--radius-sm);
+            background: rgba(184, 84, 80, 0.09);
+            color: var(--color-text);
+            font-size: 0.88rem;
+            line-height: 1.58;
+        }
+
+        .drift-map {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 0.58rem;
+            margin: 1.15rem 0 1.45rem;
+        }
+
+        .drift-step {
+            position: relative;
+            min-height: 7rem;
+            padding: 0.82rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            background: rgba(255, 253, 248, 0.68);
+        }
+
+        .drift-step:not(:last-child)::after {
+            content: "→";
+            position: absolute;
+            right: -0.66rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--color-accent);
+            font-family: var(--font-sans);
+            font-weight: 700;
+        }
+
+        .drift-step b {
+            display: block;
+            margin-bottom: 0.32rem;
+            color: var(--color-text);
+        }
+
+        .drift-step p {
+            margin-bottom: 0;
+            font-size: 0.84rem;
+            line-height: 1.48;
+        }
+
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.64rem;
+            margin: 1rem 0 1.45rem;
+        }
+
+        .review-grid div {
+            padding: 0.82rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            background: rgba(81, 124, 102, 0.09);
+        }
+
+        .review-grid b {
+            display: block;
+            margin-bottom: 0.3rem;
+            color: var(--color-text);
+        }
+
+        .review-grid p {
+            margin: 0;
+            font-size: 0.86rem;
+            line-height: 1.52;
+        }
+
+        .decision-flow {
+            counter-reset: step;
+            display: grid;
+            gap: 0.62rem;
+            margin: 1.12rem 0 1.45rem;
+            padding: 0;
+            list-style: none;
+        }
+
+        .decision-flow li {
+            counter-increment: step;
+            display: grid;
+            grid-template-columns: 2.2rem minmax(0, 1fr) auto;
+            gap: 0.7rem;
+            align-items: center;
+            padding: 0.82rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            background: rgba(255, 253, 248, 0.72);
+        }
+
+        .decision-flow li::before {
+            content: counter(step);
+            display: grid;
+            place-items: center;
+            width: 1.9rem;
+            height: 1.9rem;
+            border-radius: 50%;
+            background: var(--color-text);
+            color: var(--color-bg);
+            font-family: var(--font-sans);
+            font-size: 0.78rem;
+            font-weight: 700;
+        }
+
+        .decision-flow b {
+            color: var(--color-text);
+        }
+
+        .decision-flow span {
+            justify-self: end;
+        }
+
+        .two-state {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.8rem;
+            margin: 1.1rem 0 1.45rem;
+        }
+
+        .state-card {
+            padding: 0.92rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            background: rgba(255, 253, 248, 0.7);
+        }
+
+        .state-card b {
+            display: block;
+            margin-bottom: 0.32rem;
+            color: var(--color-text);
+            font-size: 0.98rem;
+        }
+
+        .state-card p {
+            margin-bottom: 0;
+        }
+
+        .model-map {
+            margin: 1.12rem 0 1.45rem;
+            padding: 0.82rem;
+            border: 1px solid var(--color-border);
+            border-radius: calc(var(--radius-lg) + 4px);
+            background: rgba(255, 253, 248, 0.72);
+        }
+
+        .model-core {
+            margin-bottom: 0.78rem;
+            padding: 1rem;
+            border-radius: var(--radius-lg);
+            background: linear-gradient(135deg, rgba(184, 84, 80, 0.13), rgba(81, 124, 102, 0.13));
+            text-align: center;
+        }
+
+        .model-core b {
+            display: block;
+            margin-bottom: 0.28rem;
+            color: var(--color-text);
+            font-size: 1.12rem;
+        }
+
+        .model-core p {
+            margin-bottom: 0;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.62rem;
+        }
+
+        .model-grid div {
+            padding: 0.82rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            background: rgba(255, 253, 248, 0.62);
+        }
+
+        .model-grid b {
+            display: block;
+            margin-bottom: 0.28rem;
+            color: var(--color-text);
+        }
+
+        .model-grid p {
+            margin-bottom: 0;
+            font-size: 0.86rem;
+            line-height: 1.52;
+        }
+
+        .parable-card {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.8rem;
+            margin: 1.08rem 0 1.45rem;
+        }
+
+        .parable-card div {
+            padding: 0.92rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            background: rgba(255, 253, 248, 0.7);
+        }
+
+        .parable-card b {
+            display: block;
+            margin-bottom: 0.32rem;
+            color: var(--color-text);
+        }
+
+        .starter-list {
+            counter-reset: starter;
+            display: grid;
+            gap: 0.66rem;
+            margin: 1.12rem 0 1.45rem;
+            padding: 0;
+            list-style: none;
+        }
+
+        .starter-list li {
+            counter-increment: starter;
+            position: relative;
+            padding: 0.88rem 0.92rem 0.88rem 3rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            background: rgba(255, 253, 248, 0.72);
+        }
+
+        .starter-list li::before {
+            content: counter(starter);
+            position: absolute;
+            left: 0.88rem;
+            top: 0.92rem;
+            display: grid;
+            place-items: center;
+            width: 1.4rem;
+            height: 1.4rem;
+            border-radius: 50%;
+            background: var(--color-accent);
+            color: #fff;
+            font-family: var(--font-sans);
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+
+        .article-footer {
+            margin-top: 2.9rem;
+            padding-top: 1.35rem;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .article-footer p {
+            margin-bottom: 0.32rem;
+            color: var(--color-text-light);
+            font-size: 0.86rem;
+            line-height: 1.55;
+        }
+
+        .article-back {
+            display: inline-flex;
+            align-items: center;
+            min-height: 2.35rem;
+            margin-top: 1rem;
+            padding: 0.45rem 0.85rem;
+            border-radius: var(--radius-full);
+            background: var(--color-text);
+            color: var(--color-bg);
+            font-size: 0.84rem;
+        }
+
+        .article-back:hover {
+            background: var(--color-accent);
+            color: var(--color-bg);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body.article-page {
+                background:
+                    linear-gradient(135deg, rgba(27, 27, 24, 0.98), rgba(25, 34, 30, 0.98) 42%, rgba(34, 29, 25, 0.98)),
+                    var(--color-bg);
+            }
+
+            .article-meta span,
+            .article-pill,
+            .manifesto-panel,
+            .article-lead,
+            .article-quote,
+            .article-callout,
+            .signal-list li,
+            .axis-card,
+            .article-table,
+            .tier-card,
+            .drift-step,
+            .decision-flow li,
+            .state-card,
+            .model-map,
+            .model-grid div,
+            .parable-card div,
+            .starter-list li {
+                background: rgba(37, 36, 32, 0.84);
+            }
+
+            .model-core {
+                background: linear-gradient(135deg, rgba(184, 84, 80, 0.2), rgba(81, 124, 102, 0.22));
+            }
+        }
+
+        @media (max-width: 900px) {
+            html,
+            body.article-page {
+                max-width: 100%;
+                overflow-x: hidden;
+            }
+
+            .constitution-shell {
+                width: calc(100% - 1.25rem);
+                max-width: 780px;
+                padding-top: calc(var(--nav-height) + 0.9rem);
+                overflow-x: clip;
+            }
+
+            .constitution-hero {
+                grid-template-columns: 1fr;
+                min-height: auto;
+                padding: 1.8rem 0;
+                gap: 1rem;
+            }
+
+            .constitution-title {
+                max-width: 100%;
+                font-size: clamp(2.08rem, 11vw, 3.28rem);
+                line-height: 1.12;
+                overflow-wrap: anywhere;
+                word-break: break-word;
+            }
+
+            .constitution-subtitle {
+                font-size: 0.96rem;
+                line-height: 1.76;
+            }
+
+            .article-layout {
+                grid-template-columns: 1fr;
+                margin-top: 1.65rem;
+            }
+
+            .article-toc {
+                position: static;
+                display: flex;
+                gap: 0.8rem;
+                overflow-x: auto;
+                overscroll-behavior-x: contain;
+                scrollbar-width: none;
+                border-left: none;
+                border-bottom: 1px solid var(--color-border);
+                padding: 0 0 0.72rem;
+                max-width: 100%;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .article-toc::-webkit-scrollbar {
+                display: none;
+            }
+
+            .article-toc p {
+                display: none;
+            }
+
+            .article-toc a {
+                flex: 0 0 auto;
+                min-height: 1.95rem;
+                margin-bottom: 0;
+                padding: 0.34rem 0.58rem;
+                border: 1px solid var(--color-border);
+                border-radius: var(--radius-full);
+                background: rgba(255, 253, 248, 0.64);
+                font-size: 0.8rem;
+                line-height: 1.2;
+            }
+
+            .axis-map,
+            .two-state,
+            .model-grid,
+            .parable-card {
+                grid-template-columns: 1fr;
+            }
+
+            .drift-map {
+                grid-template-columns: 1fr;
+            }
+
+            .drift-step {
+                min-height: 0;
+            }
+
+            .drift-step:not(:last-child)::after {
+                content: "↓";
+                right: auto;
+                left: 1.25rem;
+                top: auto;
+                bottom: -0.72rem;
+                transform: none;
+            }
+
+            .review-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .decision-flow li {
+                grid-template-columns: 2.15rem minmax(0, 1fr);
+            }
+
+            .decision-flow span {
+                grid-column: 2;
+                justify-self: start;
+            }
+
+            .article-section h2 {
+                display: block;
+                font-size: clamp(1.48rem, 7vw, 2.08rem);
+                line-height: 1.26;
+            }
+
+            .article-section h2 span {
+                display: block;
+                margin-bottom: 0.38rem;
+            }
+
+            .article-body p,
+            .article-body li {
+                font-size: 0.94rem;
+                line-height: 1.75;
+            }
+        }
+
+        @media (max-width: 540px) {
+            .constitution-shell {
+                width: calc(100% - 1rem);
+                padding-top: calc(var(--nav-height) + 0.75rem);
+                padding-bottom: 2.8rem;
+            }
+
+            .constitution-hero {
+                padding: 1.35rem 0 1.6rem;
+            }
+
+            .article-kicker {
+                font-size: 0.72rem;
+                line-height: 1.45;
+                letter-spacing: 0.07em;
+            }
+
+            .manifesto-word {
+                font-size: clamp(2rem, 14vw, 2.85rem);
+            }
+
+            .manifesto-rule span {
+                display: block;
+            }
+
+            .article-section {
+                margin-bottom: 2.35rem;
+            }
+
+            .article-lead,
+            .article-quote,
+            .article-callout,
+            .article-figure img,
+            .tier-card,
+            .state-card,
+            .model-map,
+            .parable-card div {
+                border-radius: var(--radius-md);
+            }
+
+            .article-table table {
+                min-width: 620px;
+            }
+        }
+    </style>
+</head>
+<body class="article-page">
+    <div class="page-progress" aria-hidden="true">
+        <span class="page-progress-bar" id="pageProgressBar"></span>
+    </div>
+
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="https://renezhang.fun/#hero" class="nav-logo">R</a>
+            <div class="nav-links">
+                <a href="https://renezhang.fun/#about">关于</a>
+                <a href="https://renezhang.fun/#learn-digest">#Learn&amp;Digest</a>
+                <a href="https://renezhang.fun/#thinking">思考手记</a>
+                <a href="https://renezhang.fun/#contact">联系</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="constitution-shell">
+        <header class="constitution-hero">
+            <div>
+                <p class="article-kicker">Field Notes / AI Collaboration</p>
+                <h1 class="constitution-title">在 AI 什么都能做的时代，我给自己立了一部「协作宪法」</h1>
+                <p class="constitution-subtitle">这是我写给自己、也想分享给同样在用 AI 重塑工作和生活的朋友的一篇长文。它不是任务分配表，而是一份关于“我之所以是我”的边界声明。</p>
+                <div class="article-meta">
+                    <span>Renee Zhang</span>
+                    <span>分享版 v1.2</span>
+                    <span>约 12 分钟阅读</span>
+                    <span>AI 协作 / 自我训练 / 人机边界</span>
+                </div>
+            </div>
+            <aside class="manifesto-panel" aria-label="协作宪法摘要">
+                <h2>Constitution</h2>
+                <strong class="manifesto-word">边界</strong>
+                <p>AI 越强，我越需要主动选择：什么自己做，什么让 AI 做。不是为了拒绝效率，而是为了在效率红利里，仍然知道自己是谁。</p>
+                <div class="manifesto-rule">
+                    <span><strong>训练我</strong><em>留给自己</em></span>
+                    <span><strong>显化我</strong><em>让 AI 协助</em></span>
+                    <span><strong>效率税</strong><em>交给 AI</em></span>
+                </div>
+            </aside>
+        </header>
+
+        <div class="article-layout">
+            <aside class="article-toc" aria-label="文章目录">
+                <p>Contents</p>
+                <a href="#origin">缘起</a>
+                <a href="#core">两个问题</a>
+                <a href="#tiers">五档分级</a>
+                <a href="#drift">档位漂移</a>
+                <a href="#flow">30 秒流程</a>
+                <a href="#why">为什么需要</a>
+                <a href="#model">把自己当模型</a>
+                <a href="#human">保持为人</a>
+                <a href="#start">三个起手式</a>
+            </aside>
+
+            <article class="article-body">
+                <section class="article-lead">
+                    原始内部版本叫《岚焱 · AI 协作宪法 — 五档分级 v1》，这里是去掉私人语境后的可分享版。它回答的不是“AI 能不能做”，而是另一件更难的事：这件事交给 AI 之后，我会变得更像自己，还是更远离自己？
+                </section>
+
+                <section class="article-section" id="origin">
+                    <h2><span>01</span>缘起：AI 越强，我越焦虑</h2>
+                    <p>过去一年，我在重度使用 AI：写作、调研、做表、跑代码、做战略选择，几乎每天都在“让 AI 帮我做点什么”。</p>
+                    <p>但慢慢地，我开始觉得不对劲。</p>
+                    <ul class="signal-list">
+                        <li>我发现自己<strong>能喂给 AI 的“我”越来越稀薄</strong>：长文不读完了、深度对话不见了、街也不逛了，脑子里没有真实经验做储备，AI 替我输出的就只能是“平均答案”。</li>
+                        <li>我发现自己<strong>驾驭 AI 的判断力在钝化</strong>：讽刺的是，越依赖 AI 替我思考，我越判断不出“AI 这次给的到底是好是坏”。</li>
+                        <li>我发现自己面对一个决策时，<strong>第一反应不再是“我怎么想”，而是“让 AI 帮我分析一下”</strong>。</li>
+                    </ul>
+                    <p>效率确实提高了。但有些东西，正在悄悄从我身上退化。</p>
+                    <div class="article-quote">在 AI 越来越强的时代，主动选择“什么自己做、什么让 AI 做”，比被动接受效率红利更重要。</div>
+                    <p>这不是反 AI，恰恰相反。正因为 AI 太强了，才需要一份“使用说明书”来约束我自己。</p>
+                    <p>所以我给自己写了一部“AI 协作宪法”。它不是任务分配表，更像是一份<strong>“我之所以是我”的边界声明</strong>。</p>
+                </section>
+
+                <section class="article-section" id="core">
+                    <h2><span>02</span>核心：两个问题就能定档</h2>
+                    <p>我想了很久，最后把判断逻辑收敛成两个问题。这两个问题都不是问“任务在外面长什么样”，而是问“这件事对我意味着什么”。</p>
+                    <div class="axis-map" aria-label="协作宪法两个判断轴">
+                        <div class="axis-card">
+                            <b>问题 1：这件事是在训练我，还是显化我？</b>
+                            <div class="axis-row">
+                                <span class="warm"><strong>训练我</strong>：练手感、长心力、长品味、长判断力，自己做。</span>
+                                <span><strong>显化我</strong>：把脑子里只有我能感知的东西翻译成别人能看到的产物，让 AI 协助。</span>
+                                <span class="gold"><strong>都不是</strong>：纯效率任务，全交给 AI。</span>
+                            </div>
+                        </div>
+                        <div class="axis-card">
+                            <b>问题 2：“我”在产物里的浓度有多高？</b>
+                            <div class="axis-row">
+                                <span class="warm"><strong>极高</strong>：不是我做，做出来就不是我。</span>
+                                <span><strong>高</strong>：产物质量取决于我的判断、品味、风格。</span>
+                                <span class="gold"><strong>中低</strong>：方向是我，执行可委托；或只是纯产物。</span>
+                            </div>
+                        </div>
+                    </div>
+                    <figure class="article-figure">
+                        <img src="decision-axis.jpg" loading="lazy" decoding="async" alt="线条风格的双轴决策图，一侧是阅读、书写和觉察，另一侧是 AI 节点、文档和输出">
+                        <figcaption>一边是训练自己的手感、心力和判断力，一边是借助 AI 把已有的东西显化出来。</figcaption>
+                    </figure>
+                    <p>两个问题叠起来，自然就分出了五档。</p>
+                </section>
+
+                <section class="article-section" id="tiers">
+                    <h2><span>03</span>五档分级</h2>
+                    <div class="article-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>档位</th>
+                                    <th>定位</th>
+                                    <th>一句话理解</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="tier-label tier-1">T1</span></td>
+                                    <td>只有我能做</td>
+                                    <td>这事如果不是我做，做出来还是不是“我”？</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="tier-label tier-2">T2</span></td>
+                                    <td>刻意我做</td>
+                                    <td><strong>训练我</strong>的核心档位，慢和笨拙是练习信号。</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="tier-label tier-3">T3</span></td>
+                                    <td>我主 AI 辅</td>
+                                    <td>我握决策权和品味，AI 当放大器，而不是代笔。</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="tier-label tier-4">T4</span></td>
+                                    <td>AI 主我把关</td>
+                                    <td><strong>显化我</strong>的主战场，方向我给清，AI 跑后我严格 review。</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="tier-label tier-5">T5</span></td>
+                                    <td>全交给 AI</td>
+                                    <td>自己做也不涨手感、不长心力，纯效率税。</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <figure class="article-figure">
+                        <img src="five-tiers.jpg" loading="lazy" decoding="async" alt="线条风格的五级阶梯图，从身份印章、练习书写、审阅放大镜到 AI 流程和自动化">
+                        <figcaption>五档不是能力高低，而是责任、训练价值和委托程度的不同组合。</figcaption>
+                    </figure>
+
+                    <div class="tier-stack">
+                        <section class="tier-card">
+                            <header>
+                                <span class="tier-label tier-1">T1</span>
+                                <h3>只有我能做</h3>
+                            </header>
+                            <p><strong>判断口诀：</strong>如果不是我做，做出来还是不是“我”？</p>
+                            <ul>
+                                <li>身份与价值观：我是谁、我相信什么、我反对什么。</li>
+                                <li>重大决策：离职、入职、关系开始或结束、搬城市。</li>
+                                <li>真实感受：此刻冷不冷、累不累、开不开心。</li>
+                                <li>给重要的人写真心话：道歉、悼念、表白、谢意。</li>
+                                <li>最终按按钮：可以让 AI 列利弊，但 YES / NO 我按。</li>
+                            </ul>
+                            <div class="warning-note">容易漂移的陷阱：情绪上头时让 AI “帮我判断”我现在的状态。这是逃避信号，不是效率信号。</div>
+                        </section>
+
+                        <section class="tier-card">
+                            <header>
+                                <span class="tier-label tier-2">T2</span>
+                                <h3>刻意我做</h3>
+                            </header>
+                            <p><strong>判断口诀：</strong>这件事做的过程，会不会让我“长出点什么”？</p>
+                            <ul>
+                                <li>关键内容的第一遍：长文初稿、演讲提纲、思维导图。</li>
+                                <li>注意力训练：长文阅读不开 AI 摘要、背诵默写、关键算法纸笔推导。</li>
+                                <li>身体与觉察：健身、跑步、冥想、呼吸校准。</li>
+                                <li>创作灵魂位：一首想写的诗、一段真心想发的视频脚本。</li>
+                            </ul>
+                            <div class="warning-note">这一档的本质是反 AI 的肌肉训练。AI 时代最稀缺的能力，往往是那些不用 AI 才能长出来的能力。</div>
+                        </section>
+
+                        <section class="tier-card">
+                            <header>
+                                <span class="tier-label tier-3">T3</span>
+                                <h3>我主 AI 辅</h3>
+                            </header>
+                            <p><strong>判断口诀：</strong>我必须懂、必须负责，但单靠我视野有限、节奏太慢。</p>
+                            <ul>
+                                <li>战略与路径选择：让 AI 列选项、反驳、找漏洞。</li>
+                                <li>关键写作的润色：我先出 v0，AI 当 reviewer，而不是作者。</li>
+                                <li>“私董会”式异步圆桌：召唤不同角色给我多视角输入。</li>
+                                <li>周整合的取舍：AI 给候选，我勾选。</li>
+                            </ul>
+                        </section>
+
+                        <section class="tier-card">
+                            <header>
+                                <span class="tier-label tier-4">T4</span>
+                                <h3>AI 主我把关</h3>
+                            </header>
+                            <p><strong>判断口诀：</strong>方向给清了，AI 做能 ≥ 我，那就让 AI 做。</p>
+                            <ul>
+                                <li>调研、综述、对标分析、行业扫描。</li>
+                                <li>文档 v0、邮件 v0、PPT 大纲、会议要点。</li>
+                                <li>提示词工程：一次写好，跨工具复用。</li>
+                                <li>轻量代码、数据处理、Notion 结构搭建。</li>
+                                <li>信息聚合成单页 brief。</li>
+                            </ul>
+                            <div class="warning-note">这一档最大的陷阱是“把关变成走过场”。我的硬规则是：T4 输出必须至少通读一遍，且改一处。</div>
+                        </section>
+
+                        <section class="tier-card">
+                            <header>
+                                <span class="tier-label tier-5">T5</span>
+                                <h3>全交给 AI</h3>
+                            </header>
+                            <p><strong>判断口诀：</strong>自己做也不涨手感、不长心力、不让产物更好。</p>
+                            <ul>
+                                <li>翻译（非文学）、格式转换、文件批处理。</li>
+                                <li>信息抓取、会议录音转文字、字幕生成。</li>
+                                <li>日程冲突检查、时区协调。</li>
+                                <li>客套类沟通模板。给家人的节日问候不在这一档，那是 T1。</li>
+                            </ul>
+                        </section>
+                    </div>
+                </section>
+
+                <section class="article-section" id="drift">
+                    <h2><span>04</span>一个反直觉的发现：档位会漂移</h2>
+                    <p>做这套体系前，我以为分级是一次性的事。但用了一段时间后我发现：<strong>同一件事在不同阶段会漂移到不同档位</strong>。</p>
+                    <div class="drift-map" aria-label="档位漂移示意图">
+                        <div class="drift-step">
+                            <b>新技能初学</b>
+                            <p>T2 练手感。先让自己慢下来，知道这件事的纹理。</p>
+                        </div>
+                        <div class="drift-step">
+                            <b>熟练之后</b>
+                            <p>T4 让 AI 跑。此时委托不是偷懒，而是放大。</p>
+                        </div>
+                        <div class="drift-step">
+                            <b>手感退化？</b>
+                            <p>如果退化，回升到 T2；如果没有，稳定在 T4。</p>
+                        </div>
+                        <div class="drift-step">
+                            <b>T1 宪法层</b>
+                            <p>不因为 AI 太强而降档。这是底线，不是效率题。</p>
+                        </div>
+                        <div class="drift-step">
+                            <b>季度校准</b>
+                            <p>定期检查：我有没有把训练和真实感受交出去。</p>
+                        </div>
+                    </div>
+                    <p>三条规则我总结出来：</p>
+                    <ol>
+                        <li><strong>学新东西默认从 T2 起步。</strong>先练手感，熟了再下放到 T4。比如学机器学习时手推算法是 T2，工作中跑模型是 T4。</li>
+                        <li><strong>AI 做完发现手感退化的事，回升一档。</strong>发现自己写不出有感觉的文字了，就把“关键文章初稿”从 T4 拉回 T2。</li>
+                        <li><strong>T1 永远不能因为 AI 太强而降档。</strong>这是宪法底线。如果某天我觉得“让 AI 帮我决定吧”，那是逃避信号。</li>
+                    </ol>
+                    <p>所以我每季度都会校准一次，问自己三个问题：</p>
+                    <div class="review-grid">
+                        <div>
+                            <b>手感警报</b>
+                            <p>哪些 T2 的事我连续两周没做？</p>
+                        </div>
+                        <div>
+                            <b>质量警报</b>
+                            <p>哪些 T4 的事我把关松了？</p>
+                        </div>
+                        <div>
+                            <b>逃避警报</b>
+                            <p>哪些事我下意识想从 T1 / T2 降档？</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="article-section" id="flow">
+                    <h2><span>05</span>30 秒决策流程</h2>
+                    <p>每接到一个新任务，我会按这个顺序自问：</p>
+                    <ol class="decision-flow">
+                        <li>
+                            <b>不是我做，做出来还是不是“我”？</b>
+                            <span class="tier-label tier-1">否 → T1</span>
+                        </li>
+                        <li>
+                            <b>这件事是在训练我吗？</b>
+                            <span class="tier-label tier-2">是 → T2</span>
+                        </li>
+                        <li>
+                            <b>我必须懂、必须负责，但单靠我视野有限吗？</b>
+                            <span class="tier-label tier-3">是 → T3</span>
+                        </li>
+                        <li>
+                            <b>方向给清后，AI 做能 ≥ 我吗？</b>
+                            <span class="tier-label tier-4">是 → T4</span>
+                        </li>
+                        <li>
+                            <b>自己做也不涨手感、不长心力、不让产物更好吗？</b>
+                            <span class="tier-label tier-5">是 → T5</span>
+                        </li>
+                    </ol>
+                    <p>练熟之后，30 秒就能判断“这事我该 T 几”。</p>
+                </section>
+
+                <section class="article-section" id="why">
+                    <h2><span>06</span>为什么我觉得每个人都需要一份</h2>
+                    <p>我观察周围重度用 AI 的朋友，大概分两种状态：</p>
+                    <div class="two-state">
+                        <div class="state-card">
+                            <b>都丢给 AI 派</b>
+                            <p>能让 AI 做的全都让 AI 做，效率拉满，但慢慢变得没有自己的味道。</p>
+                        </div>
+                        <div class="state-card">
+                            <b>死磕自己派</b>
+                            <p>固执地什么都自己来，对 AI 警惕到不愿意用，结果被时代节奏甩开。</p>
+                        </div>
+                    </div>
+                    <p>这两种都不健康。真正的问题不是“用不用 AI”，而是：</p>
+                    <div class="article-callout">
+                        <p><strong>哪些事 AI 做完之后，我会变得更像我自己？哪些事 AI 做完之后，我会一点点失去我自己？</strong></p>
+                    </div>
+                    <p>这个问题没有标准答案，每个人的清单都不一样。但你必须给自己一个答案，而不是默认让算法和习惯替你回答。</p>
+                    <p>这就是“AI 协作宪法”的意义：它不是反 AI 的；它不是为了限制效率；它是为了在效率红利面前，<strong>还能记得自己是谁</strong>。</p>
+                </section>
+
+                <section class="article-section" id="model">
+                    <h2><span>07</span>更深一层：把自己当作那个大模型</h2>
+                    <p>你可能在第二节有点疑惑：为什么要用“训练我 / 显化我”“我的浓度”这种说法？这背后藏着一个比“自己做 vs AI 做”更底层的觉察。</p>
+                    <p><strong>未来“会用 AI”会越来越廉价。</strong></p>
+                    <p>现在让 AI 写一篇还行的文章、做一份还行的调研、跑一段还行的代码，已经是几乎人人都能做到的事。当一项能力人人都有，它的市场价格就会逼近零。所以靠“压榨 AI 价值”赚到的红利，会随着模型变强而越来越薄。</p>
+                    <p>那什么不会廉价？</p>
+                    <div class="model-map" aria-label="把自己当作大模型的信息图">
+                        <div class="model-core">
+                            <b>你才是那个最值得训练的大模型</b>
+                            <p>AI 只是训练你、显化你的基础设施。</p>
+                        </div>
+                        <div class="model-grid">
+                            <div>
+                                <b>训练数据</b>
+                                <p>生活经验、阅读、思考、品味、关系。让你接触真实世界的事，都在变得更值钱。</p>
+                            </div>
+                            <div>
+                                <b>模型权重</b>
+                                <p>风格、价值观、判断力。这些只能靠你自己长出来，AI 没法替你训练。</p>
+                            </div>
+                            <div>
+                                <b>显化设施</b>
+                                <p>AI 的真正用法不是替代你，而是把你独有的洞察翻译成别人能看到的产物。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <figure class="article-figure">
+                        <img src="self-model-loop.jpg" loading="lazy" decoding="async" alt="线条风格的反馈循环图，中央是种子形模型，周围连接经验、判断和 AI 输出">
+                        <figcaption>把自己当作那个需要持续训练的模型：经验是数据，价值观是权重，AI 是显化设施。</figcaption>
+                    </figure>
+                    <p>回看五档体系你会发现：T1 和 T2 之所以最重要，不是因为它们效率高，而是因为它们在<strong>喂养你这个模型</strong>。</p>
+                    <div class="article-quote">T3 / T4 / T5 让你这个模型被“显化”；T1 / T2 让你这个模型变得“值得显化”。</div>
+                </section>
+
+                <section class="article-section" id="human">
+                    <h2><span>08</span>一个意外的呼应：巴别塔与尼希米之路</h2>
+                    <p>写完这部宪法没多久，我读到 Vatican 官网发布的教宗良十四世通谕 <a href="https://www.vatican.va/content/leo-xiv/en/encyclicals/documents/20260515-magnifica-humanitas.html" target="_blank" rel="noopener">《Magnifica Humanitas》</a>（2026 年 5 月 15 日，副标题是“On Safeguarding the Human Person in the Time of Artificial Intelligence”）。真正打动我的不是“权威说了什么”，而是它在开篇提出的两个隐喻。</p>
+                    <div class="parable-card">
+                        <div>
+                            <b>巴别塔综合症</b>
+                            <p>用一种语言、一种技术、一个方向追求自我膨胀，把人简化为数据和绩效。结果不是统一，而是分裂和失语。</p>
+                        </div>
+                        <div>
+                            <b>尼希米之路</b>
+                            <p>不靠一个人独断，而是召集不同的人扮演不同角色，先重建关系，再重建城墙。工程的中心始终是人，而不是砖。</p>
+                        </div>
+                    </div>
+                    <p>它在第 4 节里说，人类从未对自身拥有如此大的权力；第 7 到 10 节把这个问题展开成“建巴别塔，还是重建耶路撒冷”的选择；结尾又把 AI 时代的当务之急落在一句话上：<strong>深深地保持为人</strong>。</p>
+                    <p>这种权力既可以用来建巴别塔，让 AI 替我们做所有事，包括“做我们自己”；也可以用来重建耶路撒冷，让 AI 协助我们更深地活成自己。</p>
+                    <p>我不是在为宗教立场写注脚，我只是发现：这句话和我那条 T1 红线说的几乎是一件事。<strong>有些事让 AI 做完之后，做出来就不是我了。</strong></p>
+                    <p>所以这部宪法，本质上是我自己的“反巴别塔指南”：不是拒绝技术，而是拒绝被技术简化为数据和绩效；不是回避协作，而是把协作的中心，始终放在人，而不是模型权重。</p>
+                </section>
+
+                <section class="article-section" id="start">
+                    <h2><span>09</span>写给你的三个起手式</h2>
+                    <p>如果你也想给自己写一份，不必从五档开始。我建议从最小可行版本开始：</p>
+                    <ol class="starter-list">
+                        <li><strong>先列出你的 T1 清单。</strong>3 件事就够：这 3 件事，无论 AI 多强，我都不交出去。</li>
+                        <li><strong>再列出你的 T2 清单。</strong>3 件事就够：这 3 件事，哪怕 AI 做更快，我也要自己慢慢做，因为过程本身在塑造我。</li>
+                        <li><strong>其他事先不管。</strong>让它们自然漂移到 T3 / T4 / T5。一个月后回头看，会发现自己的边界已经清晰了一大半。</li>
+                    </ol>
+                    <p>剩下的，交给时间和复盘。</p>
+                    <div class="article-callout">
+                        <p><strong>最后想说的一句：</strong>AI 时代最贵的不是会用 AI 的人，而是知道自己是谁、值得被 AI 显化什么的人。</p>
+                    </div>
+                    <p>愿你也能在效率红利里，深深地保持为人。也欢迎你写完自己的版本来交换。</p>
+                </section>
+
+                <footer class="article-footer">
+                    <p>作者：张岚焱（Renee）</p>
+                    <p>版本：分享版 v1.2（判断双轴重构为“训练我 / 显化我”+“我的浓度”，对齐底层视角）</p>
+                    <p>原始内部版本：《岚焱 · AI 协作宪法 — 五档分级 v1》</p>
+                    <a class="article-back" href="https://renezhang.fun/#thinking">返回思考手记</a>
+                </footer>
+            </article>
+        </div>
+    </main>
+
+    <script>
+        const progressBar = document.getElementById('pageProgressBar');
+
+        function updateProgress() {
+            const scrollTop = window.scrollY || document.documentElement.scrollTop;
+            const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = pageHeight > 0 ? Math.min(100, (scrollTop / pageHeight) * 100) : 0;
+            progressBar.style.width = `${progress}%`;
+        }
+
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+    </script>
+</body>
+</html>
