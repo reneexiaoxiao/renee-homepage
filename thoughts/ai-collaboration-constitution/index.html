@@ -78,6 +78,7 @@
         .constitution-subtitle {
             max-width: 49rem;
             color: var(--color-text-muted);
+            font-family: "Noto Serif SC", var(--font-serif);
             font-size: clamp(1rem, 1.45vw, 1.16rem);
             line-height: 1.78;
         }
@@ -143,6 +144,7 @@
         .manifesto-panel p {
             position: relative;
             color: var(--color-text-muted);
+            font-family: "Noto Serif SC", var(--font-serif);
             font-size: 0.94rem;
             line-height: 1.68;
         }
@@ -199,6 +201,7 @@
 
         .article-body {
             max-width: 740px;
+            font-family: "Noto Serif SC", var(--font-serif);
         }
 
         .article-lead {
@@ -747,6 +750,7 @@
             .state-card,
             .model-map,
             .model-grid div,
+            .article-table tr,
             .parable-card div,
             .starter-list li {
                 background: rgba(37, 36, 32, 0.84);
@@ -765,8 +769,9 @@
             }
 
             .constitution-shell {
-                width: calc(100% - 1.25rem);
+                width: min(100%, 46rem);
                 max-width: 780px;
+                padding-inline: 0.95rem;
                 padding-top: calc(var(--nav-height) + 0.9rem);
                 overflow-x: clip;
             }
@@ -793,19 +798,20 @@
 
             .article-layout {
                 grid-template-columns: 1fr;
-                margin-top: 1.65rem;
+                margin-top: 1.35rem;
             }
 
             .article-toc {
                 position: static;
                 display: flex;
-                gap: 0.8rem;
+                gap: 0.45rem;
+                margin-inline: -0.95rem;
                 overflow-x: auto;
                 overscroll-behavior-x: contain;
                 scrollbar-width: none;
                 border-left: none;
                 border-bottom: 1px solid var(--color-border);
-                padding: 0 0 0.72rem;
+                padding: 0 0.95rem 0.72rem;
                 max-width: 100%;
                 -webkit-overflow-scrolling: touch;
             }
@@ -822,11 +828,11 @@
                 flex: 0 0 auto;
                 min-height: 1.95rem;
                 margin-bottom: 0;
-                padding: 0.34rem 0.58rem;
+                padding: 0.32rem 0.54rem;
                 border: 1px solid var(--color-border);
                 border-radius: var(--radius-full);
                 background: rgba(255, 253, 248, 0.64);
-                font-size: 0.8rem;
+                font-size: 0.78rem;
                 line-height: 1.2;
             }
 
@@ -880,38 +886,264 @@
 
             .article-body p,
             .article-body li {
-                font-size: 0.94rem;
-                line-height: 1.75;
+                font-size: 0.96rem;
+                line-height: 1.76;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .constitution-hero {
+                border-bottom: none;
+            }
+
+            .manifesto-panel {
+                padding: 0.82rem 0.9rem;
+                border-radius: var(--radius-md);
+                border-left: 3px solid var(--color-accent);
+                box-shadow: none;
+            }
+
+            .manifesto-panel::before,
+            .manifesto-panel h2,
+            .manifesto-word {
+                display: none;
+            }
+
+            .manifesto-panel p {
+                margin-bottom: 0.65rem;
+                font-size: 0.88rem;
+                line-height: 1.58;
+            }
+
+            .manifesto-rule {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 0.35rem;
+                margin-top: 0;
+            }
+
+            .manifesto-rule span {
+                display: block;
+                padding: 0.46rem 0.35rem;
+                font-size: 0.76rem;
+                line-height: 1.25;
+                text-align: center;
+            }
+
+            .manifesto-rule em {
+                display: block;
+                margin-top: 0.12rem;
+                color: var(--color-text-muted);
+                font-size: 0.72rem;
+                font-style: normal;
+            }
+
+            .article-table {
+                overflow: visible;
+                border: none;
+                background: transparent;
+            }
+
+            .article-table table,
+            .article-table thead,
+            .article-table tbody,
+            .article-table tr,
+            .article-table td {
+                display: block;
+                width: 100%;
+                min-width: 0;
+            }
+
+            .article-table thead {
+                display: none;
+            }
+
+            .article-table tr {
+                display: grid;
+                grid-template-columns: auto minmax(0, 1fr);
+                gap: 0.38rem 0.55rem;
+                margin-bottom: 0.58rem;
+                padding: 0.75rem 0.82rem;
+                border: 1px solid var(--color-border);
+                border-radius: var(--radius-md);
+                background: rgba(255, 253, 248, 0.72);
+            }
+
+            .article-table td {
+                padding: 0;
+                border: none;
+                font-size: 0.88rem;
+                line-height: 1.45;
+            }
+
+            .article-table td:nth-child(1) {
+                align-self: start;
+            }
+
+            .article-table td:nth-child(2) {
+                color: var(--color-text);
+                font-weight: 600;
+            }
+
+            .article-table td:nth-child(3) {
+                grid-column: 1 / -1;
+                padding-top: 0.14rem;
+            }
+
+            .tier-stack {
+                gap: 0.62rem;
+            }
+
+            .tier-card {
+                padding: 0.82rem;
+            }
+
+            .tier-card li {
+                line-height: 1.62;
+            }
+
+            .article-figure {
+                width: 100%;
+                margin: 0.92rem auto 1.18rem;
             }
         }
 
         @media (max-width: 540px) {
             .constitution-shell {
-                width: calc(100% - 1rem);
-                padding-top: calc(var(--nav-height) + 0.75rem);
+                width: 100%;
+                padding-inline: 0.82rem;
+                padding-top: calc(var(--nav-height) + 0.55rem);
                 padding-bottom: 2.8rem;
             }
 
             .constitution-hero {
-                padding: 1.35rem 0 1.6rem;
+                padding: 1rem 0 1.2rem;
+                gap: 0.82rem;
             }
 
             .article-kicker {
-                font-size: 0.72rem;
-                line-height: 1.45;
+                margin-bottom: 0.5rem;
+                font-size: 0.68rem;
+                line-height: 1.35;
                 letter-spacing: 0.07em;
             }
 
-            .manifesto-word {
-                font-size: clamp(2rem, 14vw, 2.85rem);
+            .constitution-title {
+                margin-bottom: 0.72rem;
+                font-size: clamp(1.58rem, 8.35vw, 2.18rem);
+                line-height: 1.18;
+            }
+
+            .constitution-subtitle {
+                font-size: 0.92rem;
+                line-height: 1.66;
+            }
+
+            .article-meta {
+                gap: 0.36rem;
+                margin-top: 0.9rem;
+            }
+
+            .article-meta span {
+                min-height: 1.72rem;
+                padding: 0.22rem 0.52rem;
+                font-size: 0.72rem;
+            }
+
+            .article-meta span:nth-child(4) {
+                display: none;
+            }
+
+            .manifesto-panel {
+                padding: 0.68rem 0.74rem;
+            }
+
+            .manifesto-panel p {
+                display: none;
+            }
+
+            .manifesto-rule {
+                gap: 0.28rem;
             }
 
             .manifesto-rule span {
-                display: block;
+                padding: 0.4rem 0.28rem;
+            }
+
+            .article-layout {
+                margin-top: 1rem;
+            }
+
+            .article-toc {
+                margin-inline: -0.82rem;
+                padding: 0 0.82rem 0.62rem;
             }
 
             .article-section {
-                margin-bottom: 2.35rem;
+                margin-bottom: 2rem;
+            }
+
+            .article-section h2 {
+                margin-bottom: 0.72rem;
+                font-size: clamp(1.34rem, 6.5vw, 1.82rem);
+            }
+
+            .article-section h2 span {
+                margin-bottom: 0.28rem;
+            }
+
+            .article-lead {
+                margin-bottom: 1.6rem;
+                padding: 0.85rem 0.95rem;
+                font-size: 0.95rem;
+                line-height: 1.68;
+            }
+
+            .article-body p,
+            .article-body li {
+                font-size: 0.94rem;
+                line-height: 1.72;
+            }
+
+            .article-body ul,
+            .article-body ol {
+                margin: 0.62rem 0 0.9rem;
+            }
+
+            .article-quote,
+            .article-callout {
+                margin: 1.05rem 0;
+                padding: 0.88rem 0.95rem;
+            }
+
+            .article-quote,
+            .article-callout p {
+                font-size: 0.96rem;
+                line-height: 1.58;
+            }
+
+            .signal-list,
+            .axis-map,
+            .two-state,
+            .model-map,
+            .parable-card,
+            .starter-list,
+            .decision-flow,
+            .review-grid,
+            .drift-map {
+                margin-top: 0.82rem;
+                margin-bottom: 1rem;
+            }
+
+            .axis-card,
+            .state-card,
+            .model-grid div,
+            .parable-card div,
+            .starter-list li,
+            .decision-flow li,
+            .review-grid div,
+            .drift-step,
+            .signal-list li {
+                padding: 0.72rem 0.76rem;
             }
 
             .article-lead,
@@ -926,7 +1158,12 @@
             }
 
             .article-table table {
-                min-width: 620px;
+                min-width: 0;
+            }
+
+            .article-back {
+                width: 100%;
+                justify-content: center;
             }
         }
     </style>
