@@ -4919,6 +4919,1032 @@ ul {
     }
 }
 
+/* ===== Mobile Section Pager ===== */
+@media (max-width: 768px) and (orientation: portrait) {
+    html,
+    body {
+        width: 100%;
+        height: 100svh;
+        min-height: 100svh;
+        overflow: hidden;
+        overscroll-behavior: none;
+    }
+
+    html {
+        scroll-snap-type: none;
+    }
+
+    body {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        background-attachment: fixed;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+        scroll-padding-left: 0;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+    .page-progress {
+        top: auto;
+        bottom: 0;
+        height: 4px;
+        z-index: 1500;
+    }
+
+    .nav {
+        height: var(--nav-height);
+        background: rgba(245, 241, 232, 0.82);
+    }
+
+    .nav-content {
+        height: 100%;
+        padding: 0 0.7rem;
+        gap: 0.45rem;
+    }
+
+    .nav-logo {
+        width: 2.35rem;
+        height: 2.35rem;
+        font-size: 1.05rem;
+    }
+
+    .nav-links {
+        position: static;
+        order: initial;
+        padding: 0;
+        gap: 0.34rem;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        mask-image: linear-gradient(90deg, #000 calc(100% - 1.1rem), transparent);
+    }
+
+    .nav-links a {
+        min-height: 2rem;
+        padding: 0.38rem 0.66rem;
+        border-color: transparent;
+        background: transparent;
+        font-size: 0.74rem;
+    }
+
+    .language-toggle {
+        flex: 0 0 auto;
+    }
+
+    body > .snap-section {
+        flex: 0 0 100vw;
+        width: 100vw;
+        max-width: 100vw;
+        height: 100svh;
+        min-height: 100svh;
+        max-height: 100svh;
+        overflow: hidden;
+        padding: calc(var(--nav-height) + 0.72rem) 0 calc(2.8rem + env(safe-area-inset-bottom));
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+    }
+
+    .hero {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: calc(2.8rem + env(safe-area-inset-bottom));
+    }
+
+    .hero-content {
+        width: min(100%, 23rem);
+        gap: 0.75rem;
+    }
+
+    .hero-avatar {
+        margin-bottom: 0.35rem;
+    }
+
+    .hero-avatar img {
+        width: 88px;
+        height: 88px;
+    }
+
+    .hero-title {
+        font-size: clamp(1.7rem, 8vw, 2.2rem);
+    }
+
+    .hero-positioning,
+    .hero-quote {
+        line-height: 1.58;
+    }
+
+    .hero-quote {
+        max-width: 22rem;
+        margin-bottom: 0.3rem;
+        font-size: 0.9rem;
+    }
+
+    .hero-credentials {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.25rem 0.4rem;
+        font-size: 0.76rem;
+    }
+
+    .hero-actions {
+        gap: 0.55rem;
+    }
+
+    .hero-story-link {
+        min-height: 2.65rem;
+        padding: 0.65rem 0.95rem;
+        font-size: 0.86rem;
+    }
+
+    .hero-scroll {
+        display: none;
+    }
+
+    body > .snap-section > .container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        min-height: 0;
+        overflow: hidden;
+        padding: 0 0.9rem;
+    }
+
+    .section-header {
+        flex: 0 0 auto;
+        margin-bottom: 0.68rem;
+    }
+
+    .section-title {
+        font-size: clamp(1.45rem, 7vw, 1.9rem);
+        line-height: 1.16;
+    }
+
+    .section-subtitle {
+        margin-bottom: 0.25rem;
+        font-size: 0.68rem;
+        letter-spacing: 0.14em;
+    }
+
+    .about-content,
+    .career-stage,
+    .digest-stage,
+    .speaking-stage,
+    .thinking-stage,
+    .contact-stage,
+    .story-epilogue-stage {
+        flex: 1 1 auto;
+        min-height: 0;
+        height: auto;
+        overflow: hidden;
+        border-radius: 22px;
+        gap: 0.68rem;
+    }
+
+    .about-content {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: minmax(0, 1fr) auto;
+        align-content: stretch;
+        align-items: stretch;
+    }
+
+    .about-text {
+        display: flex;
+        align-items: stretch;
+        gap: 0.72rem;
+        min-height: 0;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .about-text::-webkit-scrollbar,
+    .about-tags::-webkit-scrollbar,
+    .career-steps::-webkit-scrollbar,
+    .digest-rail-track::-webkit-scrollbar,
+    .speaking-timeline::-webkit-scrollbar,
+    .speaking-ticket-stack::-webkit-scrollbar,
+    .thinking-stage-content::-webkit-scrollbar,
+    .thinking-grid::-webkit-scrollbar,
+    .projects-grid::-webkit-scrollbar,
+    .contact-qr-grid::-webkit-scrollbar,
+    .storyboard-rail::-webkit-scrollbar {
+        display: none;
+    }
+
+    .about-text p {
+        flex: 0 0 min(82vw, 22rem);
+        min-width: 0;
+        min-height: 100%;
+        max-height: 100%;
+        margin: 0;
+        padding: 0.95rem;
+        border: 1px solid rgba(26, 25, 21, 0.08);
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.5);
+        color: var(--color-text-muted);
+        font-size: 0.94rem;
+        line-height: 1.64;
+        scroll-snap-align: start;
+        overflow-y: auto;
+    }
+
+    .about-text strong {
+        color: var(--color-text);
+    }
+
+    .about-tags {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        gap: 0.62rem;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-bottom: 0.05rem;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .tag-cloud,
+    .personality-tags,
+    .hobbies {
+        flex: 0 0 min(82vw, 22rem);
+        align-content: start;
+    }
+
+    .tag-cloud,
+    .personality-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+    }
+
+    .tag,
+    .personality-tag {
+        font-size: 0.76rem;
+        line-height: 1.25;
+    }
+
+    .hobbies {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.45rem;
+    }
+
+    .hobby-item {
+        min-height: 4.1rem;
+        padding: 0.55rem;
+        font-size: 0.78rem;
+    }
+
+    .hobby-icon {
+        font-size: 1.18rem;
+    }
+
+    .career-stage {
+        display: grid;
+        grid-template-rows: auto minmax(0, 1fr);
+        padding: 0.68rem;
+    }
+
+    .career-panel {
+        height: auto;
+        min-height: 0;
+        justify-content: flex-start;
+        padding: 0.9rem;
+        border-radius: 18px;
+        gap: 0.7rem;
+    }
+
+    .career-panel-head {
+        align-items: flex-start;
+    }
+
+    .career-panel-title {
+        font-size: clamp(1.08rem, 5.1vw, 1.35rem);
+        line-height: 1.2;
+    }
+
+    .career-panel-label {
+        display: none;
+    }
+
+    .career-panel-desc,
+    .career-panel-tags {
+        display: none;
+    }
+
+    .career-panel-metrics {
+        gap: 0.45rem;
+    }
+
+    .career-panel-metric {
+        min-width: 0;
+        padding: 0.58rem;
+        border-radius: 14px;
+    }
+
+    .career-panel-metric-value {
+        font-size: 1.04rem;
+    }
+
+    .career-panel-metric-label {
+        font-size: 0.7rem;
+        line-height: 1.25;
+    }
+
+    .career-steps {
+        display: flex;
+        gap: 0.72rem;
+        min-height: 0;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 0;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .career-step {
+        position: relative;
+        flex: 0 0 min(84vw, 23rem);
+        display: block;
+        min-height: 0;
+        max-height: 100%;
+        padding: 0.95rem;
+        overflow-y: auto;
+        scroll-snap-align: start;
+        opacity: 1;
+        transform: none;
+    }
+
+    .career-step-index {
+        position: absolute;
+        top: 0.78rem;
+        right: 0.78rem;
+        width: 2.2rem;
+        height: 2.2rem;
+        font-size: 0.82rem;
+    }
+
+    .career-step-card {
+        gap: 0.72rem;
+        padding-right: 2.25rem;
+    }
+
+    .career-step-card h3 {
+        font-size: 1.05rem;
+        line-height: 1.35;
+    }
+
+    .career-step-card p,
+    .career-step-point p {
+        font-size: 0.84rem;
+        line-height: 1.55;
+    }
+
+    .career-step-points {
+        grid-template-columns: 1fr;
+        gap: 0.55rem;
+    }
+
+    .career-step-point {
+        padding: 0.68rem;
+        border-radius: 14px;
+    }
+
+    .digest-stage,
+    .thinking-stage {
+        display: grid;
+        grid-template-rows: auto minmax(0, 1fr);
+        padding: 0.68rem;
+    }
+
+    .digest-sidebar,
+    .thinking-manifesto,
+    .contact-copy {
+        padding: 0.85rem;
+        border-radius: 18px;
+    }
+
+    .digest-sidebar {
+        justify-content: flex-start;
+        gap: 0.55rem;
+    }
+
+    .digest-quote {
+        margin: 0;
+        font-size: 0.98rem;
+        line-height: 1.56;
+    }
+
+    .digest-cta {
+        gap: 0.5rem;
+    }
+
+    .digest-mission,
+    .digest-migration-note p {
+        font-size: 0.8rem;
+        line-height: 1.45;
+    }
+
+    .digest-migration-note {
+        display: none;
+    }
+
+    .digest-stage-content,
+    .thinking-stage-content {
+        min-height: 0;
+        padding: 0;
+        overflow: hidden;
+        scroll-snap-type: none;
+    }
+
+    .stage-chapter {
+        min-height: 0;
+        padding: 0.82rem;
+        border-radius: 18px;
+    }
+
+    .digest-stage-content .digest-chapter:first-child,
+    .thinking-stage-content .thinking-chapter:first-child {
+        display: none;
+    }
+
+    .digest-chapter-gallery,
+    .thinking-chapter-grid {
+        height: 100%;
+    }
+
+    .digest-chapter-title {
+        white-space: normal;
+    }
+
+    .digest-filters {
+        flex: 0 0 auto;
+        gap: 0.42rem;
+        margin-bottom: 0.45rem;
+        padding-bottom: 0.05rem;
+    }
+
+    .filter-btn {
+        min-height: 2rem;
+        padding: 0.42rem 0.68rem;
+        font-size: 0.72rem;
+    }
+
+    .digest-gallery,
+    .digest-rail-shell {
+        height: 100%;
+        min-height: 0;
+    }
+
+    .digest-rail-header {
+        display: none;
+    }
+
+    .digest-rail-track {
+        height: 100%;
+        gap: 0.72rem;
+        padding: 0;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+    }
+
+    .digest-card,
+    .digest-rail-card,
+    .digest-rail-card:nth-child(even) {
+        flex: 0 0 min(78vw, 20rem);
+        max-height: 100%;
+        overflow-y: auto;
+        transform: none;
+    }
+
+    .digest-card-cover {
+        flex: 0 0 auto;
+        aspect-ratio: 4 / 3;
+    }
+
+    .digest-card-content {
+        padding: 0.82rem;
+    }
+
+    .digest-card-title {
+        font-size: 0.95rem;
+        line-height: 1.42;
+    }
+
+    .speaking-stage {
+        display: grid;
+        grid-template-rows: auto minmax(0, 1fr);
+        padding: 0.68rem;
+    }
+
+    .speaking-intro-panel,
+    .speaking-timeline-stage {
+        padding: 0.82rem;
+        border-radius: 18px;
+    }
+
+    .speaking-intro {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
+    }
+
+    .speaking-inline-summary {
+        font-size: 0.88rem;
+        line-height: 1.52;
+    }
+
+    .speaking-stats {
+        display: flex;
+        gap: 0.5rem;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .speaking-stat {
+        flex: 0 0 9.2rem;
+        min-height: 4rem;
+        padding: 0.58rem;
+        border-radius: 14px;
+    }
+
+    .speaking-stat-value {
+        font-size: 0.9rem;
+    }
+
+    .speaking-stat-label {
+        font-size: 0.69rem;
+    }
+
+    .speaking-timeline-stage {
+        min-height: 0;
+    }
+
+    .speaking-timeline {
+        height: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 0;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+    }
+
+    .speaking-ticket-archive {
+        flex-direction: row;
+        align-items: stretch;
+        height: 100%;
+        gap: 0.72rem;
+    }
+
+    .speaking-ticket-intro,
+    .speaking-ticket-year-rail {
+        flex: 0 0 min(86vw, 23rem);
+        width: min(86vw, 23rem);
+        max-height: 100%;
+        scroll-snap-align: start;
+    }
+
+    .speaking-ticket-intro {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow-y: auto;
+    }
+
+    .speaking-ticket-year-rail {
+        display: grid;
+        grid-template-rows: auto minmax(0, 1fr);
+        gap: 0.55rem;
+    }
+
+    .speaking-ticket-year {
+        position: relative;
+        top: auto;
+        padding: 0.2rem 0.1rem 0;
+    }
+
+    .speaking-ticket-year h3 {
+        font-size: 1.28rem;
+    }
+
+    .speaking-ticket-stack {
+        display: flex;
+        gap: 0.72rem;
+        min-height: 0;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 0 0 0.05rem;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+    }
+
+    .speaking-ticket-stub,
+    .speaking-ticket-stub:nth-child(2n),
+    .speaking-ticket-stub:nth-child(2n + 1),
+    .speaking-ticket-stub:nth-child(n + 3),
+    .speaking-ticket-stub:nth-child(3n),
+    .speaking-ticket-stub:nth-child(4n) {
+        flex: 0 0 min(78vw, 20rem);
+        display: grid;
+        grid-template-columns: 1fr;
+        max-width: none;
+        min-height: 0;
+        max-height: 100%;
+        margin: 0;
+        padding: 0.72rem;
+        transform: none;
+        overflow-y: auto;
+        scroll-snap-align: start;
+    }
+
+    .speaking-ticket-photo {
+        min-height: 0;
+        aspect-ratio: 16 / 10;
+    }
+
+    .speaking-ticket-copy {
+        gap: 0.55rem;
+    }
+
+    .speaking-ticket-copy h3 {
+        font-size: 0.98rem;
+        line-height: 1.35;
+    }
+
+    .speaking-ticket-copy p {
+        font-size: 0.78rem;
+        line-height: 1.5;
+    }
+
+    .speaking-ticket-tags {
+        gap: 0.35rem;
+    }
+
+    .speaking-card-tag {
+        padding: 0.28rem 0.5rem;
+        font-size: 0.66rem;
+    }
+
+    .speaking-ticket-action {
+        padding-top: 0.55rem;
+    }
+
+    .thinking-manifesto {
+        justify-content: flex-start;
+    }
+
+    .thinking-kicker {
+        font-size: 0.7rem;
+        letter-spacing: 0.14em;
+    }
+
+    .thinking-title {
+        font-size: 1.12rem;
+        line-height: 1.32;
+    }
+
+    .thinking-desc {
+        margin-bottom: 0;
+        font-size: 0.84rem;
+        line-height: 1.5;
+    }
+
+    .thinking-formats {
+        margin: 0.65rem 0 0;
+        gap: 0.35rem;
+    }
+
+    .thinking-formats span {
+        font-size: 0.68rem;
+        padding: 0.28rem 0.52rem;
+    }
+
+    .thinking-prompts {
+        display: none;
+    }
+
+    .thinking-grid {
+        display: flex;
+        gap: 0.72rem;
+        height: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+    }
+
+    .thinking-card {
+        flex: 0 0 min(82vw, 21.5rem);
+        min-height: 0;
+        max-height: 100%;
+        overflow-y: auto;
+        padding: 0.95rem;
+        scroll-snap-align: start;
+    }
+
+    .thinking-card-title {
+        font-size: 0.98rem;
+        line-height: 1.38;
+    }
+
+    .thinking-card-desc {
+        font-size: 0.82rem;
+        line-height: 1.52;
+    }
+
+    .thinking-card-footer {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.55rem;
+        margin-top: 0.8rem;
+    }
+
+    .vibe-coding .container {
+        justify-content: flex-start;
+    }
+
+    .vibe-intro {
+        flex: 0 0 auto;
+        margin: 0 auto 0.7rem;
+    }
+
+    .vibe-desc,
+    .vibe-philosophy {
+        margin-bottom: 0.35rem;
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .projects-grid {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.72rem;
+        flex: 1 1 auto;
+        min-height: 0;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+    }
+
+    .project-link-card {
+        flex: 0 0 min(84vw, 22rem);
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: minmax(8.2rem, 34%) auto;
+        height: min(100%, 32rem);
+        max-height: 100%;
+        overflow-y: auto;
+        scroll-snap-align: start;
+    }
+
+    .project-preview {
+        min-height: 0;
+        padding: 1.2rem;
+    }
+
+    .project-card-body {
+        justify-content: flex-start;
+        padding: 1rem;
+    }
+
+    .project-title {
+        font-size: 1.15rem;
+    }
+
+    .project-desc {
+        font-size: 0.86rem;
+        line-height: 1.55;
+    }
+
+    .contact-stage {
+        display: grid;
+        grid-template-rows: auto minmax(0, 1fr);
+        padding: 0.68rem;
+    }
+
+    .contact-copy {
+        gap: 0.65rem;
+    }
+
+    .contact-quote-box .quote-text {
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .contact-primary-cta {
+        min-height: 2.6rem;
+        padding: 0.62rem 0.9rem;
+        font-size: 0.86rem;
+    }
+
+    .contact-content {
+        gap: 0.5rem;
+    }
+
+    .contact-email {
+        min-height: 2.4rem;
+        min-width: 0;
+        padding: 0.55rem 0.76rem;
+        font-size: 0.82rem;
+    }
+
+    .contact-qr-grid {
+        display: flex;
+        gap: 0.72rem;
+        min-height: 0;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+    }
+
+    .contact-qr-card {
+        flex: 0 0 min(84vw, 22rem);
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        max-height: 100%;
+        padding: 0.9rem;
+        overflow-y: auto;
+        scroll-snap-align: start;
+    }
+
+    .contact-qr-title {
+        font-size: 1rem;
+    }
+
+    .contact-qr-desc {
+        margin-bottom: 0;
+        font-size: 0.78rem;
+        line-height: 1.45;
+    }
+
+    .contact-qr-image {
+        width: min(110px, 30vw);
+    }
+
+    .story-epilogue-stage {
+        display: grid;
+        grid-template-rows: auto minmax(0, 1fr);
+        padding: 0.68rem;
+    }
+
+    .story-epilogue-intro {
+        padding: 0.85rem;
+        border-radius: 18px;
+    }
+
+    .story-epilogue-title {
+        font-size: 1.1rem;
+        line-height: 1.35;
+    }
+
+    .story-epilogue-desc {
+        margin-bottom: 0;
+        font-size: 0.84rem;
+        line-height: 1.5;
+    }
+
+    .storyboard-rail {
+        display: flex;
+        gap: 0.72rem;
+        min-height: 0;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+    }
+
+    .storyboard-card {
+        flex: 0 0 min(78vw, 20rem);
+        max-height: 100%;
+        padding: 0.95rem;
+        overflow-y: auto;
+        scroll-snap-align: start;
+    }
+
+    .footer {
+        display: none;
+    }
+
+    .screen-pager {
+        display: flex;
+        left: 50%;
+        right: auto;
+        top: auto;
+        bottom: calc(1.05rem + env(safe-area-inset-bottom));
+        flex-direction: row;
+        gap: 0.36rem;
+        padding: 0.38rem 0.48rem;
+        transform: translateX(-50%);
+        background: rgba(250, 247, 240, 0.72);
+        z-index: 1360;
+    }
+
+    .screen-pager-dot {
+        width: 0.42rem;
+        height: 0.42rem;
+        background: rgba(26, 25, 21, 0.18);
+    }
+
+    .screen-pager-dot.active {
+        width: 1.25rem;
+        background: var(--color-accent);
+    }
+}
+
+@media (max-width: 768px) and (orientation: portrait) and (max-height: 740px) {
+    body > .snap-section {
+        padding-top: calc(var(--nav-height) + 0.42rem);
+        padding-bottom: calc(2.45rem + env(safe-area-inset-bottom));
+    }
+
+    .section-header {
+        margin-bottom: 0.48rem;
+    }
+
+    .hero-content {
+        gap: 0.55rem;
+    }
+
+    .hero-avatar img {
+        width: 72px;
+        height: 72px;
+    }
+
+    .hero-quote {
+        font-size: 0.82rem;
+        line-height: 1.48;
+    }
+
+    .hero-story-link {
+        min-height: 2.35rem;
+    }
+
+    .digest-quote,
+    .thinking-title,
+    .story-epilogue-title {
+        font-size: 0.98rem;
+    }
+
+    .speaking-stat {
+        min-height: 3.35rem;
+    }
+
+    .contact-qr-image {
+        width: min(92px, 26vw);
+    }
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+    html {
+        scroll-snap-type: none;
+    }
+}
+
+@media (prefers-color-scheme: dark) and (max-width: 768px) and (orientation: portrait) {
+    .nav,
+    .nav-links,
+    .screen-pager {
+        background: rgba(31, 30, 26, 0.78);
+        border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .about-text p,
+    .speaking-ticket-intro,
+    .digest-sidebar,
+    .thinking-manifesto,
+    .contact-copy,
+    .story-epilogue-intro {
+        background: rgba(37, 36, 32, 0.76);
+        border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .screen-pager-dot {
+        background: rgba(245, 241, 232, 0.22);
+    }
+}
+
 /* ===== Animations ===== */
 @media (prefers-reduced-motion: no-preference) {
     .hero-content,

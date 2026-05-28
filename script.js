@@ -350,6 +350,32 @@ function initLanguageToggle() {
     });
 }
 
+const mobileSectionPagerQuery = window.matchMedia('(max-width: 768px) and (orientation: portrait)');
+
+function isMobileSectionPager() {
+    return mobileSectionPagerQuery.matches;
+}
+
+function getHorizontalScrollLeft() {
+    return window.scrollX
+        || document.documentElement.scrollLeft
+        || document.body.scrollLeft
+        || 0;
+}
+
+function getHorizontalScrollMax() {
+    const scrollWidth = Math.max(document.documentElement.scrollWidth, document.body.scrollWidth);
+    return Math.max(scrollWidth - window.innerWidth, 0);
+}
+
+function scrollToSection(section) {
+    section.scrollIntoView({
+        behavior: 'smooth',
+        block: isMobileSectionPager() ? 'nearest' : 'start',
+        inline: isMobileSectionPager() ? 'start' : 'nearest'
+    });
+}
+
 // ===== Smooth Scrolling =====
 function bindSmoothScroll(root = document) {
     root.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -360,10 +386,7 @@ function bindSmoothScroll(root = document) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+                scrollToSection(target);
             }
         });
     });
@@ -375,8 +398,10 @@ bindSmoothScroll();
 const nav = document.querySelector('.nav');
 let lastScroll = 0;
 
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
+function updateNavChrome() {
+    const currentScroll = isMobileSectionPager()
+        ? getHorizontalScrollLeft()
+        : window.pageYOffset;
 
     // Add shadow when scrolled
     if (currentScroll > 50) {
@@ -386,7 +411,9 @@ window.addEventListener('scroll', () => {
     }
 
     lastScroll = currentScroll;
-});
+}
+
+window.addEventListener('scroll', updateNavChrome, { passive: true });
 
 // ===== Intersection Observer for Animations =====
 const observerOptions = {
@@ -431,29 +458,49 @@ const pageProgressBar = document.getElementById('pageProgressBar');
 function updatePageProgress() {
     if (!pageProgressBar) return;
 
-    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-    const progress = maxScroll > 0 ? (window.scrollY / maxScroll) * 100 : 0;
+    const maxScroll = isMobileSectionPager()
+        ? getHorizontalScrollMax()
+        : document.documentElement.scrollHeight - window.innerHeight;
+    const currentScroll = isMobileSectionPager()
+        ? getHorizontalScrollLeft()
+        : window.scrollY;
+    const progress = maxScroll > 0 ? (currentScroll / maxScroll) * 100 : 0;
     pageProgressBar.style.width = `${Math.min(Math.max(progress, 0), 100)}%`;
 }
 
 window.addEventListener('scroll', updatePageProgress, { passive: true });
-window.addEventListener('resize', updatePageProgress);
+window.addEventListener('resize', () => {
+    updatePageProgress();
+    updateActiveNavigation();
+});
 
 // ===== Active Navigation Link =====
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-links a');
 
-window.addEventListener('scroll', () => {
+function updateActiveNavigation() {
     let current = '';
-    const scrollY = window.pageYOffset;
 
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (scrollY >= sectionTop - 200) {
-            current = section.getAttribute('id');
-        }
-    });
+    if (isMobileSectionPager()) {
+        let closestDistance = Number.POSITIVE_INFINITY;
+
+        sections.forEach(section => {
+            const distance = Math.abs(section.getBoundingClientRect().left);
+            if (distance < closestDistance) {
+                closestDistance = distance;
+                current = section.getAttribute('id');
+            }
+        });
+    } else {
+        const scrollY = window.pageYOffset;
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (scrollY >= sectionTop - 200) {
+                current = section.getAttribute('id');
+            }
+        });
+    }
 
     navLinks.forEach(link => {
         link.style.color = '';
@@ -461,7 +508,17 @@ window.addEventListener('scroll', () => {
             link.style.color = 'var(--color-text)';
         }
     });
-});
+}
+
+window.addEventListener('scroll', updateActiveNavigation, { passive: true });
+
+function syncMobileSectionPagerState() {
+    updateNavChrome();
+    updatePageProgress();
+    updateActiveNavigation();
+}
+
+document.body.addEventListener('scroll', syncMobileSectionPagerState, { passive: true });
 
 // ===== Screen Pager =====
 function initScreenPager() {
@@ -484,10 +541,7 @@ function initScreenPager() {
         dot.setAttribute('aria-label', `跳转到${label}`);
         dot.title = label;
         dot.addEventListener('click', () => {
-            section.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+            scrollToSection(section);
         });
 
         if (index === 0) {
@@ -2639,6 +2693,7 @@ document.addEventListener('keydown', (e) => {
 document.addEventListener('DOMContentLoaded', () => {
     initLanguageToggle();
     updatePageProgress();
+    updateActiveNavigation();
     initScreenPager();
     initCareerStage();
     renderSpeakingCards();
