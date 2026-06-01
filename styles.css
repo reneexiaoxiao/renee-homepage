@@ -3674,6 +3674,47 @@ ul {
     transform: translateX(0.25rem);
 }
 
+.project-preview-supply {
+    isolation: isolate;
+    overflow: hidden;
+    background: linear-gradient(145deg, rgba(255, 245, 214, 0.92), rgba(255, 255, 255, 0.96));
+}
+
+.project-preview-supply .project-preview-symbol {
+    background: linear-gradient(135deg, #ff7a59, #b85450);
+    color: #fffdf8;
+}
+
+.supply-tag {
+    position: absolute;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 3.8rem;
+    min-height: 2.15rem;
+    padding: 0.48rem 0.72rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(184, 84, 80, 0.14);
+    color: var(--color-text);
+    font-size: 0.82rem;
+    font-weight: 700;
+    box-shadow: 0 14px 30px rgba(184, 84, 80, 0.1);
+}
+
+.supply-tag-food {
+    top: 18%;
+    left: 13%;
+    transform: rotate(-8deg);
+}
+
+.supply-tag-cart {
+    right: 12%;
+    bottom: 18%;
+    transform: rotate(7deg);
+}
+
 .project-card-body {
     display: flex;
     flex-direction: column;
