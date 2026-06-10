@@ -1884,6 +1884,23 @@ const thinkingData = [
         ctaEn: 'Read Essay'
     },
     {
+        id: 'lark-note-eydmdsyu',
+        status: 'live',
+        statusLabel: '飞书文档',
+        statusLabelEn: 'Feishu Doc',
+        title: '飞书文档 · 新的思考手记',
+        titleEn: 'Feishu Doc: New Field Note',
+        desc: '这篇飞书文档先作为思考手记入口收录，后续可以再整理成更完整的公开摘要或长文。',
+        descEn: 'A Feishu document collected as a field-note entry, ready to be turned into a public summary or essay later.',
+        format: '飞书文档 / 待整理',
+        formatEn: 'Feishu Doc / To Organize',
+        topics: ['飞书文档', '思考手记', '待整理'],
+        topicsEn: ['Feishu Doc', 'Field Note', 'To Organize'],
+        href: 'https://bytedance.larkoffice.com/docx/EydmdSYURoZy0SxPCW3cBhPinhQ',
+        cta: '打开文档',
+        ctaEn: 'Open Doc'
+    },
+    {
         id: 'openclaw-assistant',
         status: 'live',
         statusLabel: '飞书文档',
