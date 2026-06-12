@@ -1647,14 +1647,28 @@ ul {
     justify-content: flex-start;
     gap: var(--spacing-sm);
     margin-bottom: var(--spacing-sm);
-    flex-wrap: wrap;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 0.2rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.digest-filters::-webkit-scrollbar {
+    display: none;
 }
 
 .filter-btn {
+    flex: 0 0 auto;
     padding: var(--spacing-xs) var(--spacing-md);
     min-height: 2.6rem;
     font-size: 0.875rem;
     line-height: 1;
+    white-space: nowrap;
     background: transparent;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-full);
