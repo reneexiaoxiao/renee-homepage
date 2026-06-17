@@ -163,7 +163,7 @@ const translations = {
         '前沿科技': 'Frontier Tech',
         '12 分钟': '12 min',
         '公开分享不是抛出观点，而是把洞见翻译成别人真正能带走、能继续讨论、也能带回现场去用的东西。': 'Public speaking is not about tossing out opinions. It is about translating insight into something people can take away, keep discussing, and use back in the field.',
-        '11 条': '11 Records',
+        '12 条': '12 Records',
         '已整理公开记录': 'public records curated',
         'AI × 组织': 'AI × Organization',
         '反复出现的主题': 'recurring theme',
@@ -1584,6 +1584,29 @@ const digestData = [
 ];
 
 const speakingData = [
+    {
+        year: '2026',
+        type: '分享嘉宾',
+        typeEn: 'Guest Speaker',
+        title: '上海交通大学校友创新沙龙',
+        titleEn: 'Shanghai Jiao Tong University Alumni Innovation Salon',
+        event: '2026-06-06 · AI 智能体与小龙虾',
+        eventEn: '2026-06-06 · AI agents and one-person companies',
+        desc: '围绕 AI 智能体如何成为 OPC 个人公司及创业的助力，和校友一起拆解企业 Skill、场景能力与创业实践。',
+        descEn: 'Shared how AI agents can support one-person companies and entrepreneurial practice, using enterprise skills and scenario maps as practical anchors.',
+        tags: ['上海交大', 'AI智能体', 'OPC创业'],
+        tagsEn: ['SJTU Alumni', 'AI Agents', 'OPC Startups'],
+        images: [
+            '公开分享记录/20260606-上海交通大学校友创新沙龙/poster.jpg',
+            '公开分享记录/20260606-上海交通大学校友创新沙龙/talk-closeup.jpg',
+            '公开分享记录/20260606-上海交通大学校友创新沙龙/skill-map.jpg',
+            '公开分享记录/20260606-上海交通大学校友创新沙龙/capability-board.jpg',
+            '公开分享记录/20260606-上海交通大学校友创新沙龙/room-wide.jpg'
+        ],
+        href: '公开分享记录/20260606-上海交通大学校友创新沙龙/poster.jpg',
+        cta: '查看海报',
+        ctaEn: 'View Poster'
+    },
     {
         year: '2026',
         type: '分享嘉宾',

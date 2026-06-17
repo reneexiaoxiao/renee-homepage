@@ -5607,6 +5607,7 @@ ul {
 
     .speaking-ticket-stack {
         display: flex;
+        justify-content: flex-start;
         gap: 0.72rem;
         min-height: 0;
         overflow-x: auto;
