@@ -1220,7 +1220,7 @@ ul {
 .career-stage {
     display: grid;
     grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
-    gap: var(--spacing-xl);
+    gap: clamp(1.2rem, 2vw, var(--spacing-xl));
     align-items: stretch;
     flex: 1;
     height: 100%;
@@ -1237,8 +1237,11 @@ ul {
     min-height: 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: clamp(1.5rem, 3vw, 2.2rem);
+    justify-content: flex-start;
+    gap: clamp(0.9rem, 1.8vh, 1.35rem);
+    padding: clamp(1.2rem, 2.2vw, 1.8rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
     border-radius: 28px;
     background:
         radial-gradient(circle at top right, rgba(184, 84, 80, 0.14), transparent 28%),
@@ -1274,12 +1277,12 @@ ul {
 
 .career-panel-body {
     flex-direction: column;
-    gap: var(--spacing-md);
+    gap: clamp(0.72rem, 1.4vh, 1rem);
     max-width: 32rem;
 }
 
 .career-panel-title {
-    font-size: clamp(1.9rem, 4vw, 3rem);
+    font-size: clamp(1.65rem, 3.3vw, 2.55rem);
     line-height: 1.1;
     font-weight: 400;
 }
@@ -1287,7 +1290,8 @@ ul {
 .career-panel-desc {
     margin-bottom: 0;
     color: var(--color-text-muted);
-    font-size: 1.02rem;
+    font-size: 0.96rem;
+    line-height: 1.58;
 }
 
 .career-panel-tags {
@@ -1308,14 +1312,14 @@ ul {
 }
 
 .career-panel-metrics {
-    gap: var(--spacing-sm);
+    gap: 0.72rem;
     flex-wrap: wrap;
 }
 
 .career-panel-metric {
     flex: 1 1 0;
-    min-width: 160px;
-    padding: 1rem;
+    min-width: 145px;
+    padding: 0.82rem 0.9rem;
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.55);
     border: 1px solid rgba(255, 255, 255, 0.72);
@@ -1366,9 +1370,9 @@ ul {
     display: grid;
     grid-template-columns: auto 1fr;
     gap: var(--spacing-md);
-    min-height: clamp(24rem, 58vh, 36rem);
+    min-height: clamp(20rem, 50vh, 31rem);
     align-items: start;
-    padding: clamp(1.25rem, 2vw, 1.8rem);
+    padding: clamp(1.05rem, 1.7vw, 1.5rem);
     border-radius: 24px;
     background: rgba(255, 255, 255, 0.42);
     border: 1px solid rgba(255, 255, 255, 0.58);
@@ -1406,7 +1410,7 @@ ul {
 .career-step-card {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-md);
+    gap: clamp(0.8rem, 1.5vh, 1rem);
 }
 
 .career-step-meta {
@@ -1428,7 +1432,8 @@ ul {
 }
 
 .career-step-card h3 {
-    font-size: 1.46rem;
+    font-size: 1.32rem;
+    line-height: 1.35;
 }
 
 .career-step-card p {
@@ -1442,12 +1447,12 @@ ul {
 .career-step-points {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: var(--spacing-sm);
+    gap: 0.72rem;
     align-items: start;
 }
 
 .career-step-point {
-    padding: 0.82rem;
+    padding: 0.76rem;
     border-radius: 18px;
     background: rgba(245, 241, 232, 0.78);
     border: 1px solid rgba(26, 25, 21, 0.08);
@@ -1465,6 +1470,142 @@ ul {
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--color-accent);
+}
+
+@media (min-width: 769px) and (max-height: 820px) {
+    .career {
+        padding: calc(var(--nav-height) + 0.55rem) 0 0.75rem;
+    }
+
+    .career .container {
+        height: calc(100vh - var(--nav-height) - 1.3rem);
+    }
+
+    .career .section-header {
+        margin-bottom: 0.55rem;
+    }
+
+    .career .section-subtitle {
+        font-size: 0.72rem;
+        margin-bottom: 0.42rem;
+    }
+
+    .career .section-title {
+        font-size: clamp(1.75rem, 3.4vw, 2.1rem);
+    }
+
+    .career-stage {
+        gap: 0.9rem;
+        padding: 0.62rem;
+        border-radius: 24px;
+    }
+
+    .career-panel {
+        gap: 0.62rem;
+        padding: 0.95rem;
+        border-radius: 22px;
+    }
+
+    .career-panel-kicker,
+    .career-panel-label {
+        font-size: 0.72rem;
+    }
+
+    .career-panel-period {
+        font-size: 0.78rem;
+    }
+
+    .career-panel-body {
+        gap: 0.55rem;
+    }
+
+    .career-panel-title {
+        font-size: clamp(1.45rem, 2.7vw, 2.05rem);
+        line-height: 1.08;
+    }
+
+    .career-panel-desc {
+        font-size: 0.86rem;
+        line-height: 1.48;
+    }
+
+    .career-panel-tags span {
+        padding: 0.28rem 0.58rem;
+        font-size: 0.72rem;
+    }
+
+    .career-panel-metrics {
+        gap: 0.5rem;
+    }
+
+    .career-panel-metric {
+        min-width: 128px;
+        padding: 0.6rem 0.7rem;
+        border-radius: 16px;
+    }
+
+    .career-panel-metric-value {
+        font-size: 1.14rem;
+        margin-bottom: 0.12rem;
+    }
+
+    .career-panel-metric-label {
+        font-size: 0.72rem;
+        line-height: 1.3;
+    }
+
+    .career-steps {
+        gap: 0.85rem;
+    }
+
+    .career-step {
+        min-height: clamp(15.5rem, 42vh, 21rem);
+        padding: 0.82rem;
+    }
+
+    .career-step-index {
+        width: 2.35rem;
+        height: 2.35rem;
+        font-size: 0.82rem;
+    }
+
+    .career-step-card {
+        gap: 0.58rem;
+    }
+
+    .career-step-meta span {
+        padding: 0.26rem 0.55rem;
+        font-size: 0.68rem;
+    }
+
+    .career-step-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .career-step-card p {
+        font-size: 0.82rem;
+        line-height: 1.48;
+    }
+
+    .career-step-points {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 0.5rem;
+    }
+
+    .career-step-point {
+        padding: 0.58rem;
+        border-radius: 14px;
+    }
+
+    .career-step-point-label {
+        margin-bottom: 0.32rem;
+        font-size: 0.67rem;
+    }
+
+    .career-step-point p {
+        font-size: 0.78rem;
+        line-height: 1.42;
+    }
 }
 
 @media (prefers-color-scheme: dark) {
