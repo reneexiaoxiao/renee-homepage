@@ -1,0 +1,727 @@
+{
+  "version": 1,
+  "catalogVersion": 1,
+  "generatedAt": "2026-07-19T04:31:13.920Z",
+  "clips": {
+    "chapter:ch-00-01": {
+      "src": "audio/qwen-mlx/chapter-ch-00-01.b7f0d4523787.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "b7f0d4523787cfd4db394d26f53969988b53f43d28067075f163e8c011e02ba8",
+      "bytes": 426285,
+      "durationMs": 26560
+    },
+    "chapter:ch-00-02": {
+      "src": "audio/qwen-mlx/chapter-ch-00-02.dfb9e021bcb6.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "dfb9e021bcb67e6d9566710ff793bf9e4cf6dec0d647c49f0dc57fe84d8576df",
+      "bytes": 458541,
+      "durationMs": 28560
+    },
+    "chapter:ch-00-03": {
+      "src": "audio/qwen-mlx/chapter-ch-00-03.4bd89620f649.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "4bd89620f6495ddd1b20cbf21502e7ab02432c9f9a2eea0ec592f90c1d220c0e",
+      "bytes": 437805,
+      "durationMs": 27280
+    },
+    "chapter:ch-01-01": {
+      "src": "audio/qwen-mlx/chapter-ch-01-01.ae67b914e834.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "ae67b914e834d4e347f720c31ae4e787f6c9bd7b52f2dccc263d0555601c1f25",
+      "bytes": 467181,
+      "durationMs": 29120
+    },
+    "chapter:ch-01-02": {
+      "src": "audio/qwen-mlx/chapter-ch-01-02.69002b18dd98.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "69002b18dd98b2ac0d659b74d2316603dd2c7d9e3dcce97c09e2bf8c12d24538",
+      "bytes": 461997,
+      "durationMs": 28800
+    },
+    "chapter:ch-01-03": {
+      "src": "audio/qwen-mlx/chapter-ch-01-03.3b5905f0cd32.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "3b5905f0cd320f4b4ce6cd778dc0496bae3da2205c89530c21b50c5d68eecae5",
+      "bytes": 421101,
+      "durationMs": 26240
+    },
+    "chapter:ch-01-04": {
+      "src": "audio/qwen-mlx/chapter-ch-01-04.c2d763a804c2.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "c2d763a804c214edc9bf87ea2a4d2ec1592bb2b5606708f6c70a650c882f28e3",
+      "bytes": 434349,
+      "durationMs": 27040
+    },
+    "chapter:ch-02-01": {
+      "src": "audio/qwen-mlx/chapter-ch-02-01.49addcba60c5.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "49addcba60c5873c7920a068db74ef5a7f6b6353c2f2f1c9ede8a45b6d26fdba",
+      "bytes": 454509,
+      "durationMs": 28320
+    },
+    "chapter:ch-02-02": {
+      "src": "audio/qwen-mlx/chapter-ch-02-02.1c6fa3f569c5.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "1c6fa3f569c5ad98b0dfc36148cb35eb960d7867f3b144c0f82365481d2f3eda",
+      "bytes": 419949,
+      "durationMs": 26160
+    },
+    "chapter:ch-02-03": {
+      "src": "audio/qwen-mlx/chapter-ch-02-03.d71085fac5e0.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "d71085fac5e0599548b032e1c39dafeca4b058fd2360b4be40020285b49894b2",
+      "bytes": 434349,
+      "durationMs": 27040
+    },
+    "chapter:ch-02-04": {
+      "src": "audio/qwen-mlx/chapter-ch-02-04.76434802440a.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "76434802440a59bf527b3ed2d75e7408e7492e464e7e688b0448bf9a202d0d44",
+      "bytes": 466029,
+      "durationMs": 29040
+    },
+    "chapter:ch-02-05": {
+      "src": "audio/qwen-mlx/chapter-ch-02-05.6140037b2030.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "6140037b2030c8efac3725b9d62fddd604ba5c4d10f4cb1633354e8c5e43ed52",
+      "bytes": 452205,
+      "durationMs": 28160
+    },
+    "chapter:ch-03-01": {
+      "src": "audio/qwen-mlx/chapter-ch-03-01.428db53aac4f.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "428db53aac4f917dd20fc6e2e5648754378a6211e1624e9aee3bd1e7fe62cf88",
+      "bytes": 423981,
+      "durationMs": 26400
+    },
+    "chapter:ch-03-02": {
+      "src": "audio/qwen-mlx/chapter-ch-03-02.db9055536a3f.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "db9055536a3f7d7c92f4869f632780564757268c59918e32e399a54485753c2a",
+      "bytes": 494253,
+      "durationMs": 30800
+    },
+    "chapter:ch-03-03": {
+      "src": "audio/qwen-mlx/chapter-ch-03-03.e0bb533142f5.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "e0bb533142f50738acd306fb51fd82bb080202941a91af7e28fdde07fdf37d00",
+      "bytes": 403245,
+      "durationMs": 25120
+    },
+    "chapter:ch-03-04": {
+      "src": "audio/qwen-mlx/chapter-ch-03-04.0fc84e069baa.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "0fc84e069baa3add9610f3b900f1d8786f1ce32968c9e032407b1c2239e526aa",
+      "bytes": 417645,
+      "durationMs": 26000
+    },
+    "chapter:ch-03-05": {
+      "src": "audio/qwen-mlx/chapter-ch-03-05.5d9e9f3b83d6.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "5d9e9f3b83d624feb675a4fe1599f7f2fbc3c2cb88ade476a6691bda17d82df3",
+      "bytes": 400941,
+      "durationMs": 24960
+    },
+    "chapter:ch-03-06": {
+      "src": "audio/qwen-mlx/chapter-ch-03-06.420c10554573.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "420c10554573564f6aeb0cc20a71d8e0c042ae20957f311a33a7fd6c507c5ce8",
+      "bytes": 478701,
+      "durationMs": 29840
+    },
+    "chapter:ch-04-01": {
+      "src": "audio/qwen-mlx/chapter-ch-04-01.a2ec77c31bfa.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "a2ec77c31bfa4fe916d7bf3e32b2ca9309888972d6e1a6dcf0885aaaeeeffb63",
+      "bytes": 411309,
+      "durationMs": 25600
+    },
+    "chapter:ch-04-02": {
+      "src": "audio/qwen-mlx/chapter-ch-04-02.100ad68e0cab.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "100ad68e0cab0fbe47e6fb5965c7c327ad1e170c5d6dee47c364d7f950b26a9a",
+      "bytes": 412461,
+      "durationMs": 25680
+    },
+    "chapter:ch-04-03": {
+      "src": "audio/qwen-mlx/chapter-ch-04-03.e49a78f22bd7.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "e49a78f22bd7d6e1b74e45972ea2acbe25da5952249dd061a99abd83f331d8d4",
+      "bytes": 429165,
+      "durationMs": 26720
+    },
+    "chapter:ch-04-04": {
+      "src": "audio/qwen-mlx/chapter-ch-04-04.cbfbd450e5af.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "cbfbd450e5af5656fe8e03782060c423312ff2efe3d2cc778e523bce1e9f0d9e",
+      "bytes": 472365,
+      "durationMs": 29440
+    },
+    "chapter:ch-04-05": {
+      "src": "audio/qwen-mlx/chapter-ch-04-05.23ebf3bded65.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "23ebf3bded6583bae5cf6cdd353bdd189d6d2361e4cffaa511374f5b168ba576",
+      "bytes": 473517,
+      "durationMs": 29520
+    },
+    "chapter:ch-05-01": {
+      "src": "audio/qwen-mlx/chapter-ch-05-01.8c3fd154e407.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "8c3fd154e407abc90ef94f5b010bad6250a0c5a59fdf043e78b54580d2f9ece9",
+      "bytes": 425133,
+      "durationMs": 26480
+    },
+    "chapter:ch-05-02": {
+      "src": "audio/qwen-mlx/chapter-ch-05-02.ca9aa4d7dd89.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "ca9aa4d7dd897e41c4a43ccada2b0d8438636e71e6e16707ef55f723f9faaff4",
+      "bytes": 423981,
+      "durationMs": 26400
+    },
+    "chapter:ch-05-03": {
+      "src": "audio/qwen-mlx/chapter-ch-05-03.519af310f0d5.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "519af310f0d57beaad1e6a4f20c0a355df5268a4c71e3d38ac290a6cad06adb2",
+      "bytes": 523629,
+      "durationMs": 32640
+    },
+    "chapter:ch-05-04": {
+      "src": "audio/qwen-mlx/chapter-ch-05-04.63a54659d287.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "63a54659d287d509ef93a53fe7dccf002b0b680bd43c1534e6530d59e472f473",
+      "bytes": 441837,
+      "durationMs": 27520
+    },
+    "chapter:ch-05-05": {
+      "src": "audio/qwen-mlx/chapter-ch-05-05.a6cf912e9ea1.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "a6cf912e9ea1246a3794b4cffab04b12f6a75817a7664041b19a50487f20c8f4",
+      "bytes": 473517,
+      "durationMs": 29520
+    },
+    "chapter:ch-06-01": {
+      "src": "audio/qwen-mlx/chapter-ch-06-01.583ecb08badf.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "583ecb08badfcc51db6b2138aaca360bab917b93d1b6dbdf02720b0d865d9df3",
+      "bytes": 504621,
+      "durationMs": 31440
+    },
+    "chapter:ch-06-02": {
+      "src": "audio/qwen-mlx/chapter-ch-06-02.03e63db82499.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "03e63db82499bb46b6e9f8f042e31468a951e5a8bc48674ae6219564b715ec32",
+      "bytes": 544365,
+      "durationMs": 33920
+    },
+    "chapter:ch-06-03": {
+      "src": "audio/qwen-mlx/chapter-ch-06-03.a62432430123.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "a624324301238b3e6ffeb23fb729d5a17945e24bb8b7798c7802410061bd62c1",
+      "bytes": 431469,
+      "durationMs": 26880
+    },
+    "chapter:ch-06-04": {
+      "src": "audio/qwen-mlx/chapter-ch-06-04.3c5b985df4c6.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "3c5b985df4c62dda593254b1535fd78b3c07f31be1e9cc957c6a55a6c9d11e16",
+      "bytes": 426285,
+      "durationMs": 26560
+    },
+    "field:D01-M01": {
+      "src": "audio/qwen-mlx/field-D01-M01.d323d480051c.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "d323d480051c8f436e9a236bbb9aa160036b8a0328d8fdf472c357610fc2d6c6",
+      "bytes": 169389,
+      "durationMs": 10480
+    },
+    "field:D02-M01": {
+      "src": "audio/qwen-mlx/field-D02-M01.d809eb510dd1.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "d809eb510dd1e56c9f7473a2d037201e2961385df9e1dba968e827ab44830b11",
+      "bytes": 167661,
+      "durationMs": 10400
+    },
+    "field:D02-M02": {
+      "src": "audio/qwen-mlx/field-D02-M02.9a263fc3d4a1.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "9a263fc3d4a1d0b4ed18ed8056e945115c6576fd8994ab6ec42866a3e6bbc172",
+      "bytes": 142317,
+      "durationMs": 8800
+    },
+    "field:D02-M03": {
+      "src": "audio/qwen-mlx/field-D02-M03.4598bb837cd4.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "4598bb837cd402c222f0bf616dda78a41c7f2a3119c0f86a275b093248941c09",
+      "bytes": 162477,
+      "durationMs": 10080
+    },
+    "field:D03-M01": {
+      "src": "audio/qwen-mlx/field-D03-M01.d0491642afa8.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "d0491642afa88ab08c04be816d38df524cb3c110474494f67ff62bec1ea63f58",
+      "bytes": 203949,
+      "durationMs": 12640
+    },
+    "field:D03-M02": {
+      "src": "audio/qwen-mlx/field-D03-M02.5795476568e1.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "5795476568e12bb7210043e94ae0c6bf1bc18d79f491acfa287facfc081a067b",
+      "bytes": 157869,
+      "durationMs": 9760
+    },
+    "field:D04-M01": {
+      "src": "audio/qwen-mlx/field-D04-M01.17d236038c14.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "17d236038c14e2fda34f9be8049a45dc383e736423ff859f7e335f799e96946f",
+      "bytes": 161325,
+      "durationMs": 10000
+    },
+    "field:D04-M02": {
+      "src": "audio/qwen-mlx/field-D04-M02.de0be360cb6b.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "de0be360cb6b6ad5b494d4ca9da45a2b53bf84211597e2b42fc873e2b24d88cf",
+      "bytes": 160173,
+      "durationMs": 9920
+    },
+    "field:D05-M01": {
+      "src": "audio/qwen-mlx/field-D05-M01.f7e30e3a778e.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "f7e30e3a778e2efd6805a90e20e71e86e6bc62ba11b906b5d9ad9d241650a301",
+      "bytes": 172845,
+      "durationMs": 10720
+    },
+    "field:D05-M02": {
+      "src": "audio/qwen-mlx/field-D05-M02.4f70ca9c1633.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "4f70ca9c1633c9becd0293ab61655501a7a4e77df9392cbfefa6c7606ea6087d",
+      "bytes": 167661,
+      "durationMs": 10400
+    },
+    "field:D05-M03": {
+      "src": "audio/qwen-mlx/field-D05-M03.2b7b991d3d7d.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "2b7b991d3d7d946dce2a676a4065df370b017ddb9d3c16501bf41761ffbef78e",
+      "bytes": 153837,
+      "durationMs": 9520
+    },
+    "field:D06-M01": {
+      "src": "audio/qwen-mlx/field-D06-M01.91e8027537b5.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "91e8027537b5870f653f3ad1b6afcc6ca8fb10dab58ea8b4a83926f3b8b62c5b",
+      "bytes": 153837,
+      "durationMs": 9520
+    },
+    "field:D06-M02": {
+      "src": "audio/qwen-mlx/field-D06-M02.79716f0864f2.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "79716f0864f268660a28845718fd7e272680eabe1d36404d7c29ff86ac4353d2",
+      "bytes": 167661,
+      "durationMs": 10400
+    },
+    "field:D06-M03": {
+      "src": "audio/qwen-mlx/field-D06-M03.cfa37a5b34f0.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "cfa37a5b34f0013405f9e05179a624f4e39d7bade39a7a27213b854cc143f8f7",
+      "bytes": 156141,
+      "durationMs": 9680
+    },
+    "field:D07-M01": {
+      "src": "audio/qwen-mlx/field-D07-M01.199f8ca0e2df.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "199f8ca0e2dfb98994f6336c6439966ed6154d8f39dbe489388116d30221d570",
+      "bytes": 143469,
+      "durationMs": 8880
+    },
+    "field:D07-M02": {
+      "src": "audio/qwen-mlx/field-D07-M02.a926001d0485.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "a926001d04857f14761021062284f189183dddf5e2673a8e258f338e051630a0",
+      "bytes": 175725,
+      "durationMs": 10880
+    },
+    "field:D08-M01": {
+      "src": "audio/qwen-mlx/field-D08-M01.bd429f560642.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "bd429f560642abbdb5bb3bf368cee39570349b64696286b013f9f45e09d603e6",
+      "bytes": 195885,
+      "durationMs": 12160
+    },
+    "field:D08-M02": {
+      "src": "audio/qwen-mlx/field-D08-M02.1037be024c9f.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "1037be024c9f03c3deff42098262f981b8c0db811e8afc26f01be32ebca93b97",
+      "bytes": 161325,
+      "durationMs": 10000
+    },
+    "field:D09-M01": {
+      "src": "audio/qwen-mlx/field-D09-M01.9d6046dee17f.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "9d6046dee17fc04c40cf2abb6a6b4130f657d0f0576d2e829bf502c1b29daa78",
+      "bytes": 157869,
+      "durationMs": 9760
+    },
+    "field:D09-M02": {
+      "src": "audio/qwen-mlx/field-D09-M02.80390938b5b0.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "80390938b5b01b0462241f174a5deac94a1e13e4a8c0efee5f1147f5417c90cf",
+      "bytes": 183213,
+      "durationMs": 11360
+    },
+    "field:D10-M01": {
+      "src": "audio/qwen-mlx/field-D10-M01.39098ea7cbc2.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "39098ea7cbc25a0303d164aa44d0f6f6745a7d9d0d0d7880c90dfecd1dd8e7ff",
+      "bytes": 180909,
+      "durationMs": 11200
+    },
+    "field:D10-M02": {
+      "src": "audio/qwen-mlx/field-D10-M02.ffb05b789920.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "ffb05b78992049e22d3fcbfc07fa3f43452e62293b682dc49ed8a82a3df64295",
+      "bytes": 161325,
+      "durationMs": 10000
+    },
+    "field:D11-M01": {
+      "src": "audio/qwen-mlx/field-D11-M01.a349dac9c5a8.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "a349dac9c5a8a9f1ab11c2823273eff7b5aade7fd6edf385068b8f443ea86a00",
+      "bytes": 199917,
+      "durationMs": 12400
+    },
+    "field:D11-M02": {
+      "src": "audio/qwen-mlx/field-D11-M02.d660b64e1567.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "d660b64e1567d78d9392ffcbdfe1b3dd28200b48cd877459baba07cf245fa8ca",
+      "bytes": 159021,
+      "durationMs": 9840
+    },
+    "field:D11-M03": {
+      "src": "audio/qwen-mlx/field-D11-M03.5608d87637a0.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "5608d87637a07f4dc22ef960e28b16bb26b54ec092b7224297f5e009c37b1e8f",
+      "bytes": 175725,
+      "durationMs": 10880
+    },
+    "field:D12-M01": {
+      "src": "audio/qwen-mlx/field-D12-M01.9c8724e78723.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "9c8724e787237f43c6ceeaafdd85f8bfdf54017cd38b7ec423b286c0272c6c00",
+      "bytes": 190701,
+      "durationMs": 11840
+    },
+    "field:D13-M01": {
+      "src": "audio/qwen-mlx/field-D13-M01.06bcfd928096.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "06bcfd92809672a15dd8f9ccb4e9fee6a249383ff4efe97f6afdae453fe77d01",
+      "bytes": 179181,
+      "durationMs": 11120
+    },
+    "preheat:D01": {
+      "src": "audio/qwen-mlx/preheat-D01.6ae6bda16527.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "6ae6bda16527fce468e0ccd57d7b7f951bb4a4f273e6e6cd89f7adae3b1e35f0",
+      "bytes": 394605,
+      "durationMs": 24560
+    },
+    "preheat:D02": {
+      "src": "audio/qwen-mlx/preheat-D02.70c0d352bb83.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "70c0d352bb836f18aff264c56d802bd2cab6564c7e928d1b4f6b8971f337d286",
+      "bytes": 452205,
+      "durationMs": 28160
+    },
+    "preheat:D03": {
+      "src": "audio/qwen-mlx/preheat-D03.f88fb82040de.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "f88fb82040de5cdc987c0fd4b875178b8c3efa015d7e32a12c915e3ad88e3306",
+      "bytes": 452205,
+      "durationMs": 28160
+    },
+    "preheat:D04": {
+      "src": "audio/qwen-mlx/preheat-D04.0e30f1ea6655.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "0e30f1ea6655c40348050fe41b6beb282ac769e096c0334065933c229976fc0a",
+      "bytes": 425133,
+      "durationMs": 26480
+    },
+    "preheat:D05": {
+      "src": "audio/qwen-mlx/preheat-D05.46dfc73d0c0e.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "46dfc73d0c0e2b118b3342898814269acabb70964586913713094cb65414eb15",
+      "bytes": 494253,
+      "durationMs": 30800
+    },
+    "preheat:D06": {
+      "src": "audio/qwen-mlx/preheat-D06.827902c68292.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "827902c68292e7a429cc412b10873c8f5cb2821e425297e09a800f66637774a1",
+      "bytes": 481581,
+      "durationMs": 30000
+    },
+    "preheat:D07": {
+      "src": "audio/qwen-mlx/preheat-D07.275dfdc8228f.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "275dfdc8228fb127dad1187a393ccd000d39e7835c9dfed661170d9f4e60b252",
+      "bytes": 441837,
+      "durationMs": 27520
+    },
+    "preheat:D08": {
+      "src": "audio/qwen-mlx/preheat-D08.700932f7f10a.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "700932f7f10ac6a673d952997708765fd6afaad5a8a607dd661444ba8ef83363",
+      "bytes": 498285,
+      "durationMs": 31040
+    },
+    "preheat:D09": {
+      "src": "audio/qwen-mlx/preheat-D09.cef8afd37f5a.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "cef8afd37f5ab30b0116cf4a957b406c412209c94798ca200650804b6055fa82",
+      "bytes": 475245,
+      "durationMs": 29600
+    },
+    "preheat:D10": {
+      "src": "audio/qwen-mlx/preheat-D10.198f4b6e6ce4.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "198f4b6e6ce44d50dfc29e51a851d0e587b04d4b2c96adb14901ca7d5493f4ba",
+      "bytes": 464877,
+      "durationMs": 28960
+    },
+    "preheat:D11": {
+      "src": "audio/qwen-mlx/preheat-D11.cfd86956582d.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "cfd86956582d6f934b9dce1b78f2f3affda5b1583ff545bab51843e024b5a0db",
+      "bytes": 470061,
+      "durationMs": 29280
+    },
+    "preheat:D12": {
+      "src": "audio/qwen-mlx/preheat-D12.e9051ecac275.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "e9051ecac2759748db24cb67e61508b067df61b021a7a6046235abce79732e3c",
+      "bytes": 415917,
+      "durationMs": 25920
+    },
+    "preheat:D13": {
+      "src": "audio/qwen-mlx/preheat-D13.b8ae6bfa9dd5.mp3",
+      "provider": "qwen-mlx",
+      "model": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+      "voice": "Serena",
+      "format": "mp3",
+      "contentHash": "b8ae6bfa9dd540f0c5ec4aaf12cfa123597c8aef6078e3c8632d18c11d4456e1",
+      "bytes": 399789,
+      "durationMs": 24880
+    }
+  }
+}
