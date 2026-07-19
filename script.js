@@ -205,8 +205,8 @@ const translations = {
         '古茗战略部': 'Guming · Strategy',
         '战略 × AI 落地': 'Strategy × AI in Practice',
         '个人 OS 实践者': 'Personal OS Builder',
-        '读最新思考': 'Read the Latest Essay (Chinese)',
-        '连接交流': 'Connect',
+        '读最新思考': 'Explore Field Notes',
+        '链接交流': 'Connect',
         '战略判断 × AI 执行杠杆 × 个人 OS': 'Strategic Judgment × AI Leverage × Personal OS',
         '古茗战略部 × 新茶饮 × 消费产业': 'Guming Strategy × Tea Beverages × Consumer Industry',
         '企业 AI 应用落地分享': 'Enterprise AI Talks',
@@ -1661,6 +1661,9 @@ const speakingData = [
         tags: ['个人OS', 'Harness Engineering', '判断力'],
         tagsEn: ['Personal OS', 'Harness Engineering', 'Judgment'],
         images: [
+            '公开分享记录/20260718-半年认知回顾/poster.jpg',
+            '公开分享记录/20260718-半年认知回顾/live-talk.png',
+            '公开分享记录/20260718-半年认知回顾/audience-feedback.jpg',
             'thoughts/from-dropper-to-pipeline/os-role-workflow.png',
             'thoughts/from-dropper-to-pipeline/train-yourself-as-model.png'
         ],
