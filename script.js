@@ -29,19 +29,7 @@ const translations = {
         '思考': 'Notes',
         '项目': 'Projects',
         'The Timeless Art of Evolution': 'The Timeless Art of Evolution',
-        '飞书企业效能顾问，关注企业 AI 应用从场景到结果的落地。': 'Feishu enterprise efficiency consultant focused on turning enterprise AI from scenarios into measurable outcomes.',
-        '"在所有人都在加速的时代，我选择先把手弄脏，亲手把石头推上山。石头会滚下来——但沿途那些「叮」的瞬间，是真的。我是 Renee。"': '"In an age where everyone is accelerating, I choose to get my hands dirty and push the stone myself. It may roll back down, but the sparks along the way are real. I am Renee."',
-        '飞书企业效能顾问': 'Feishu Consultant',
-        '华东KA客户': 'East China KA Clients',
-        '企业AI应用落地': 'Enterprise AI Adoption',
-        '开始浏览': 'Start Exploring',
-        '聊聊企业 AI 落地': 'Talk Enterprise AI',
         '关于我': 'About Me',
-        '大家好，我是张岚焱（Renee），base 上海，目前在字节跳动飞书做企业效能顾问，服务华东区域 KA 客户，主要聚焦互联网和机器人行业，日常在做企业 AI 应用落地这件事。': 'Hi, I am Renee Zhang, based in Shanghai. I work as an enterprise efficiency consultant at ByteDance Feishu, serving East China KA clients with a focus on internet and robotics companies. Most of my work is about helping enterprise AI move from idea to actual usage.',
-        '从 UC 伯克利交流回来后，我一直在想一个问题：AI 时代，有哪些事即便 AI 能做，我也坚持要自己做？': 'After returning from UC Berkeley, I kept asking myself: in the AI era, what should I still insist on doing myself, even when AI can help?',
-        '我给自己的答案是三件事：亲自消化内容、亲自在脑子里连出新的线索、亲自动手写下来。于是就有了 #Learn&Digest 这项长期练习。工作里也是一样，我更愿意从场景挖掘、方案设计到陪跑实施，一步步把 AI 真正推到业务现场。': 'My answer is three things: digest ideas myself, connect them in my own mind, and write them down by hand. That became my long-term #Learn&Digest practice. At work, I take the same approach: discover scenarios, design solutions, and walk with teams until AI actually enters their workflow.',
-        '这件事做着做着，我越来越确信：AI 越强大，人越需要和真实的人面对面碰撞。 再精准的推荐，也不如一次真实相遇带来的“叮”更有生命力。所以工作之外，我也在持续搭智能体、玩 AI 编程，运营飞书客户的 AI 实践交流群，也在复旦 MBA AI 俱乐部、私董会和公开分享场域里继续和人碰撞。': 'The longer I do this, the more I believe that the stronger AI becomes, the more people need real, face-to-face collisions. No recommendation engine can replace the spark of a real encounter. Outside work, I keep building agents, experimenting with AI coding, running Feishu AI practice communities, and showing up in MBA, peer advisory, and public sharing spaces.',
-        'AI 时代最稀缺的，不是算力，而是人对场景的洞察力，以及一步步把事做成的行动力。如果你也在做企业 AI 落地，或者你的企业正在琢磨从哪里开始，我很乐意一起聊聊场景、方案和共创的可能。': 'In the AI era, the scarce resource is not compute. It is human insight into real scenarios, plus the will to make things work step by step. If you are also working on enterprise AI adoption, or wondering where your company should begin, I would love to talk about scenarios, solutions, and co-creation.',
         '企业AI落地 × 场景共创 × 陪跑实施': 'Enterprise AI × Scenario Co-creation × Implementation',
         '华东KA × 互联网 × 机器人': 'East China KA × Internet × Robotics',
         '企业AI应用落地分享': 'Enterprise AI Talks',
@@ -63,11 +51,9 @@ const translations = {
         '能力底盘': 'Foundation',
         '高价值客户': 'High-value Clients',
         'AI 应用场景': 'AI Scenarios',
-        '2022.03 - 至今': '2022.03 - Present',
+        '2022.03 - 2026.07': '2022.03 - 2026.07',
         '2016 - 至今': '2016 - Present',
         '字节跳动（飞书）企业效能顾问': 'ByteDance Feishu Enterprise Efficiency Consultant',
-        'base 上海，服务华东区域 KA 客户，主要看互联网和机器人行业，把场景挖掘、方案设计与陪跑实施接成完整交付链路。': 'Based in Shanghai, serving East China KA clients in internet and robotics, connecting scenario discovery, solution design, and implementation support into one delivery loop.',
-        'base 上海，服务华东区域 KA 客户，聚焦互联网和机器人行业，把场景挖掘、方案设计与陪跑实施接到一起做。': 'Based in Shanghai, serving East China KA clients in internet and robotics, connecting scenario discovery, solution design, and implementation support.',
         '华东KA': 'East China KA',
         '互联网与机器人': 'Internet and Robotics',
         '企业AI落地': 'Enterprise AI Adoption',
@@ -163,7 +149,6 @@ const translations = {
         '前沿科技': 'Frontier Tech',
         '12 分钟': '12 min',
         '公开分享不是抛出观点，而是把洞见翻译成别人真正能带走、能继续讨论、也能带回现场去用的东西。': 'Public speaking is not about tossing out opinions. It is about translating insight into something people can take away, keep discussing, and use back in the field.',
-        '12 条': '12 Records',
         '已整理公开记录': 'public records curated',
         'AI × 组织': 'AI × Organization',
         '反复出现的主题': 'recurring theme',
@@ -214,16 +199,94 @@ const translations = {
         '公开分享、课堂和社群，是让表达被验证、被接住的现场。': 'Public talks, classrooms, and communities are where expression gets tested and received.',
         '生长': 'Growth',
         '把未完成也留在这里': 'Leave the Unfinished Here',
-        '文章、项目和新的问题会继续长出来，后面的相遇里也会有新的展开。': 'Essays, projects, and new questions will keep growing here, with more to unfold in future encounters.'
+        '文章、项目和新的问题会继续长出来，后面的相遇里也会有新的展开。': 'Essays, projects, and new questions will keep growing here, with more to unfold in future encounters.',
+        '把四年企业 AI 落地经验带进消费业务的战略现场，让人的判断成为 AI 可以放大的杠杆。': 'Bringing four years of enterprise AI experience into consumer strategy—so human judgment can become the leverage AI amplifies.',
+        '“自己才是最值得训练的大模型。如切如磋，如琢如磨。”': '“The model most worth training is yourself. Cut, polish, and refine—again and again.”',
+        '古茗战略部': 'Guming · Strategy',
+        '战略 × AI 落地': 'Strategy × AI in Practice',
+        '个人 OS 实践者': 'Personal OS Builder',
+        '读最新思考': 'Read the Latest Essay (Chinese)',
+        '连接交流': 'Connect',
+        '战略判断 × AI 执行杠杆 × 个人 OS': 'Strategic Judgment × AI Leverage × Personal OS',
+        '古茗战略部 × 新茶饮 × 消费产业': 'Guming Strategy × Tea Beverages × Consumer Industry',
+        '企业 AI 应用落地分享': 'Enterprise AI Talks',
+        '古茗 · 战略部': 'Guming · Strategy',
+        '2026.07 - 至今': '2026.07 - Present',
+        '从跨企业推动 AI 落地，走进消费业务内部做战略研究与问题解决。当前围绕新茶饮与消费产业形成判断，并探索如何让 AI 成为判断之后更快、更可复用的执行杠杆。': 'After four years advising across companies, I moved inside a consumer business to stay closer to its questions over time. I now study the tea beverage and broader consumer landscape, while exploring how AI can turn sound judgment into faster, more reusable action.',
+        '新茶饮与消费产业': 'Tea Beverages and Consumer Industry',
+        '战略研究': 'Strategic Research',
+        '判断力 × AI 杠杆': 'Judgment × AI Leverage',
+        '加入古茗': 'Joined Guming',
+        '杭州': 'Hangzhou',
+        '进行中': 'In Progress',
+        '古茗': 'Guming',
+        '战略部': 'Strategy',
+        '从跨企业落地，走进一个真实消费业务的战略现场': 'From Cross-Company AI Delivery to the Strategic Reality of One Consumer Business',
+        '这一次，我选择把观察的距离拉近：长期浸入一个真实业务，先理解问题、形成判断，再让 AI 帮助执行。': 'This time, I chose to get closer to the work: stay with one operating business, understand the question, form a view, and then use AI to support execution.',
+        '新的现场': 'New Context',
+        '现居杭州，在古茗战略部围绕新茶饮与消费产业做战略研究与问题解决，持续形成自己的行业判断。': 'Now based in Hangzhou, I work in Guming Strategy on questions across tea beverages and the wider consumer industry, continuously sharpening my own point of view.',
+        '探索方向': 'What I Am Exploring',
+        '不把 AI 当作判断的替代品，而是把它接在判断之后，让研究、表达与执行变得更快、更可复用。': 'I do not treat AI as a replacement for judgment. I place it after judgment, making research, expression, and execution faster and more reusable.',
+        '上一段经历': 'Previous Chapter',
+        '在飞书的四年里，我长期服务华东区域 KA 客户，围绕真实业务流程做场景挖掘、方案设计与陪跑实施，帮助 AI 从概念进入团队的日常工作。': 'Over four years at Feishu, I worked with key accounts in East China to discover scenarios, design solutions, and support implementation—helping AI move from concepts into everyday workflows.',
+        '30+高价值客户': '30+ High-value Clients',
+        '20+AI应用场景': '20+ AI Scenarios',
+        '场景共创与陪跑': 'Scenario Co-creation and Implementation',
+        '企业AI落地': 'Enterprise AI Delivery',
+        '用四年时间，把企业 AI 从概念推到真实业务流程': 'Four Years Moving Enterprise AI from Concept into Real Workflows',
+        '这段经历训练了我跨行业理解问题、从场景切入，并陪着团队把方案真正用起来的能力。': 'This chapter trained me to understand problems across industries, start from real scenarios, and stay with teams until solutions were genuinely in use.',
+        '客户与场景': 'Clients and Scenarios',
+        '累计服务 30+ 家高价值客户，推进 20+ 个 AI 应用场景，把知识问答、智能体与工作流能力接进真实团队协作。': 'I worked with 30+ high-value clients and advanced 20+ AI scenarios, bringing knowledge Q&A, agents, and workflows into real team collaboration.',
+        '共创与验证': 'Co-creation and Validation',
+        '曾为某头部直播电商企业主导全员 AI 应用挑战赛，从场景共创、方案陪跑一直走到业务验证。': 'I also led a company-wide AI application challenge for a leading livestream commerce business, moving from scenario co-creation and coaching through to business validation.',
+        '咨询底盘': 'Consulting Foundation',
+        '德勤风险咨询 · 高级咨询顾问': 'Deloitte Risk Advisory · Senior Consultant',
+        '在银行转型、系统推广与经营分析项目中，把战略设计、流程重塑、试点验证和规模复制接成完整的落地链路。': 'Across banking transformation, system rollout, and business analysis projects, I connected strategy design, process redesign, pilot validation, and scaled replication into one delivery chain.',
+        '学习、表达与工具': 'Learning, Expression, and Tools',
+        '把学习、社群、公开表达与工具实践，接成持续生长的能力线': 'Connecting Learning, Community, Public Expression, and Tools into a Compounding Capability',
+        '校园、分享、社群、教练与 AI 工具实践，一起构成了我在工作之外持续训练判断、连接与表达的方式。': 'Campus life, public sharing, communities, coaching, and AI tool practice are how I keep training judgment, connection, and expression beyond work.',
+        '公开分享': 'Public Speaking',
+        'AI工具实践': 'AI Tool Practice',
+        '#Learn&Digest': '#Learn&Digest',
+        '公开表达': 'Public Expression',
+        '常用飞书 CLI、Codex、Python、SQL 与数据可视化工具；持有 CISA、CIA 与证券从业资格证。': 'My regular toolkit includes the Feishu CLI, Codex, Python, SQL, and data visualization tools; I hold CISA, CIA, and securities qualifications.',
+        '这场长期训练走到今天，越来越像在给“自己这个大模型”做持续预训练：用真实输入喂养判断，用写作把它显化出来。': 'Over time, this practice has begun to feel like continual pre-training for the model that is me: feeding judgment with real inputs, then making it visible through writing.',
+        '13 条': '13 Records',
+        '当 AI 从“滴管”变成“水管”，普通人的分水岭究竟在哪里？': 'When AI shifts from a dropper to a pipeline, what truly separates the people who keep up?',
+        '外卖': 'Delivery',
+        '补': 'Boost',
+        '购物': 'Shopping',
+        '情绪补给': 'Mood Boost',
+        '小补给': 'Little Boost',
+        '一个“假装下单”的多巴胺小程序，用虚拟外卖、购物和破财演练安慰一下自己。': 'A playful dopamine mini app that simulates delivery, shopping, and splurging without spending real money.',
+        '杭': 'HZ',
+        '里': 'LIS',
+        '海': 'ATL',
+        '旅行实验': 'Travel Experiment',
+        'AI 旅行定制': 'AI Travel Planner',
+        '把偏好、节奏与真实约束交给 AI，共同长出一条可以出发的伊比利亚路线。': 'Give AI your preferences, pace, and real-world constraints, then shape an Iberian route you can actually take.',
+        '如果你也在思考战略与 AI 的结合、正在搭建自己的个人 OS，或者只是对这些问题有自己的答案，欢迎来连接我。': 'If you are thinking about strategy and AI, building your own personal operating system, or simply have your own answers to these questions, I would be glad to connect.',
+        '公开分享、行业交流与真诚讨论都很欢迎；涉及现任或前任雇主的信息，我只讨论已经公开的内容。': 'Public talks, industry exchange, and honest discussion are all welcome. When it comes to current or former employers, I only discuss information already in the public domain.',
+        '写邮件给我': 'Email Me',
+        '想聊战略与 AI、个人 OS，或交换各自正在形成的判断，欢迎直接来找我。': 'If you would like to discuss strategy and AI, personal operating systems, or compare emerging views, feel free to reach out.',
+        '换了公司和城市，但没有换掉那条主线。': 'The company and city changed. The through-line did not.',
+        '亲手判断、借 AI 显化，再到真实世界里持续校准——这几条线会在后面的工作、写作和相遇里继续展开。': 'Make the judgment myself, use AI to make it visible, and keep calibrating it in the real world—these threads will continue through future work, writing, and encounters.',
+        '“在所有人都在加速的时代，我选择先把手弄脏，亲手把石头推上山。石头会滚下来——但沿途那些「叮」的瞬间，是真的。”': '“In an age when everyone is accelerating, I choose to get my hands dirty and push the stone uphill myself. It rolls back down—but the sparks along the way are real.”',
+        '把自己当作值得训练的模型': 'Treat Yourself as a Model Worth Training',
+        '持续阅读、消化和书写，让经验、判断与品味一点点长在自己身上。': 'Keep reading, digesting, and writing until experience, judgment, and taste become part of you.',
+        '让判断进入真实现场': 'Put Judgment into the Real World',
+        '公开表达、面对面交流和业务实践，会不断检验并修正我的答案。': 'Public expression, face-to-face conversations, and operating practice keep testing and correcting my answers.',
+        '继续进入下一章': 'Keep Entering the Next Chapter',
+        '文章、项目和新的问题会继续长出来；下一章，也在一杯茶的经济版图里展开。': 'Essays, projects, and new questions will keep growing; the next chapter is also unfolding across the economy behind a cup of tea.',
+        '本站内容仅代表个人观点，不代表现任或前任雇主。': 'Views expressed here are personal and do not represent my current or former employers.'
     }
 };
 
 const htmlTranslations = {
-    '.about-intro': 'Hi, I am Renee Zhang, based in Shanghai. I work as an <strong>enterprise efficiency consultant</strong> at ByteDance Feishu, serving East China KA clients with a focus on internet and robotics companies. Most of my work is about helping enterprise AI move from idea to actual usage.',
-    '.about-quote': 'After returning from UC Berkeley, I kept asking myself: <strong>in the AI era, what should I still insist on doing myself, even when AI can help?</strong>',
-    '.about-mission': 'My answer is three things: digest ideas myself, connect them in my own mind, and write them down by hand. That became my long-term <strong>#Learn&amp;Digest</strong> practice. At work, I take the same approach: discover scenarios, design solutions, and walk with teams until AI actually enters their workflow.',
-    '.about-belief': 'The longer I do this, the more I believe that <strong>the stronger AI becomes, the more people need real, face-to-face collisions.</strong> No recommendation engine can replace the spark of a real encounter. Outside work, I keep building agents, experimenting with AI coding, running Feishu AI practice communities, and showing up in MBA, peer advisory, and public sharing spaces.',
-    '.about-vision': 'In the AI era, the scarce resource is not compute. It is human insight into real scenarios, plus the will to make things work step by step. <strong>If you are also working on enterprise AI adoption, or wondering where your company should begin, I would love to talk about scenarios, solutions, and co-creation.</strong>'
+    '.about-intro': 'Hi, I’m Renee Zhang, now based in Hangzhou and working in <strong>Strategy at Guming</strong>. In the summer of 2026, I moved from an enterprise efficiency consulting role at ByteDance’s Feishu into a consumer business. Over the previous four years, I helped 30+ enterprises move AI from ideas into real workflows. Today, I bring that cross-industry experience into a new strategic context, studying the tea beverage and broader consumer landscape while exploring how AI can turn sound judgment into action.',
+    '.about-quote': 'The move changed more than my company and city. It changed the distance between me and the problems I work on: from supporting many clients to staying with one operating business over time; from responding to individual requests to understanding the underlying question, forming a view, and setting execution in motion. It has made one thing especially clear—<strong>I am at my best when I can understand a complex problem, make a choice, and help turn it into action.</strong>',
+    '.about-mission': 'Ever since an exchange program at UC Berkeley, I have kept asking myself: in an age when AI can do almost anything, what do I still insist on doing myself? My answer remains the same: digest ideas, connect them in my own mind, and write down what I truly think. That question became the foundation of my long-running <strong>#Learn&amp;Digest</strong> practice.',
+    '.about-belief': 'More recently, I have become convinced that building a durable personal operating system matters more than chasing every new tool. The goal is to turn experience, standards, and taste into reusable context that compounds over time. <strong>The stronger AI becomes, the more carefully we need to protect our judgment—and the more we need real conversations with real people.</strong> If you are thinking about strategy, AI, or your own personal OS, I would be glad to connect.'
 };
 
 function normalizeText(text) {
@@ -279,16 +342,16 @@ function translateTextNodes(root = document.body) {
 function applyLanguageMeta() {
     document.documentElement.lang = currentLanguage === 'en' ? 'en' : 'zh-CN';
     document.title = currentLanguage === 'en'
-        ? 'Renee Zhang | Enterprise AI Adoption'
-        : '张岚焱 Renee | 企业 AI 应用落地实践';
+        ? 'Renee Zhang | Strategy × AI × Personal OS'
+        : '张岚焱 Renee｜战略 × AI × 个人 OS';
 
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
         metaDescription.setAttribute(
             'content',
             currentLanguage === 'en'
-                ? 'Renee Zhang, enterprise efficiency consultant at ByteDance Feishu, focused on enterprise AI adoption, public speaking, field notes, and AI projects.'
-                : '张岚焱（Renee），字节跳动飞书企业效能顾问，关注企业 AI 应用落地、公开分享、深度阅读与 AI 小项目实践。'
+                ? 'Renee Zhang is based in Hangzhou and works in Strategy at Guming after helping 30+ enterprises move AI from ideas into real workflows at ByteDance’s Feishu.'
+                : '张岚焱（Renee），现居杭州、就职于古茗战略部，曾在字节跳动飞书推动 30+ 家企业的 AI 应用落地。持续记录战略判断、个人 OS、公开分享与 AI 项目。'
         );
     }
 }
@@ -528,7 +591,7 @@ function initScreenPager() {
 
     const pager = document.createElement('div');
     pager.className = 'screen-pager';
-    pager.setAttribute('aria-label', '页面分屏导航');
+    pager.setAttribute('aria-label', currentLanguage === 'en' ? 'Section navigation' : '页面分屏导航');
 
     const dots = snapSections.map((section, index) => {
         const dot = document.createElement('button');
@@ -538,8 +601,9 @@ function initScreenPager() {
 
         dot.className = 'screen-pager-dot';
         dot.type = 'button';
-        dot.setAttribute('aria-label', `跳转到${label}`);
-        dot.title = label;
+        const localizedLabel = t(label);
+        dot.setAttribute('aria-label', currentLanguage === 'en' ? `Go to ${localizedLabel}` : `跳转到${label}`);
+        dot.title = localizedLabel;
         dot.addEventListener('click', () => {
             scrollToSection(section);
         });
@@ -1586,6 +1650,26 @@ const digestData = [
 const speakingData = [
     {
         year: '2026',
+        type: '受邀分享',
+        typeEn: 'Invited Talk',
+        title: '半年认知回顾：从滴管到水管',
+        titleEn: 'Half-Year Reflection: From Dropper to Pipeline',
+        event: '2026-07-18 · AI 工作方式与个人 OS',
+        eventEn: '2026-07-18 · AI workflows and personal operating systems',
+        desc: '从 Prompt、Context 到 Harness，复盘普通人跟上 AI 的分水岭：不只会提问，更要建立一套能持续接住上下文、标准与反馈的个人 OS。',
+        descEn: 'A reflection on the shift from prompts and context to harnesses—and why keeping up with AI now depends on a personal operating system that can hold context, standards, and feedback over time.',
+        tags: ['个人OS', 'Harness Engineering', '判断力'],
+        tagsEn: ['Personal OS', 'Harness Engineering', 'Judgment'],
+        images: [
+            'thoughts/from-dropper-to-pipeline/os-role-workflow.png',
+            'thoughts/from-dropper-to-pipeline/train-yourself-as-model.png'
+        ],
+        href: '/thoughts/from-dropper-to-pipeline/',
+        cta: '阅读全文',
+        ctaEn: 'Read in Chinese'
+    },
+    {
+        year: '2026',
         type: '分享嘉宾',
         typeEn: 'Guest Speaker',
         title: '上海交通大学校友创新沙龙',
@@ -1873,6 +1957,23 @@ const speakingGalleryData = [
 
 const thinkingData = [
     {
+        id: 'from-dropper-to-pipeline',
+        status: 'live',
+        statusLabel: '在线长文',
+        statusLabelEn: 'Live Essay',
+        title: '从滴管到水管：普通人跟上 AI 的分水岭在哪里',
+        titleEn: 'From Dropper to Pipeline: What Separates People Who Keep Up with AI?',
+        desc: '从 Prompt、Context 到 Harness：真正的分水岭，不是更会向 AI 提问，而是能否建立一套持续接住上下文、标准与反馈的个人 OS。',
+        descEn: 'From prompts and context to harnesses: the real divide is not better prompting, but building a personal operating system that continuously holds context, standards, and feedback.',
+        format: '思考长文 / 个人 OS',
+        formatEn: 'Long Essay / Personal OS',
+        topics: ['Harness Engineering', '个人 OS', '判断力'],
+        topicsEn: ['Harness Engineering', 'Personal OS', 'Judgment'],
+        href: '/thoughts/from-dropper-to-pipeline/',
+        cta: '阅读全文',
+        ctaEn: 'Read in Chinese'
+    },
+    {
         id: 'ai-collaboration-constitution',
         status: 'live',
         statusLabel: '在线长文',
@@ -1990,30 +2091,6 @@ const thinkingData = [
         href: 'https://bytedance.larkoffice.com/wiki/MjxXwCmNeiIgKLkdVvJcvVS0nof',
         cta: '打开文档',
         ctaEn: 'Open Doc'
-    },
-    {
-        id: 'harness-engineering',
-        status: 'building',
-        statusLabel: '片段随记',
-        statusLabelEn: 'Fragment',
-        title: '从 Prompt 到 Harness：AI 开始接上人的上下文之后',
-        titleEn: 'From Prompt to Harness: When AI Connects to Human Context',
-        desc: '关键词：Harness Engineering / 认知显化 / 对齐。不是更大的滴管，而是把系统真正接上人的上下文。',
-        descEn: 'Keywords: harness engineering, cognitive externalization, alignment. Not a bigger dropper, but a system connected to human context.',
-        format: '元认知 / 元 AI',
-        formatEn: 'Metacognition / Meta AI',
-        topics: ['Harness Engineering', '认知上传', '对齐'],
-        topicsEn: ['Harness Engineering', 'Cognition Upload', 'Alignment'],
-        href: '',
-        cta: '阅读全文',
-        ctaEn: 'Read More',
-        fullText: `
-            <p>#1-Area/元认知 #AI/元AI</p>
-            <p>以前 prompt engineering 和 context engineering 就像拿着滴管去河里面取水，不过是小滴管变成了大滴管甚至管道。</p>
-            <p>但现在 harness engineering 是完全不一样的，尤其是结合飞书或者 OpenClaw 或者 Notion 或者 Obsidian 之类的各处主人信息，那就像阿凡达里面那个辫子和龙连在一起，就可以翱翔了。</p>
-            <p>一开始给 AI 几个模糊的标签，AI 能懂你一点，大概按照你的标签去交互，没关系，重要的是建立起系统，过程中不断给反馈，优化迭代，就会越来越像你。这个过程的核心是自己的认知的显化和上传以及对齐。</p>
-            <p>人和人的关系就像黑暗中并肩行走，永远无法真的知道对方和自己的真实全貌，但不断加深互相的了解和纠正共同前进，就够了，未来人和 AI 也是。</p>
-        `
     },
     {
         id: 'startup-will',
@@ -2354,7 +2431,7 @@ function renderSpeakingCarousel() {
     `).join('');
 
     indicators.innerHTML = speakingGalleryData.map((_, index) => `
-        <button class="speaking-carousel-indicator ${index === 0 ? 'active' : ''}" data-index="${index}" aria-label="查看第 ${index + 1} 张"></button>
+        <button class="speaking-carousel-indicator ${index === 0 ? 'active' : ''}" data-index="${index}" aria-label="${currentLanguage === 'en' ? `View slide ${index + 1}` : `查看第 ${index + 1} 张`}"></button>
     `).join('');
 
     let currentIndex = 0;

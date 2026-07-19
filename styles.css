@@ -1104,12 +1104,13 @@ ul {
 .about-tags {
     display: flex;
     flex-direction: column;
+    min-width: 0;
     gap: 1rem;
 }
 
 .tag-cloud {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     gap: var(--spacing-sm);
 }
 
@@ -3843,6 +3844,68 @@ ul {
     color: #fffdf8;
 }
 
+.project-preview-travel {
+    isolation: isolate;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 22% 24%, rgba(53, 122, 112, 0.18), transparent 30%),
+        linear-gradient(145deg, rgba(225, 239, 234, 0.92), rgba(250, 247, 240, 0.98));
+}
+
+.travel-route {
+    position: absolute;
+    left: 18%;
+    right: 18%;
+    top: 50%;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(53, 122, 112, 0.3), #357a70 50%, rgba(184, 84, 80, 0.48));
+    transform: rotate(-8deg);
+}
+
+.travel-route::after {
+    content: "";
+    position: absolute;
+    inset: -0.42rem 18% auto 34%;
+    height: 0.75rem;
+    border-top: 1px dashed rgba(53, 122, 112, 0.34);
+    border-radius: 50%;
+}
+
+.travel-stop {
+    position: absolute;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.15rem;
+    height: 2.15rem;
+    padding: 0 0.45rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.86);
+    border: 1px solid rgba(53, 122, 112, 0.2);
+    color: #285f57;
+    font-size: 0.7rem;
+    font-weight: 700;
+    box-shadow: 0 12px 24px rgba(38, 90, 82, 0.12);
+}
+
+.travel-stop-start {
+    left: 13%;
+    bottom: 22%;
+}
+
+.travel-stop-mid {
+    left: 47%;
+    top: 24%;
+}
+
+.travel-stop-end {
+    right: 12%;
+    bottom: 30%;
+    border-color: rgba(184, 84, 80, 0.22);
+    color: var(--color-accent);
+}
+
 .supply-tag {
     position: absolute;
     z-index: 1;
@@ -3920,6 +3983,26 @@ ul {
     color: var(--color-text-muted);
     font-size: 0.86rem;
     line-height: 1.58;
+}
+
+@media (min-width: 1181px) {
+    .projects-grid {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: clamp(0.72rem, 1vw, 1rem);
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1180px) {
+    .projects-grid {
+        grid-template-columns: repeat(5, minmax(220px, 1fr));
+        overflow-x: auto;
+        scroll-snap-type: x proximity;
+        padding-bottom: 0.65rem;
+    }
+
+    .project-card {
+        scroll-snap-align: start;
+    }
 }
 
 /* ===== Quote Section ===== */
@@ -4158,6 +4241,17 @@ ul {
     color: var(--color-text-muted);
 }
 
+.story-epilogue-legacy-quote {
+    margin: 0;
+    padding: 0.95rem 1rem;
+    border-left: 2px solid rgba(184, 84, 80, 0.55);
+    background: rgba(255, 255, 255, 0.38);
+    color: var(--color-text-muted);
+    font-family: var(--font-serif);
+    font-size: 0.9rem;
+    line-height: 1.72;
+}
+
 .storyboard-rail {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -4220,6 +4314,12 @@ ul {
     color: var(--color-text-light);
 }
 
+.footer-disclaimer {
+    margin-bottom: 0.45rem;
+    color: var(--color-text-muted);
+    font-size: 0.82rem;
+}
+
 @media (prefers-color-scheme: dark) {
     .about-content,
     .career-stage,
@@ -4271,7 +4371,8 @@ ul {
     .thinking-prompts li,
     .storyboard-card p,
     .contact-qr-desc,
-    .quote-text {
+    .quote-text,
+    .story-epilogue-legacy-quote {
         color: rgba(245, 241, 232, 0.74);
     }
 
@@ -4305,6 +4406,11 @@ ul {
         background: rgba(184, 84, 80, 0.18);
         color: var(--color-text);
         border: 1px solid rgba(184, 84, 80, 0.26);
+    }
+
+    .story-epilogue-legacy-quote {
+        background: rgba(255, 255, 255, 0.04);
+        border-left-color: rgba(184, 84, 80, 0.64);
     }
 
     .tag-secondary,

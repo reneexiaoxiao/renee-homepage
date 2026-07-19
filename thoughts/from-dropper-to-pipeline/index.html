@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>从滴管到水管：普通人跟上 AI 的分水岭在哪里 | Renee Zhang</title>
+    <meta name="description" content="从一次次手动提问，走向 Harness、个人上下文 OS 与可持续的人机协作流程：这是《AI 协作宪法》的系统实现篇。">
+    <meta name="author" content="张岚焱（Renee Zhang）">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://renezhang.fun/thoughts/from-dropper-to-pipeline/">
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="Renee Zhang">
+    <meta property="og:title" content="从滴管到水管：普通人跟上 AI 的分水岭在哪里">
+    <meta property="og:description" content="真正的分水岭，不是更会写 Prompt，而是能否起一个流程，把判断、上下文、工具与反馈接成自己的工作 OS。">
+    <meta property="og:url" content="https://renezhang.fun/thoughts/from-dropper-to-pipeline/">
+    <meta property="og:image" content="https://renezhang.fun/thoughts/from-dropper-to-pipeline/train-yourself-as-model.png">
+    <meta property="article:published_time" content="2026-07-18">
+    <meta property="article:modified_time" content="2026-07-19">
+    <meta property="article:author" content="Renee Zhang">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="从滴管到水管：普通人跟上 AI 的分水岭在哪里">
+    <meta name="twitter:description" content="《AI 协作宪法》的系统实现篇：Harness、个人上下文 OS、token 丰盛与判断力 × 杠杆。">
+    <meta name="twitter:image" content="https://renezhang.fun/thoughts/from-dropper-to-pipeline/train-yourself-as-model.png">
+    <meta name="theme-color" content="#F6F2EA">
+    <link rel="preload" href="../../fonts/zhonghuaxinhuo-subset.woff2?v=20260515-font2" as="font" type="font/woff2" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css?v=20260521-curation1">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "从滴管到水管：普通人跟上 AI 的分水岭在哪里",
+        "description": "从一次次手动提问，走向 Harness、个人上下文 OS 与可持续的人机协作流程。",
+        "inLanguage": "zh-CN",
+        "datePublished": "2026-07-18",
+        "dateModified": "2026-07-19",
+        "author": {
+            "@type": "Person",
+            "name": "张岚焱（Renee Zhang）",
+            "url": "https://renezhang.fun/"
+        },
+        "mainEntityOfPage": "https://renezhang.fun/thoughts/from-dropper-to-pipeline/",
+        "image": "https://renezhang.fun/thoughts/from-dropper-to-pipeline/train-yourself-as-model.png"
+    }
+    </script>
+    <style>
+        body.article-page {
+            background:
+                linear-gradient(135deg, rgba(246, 242, 234, 0.96), rgba(238, 242, 237, 0.92) 42%, rgba(247, 240, 232, 0.96)),
+                var(--color-bg);
+        }
+
+        .page-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 120;
+            width: 100%;
+            height: 3px;
+            background: transparent;
+        }
+
+        .page-progress-bar {
+            display: block;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(90deg, #b85450, #517c66, #d6a247);
+        }
+
+        .pipeline-shell {
+            width: min(1120px, calc(100% - 2rem));
+            margin: 0 auto;
+            padding: calc(var(--nav-height) + 2.2rem) 0 4rem;
+        }
+
+        .pipeline-hero {
+            display: grid;
+            grid-template-columns: minmax(0, 1.08fr) minmax(20rem, 0.72fr);
+            gap: clamp(1.6rem, 4vw, 3.5rem);
+            align-items: end;
+            min-height: 60vh;
+            padding: 2.6rem 0 2.2rem;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .article-kicker {
+            margin-bottom: 0.85rem;
+            color: var(--color-accent);
+            font-family: var(--font-sans);
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .pipeline-title {
+            max-width: 10.8em;
+            margin-bottom: 1rem;
+            font-size: clamp(2.45rem, 6.1vw, 5rem);
+            line-height: 1.08;
+            letter-spacing: 0;
+        }
+
+        .pipeline-subtitle {
+            max-width: 49rem;
+            color: var(--color-text-muted);
+            font-family: "Noto Serif SC", var(--font-serif);
+            font-size: clamp(1rem, 1.45vw, 1.16rem);
+            line-height: 1.78;
+        }
+
+        .article-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.35rem;
+        }
+
+        .article-meta span,
+        .article-pill {
+            display: inline-flex;
+            align-items: center;
+            min-height: 1.9rem;
+            padding: 0.25rem 0.65rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-full);
+            background: rgba(255, 253, 248, 0.68);
+            color: var(--color-text-muted);
+            font-family: var(--font-sans);
+            font-size: 0.78rem;
+        }
+
+        .pipeline-panel {
+            padding: 1rem;
+            border: 1px solid rgba(88, 72, 58, 0.16);
+            border-radius: var(--radius-lg);
+            background: rgba(255, 253, 248, 0.72);
+            box-shadow: 0 16px 42px rgba(88, 72, 58, 0.08);
+        }
+
+        .pipeline-panel > p {
+            margin-bottom: 0.8rem;
+            color: var(--color-text-light);
+            font-family: var(--font-sans);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .flow-state {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 0.55rem;
+            align-items: stretch;
+        }
+
+        .flow-state-card {
+            display: flex;
+            min-height: 11.2rem;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 0.9rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            background: rgba(255, 253, 248, 0.62);
+        }
+
+        .flow-state-card.is-pipeline {
+            border-color: rgba(81, 124, 102, 0.32);
+            background: rgba(81, 124, 102, 0.09);
+        }
+
+        .flow-state-card b {
+            color: var(--color-text);
+            font-size: 1.06rem;
+        }
+
+        .flow-state-card small {
+            color: var(--color-text-light);
+            font-family: var(--font-sans);
+            font-size: 0.72rem;
+        }
+
+        .flow-state-card span {
+            color: var(--color-text-muted);
+            font-size: 0.84rem;
+            line-height: 1.55;
+        }
+
+        .flow-arrow {
+            align-self: center;
+            color: var(--color-accent);
+            font-family: var(--font-sans);
+            font-weight: 700;
+        }
+
+        .pipeline-panel blockquote {
+            margin: 0.85rem 0 0;
+            padding-top: 0.78rem;
+            border-top: 1px solid var(--color-border);
+            color: var(--color-text);
+            font-family: "Noto Serif SC", var(--font-serif);
+            font-size: 0.9rem;
+            line-height: 1.62;
+        }
+
+        .article-layout {
+            display: grid;
+            grid-template-columns: 15rem minmax(0, 1fr);
+            gap: clamp(1.6rem, 4vw, 3.25rem);
+            margin-top: 2.8rem;
+        }
+
+        .article-toc {
+            position: sticky;
+            top: calc(var(--nav-height) + 1.4rem);
+            align-self: start;
+            padding: 0.8rem 0.85rem;
+            border-left: 2px solid var(--color-border);
+        }
+
+        .article-toc p {
+            margin-bottom: 0.75rem;
+            color: var(--color-text-light);
+            font-family: var(--font-sans);
+            font-size: 0.72rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .article-toc a {
+            display: block;
+            margin-bottom: 0.56rem;
+            color: var(--color-text-muted);
+            font-size: 0.88rem;
+            line-height: 1.42;
+        }
+
+        .article-body {
+            max-width: 760px;
+            font-family: "Noto Serif SC", var(--font-serif);
+        }
+
+        .article-body > .article-lead {
+            margin-bottom: 2.35rem;
+            padding: 1.05rem 1.25rem;
+            border-left: 4px solid var(--color-accent);
+            background: rgba(255, 253, 248, 0.72);
+            color: var(--color-text);
+            font-size: 1.04rem;
+            line-height: 1.8;
+        }
+
+        .article-body a:not(.article-back):not(.image-zoom-link):not(.bridge-link) {
+            color: var(--color-accent);
+            text-decoration: underline;
+            text-decoration-color: rgba(184, 84, 80, 0.36);
+            text-underline-offset: 0.18em;
+        }
+
+        .article-section {
+            margin: 0 0 3.2rem;
+            scroll-margin-top: calc(var(--nav-height) + 1.5rem);
+        }
+
+        .article-section h2 {
+            display: flex;
+            gap: 0.9rem;
+            align-items: baseline;
+            margin-bottom: 0.95rem;
+            font-size: clamp(1.55rem, 3.3vw, 2.55rem);
+            line-height: 1.2;
+        }
+
+        .article-section h2 span {
+            color: var(--color-accent);
+            font-family: var(--font-sans);
+            font-size: 0.82rem;
+            font-weight: 700;
+        }
+
+        .article-section h3 {
+            margin: 1.45rem 0 0.55rem;
+            font-size: 1.14rem;
+        }
+
+        .article-body p,
+        .article-body li {
+            color: var(--color-text-muted);
+            font-size: 0.98rem;
+            line-height: 1.82;
+        }
+
+        .article-body ul,
+        .article-body ol {
+            display: grid;
+            gap: 0.3rem;
+            margin: 0.75rem 0 1.12rem;
+            padding-left: 1.2rem;
+        }
+
+        .article-body strong {
+            color: var(--color-text);
+            font-weight: 600;
+        }
+
+        .article-quote,
+        .article-callout {
+            margin: 1.4rem 0;
+            padding: 1.08rem 1.22rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            background: rgba(255, 253, 248, 0.66);
+            color: var(--color-text);
+        }
+
+        .article-quote {
+            font-size: 1.08rem;
+            line-height: 1.72;
+            text-align: center;
+        }
+
+        .article-callout p {
+            margin-bottom: 0;
+            color: var(--color-text);
+            font-size: 1.01rem;
+            line-height: 1.68;
+        }
+
+        .constitution-bridge {
+            display: grid;
+            grid-template-columns: auto minmax(0, 1fr) auto;
+            gap: 0.85rem;
+            align-items: center;
+            margin: 1.25rem 0 1.55rem;
+            padding: 0.95rem 1rem;
+            border: 1px solid rgba(184, 84, 80, 0.22);
+            border-radius: var(--radius-lg);
+            background: rgba(184, 84, 80, 0.07);
+        }
+
+        .bridge-mark {
+            display: grid;
+            place-items: center;
+            width: 2.25rem;
+            height: 2.25rem;
+            border-radius: 50%;
+            background: var(--color-accent);
+            color: #fff;
+            font-family: var(--font-sans);
+            font-size: 0.78rem;
+            font-weight: 700;
+        }
+
+        .constitution-bridge b {
+            display: block;
+            margin-bottom: 0.18rem;
+            color: var(--color-text);
+        }
+
+        .constitution-bridge p {
+            margin: 0;
+            font-size: 0.86rem;
+            line-height: 1.55;
+        }
+
+        .bridge-link {
+            color: var(--color-accent);
+            font-family: var(--font-sans);
+            font-size: 0.82rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .compare-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.8rem;
+            margin: 1.1rem 0 1.5rem;
+        }
+
+        .compare-card {
+            padding: 0.95rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            background: rgba(255, 253, 248, 0.68);
+        }
+
+        .compare-card.is-new {
+            border-color: rgba(81, 124, 102, 0.28);
+            background: rgba(81, 124, 102, 0.08);
+        }
+
+        .compare-card header {
+            display: flex;
+            gap: 0.58rem;
+            align-items: baseline;
+            margin-bottom: 0.65rem;
+        }
+
+        .compare-card header span {
+            color: var(--color-accent);
+            font-family: var(--font-sans);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .compare-card h3 {
+            margin: 0;
+        }
+
+        .compare-card ul {
+            margin-bottom: 0;
+        }
+
+        .harness-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.68rem;
+            margin: 1.1rem 0 1.5rem;
+        }
+
+        .harness-grid div {
+            padding: 0.88rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            background: rgba(255, 253, 248, 0.64);
+        }
+
+        .harness-grid b {
+            display: block;
+            margin-bottom: 0.28rem;
+            color: var(--color-text);
+        }
+
+        .harness-grid p {
+            margin: 0;
+            font-size: 0.88rem;
+            line-height: 1.58;
+        }
+
+        .system-loop {
+            counter-reset: loop;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.62rem;
+            margin: 1.15rem 0 1.5rem;
+            padding: 0;
+            list-style: none;
+        }
+
+        .system-loop li {
+            counter-increment: loop;
+            position: relative;
+            padding: 0.9rem 0.82rem 0.82rem 2.9rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            background: rgba(255, 253, 248, 0.68);
+        }
+
+        .system-loop li::before {
+            content: counter(loop);
+            position: absolute;
+            top: 0.86rem;
+            left: 0.82rem;
+            display: grid;
+            place-items: center;
+            width: 1.45rem;
+            height: 1.45rem;
+            border-radius: 50%;
+            background: var(--color-text);
+            color: var(--color-bg);
+            font-family: var(--font-sans);
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+
+        .system-loop b {
+            display: block;
+            margin-bottom: 0.2rem;
+            color: var(--color-text);
+        }
+
+        .system-loop p {
+            margin: 0;
+            font-size: 0.84rem;
+            line-height: 1.52;
+        }
+
+        .context-stack {
+            display: grid;
+            gap: 0.55rem;
+            margin: 1.1rem 0 1.45rem;
+        }
+
+        .context-layer {
+            display: grid;
+            grid-template-columns: 8.2rem minmax(0, 1fr);
+            gap: 0.8rem;
+            align-items: start;
+            padding: 0.82rem 0.9rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            background: rgba(255, 253, 248, 0.66);
+        }
+
+        .context-layer b {
+            color: var(--color-text);
+        }
+
+        .context-layer p {
+            margin: 0;
+            font-size: 0.88rem;
+            line-height: 1.58;
+        }
+
+        .article-figure {
+            width: 100%;
+            margin: 1.18rem auto 1.6rem;
+        }
+
+        .image-zoom-link {
+            position: relative;
+            display: block;
+            width: 100%;
+            overflow: hidden;
+            border: 1px solid rgba(88, 72, 58, 0.14);
+            border-radius: var(--radius-md);
+            background: rgba(255, 253, 248, 0.72);
+            box-shadow: 0 10px 24px rgba(88, 72, 58, 0.07);
+        }
+
+        .image-zoom-link img {
+            display: block;
+            width: 100%;
+            height: auto;
+            transition: transform var(--transition-normal);
+        }
+
+        .image-zoom-link:hover img {
+            transform: scale(1.012);
+        }
+
+        .image-zoom-link:focus-visible {
+            outline: 3px solid var(--color-accent);
+            outline-offset: 3px;
+        }
+
+        .zoom-hint {
+            position: absolute;
+            right: 0.7rem;
+            bottom: 0.7rem;
+            display: inline-flex;
+            align-items: center;
+            min-height: 2rem;
+            padding: 0.35rem 0.62rem;
+            border-radius: var(--radius-full);
+            background: rgba(26, 25, 21, 0.86);
+            color: #f5f1e8;
+            font-family: var(--font-sans);
+            font-size: 0.72rem;
+        }
+
+        .article-figure figcaption {
+            max-width: 42rem;
+            margin: 0.55rem auto 0;
+            color: var(--color-text-light);
+            font-size: 0.78rem;
+            line-height: 1.55;
+            text-align: center;
+        }
+
+        .travel-case {
+            margin: 1.15rem 0 1.5rem;
+            padding: 1rem;
+            border: 1px solid rgba(214, 162, 71, 0.34);
+            border-radius: var(--radius-lg);
+            background: rgba(214, 162, 71, 0.1);
+        }
+
+        .travel-case header {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            align-items: center;
+            margin-bottom: 0.58rem;
+        }
+
+        .travel-case header span {
+            padding: 0.2rem 0.5rem;
+            border-radius: var(--radius-full);
+            background: rgba(214, 162, 71, 0.2);
+            color: var(--color-text);
+            font-family: var(--font-sans);
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+
+        .travel-case h3 {
+            margin: 0;
+        }
+
+        .travel-case p {
+            margin-bottom: 0.62rem;
+        }
+
+        .travel-case ul {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.45rem;
+            margin-bottom: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .travel-case li {
+            padding: 0.52rem 0.62rem;
+            border-radius: var(--radius-sm);
+            background: rgba(255, 253, 248, 0.58);
+            font-size: 0.86rem;
+            line-height: 1.5;
+        }
+
+        .judgment-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+            gap: 0.68rem;
+            align-items: stretch;
+            margin: 1.1rem 0 1.5rem;
+        }
+
+        .judgment-card {
+            padding: 0.95rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            background: rgba(255, 253, 248, 0.68);
+        }
+
+        .judgment-card.is-ai {
+            background: rgba(81, 124, 102, 0.08);
+        }
+
+        .judgment-card b {
+            display: block;
+            margin-bottom: 0.55rem;
+            color: var(--color-text);
+            font-size: 1rem;
+        }
+
+        .judgment-card ul {
+            margin: 0;
+        }
+
+        .judgment-times {
+            align-self: center;
+            color: var(--color-accent);
+            font-family: var(--font-sans);
+            font-size: 1.35rem;
+            font-weight: 700;
+        }
+
+        .guardrail-list {
+            display: grid;
+            gap: 0.62rem;
+            margin: 1.1rem 0 1.5rem;
+            padding: 0;
+            list-style: none;
+        }
+
+        .guardrail-list li {
+            display: grid;
+            grid-template-columns: 2.15rem minmax(0, 1fr);
+            gap: 0.72rem;
+            align-items: start;
+            padding: 0.86rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            background: rgba(255, 253, 248, 0.66);
+        }
+
+        .guardrail-list span {
+            display: grid;
+            place-items: center;
+            width: 1.85rem;
+            height: 1.85rem;
+            border-radius: 50%;
+            background: rgba(184, 84, 80, 0.12);
+            color: var(--color-accent);
+            font-family: var(--font-sans);
+            font-size: 0.76rem;
+            font-weight: 700;
+        }
+
+        .guardrail-list b {
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+
+        .guardrail-list p {
+            margin: 0;
+            font-size: 0.88rem;
+            line-height: 1.56;
+        }
+
+        .starter-list {
+            counter-reset: starter;
+            display: grid;
+            gap: 0.66rem;
+            margin: 1.12rem 0 1.45rem;
+            padding: 0;
+            list-style: none;
+        }
+
+        .starter-list li {
+            counter-increment: starter;
+            position: relative;
+            padding: 0.88rem 0.92rem 0.88rem 3rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            background: rgba(255, 253, 248, 0.72);
+        }
+
+        .starter-list li::before {
+            content: counter(starter);
+            position: absolute;
+            top: 0.92rem;
+            left: 0.88rem;
+            display: grid;
+            place-items: center;
+            width: 1.4rem;
+            height: 1.4rem;
+            border-radius: 50%;
+            background: var(--color-accent);
+            color: #fff;
+            font-family: var(--font-sans);
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+
+        .article-footer {
+            margin-top: 2.9rem;
+            padding-top: 1.35rem;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .article-footer p {
+            margin-bottom: 0.32rem;
+            color: var(--color-text-light);
+            font-size: 0.86rem;
+            line-height: 1.55;
+        }
+
+        .article-footer-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            margin-top: 1rem;
+        }
+
+        .article-back {
+            display: inline-flex;
+            align-items: center;
+            min-height: 2.35rem;
+            padding: 0.45rem 0.85rem;
+            border: 1px solid var(--color-text);
+            border-radius: var(--radius-full);
+            background: var(--color-text);
+            color: var(--color-bg);
+            font-size: 0.84rem;
+        }
+
+        .article-back.is-secondary {
+            background: transparent;
+            color: var(--color-text);
+        }
+
+        .article-back:hover {
+            border-color: var(--color-accent);
+            background: var(--color-accent);
+            color: var(--color-bg);
+        }
+
+        .image-dialog {
+            width: min(96vw, 1540px);
+            max-width: none;
+            height: min(94vh, 980px);
+            max-height: none;
+            margin: auto;
+            padding: 0;
+            overflow: hidden;
+            border: 1px solid rgba(245, 241, 232, 0.18);
+            border-radius: var(--radius-lg);
+            background: #171713;
+            color: #f5f1e8;
+        }
+
+        .image-dialog::backdrop {
+            background: rgba(15, 15, 13, 0.84);
+            backdrop-filter: blur(5px);
+        }
+
+        .image-dialog-header {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 3.4rem;
+            padding: 0.7rem 0.85rem;
+            border-bottom: 1px solid rgba(245, 241, 232, 0.12);
+        }
+
+        .image-dialog-header p {
+            margin: 0;
+            color: rgba(245, 241, 232, 0.82);
+            font-family: var(--font-sans);
+            font-size: 0.82rem;
+            line-height: 1.4;
+        }
+
+        .image-dialog-actions {
+            display: flex;
+            flex: 0 0 auto;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .image-dialog-actions a,
+        .image-dialog-actions button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 2.15rem;
+            padding: 0.36rem 0.62rem;
+            border: 1px solid rgba(245, 241, 232, 0.2);
+            border-radius: var(--radius-full);
+            background: transparent;
+            color: #f5f1e8;
+            font-family: var(--font-sans);
+            font-size: 0.76rem;
+            cursor: pointer;
+        }
+
+        .image-dialog-actions button {
+            width: 2.15rem;
+            padding: 0;
+            font-size: 1rem;
+        }
+
+        .image-dialog-actions a:hover,
+        .image-dialog-actions button:hover,
+        .image-dialog-actions a:focus-visible,
+        .image-dialog-actions button:focus-visible {
+            border-color: #f5f1e8;
+            outline: none;
+        }
+
+        .image-dialog-scroll {
+            width: 100%;
+            height: calc(100% - 3.4rem);
+            overflow: auto;
+            overscroll-behavior: contain;
+            background: #ece9e2;
+        }
+
+        .image-dialog-scroll img {
+            display: block;
+            width: 100%;
+            min-width: 980px;
+            height: auto;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body.article-page {
+                background:
+                    linear-gradient(135deg, rgba(27, 27, 24, 0.98), rgba(25, 34, 30, 0.98) 42%, rgba(34, 29, 25, 0.98)),
+                    var(--color-bg);
+            }
+
+            .article-meta span,
+            .pipeline-panel,
+            .flow-state-card,
+            .article-lead,
+            .article-quote,
+            .article-callout,
+            .constitution-bridge,
+            .compare-card,
+            .harness-grid div,
+            .system-loop li,
+            .context-layer,
+            .travel-case,
+            .travel-case li,
+            .judgment-card,
+            .guardrail-list li,
+            .starter-list li {
+                background: rgba(37, 36, 32, 0.84);
+            }
+
+            .flow-state-card.is-pipeline,
+            .compare-card.is-new,
+            .judgment-card.is-ai {
+                background: rgba(81, 124, 102, 0.16);
+            }
+
+            .image-zoom-link {
+                background: rgba(37, 36, 32, 0.84);
+            }
+        }
+
+        @media (max-width: 900px) {
+            html,
+            body.article-page {
+                max-width: 100%;
+                overflow-x: hidden;
+            }
+
+            .pipeline-shell {
+                width: min(100%, 48rem);
+                max-width: 800px;
+                padding-inline: 0.95rem;
+                padding-top: calc(var(--nav-height) + 0.9rem);
+                overflow-x: clip;
+            }
+
+            .pipeline-hero {
+                grid-template-columns: 1fr;
+                min-height: auto;
+                padding: 1.8rem 0;
+                gap: 1rem;
+            }
+
+            .pipeline-title {
+                max-width: 100%;
+                font-size: clamp(2.08rem, 11vw, 3.35rem);
+                line-height: 1.12;
+                overflow-wrap: anywhere;
+            }
+
+            .pipeline-subtitle {
+                font-size: 0.96rem;
+                line-height: 1.76;
+            }
+
+            .article-layout {
+                grid-template-columns: 1fr;
+                margin-top: 1.35rem;
+            }
+
+            .article-toc {
+                position: static;
+                display: flex;
+                gap: 0.45rem;
+                max-width: 100%;
+                margin-inline: -0.95rem;
+                padding: 0 0.95rem 0.72rem;
+                overflow-x: auto;
+                overscroll-behavior-x: contain;
+                border-left: none;
+                border-bottom: 1px solid var(--color-border);
+                scrollbar-width: none;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .article-toc::-webkit-scrollbar {
+                display: none;
+            }
+
+            .article-toc p {
+                display: none;
+            }
+
+            .article-toc a {
+                flex: 0 0 auto;
+                min-height: 1.95rem;
+                margin-bottom: 0;
+                padding: 0.32rem 0.54rem;
+                border: 1px solid var(--color-border);
+                border-radius: var(--radius-full);
+                background: rgba(255, 253, 248, 0.64);
+                font-size: 0.78rem;
+                line-height: 1.2;
+            }
+
+            .article-section h2 {
+                display: block;
+                font-size: clamp(1.48rem, 7vw, 2.08rem);
+                line-height: 1.26;
+            }
+
+            .article-section h2 span {
+                display: block;
+                margin-bottom: 0.38rem;
+            }
+
+            .system-loop {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .article-body p,
+            .article-body li {
+                font-size: 0.96rem;
+                line-height: 1.76;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .pipeline-hero {
+                border-bottom: none;
+            }
+
+            .pipeline-panel {
+                box-shadow: none;
+            }
+
+            .compare-grid,
+            .harness-grid,
+            .system-loop,
+            .travel-case ul {
+                grid-template-columns: 1fr;
+            }
+
+            .context-layer {
+                grid-template-columns: 1fr;
+                gap: 0.22rem;
+            }
+
+            .judgment-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .judgment-times {
+                justify-self: center;
+            }
+
+            .constitution-bridge {
+                grid-template-columns: auto minmax(0, 1fr);
+            }
+
+            .bridge-link {
+                grid-column: 2;
+            }
+
+            .article-figure {
+                margin: 0.92rem auto 1.18rem;
+            }
+
+            .zoom-hint {
+                right: 0.5rem;
+                bottom: 0.5rem;
+            }
+
+            .image-dialog {
+                width: 100vw;
+                height: 100dvh;
+                border: none;
+                border-radius: 0;
+            }
+
+            .image-dialog-header {
+                padding-inline: 0.65rem;
+            }
+
+            .image-dialog-header p {
+                max-width: 11rem;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            .image-dialog-scroll img {
+                min-width: 1050px;
+            }
+        }
+
+        @media (max-width: 540px) {
+            .pipeline-shell {
+                width: 100%;
+                padding-inline: 0.82rem;
+                padding-top: calc(var(--nav-height) + 0.55rem);
+                padding-bottom: 2.8rem;
+            }
+
+            .pipeline-hero {
+                padding: 1rem 0 1.2rem;
+                gap: 0.82rem;
+            }
+
+            .article-kicker {
+                margin-bottom: 0.5rem;
+                font-size: 0.68rem;
+                line-height: 1.35;
+            }
+
+            .pipeline-title {
+                margin-bottom: 0.72rem;
+                font-size: clamp(1.64rem, 8.2vw, 2.22rem);
+                line-height: 1.18;
+            }
+
+            .pipeline-subtitle {
+                font-size: 0.92rem;
+                line-height: 1.66;
+            }
+
+            .article-meta {
+                gap: 0.36rem;
+                margin-top: 0.9rem;
+            }
+
+            .article-meta span {
+                min-height: 1.72rem;
+                padding: 0.22rem 0.52rem;
+                font-size: 0.72rem;
+            }
+
+            .article-meta span:nth-child(4) {
+                display: none;
+            }
+
+            .flow-state-card {
+                min-height: 9.4rem;
+                padding: 0.72rem;
+            }
+
+            .pipeline-panel {
+                padding: 0.72rem;
+            }
+
+            .pipeline-panel blockquote {
+                font-size: 0.84rem;
+            }
+
+            .article-layout {
+                margin-top: 1rem;
+            }
+
+            .article-toc {
+                margin-inline: -0.82rem;
+                padding: 0 0.82rem 0.62rem;
+            }
+
+            .article-section {
+                margin-bottom: 2rem;
+            }
+
+            .article-section h2 {
+                margin-bottom: 0.72rem;
+                font-size: clamp(1.34rem, 6.5vw, 1.82rem);
+            }
+
+            .article-body > .article-lead {
+                margin-bottom: 1.6rem;
+                padding: 0.85rem 0.95rem;
+                font-size: 0.95rem;
+                line-height: 1.68;
+            }
+
+            .article-body p,
+            .article-body li {
+                font-size: 0.94rem;
+                line-height: 1.72;
+            }
+
+            .article-quote,
+            .article-callout {
+                margin: 1.05rem 0;
+                padding: 0.88rem 0.95rem;
+            }
+
+            .article-quote,
+            .article-callout p {
+                font-size: 0.96rem;
+                line-height: 1.58;
+            }
+
+            .constitution-bridge {
+                padding: 0.78rem;
+            }
+
+            .constitution-bridge p {
+                font-size: 0.82rem;
+            }
+
+            .article-footer-actions {
+                display: grid;
+            }
+
+            .article-back {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .image-zoom-link img {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+<body class="article-page">
+    <div class="page-progress" aria-hidden="true">
+        <span class="page-progress-bar" id="pageProgressBar"></span>
+    </div>
+
+    <nav class="nav" aria-label="主导航">
+        <div class="nav-content">
+            <a href="https://renezhang.fun/#hero" class="nav-logo" aria-label="返回 Renee Zhang 首页">R</a>
+            <div class="nav-links">
+                <a href="https://renezhang.fun/#about">关于</a>
+                <a href="https://renezhang.fun/#learn-digest">#Learn&amp;Digest</a>
+                <a href="https://renezhang.fun/#thinking">思考手记</a>
+                <a href="https://renezhang.fun/#contact">联系</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pipeline-shell">
+        <header class="pipeline-hero">
+            <div>
+                <p class="article-kicker">Field Notes / Personal AI OS</p>
+                <h1 class="pipeline-title">从滴管到水管：普通人跟上 AI 的分水岭在哪里</h1>
+                <p class="pipeline-subtitle">真正的分水岭，不是把 Prompt 写得更长，而是能不能起一个流程，把自己的判断、上下文、工具与反馈接成一套会持续进化的系统。</p>
+                <div class="article-meta">
+                    <span>Renee Zhang</span>
+                    <span>2026.07 · 系统实现篇</span>
+                    <span>约 10 分钟阅读</span>
+                    <span>Harness / 个人上下文 / 判断力 × 杠杆</span>
+                </div>
+            </div>
+            <aside class="pipeline-panel" aria-label="从滴管到水管的核心变化">
+                <p>The Shift</p>
+                <div class="flow-state">
+                    <div class="flow-state-card">
+                        <small>01 / Dropper</small>
+                        <b>滴管</b>
+                        <span>手动复制上下文，一问一答，结果散落在一次对话里。</span>
+                    </div>
+                    <span class="flow-arrow" aria-hidden="true">→</span>
+                    <div class="flow-state-card is-pipeline">
+                        <small>02 / Pipeline</small>
+                        <b>水管</b>
+                        <span>稳定入口、可插拔上下文、Agent 执行、人工把关、反馈沉淀。</span>
+                    </div>
+                </div>
+                <blockquote>模型能力像水压；真正决定水能流向哪里的，是你有没有自己的管道。</blockquote>
+            </aside>
+        </header>
+
+        <div class="article-layout">
+            <aside class="article-toc" aria-label="文章目录">
+                <p>Contents</p>
+                <a href="#origin">这半年的变化</a>
+                <a href="#dropper">滴管与水管</a>
+                <a href="#harness">Harness 分水岭</a>
+                <a href="#system">从宪法到系统</a>
+                <a href="#context">个人上下文 OS</a>
+                <a href="#abundance">Token 丰盛</a>
+                <a href="#leverage">判断力 × 杠杆</a>
+                <a href="#guardrails">水管的护栏</a>
+                <a href="#start">起一条自己的管道</a>
+            </aside>
+
+            <article class="article-body">
+                <section class="article-lead">
+                    前一篇<a href="../ai-collaboration-constitution/">《在 AI 什么都能做的时代，我给自己立了一部「协作宪法」》</a>，回答的是“什么必须由我做，什么可以交给 AI”。这篇继续往下走一步：当边界想清楚之后，怎样把它装进一套每天真的跑得起来、还能越用越像自己的工作系统。
+                </section>
+
+                <section class="article-section" id="origin">
+                    <h2><span>01</span>这半年，我改变的不是工具清单</h2>
+                    <p>回看这半年，定期逼自己把最近的学习和思考凝结出来，还是挺重要的。每隔一段时间回头看，能明显感受到自己的认知在迭代：不是又多会了几个工具，而是对“我到底要怎么和 AI 一起工作”这件事，慢慢长出了自己的哲学。</p>
+                    <p>最早我也和很多人一样，把进步理解成：Prompt 再写清楚一点，背景材料再塞多一点，模型再换新一点。它们当然有用，但有一天我突然意识到，这些更像是在练习使用一支<strong>滴管</strong>——每次吸一点上下文，对准一个问题，滴出一个答案。</p>
+                    <p>滴管没有错。刚开始时，它甚至是最好的入口。可当 AI 开始进入真实工作、真实生活，问题就变了：我不可能每天重新解释自己是谁、现在在做什么、什么答案算好，也不可能把每一次不错的结果都留在聊天记录里等它消失。</p>
+                    <div class="article-quote">普通人真正要跨过去的，不是“会不会问”，而是“能不能让一次好用，变成下一次更好用”。</div>
+                    <p>于是我开始从滴管走向水管：不再把 AI 当成一个随叫随到的回答器，而是给它稳定入口、上下文、工具、边界、验收点和沉淀出口。模型还是那个模型，但工作方式已经完全不同。</p>
+                </section>
+
+                <section class="article-section" id="dropper">
+                    <h2><span>02</span>滴管与水管，差的不只是效率</h2>
+                    <p>这个比喻我越想越喜欢，因为它没有把新旧方式说成高低之分，而是两种不同的供给方式。</p>
+                    <div class="compare-grid">
+                        <section class="compare-card">
+                            <header>
+                                <span>Dropper</span>
+                                <h3>一次任务，一次供给</h3>
+                            </header>
+                            <ul>
+                                <li>每次手动复制背景和要求。</li>
+                                <li>结果依赖当下这一次表达是否完整。</li>
+                                <li>好答案停在对话框里，很难复用。</li>
+                                <li>人的角色主要是提问和接收。</li>
+                            </ul>
+                        </section>
+                        <section class="compare-card is-new">
+                            <header>
+                                <span>Pipeline</span>
+                                <h3>持续流动，持续沉淀</h3>
+                            </header>
+                            <ul>
+                                <li>上下文按需接入，不必每次重讲。</li>
+                                <li>工具、权限和验收规则一起工作。</li>
+                                <li>结果进入文档、知识库或下一流程。</li>
+                                <li>人的角色上移到判断、取舍与把关。</li>
+                            </ul>
+                        </section>
+                    </div>
+                    <p>水管真正改变的，不是“AI 一次能做更多”，而是<strong>工作开始有连续性</strong>。上一次的选择、修改和反馈，不再只是一段历史，而会变成下一次的起点。</p>
+                    <p>当然，水管也不会凭空创造好水源。如果输入只有二手摘要、平均观点和从没落到现实里的想象，那么系统越顺畅，只会越稳定地产出平庸。管道放大的是供给，也放大供给里的杂质。</p>
+                </section>
+
+                <section class="article-section" id="harness">
+                    <h2><span>03</span>Harness 是分水岭，但不用先学成架构师</h2>
+                    <p>最近越来越多人开始说 Harness。我的理解很朴素：<strong>模型是发动机，Harness 是让发动机真正装上车、沿着道路抵达目的地的整套约束和连接。</strong></p>
+                    <p>它至少回答四件事：</p>
+                    <div class="harness-grid">
+                        <div>
+                            <b>模型看见什么</b>
+                            <p>当前任务、必要背景、个人偏好和历史决策，怎样被准确地送到这一轮。</p>
+                        </div>
+                        <div>
+                            <b>模型能调用什么</b>
+                            <p>搜索、文档、代码、表格或其他工具，在什么权限边界内被使用。</p>
+                        </div>
+                        <div>
+                            <b>模型什么时候停</b>
+                            <p>哪些步骤可以自动继续，哪些判断必须回来问人，什么叫验收通过。</p>
+                        </div>
+                        <div>
+                            <b>结果流向哪里</b>
+                            <p>不是只在聊天里生成一段文字，而是进入真正的交付物与后续流程。</p>
+                        </div>
+                    </div>
+                    <p>所以我会开玩笑说：<strong>Prompt 和 Context Engineering，只要学得够晚，可能就不用把它们当作独立学科来学了。</strong>不是说它们不重要，而是它们正在被收进更完整的系统里，变成默认存在的基础设施。</p>
+                    <p>普通人也不必先把所有技术架构弄清楚才开始。最重要的是起一个真实流程：找一件你反复在做、结果可以验收、上下文会积累的事，把入口、执行、把关和沉淀先接起来。Harness 不是一张架构图，它首先是一条跑得起来的路。</p>
+                    <div class="article-callout">
+                        <p><strong>一个好的 Harness，不会让人的判断消失；它会把判断应该出现的位置，暴露得更清楚。</strong></p>
+                    </div>
+                </section>
+
+                <section class="article-section" id="system">
+                    <h2><span>04</span>从“协作宪法”到“个人工作 OS”</h2>
+                    <p>如果说协作宪法定义的是边界，那么个人工作 OS 解决的就是重复执行。</p>
+                    <div class="constitution-bridge">
+                        <span class="bridge-mark" aria-hidden="true">T1</span>
+                        <div>
+                            <b>原则层：什么不能交出去</b>
+                            <p>重大判断、真实感受、价值取舍仍由人完成；AI 负责显化、提速和扩展视角。</p>
+                        </div>
+                        <a class="bridge-link" href="../ai-collaboration-constitution/">阅读协作宪法 →</a>
+                    </div>
+                    <p>我现在越来越习惯把一段工作拆成下面这个闭环：</p>
+                    <ol class="system-loop">
+                        <li>
+                            <b>真实入口</b>
+                            <p>会议、沟通、现场观察与新问题进入系统。</p>
+                        </li>
+                        <li>
+                            <b>形成判断</b>
+                            <p>理解业务、识别本质、定义方向与验收标准。</p>
+                        </li>
+                        <li>
+                            <b>Agent 执行</b>
+                            <p>搜索、整理、制图、写作、搭建和多轮迭代。</p>
+                        </li>
+                        <li>
+                            <b>人工把关</b>
+                            <p>判断好坏、补关键缺口、控制风险并确认结果。</p>
+                        </li>
+                        <li>
+                            <b>资产沉淀</b>
+                            <p>把模板、方法、反馈与成品放回可复用系统。</p>
+                        </li>
+                        <li>
+                            <b>下一次更快</b>
+                            <p>不是从零开始，而是站在上一次经验上继续。</p>
+                        </li>
+                    </ol>
+                    <p>在这个闭环里，会议也不再只是信息输入。它是理解问题、形成判断、启动执行系统的入口。岗位因此不只是“做更多事”，而更像在调度一套会逐渐长出记忆的系统。</p>
+                    <figure class="article-figure">
+                        <a class="image-zoom-link" href="os-role-workflow.png" target="_blank" rel="noopener" aria-label="放大查看：我的工作正在进化成一个 OS 型岗位" aria-haspopup="dialog" data-caption="我的工作正在进化成一个 OS 型岗位" data-src="os-role-workflow.png">
+                            <img src="os-role-workflow.png" loading="lazy" decoding="async" alt="个人工作 OS 流程图：从会议入口进入判断中枢，再由 Agent 执行、人工把关、资产沉淀并反馈到下一次工作">
+                            <span class="zoom-hint">点击放大查看</span>
+                        </a>
+                        <figcaption>人的判断中枢不下线，AI 承接执行；反馈回到系统里，下一轮因此更快、更准。点击图片可查看大图。</figcaption>
+                    </figure>
+                </section>
+
+                <section class="article-section" id="context">
+                    <h2><span>05</span>OS 化地沉淀可插拔的个人上下文</h2>
+                    <p>水管要持续工作，需要稳定的上下文。但“积累上下文”不是把所有聊天记录倒进一个巨大文件，也不是每次把全部人生经历喂给模型。</p>
+                    <p>我更愿意把个人上下文想成四层可以按需插拔的模块：</p>
+                    <div class="context-stack">
+                        <div class="context-layer">
+                            <b>稳定的我</b>
+                            <p>长期角色、价值观、表达语气、审美偏好与不可越过的边界。</p>
+                        </div>
+                        <div class="context-layer">
+                            <b>当下的场</b>
+                            <p>当前目标、利益相关方、现实约束、时间窗口与已经做过的决策。</p>
+                        </div>
+                        <div class="context-layer">
+                            <b>可复用的方法</b>
+                            <p>模板、清单、Skills、常用结构，以及我验证过确实有效的工作步骤。</p>
+                        </div>
+                        <div class="context-layer">
+                            <b>反馈的痕迹</b>
+                            <p>我改过什么、拒绝过什么、为什么不满意，以及最后什么结果真的成立。</p>
+                        </div>
+                    </div>
+                    <p>“可插拔”很重要。写文章时接入表达与案例模块，做方案时接入业务与判断标准，规划旅行时接入兴趣、节奏和体验偏好。不是上下文越多越好，而是<strong>此刻真正相关的那部分，能不能被准确召回</strong>。</p>
+                    <p>这个过程很像把玩一块璞玉：不是一次雕刻就完成，而是在一次次使用、修改和反馈里，包浆越来越厚。AI 所谓“沾染上你的气息”，也不是因为你写了一段漂亮的自我介绍，而是它反复看见了你的选择。</p>
+                    <figure class="article-figure">
+                        <a class="image-zoom-link" href="train-yourself-as-model.png" target="_blank" rel="noopener" aria-label="放大查看：把自己当作那个值得训练的大模型" aria-haspopup="dialog" data-caption="把自己当作那个值得训练的大模型" data-src="train-yourself-as-model.png">
+                            <img src="train-yourself-as-model.png" loading="lazy" decoding="async" alt="个人模型训练闭环图：生活经验、阅读、思考、品味和关系喂养自己，形成判断标准、价值观和表达风格，再借 AI 显化为文字、策略、产品洞见与决策影响">
+                            <span class="zoom-hint">点击放大查看</span>
+                        </a>
+                        <figcaption>真实经验是训练数据，判断与品味是内在权重，AI 是把它们外化并放大的基础设施。点击图片可查看大图。</figcaption>
+                    </figure>
+                    <div class="article-quote">当智力资源无限丰富，怎么让 AI 沾染上你的气息，得出和别人不一样的答案，会越来越重要。</div>
+                </section>
+
+                <section class="article-section" id="abundance">
+                    <h2><span>06</span>入了门之后，要进入 token 的丰盛状态</h2>
+                    <p>“Token 丰盛”不是无限制地消耗算力，也不是看见每个念头都要做成产品。它更像一种心理许可：不要再因为“做起来太麻烦”，过早掐灭刚冒出来的小想法。</p>
+                    <p>以前，一个念头从“有点意思”走到“我真的想试试”，中间隔着搜索、整理、翻译、排版、写代码、找资料等一长串成本。现在这些执行摩擦突然变薄了。于是更值得训练的能力，变成了<strong>能不能接住念头、辨认其中真正有意思的部分，再迅速给它一个可以被验证的形状</strong>。</p>
+                    <div class="travel-case">
+                        <header>
+                            <span>生活实验</span>
+                            <h3>Iberia 旅行：半小时接住一个念头</h3>
+                        </header>
+                        <p>一次准备伊比利亚旅行时，我用大约半小时把一个模糊想法扩成了一份很“我”的现场计划。它不只回答去哪儿，还把我真正关心的体验接了进来：</p>
+                        <ul>
+                            <li>现场路线与每天的行动节奏</li>
+                            <li>美食和适合记录的出片点</li>
+                            <li>常用西班牙语的发音练习</li>
+                            <li>行前人文补课与途中观察题</li>
+                        </ul>
+                    </div>
+                    <p>我满意的不是“AI 生成了一份攻略”，而是这个结果沾上了我的气息：我喜欢怎样理解一个地方、怎样在途中观察人与城市、怎样把旅行变成一次活的学习。只有路线没有这些，就只是平均答案。</p>
+                    <p>进入这种丰盛状态之后，前一天的自己常常想不到，后一天的自己又能捣鼓出什么东西。每一个小想法都不一定要长大，但它终于有机会先发芽。</p>
+                </section>
+
+                <section class="article-section" id="leverage">
+                    <h2><span>07</span>新的工作方式：判断力 × 杠杆</h2>
+                    <p>换到甲方战略工作之后，我对这套方式有了更强的体感。真实问题每天都在发生，目标不是“按需求交一份东西”，而是理解到底发生了什么、什么最有价值、还能怎么提升、影响在哪里、杠杆最高的地方又在哪里。</p>
+                    <div class="judgment-grid" aria-label="判断力乘以 AI 杠杆的工作分工">
+                        <div class="judgment-card">
+                            <b>我负责判断</b>
+                            <ul>
+                                <li>什么问题值得解决</li>
+                                <li>什么证据足以支持方向</li>
+                                <li>什么结果才算真正成立</li>
+                                <li>哪里必须承担最终责任</li>
+                            </ul>
+                        </div>
+                        <span class="judgment-times" aria-hidden="true">×</span>
+                        <div class="judgment-card is-ai">
+                            <b>AI 提供杠杆</b>
+                            <ul>
+                                <li>拎出重点、补充视角</li>
+                                <li>搜索、整理与形成初稿</li>
+                                <li>调用工具完成高频执行</li>
+                                <li>根据把关意见快速迭代</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p>人只守住那层近乎直觉、但又必须对结果负责的判断；执行交给 Agent，经过几轮把关，把它变成能被使用的方案、图、表、流程或文档。</p>
+                    <p>最直接的变化不是“少做事”，而是时间终于回到了判断、洞察和创造价值上。过去真正喜欢的内容可能只占工作的一小部分，现在它几乎成了工作的主体。那种“跳着踢踏舞去上班”的快乐，不是因为任务变少，而是因为自己最想用的那块能力，终于被放到了正中央。</p>
+                    <div class="article-callout">
+                        <p><strong>最爽的不是少做事，而是终于把时间放回判断、洞察和创造价值上。</strong></p>
+                    </div>
+                </section>
+
+                <section class="article-section" id="guardrails">
+                    <h2><span>08</span>水管越粗，越要守住三条护栏</h2>
+                    <p>系统会放大能力，也会放大偏差。越能顺畅地调用 AI，越需要刻意保留几处“不自动”的地方。</p>
+                    <ul class="guardrail-list">
+                        <li>
+                            <span>01</span>
+                            <div>
+                                <b>持续给自己真实输入</b>
+                                <p>亲自读完重要内容、和真实的人深入碰撞、走进现场、把感受写下来。没有这些，个人上下文迟早会变成对旧答案的循环引用。</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span>02</span>
+                            <div>
+                                <b>判断层不外包</b>
+                                <p>AI 可以列选项、找证据、做反方，但什么有价值、什么风险能承担、最后按不按按钮，仍然由人决定。</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span>03</span>
+                            <div>
+                                <b>只沉淀经过反馈的东西</b>
+                                <p>第一版产出不是资产。只有经过使用、验收、修改和复盘，确认为什么有效，才值得写回系统。</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <p>这也是为什么我仍然坚持 #Learn&amp;Digest 的三件事：亲自消化内容，亲自连出新的线索，亲自动手写下来。AI 越强大，人越需要和真实的人、真实的世界面对面碰撞。水管负责输送，但水源还得自己去找。</p>
+                </section>
+
+                <section class="article-section" id="start">
+                    <h2><span>09</span>不用等准备好，先起一条自己的管道</h2>
+                    <p>如果你现在还主要用“滴管”，完全不用急着造一套庞大系统。选一件反复发生、你真的在意、结果也能看见的事，从最小闭环开始：</p>
+                    <ol class="starter-list">
+                        <li><strong>选一个稳定入口。</strong>例如每次会后整理、每周研究输出，或每次旅行前的主题规划。</li>
+                        <li><strong>准备一个个人上下文模块。</strong>只放与这件事直接相关的目标、偏好、边界和好结果样例。</li>
+                        <li><strong>设一个人工判断点。</strong>明确哪一步必须由你选择方向、检查证据或确认是否可用。</li>
+                        <li><strong>把反馈写回去。</strong>记录你改了什么、为什么改，以及下次怎样不必重来。</li>
+                    </ol>
+                    <p>先让它跑一轮，再跑第二轮。OS 不是一次设计出来的，它是在重复使用中长出来的。</p>
+                    <div class="article-quote">自己才是最值得训练的大模型。<br>如切如磋，如琢如磨。</div>
+                    <p>模型会继续变强，智力资源也会越来越丰盛。真正稀缺的，终究不是你能从 AI 那里压榨出多少，而是你自己有什么判断、经验和品味，值得被它放大。</p>
+                </section>
+
+                <footer class="article-footer">
+                    <p>作者：张岚焱（Renee）</p>
+                    <p>写于 2026 年 7 月，基于半年认知回顾整理。</p>
+                    <p>相关阅读：《AI 协作宪法》负责定义人机边界；本文负责把边界接进日常系统。</p>
+                    <div class="article-footer-actions">
+                        <a class="article-back" href="https://renezhang.fun/#thinking">返回思考手记</a>
+                        <a class="article-back is-secondary" href="../ai-collaboration-constitution/">阅读《AI 协作宪法》</a>
+                    </div>
+                </footer>
+            </article>
+        </div>
+    </main>
+
+    <dialog class="image-dialog" id="imageDialog" aria-labelledby="imageDialogTitle">
+        <div class="image-dialog-header">
+            <p id="imageDialogTitle">查看文章配图</p>
+            <div class="image-dialog-actions">
+                <a id="imageOriginalLink" href="train-yourself-as-model.png" target="_blank" rel="noopener">打开原图</a>
+                <button type="button" id="imageDialogClose" aria-label="关闭图片预览">×</button>
+            </div>
+        </div>
+        <div class="image-dialog-scroll">
+            <img id="imageDialogPreview" src="train-yourself-as-model.png" alt="">
+        </div>
+    </dialog>
+
+    <script>
+        const progressBar = document.getElementById('pageProgressBar');
+        const imageDialog = document.getElementById('imageDialog');
+        const imageDialogTitle = document.getElementById('imageDialogTitle');
+        const imageDialogPreview = document.getElementById('imageDialogPreview');
+        const imageOriginalLink = document.getElementById('imageOriginalLink');
+        const imageDialogClose = document.getElementById('imageDialogClose');
+        let lastImageTrigger = null;
+
+        function updateProgress() {
+            const scrollTop = window.scrollY || document.documentElement.scrollTop;
+            const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = pageHeight > 0 ? Math.min(100, (scrollTop / pageHeight) * 100) : 0;
+            progressBar.style.width = `${progress}%`;
+        }
+
+        document.querySelectorAll('.image-zoom-link').forEach((link) => {
+            link.addEventListener('click', (event) => {
+                if (typeof imageDialog.showModal !== 'function') return;
+                event.preventDefault();
+                lastImageTrigger = link;
+                const src = link.dataset.src;
+                const caption = link.dataset.caption;
+                const sourceImage = link.querySelector('img');
+                imageDialogTitle.textContent = caption;
+                imageDialogPreview.src = src;
+                imageDialogPreview.alt = sourceImage ? sourceImage.alt : caption;
+                imageOriginalLink.href = src;
+                imageDialog.showModal();
+                imageDialogClose.focus();
+            });
+        });
+
+        imageDialogClose.addEventListener('click', () => imageDialog.close());
+
+        imageDialog.addEventListener('click', (event) => {
+            if (event.target === imageDialog) imageDialog.close();
+        });
+
+        imageDialog.addEventListener('close', () => {
+            if (lastImageTrigger) lastImageTrigger.focus();
+        });
+
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        window.addEventListener('resize', updateProgress, { passive: true });
+        updateProgress();
+    </script>
+</body>
+</html>
