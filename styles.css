@@ -2,19 +2,27 @@
 @font-face {
     font-family: 'ZhongHuaXinHuo';
     src:
-        url('./fonts/zhonghuaxinhuo-subset.woff2?v=20260515-font2') format('woff2'),
-        url('./fonts/中华薪火体.ttf?v=20260515-font2') format('truetype');
+        url('./fonts/zhonghuaxinhuo-subset-v3.woff2?v=20260812-font-system') format('woff2'),
+        url('./fonts/中华薪火体.ttf?v=20260812-font-system') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
-}
-
-@font-face {
-    font-family: 'ZhongHuaXinHuoFull';
-    src: url('./fonts/中华薪火体.ttf?v=20260515-font2') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+    unicode-range:
+        U+00B7,
+        U+2010-205E,
+        U+2E80-2FDF,
+        U+3000-303F,
+        U+31C0-31EF,
+        U+3400-4DBF,
+        U+4E00-9FFF,
+        U+F900-FAFF,
+        U+FE10-FE1F,
+        U+FE30-FE4F,
+        U+FF01-FF0F,
+        U+FF1A-FF20,
+        U+FF3B-FF40,
+        U+FF5B-FFEF,
+        U+20000-2FA1F;
 }
 
 /* ===== CSS Variables ===== */
@@ -40,8 +48,9 @@
     --glass-shadow-hover: rgba(0, 0, 0, 0.08);
 
     /* Typography */
-    --font-serif: 'ZhongHuaXinHuo', 'ZhongHuaXinHuoFull', 'Noto Serif SC', serif;
-    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mixed: 'ZhongHuaXinHuo', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-serif: var(--font-mixed);
+    --font-sans: var(--font-mixed);
 
     /* Spacing */
     --spacing-xs: 0.5rem;
@@ -230,10 +239,11 @@ html {
     scroll-behavior: smooth;
     font-size: 16px;
     scroll-snap-type: y proximity;
+    font-synthesis: none;
 }
 
 body {
-    font-family: 'ZhongHuaXinHuo', 'ZhongHuaXinHuoFull', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: var(--font-mixed);
     background-color: var(--color-bg);
     /* 纸质纹理效果 */
     background-image:
@@ -1062,6 +1072,11 @@ ul {
     color: var(--color-text);
 }
 
+.about-text strong {
+    color: var(--color-accent);
+    font-weight: inherit;
+}
+
 .about-highlight {
     font-style: italic;
     color: var(--color-text);
@@ -1073,10 +1088,6 @@ ul {
     color: var(--color-text);
 }
 
-.about-quote strong {
-    font-weight: 500;
-}
-
 .about-answer {
     color: var(--color-text);
 }
@@ -1085,16 +1096,8 @@ ul {
     color: var(--color-text);
 }
 
-.about-mission strong {
-    color: var(--color-accent);
-}
-
 .about-belief {
     color: var(--color-text);
-}
-
-.about-belief strong {
-    font-weight: 500;
 }
 
 .about-vision {
@@ -2128,6 +2131,7 @@ ul {
 
 .digest-note strong {
     color: var(--color-accent);
+    font-weight: inherit;
 }
 
 .digest-mission,
@@ -2138,8 +2142,8 @@ ul {
 }
 
 .digest-belief strong {
-    font-weight: 500;
-    color: var(--color-text);
+    color: var(--color-accent);
+    font-weight: inherit;
 }
 
 .digest-migration-note {
