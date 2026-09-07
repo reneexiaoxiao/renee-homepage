@@ -6288,3 +6288,7 @@ ul {
 ::-webkit-scrollbar-thumb:hover {
     background: var(--color-text-muted);
 }
+
+/* Love Note project entry. */
+.project-preview-lovenote{background:#fbf5ef url('/lovenote/page-texture.jpg') center/cover}
+.project-preview-lovenote img{width:145px;height:145px;object-fit:contain;mix-blend-mode:multiply;mask-image:radial-gradient(ellipse,black 40%,transparent 72%)}
