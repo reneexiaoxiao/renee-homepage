@@ -265,6 +265,15 @@ const translations = {
         '旅行实验': 'Travel Experiment',
         'AI 旅行定制': 'AI Travel Planner',
         '把偏好、节奏与真实约束交给 AI，共同长出一条可以出发的伊比利亚路线。': 'Give AI your preferences, pace, and real-world constraints, then shape an Iberian route you can actually take.',
+            '名片': 'Card',
+            '14 条': '14 records',
+        '留张名片': 'Take My Card',
+        '正面是我正在做的事，背面是我相信的工作方式。': 'The front shows what I am working on; the back captures how I choose to work.',
+        '查看正面': 'View Front',
+        '查看背面': 'View Back',
+        '下载正反面对照': 'Download Both Sides',
+        '正面': 'Front',
+        '背面': 'Back',
         '如果你也在思考战略与 AI 的结合、正在搭建自己的个人 OS，或者只是对这些问题有自己的答案，欢迎来连接我。': 'If you are thinking about strategy and AI, building your own personal operating system, or simply have your own answers to these questions, I would be glad to connect.',
         '公开分享、行业交流与真诚讨论都很欢迎；涉及现任或前任雇主的信息，我只讨论已经公开的内容。': 'Public talks, industry exchange, and honest discussion are all welcome. When it comes to current or former employers, I only discuss information already in the public domain.',
         '写邮件给我': 'Email Me',
@@ -1650,6 +1659,34 @@ const digestData = [
 const speakingData = [
     {
         year: '2026',
+        type: '直播分享',
+        typeEn: 'Livestream Talk',
+        title: '飞书 AI 绝活大会｜古茗高级 AI 应用专家张岚焱分享',
+        titleEn: 'Feishu AI Masterclass | Renee Zhang on Enterprise AI Practice',
+        event: '2026-09-09 · 飞书 AI 绝活大会',
+        eventEn: '2026-09-09 · Feishu AI Masterclass',
+        desc: '一场围绕企业 AI 应用落地的直播分享，回放与配套资料包均已整理在此。',
+        descEn: 'A livestream on putting enterprise AI into practice, with the replay and companion resource pack collected here.',
+        tags: ['企业 AI', '落地实践', '直播回放'],
+        tagsEn: ['Enterprise AI', 'Implementation', 'Replay'],
+        duration: '37 分钟',
+        durationEn: '37 min',
+        images: [],
+        links: [
+            {
+                href: 'https://bytedance.larkoffice.com/minutes/obcnxe9g9fc1jbnh75gtw83j',
+                label: '观看直播回放',
+                labelEn: 'Watch Replay'
+            },
+            {
+                href: 'https://rcnbdd2w7hg8.feishuapp.com/app/app_17dsc4kuj0s',
+                label: '打开资料包',
+                labelEn: 'Open Resource Pack'
+            }
+        ]
+    },
+    {
+        year: '2026',
         type: '受邀分享',
         typeEn: 'Invited Talk',
         title: '半年认知回顾：从滴管到水管',
@@ -2210,9 +2247,14 @@ function renderSpeakingCards() {
                             const eventDate = eventText.split('·')[0].trim();
                             const isFeatured = groupIndex === 0;
                             const title = tItem(item, 'title');
+                            const itemLinks = item.links || (item.href ? [{
+                                href: item.href,
+                                label: item.cta,
+                                labelEn: item.ctaEn
+                            }] : []);
 
                             return `
-                                <article class="speaking-ticket-stub ${isFeatured ? 'speaking-ticket-featured' : ''}">
+                                <article class="speaking-ticket-stub ${isFeatured ? 'speaking-ticket-featured' : ''} ${itemLinks.length > 1 ? 'speaking-ticket-has-links' : ''}">
                                     <div class="speaking-ticket-edge" aria-hidden="true"></div>
                                     <div class="speaking-ticket-photo speaking-ticket-carousel ${hasCarousel ? 'is-carousel' : ''}" data-ticket-carousel>
                                         ${images.length ? `
@@ -2223,7 +2265,13 @@ function renderSpeakingCards() {
                                                     </figure>
                                                 `).join('')}
                                             </div>
-                                        ` : ''}
+                                        ` : `
+                                            <div class="speaking-ticket-live-mark" aria-hidden="true">
+                                                <span>LIVE</span>
+                                                <strong>09·09</strong>
+                                                <small>${currentLanguage === 'en' ? 'AI IN PRACTICE' : '企业 AI 落地'}</small>
+                                            </div>
+                                        `}
                                         <span class="speaking-ticket-index">${String(item.originalIndex + 1).padStart(2, '0')}</span>
                                         ${hasCarousel ? `
                                             <button class="speaking-ticket-nav prev" type="button" data-ticket-prev aria-label="${currentLanguage === 'en' ? 'Previous image' : '上一张图片'}">‹</button>
@@ -2250,11 +2298,15 @@ function renderSpeakingCards() {
                                     <div class="speaking-ticket-action">
                                         <div class="speaking-ticket-perforation" aria-hidden="true"></div>
                                         <span class="speaking-ticket-admit">ADMIT</span>
-                                        <span>${images.length} ${currentLanguage === 'en' ? 'images' : '张图'}</span>
-                                        ${item.href ? `
-                                            <a class="speaking-card-link" href="${toUrl(item.href)}" target="_blank" rel="noopener noreferrer">
-                                                ${tItem(item, 'cta') || (currentLanguage === 'en' ? 'View Details' : '查看详情')}
-                                            </a>
+                                        <span>${item.duration ? tItem(item, 'duration') : `${images.length} ${currentLanguage === 'en' ? 'images' : '张图'}`}</span>
+                                        ${itemLinks.length ? `
+                                            <div class="speaking-ticket-links">
+                                                ${itemLinks.map(link => `
+                                                    <a class="speaking-card-link" href="${toUrl(link.href)}" target="_blank" rel="noopener noreferrer">
+                                                        ${currentLanguage === 'en' ? (link.labelEn || link.label) : link.label}
+                                                    </a>
+                                                `).join('')}
+                                            </div>
                                         ` : ''}
                                     </div>
                                 </article>

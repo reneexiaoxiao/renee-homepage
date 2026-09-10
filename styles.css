@@ -2970,6 +2970,25 @@ ul {
         linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(244, 226, 211, 0.96));
 }
 
+.speaking-ticket-has-links {
+    grid-template-columns: minmax(9.8rem, 34%) minmax(0, 1fr) minmax(6.8rem, auto);
+}
+
+.speaking-ticket-featured.speaking-ticket-has-links {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: min(100%, 64rem);
+    max-width: 64rem;
+    min-height: 16rem;
+    grid-template-columns: minmax(13rem, 24%) minmax(0, 1fr) minmax(8rem, auto);
+    transform: none;
+}
+
+.speaking-ticket-featured.speaking-ticket-has-links .speaking-ticket-photo {
+    aspect-ratio: 4 / 3;
+    min-height: 13.5rem;
+}
+
 .speaking-ticket-photo {
     position: relative;
     z-index: 1;
@@ -2986,6 +3005,58 @@ ul {
 
 .speaking-ticket-carousel.is-carousel {
     cursor: pointer;
+}
+
+.speaking-ticket-live-mark {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+    padding: clamp(1rem, 2vw, 1.35rem);
+    background:
+        radial-gradient(circle at 76% 22%, rgba(184, 84, 80, 0.88) 0 12%, transparent 12.5%),
+        linear-gradient(155deg, rgba(250, 247, 240, 0.95), rgba(228, 212, 190, 0.92));
+    color: #1A1915;
+}
+
+.speaking-ticket-live-mark::before {
+    content: '';
+    position: absolute;
+    inset: 12% 12% auto auto;
+    width: 42%;
+    aspect-ratio: 1;
+    border: 1px solid rgba(184, 84, 80, 0.34);
+    border-radius: 50%;
+}
+
+.speaking-ticket-live-mark span,
+.speaking-ticket-live-mark small {
+    position: relative;
+    z-index: 1;
+    font-family: var(--font-sans);
+    letter-spacing: 0.16em;
+}
+
+.speaking-ticket-live-mark span {
+    color: var(--color-accent);
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+
+.speaking-ticket-live-mark strong {
+    position: relative;
+    z-index: 1;
+    margin: 0.2rem 0 0.32rem;
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    font-weight: 400;
+    line-height: 0.9;
+    letter-spacing: -0.06em;
+}
+
+.speaking-ticket-live-mark small {
+    font-size: 0.64rem;
 }
 
 .speaking-ticket-track {
@@ -3213,6 +3284,23 @@ ul {
 
 .speaking-ticket-stub:nth-child(3n) .speaking-ticket-action > span {
     color: rgba(245, 241, 232, 0.6);
+}
+
+.speaking-ticket-links {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.42rem;
+    min-width: 6.8rem;
+    width: 100%;
+}
+
+.speaking-ticket-links .speaking-card-link {
+    min-width: 0;
+    width: 100%;
+    min-height: 2.35rem;
+    padding: 0.48rem 0.68rem;
+    font-size: 0.74rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -4025,6 +4113,155 @@ ul {
 }
 
 /* ===== Contact Section ===== */
+.business-card-showcase {
+    min-height: 100vh;
+    padding: calc(var(--nav-height) + 0.9rem) 0 1.1rem;
+    overflow: hidden;
+}
+
+.business-card-showcase .container {
+    display: flex;
+    min-height: calc(100vh - var(--nav-height) - 2rem);
+}
+
+.business-card-stage {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(15rem, 0.68fr) minmax(0, 1.32fr);
+    align-items: center;
+    gap: clamp(1.5rem, 4vw, 4rem);
+    width: 100%;
+    padding: clamp(1.4rem, 3vw, 3rem);
+    border: 1px solid rgba(112, 95, 70, 0.16);
+    border-radius: 32px;
+    background:
+        radial-gradient(circle at 80% 16%, rgba(184, 84, 80, 0.14), transparent 24%),
+        linear-gradient(148deg, rgba(252, 249, 242, 0.96), rgba(232, 224, 208, 0.92));
+    box-shadow: 0 24px 50px rgba(66, 49, 30, 0.1);
+    isolation: isolate;
+}
+
+.business-card-stage::before {
+    content: '';
+    position: absolute;
+    left: clamp(1.4rem, 3vw, 3rem);
+    top: clamp(1.4rem, 3vw, 3rem);
+    width: 4.5rem;
+    height: 0.16rem;
+    border-radius: var(--radius-full);
+    background: var(--color-accent);
+    opacity: 0.82;
+}
+
+.business-card-copy {
+    position: relative;
+    z-index: 2;
+    max-width: 26rem;
+}
+
+.business-card-copy .section-subtitle {
+    margin-bottom: 0.75rem;
+}
+
+.business-card-copy .section-title {
+    margin-bottom: 1rem;
+}
+
+.business-card-desc {
+    max-width: 24rem;
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: clamp(1rem, 1.4vw, 1.12rem);
+    line-height: 1.8;
+}
+
+.business-card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-top: 1.6rem;
+}
+
+.business-card-actions a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.8rem;
+    padding: 0.65rem 1rem;
+    border: 1px solid rgba(26, 25, 21, 0.16);
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.52);
+    color: #1A1915;
+    font-size: 0.82rem;
+    transition: transform var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.business-card-actions a:last-child {
+    border-color: #1A1915;
+    background: #1A1915;
+    color: #F5F1E8;
+}
+
+.business-card-actions a:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-accent);
+}
+
+.business-card-visuals {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    gap: clamp(0.8rem, 2vw, 1.4rem);
+    min-width: 0;
+}
+
+.business-card-face {
+    position: relative;
+    display: block;
+    border-radius: 18px;
+    box-shadow: 0 24px 46px rgba(42, 33, 22, 0.2);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.business-card-face img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: inherit;
+}
+
+.business-card-face span {
+    position: absolute;
+    right: 0.7rem;
+    bottom: 0.7rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 3.2rem;
+    padding: 0.35rem 0.68rem;
+    border: 1px solid rgba(255, 255, 255, 0.52);
+    border-radius: var(--radius-full);
+    background: rgba(26, 25, 21, 0.72);
+    color: #fff;
+    font-size: 0.72rem;
+    backdrop-filter: blur(8px);
+}
+
+.business-card-front {
+    transform: rotate(-2.2deg) translateY(-0.5rem);
+}
+
+.business-card-back {
+    transform: rotate(2deg) translateY(0.65rem);
+}
+
+.business-card-face:hover {
+    z-index: 2;
+    transform: rotate(0) translateY(-0.35rem) scale(1.015);
+    box-shadow: 0 28px 56px rgba(42, 33, 22, 0.26);
+}
+
 .contact {
     min-height: 100vh;
     padding: calc(var(--nav-height) + 0.9rem) 0 1.1rem;
@@ -4330,6 +4567,7 @@ ul {
     .digest-stage,
     .speaking-stage,
     .thinking-stage,
+    .business-card-stage,
     .contact-stage,
     .story-epilogue-stage {
         background:
@@ -4344,6 +4582,7 @@ ul {
     .digest-stage,
     .speaking-stage,
     .thinking-stage,
+    .business-card-stage,
     .contact-stage {
         backdrop-filter: blur(14px);
         -webkit-backdrop-filter: blur(14px);
@@ -5919,6 +6158,48 @@ ul {
         padding-top: 0.55rem;
     }
 
+    .speaking-ticket-featured.speaking-ticket-has-links .speaking-ticket-photo {
+        min-height: 0;
+        aspect-ratio: 2.65 / 1;
+    }
+
+    .speaking-ticket-has-links .speaking-ticket-copy {
+        gap: 0.35rem;
+    }
+
+    .speaking-ticket-has-links .speaking-ticket-copy h3 {
+        font-size: 0.9rem;
+    }
+
+    .speaking-ticket-has-links .speaking-ticket-copy p {
+        font-size: 0.72rem;
+        line-height: 1.42;
+    }
+
+    .speaking-ticket-has-links .speaking-ticket-action {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.4rem;
+        padding-top: 0.42rem;
+    }
+
+    .speaking-ticket-has-links .speaking-ticket-admit {
+        display: none;
+    }
+
+    .speaking-ticket-has-links .speaking-ticket-links {
+        flex-direction: row;
+        gap: 0.35rem;
+        min-width: 0;
+    }
+
+    .speaking-ticket-has-links .speaking-card-link {
+        flex: 1 1 0;
+        min-height: 2.25rem;
+        padding: 0.42rem 0.5rem;
+        font-size: 0.68rem;
+    }
+
     .thinking-manifesto {
         justify-content: flex-start;
     }
@@ -6045,6 +6326,89 @@ ul {
     .project-desc {
         font-size: 0.86rem;
         line-height: 1.55;
+    }
+
+    .business-card-showcase .container {
+        min-height: 0;
+    }
+
+    .business-card-stage {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto minmax(0, 1fr);
+        gap: 0.8rem;
+        height: 100%;
+        min-height: 0;
+        padding: 0.82rem;
+        border-radius: 20px;
+    }
+
+    .business-card-stage::before {
+        left: 0.82rem;
+        top: 0.82rem;
+        width: 3rem;
+    }
+
+    .business-card-copy {
+        max-width: none;
+    }
+
+    .business-card-copy .section-subtitle {
+        margin: 0 0 0.35rem;
+        font-size: 0.7rem;
+    }
+
+    .business-card-copy .section-title {
+        margin-bottom: 0.4rem;
+        font-size: 1.45rem;
+    }
+
+    .business-card-desc {
+        font-size: 0.84rem;
+        line-height: 1.5;
+    }
+
+    .business-card-actions {
+        gap: 0.45rem;
+        margin-top: 0.7rem;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        scrollbar-width: none;
+    }
+
+    .business-card-actions a {
+        flex: 0 0 auto;
+        min-height: 2.35rem;
+        padding: 0.52rem 0.72rem;
+        font-size: 0.72rem;
+    }
+
+    .business-card-visuals {
+        align-items: start;
+        gap: 0.55rem;
+        min-height: 0;
+        overflow: hidden;
+    }
+
+    .business-card-face,
+    .business-card-front,
+    .business-card-back {
+        max-height: 100%;
+        transform: none;
+        border-radius: 10px;
+        box-shadow: 0 12px 24px rgba(42, 33, 22, 0.16);
+    }
+
+    .business-card-face img {
+        max-height: 100%;
+        object-fit: contain;
+    }
+
+    .business-card-face span {
+        right: 0.42rem;
+        bottom: 0.42rem;
+        min-width: 2.65rem;
+        padding: 0.28rem 0.5rem;
+        font-size: 0.64rem;
     }
 
     .contact-stage {
