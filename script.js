@@ -1665,13 +1665,13 @@ const speakingData = [
         titleEn: 'Feishu AI Masterclass | Renee Zhang on Enterprise AI Practice',
         event: '2026-09-09 · 飞书 AI 绝活大会',
         eventEn: '2026-09-09 · Feishu AI Masterclass',
-        desc: '一场围绕企业 AI 应用落地的直播分享，回放与配套资料包均已整理在此。',
-        descEn: 'A livestream on putting enterprise AI into practice, with the replay and companion resource pack collected here.',
+        desc: '围绕企业 AI 应用落地，分享在古茗推进业务实践的经验。',
+        descEn: 'A livestream sharing experience from putting enterprise AI into practice at Guming.',
         tags: ['企业 AI', '落地实践', '直播回放'],
         tagsEn: ['Enterprise AI', 'Implementation', 'Replay'],
         duration: '37 分钟',
         durationEn: '37 min',
-        images: [],
+        images: ['公开分享记录/20260909-飞书AI绝活大会/poster-v1.png'],
         links: [
             {
                 href: 'https://bytedance.larkoffice.com/minutes/obcnxe9g9fc1jbnh75gtw83j',
@@ -2254,7 +2254,7 @@ function renderSpeakingCards() {
                             }] : []);
 
                             return `
-                                <article class="speaking-ticket-stub ${isFeatured ? 'speaking-ticket-featured' : ''} ${itemLinks.length > 1 ? 'speaking-ticket-has-links' : ''}">
+                                <article class="speaking-ticket-stub ${isFeatured ? 'speaking-ticket-featured' : ''} ${itemLinks.length > 1 ? 'speaking-ticket-dual-actions' : ''}">
                                     <div class="speaking-ticket-edge" aria-hidden="true"></div>
                                     <div class="speaking-ticket-photo speaking-ticket-carousel ${hasCarousel ? 'is-carousel' : ''}" data-ticket-carousel>
                                         ${images.length ? `
@@ -2265,13 +2265,7 @@ function renderSpeakingCards() {
                                                     </figure>
                                                 `).join('')}
                                             </div>
-                                        ` : `
-                                            <div class="speaking-ticket-live-mark" aria-hidden="true">
-                                                <span>LIVE</span>
-                                                <strong>09·09</strong>
-                                                <small>${currentLanguage === 'en' ? 'AI IN PRACTICE' : '企业 AI 落地'}</small>
-                                            </div>
-                                        `}
+                                        ` : ''}
                                         <span class="speaking-ticket-index">${String(item.originalIndex + 1).padStart(2, '0')}</span>
                                         ${hasCarousel ? `
                                             <button class="speaking-ticket-nav prev" type="button" data-ticket-prev aria-label="${currentLanguage === 'en' ? 'Previous image' : '上一张图片'}">‹</button>
