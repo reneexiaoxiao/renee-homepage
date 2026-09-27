@@ -1,0 +1,83 @@
+name: Deploy Iberia
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'iberia/**'
+      - '.github/workflows/deploy-iberia.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: deploy-iberia-production
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure restricted SSH deployment
+        env:
+          DEPLOY_KEY: ${{ secrets.IBERIA_DEPLOY_KEY }}
+          KNOWN_HOSTS: ${{ secrets.IBERIA_KNOWN_HOSTS }}
+        run: |
+          set -euo pipefail
+          test -n "$DEPLOY_KEY"
+          test -n "$KNOWN_HOSTS"
+          install -d -m 700 ~/.ssh
+          printf '%s\n' "$DEPLOY_KEY" > ~/.ssh/iberia_key
+          printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/iberia_key ~/.ssh/known_hosts
+      - name: Validate artifact and record revision
+        run: |
+          python3 - <<'PY'
+          import pathlib, re, json, os, hashlib, datetime
+          root = pathlib.Path('iberia')
+          assert (root/'index.html').is_file(), 'Missing built iberia/index.html'
+          assert not any(p.is_symlink() for p in root.rglob('*')), 'Symlinks are not deployable'
+          html = (root/'index.html').read_text()
+          refs = re.findall(r'(?:src|href)="(/iberia/assets/[^"?#]+)"', html)
+          assert refs, 'Missing bundled assets'
+          for ref in refs:
+              rel = pathlib.PurePosixPath(ref.removeprefix('/iberia/'))
+              assert '..' not in rel.parts and (root/str(rel)).is_file(), ref
+          meta = {'commit': os.environ['GITHUB_SHA'], 'runId': os.environ['GITHUB_RUN_ID'],
+                  'deployedAt': datetime.datetime.now(datetime.timezone.utc).isoformat(),
+                  'indexSha256': hashlib.sha256((root/'index.html').read_bytes()).hexdigest()}
+          (root/'deployment.json').write_text(json.dumps(meta, indent=2)+'\n')
+          PY
+      - name: Upload assets then publish entry
+        run: |
+          set -euo pipefail
+          export RSYNC_RSH='ssh -i /home/runner/.ssh/iberia_key -o BatchMode=yes -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=20'
+          # Keep old hashed assets for visitors who still have the previous page open.
+          rsync -rtz --delay-updates --chmod=D755,F644 --exclude=index.html --exclude=deployment.json iberia/ ubuntu@152.32.132.169:./
+          rsync -rtz --delay-updates --chmod=F644 iberia/index.html iberia/deployment.json ubuntu@152.32.132.169:./
+      - name: Verify public HTML, bundles and revision
+        run: |
+          python3 - <<'PY'
+          import urllib.request, pathlib, json, re, time, os
+          base = 'https://renezhang.fun'
+          root = pathlib.Path('iberia')
+          def get(path):
+              req = urllib.request.Request(base+path+'?release='+os.environ['GITHUB_SHA'], headers={'Cache-Control':'no-cache'})
+              return urllib.request.urlopen(req, timeout=30).read()
+          for attempt in range(3):
+              try:
+                  html = get('/iberia/')
+                  assert html == (root/'index.html').read_bytes(), 'Published HTML differs'
+                  for ref in re.findall(rb'(?:src|href)="(/iberia/assets/[^"?#]+)"',html):
+                      ref = ref.decode()
+                      assert get(ref) == pathlib.Path(ref.lstrip('/')).read_bytes(), ref
+                  meta = json.loads(get('/iberia/deployment.json'))
+                  assert meta['commit'] == os.environ['GITHUB_SHA'], meta
+                  print('Verified production revision:',meta['commit'])
+                  break
+              except Exception:
+                  if attempt == 2: raise
+                  time.sleep(5)
+          PY
+      - name: Remove runner key
+        if: always()
+        run: rm -f ~/.ssh/iberia_key
