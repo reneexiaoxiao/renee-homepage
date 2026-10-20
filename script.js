@@ -17,6 +17,18 @@ let currentLanguage = getStoredLanguage();
 
 const translations = {
     en: {
+        '小镇': 'Community',
+        '我发起的社群 · 群友小镇': 'The Community I Host · Renee & Friends',
+        '看看 AI 在不同人的工作和生活里，怎样真正用起来。': 'See how people put AI to work in their own lives and industries.',
+        '2026 年 9 月，一场和张咋啦的直播对谈后，我认识了一群来自不同行业、正在尝试用 AI 解决实际问题的朋友。我们从微信群里的交流，慢慢走到了带着作品、直接投屏的行业分享会。': 'After a livestream with Zara in September 2026, I met people from different industries trying to solve real problems with AI. Conversations in our WeChat groups grew into cross-industry gatherings where we share our screens and show what we have built.',
+        '有人把剧院选座做成可以切换视角的演示，有人把立体几何做成学生能动手操作的课件。我也带来自己的「会里」和个人 Agent 实践。我们聊怎么做，也聊做完之后的难题：结果靠不靠谱，别人愿不愿意用，下一步怎么推进。': 'One member built a theater seat-view demo; another made interactive geometry lessons. I share my own Huili and personal-agent experiments, too. We discuss how to build, then what comes next: can we trust the results, will others use it, and how do we move it forward?',
+        '群友小镇把这些人、作品和讨论留在了一起。刚开始，可以来听一场分享、认识同行；正在动手，可以晒作品、带着卡点来交流；想把事情继续做下去，也欢迎带作品来聊共建。': 'Community Town brings these people, projects and conversations together. Join a sharing session and meet peers, show a project or ask about a roadblock. If you want to keep building together, bring your work and start a conversation.',
+        '群友的真实作品 · 剧院运营': 'A Member’s Project · Theater Operations',
+        '点一个座位，先看见舞台': 'Choose a seat. See the stage.',
+        '卷卷把一线工作里的问题，做成了可以切换视角的选座演示。': 'Juanjuan turned a real theater-operations problem into a demo for exploring the view from different seats.',
+        '看这次分享 ↗': 'Explore this session ↗',
+        '看看群友在做什么 →': 'Explore the community →',
+        '看最近一场回放 ↗': 'Watch the latest replay ↗',
         '关于': 'About',
         '履历': 'Career',
         '公开分享': 'Speaking',
