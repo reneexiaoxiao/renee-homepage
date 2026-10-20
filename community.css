@@ -1,11 +1,11 @@
 /* Additional glyphs use the same regular face as the existing CJK subset. */
 @font-face {
     font-family: 'ZhongHuaXinHuo';
-    src: url('./fonts/zhonghuaxinhuo-community.woff2?v=20261020') format('woff2');
+    src: url('./fonts/zhonghuaxinhuo-community.woff2?v=20261020-gallery') format('woff2');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
-    unicode-range: U+5267,U+5377,U+542B,U+548B,U+5566,U+5C1D,U+5EA7,U+6652,U+9547,U+9662;
+    unicode-range: U+5267,U+5377,U+542B,U+548B,U+5566,U+5C1D,U+5EA7,U+5F69,U+6652,U+7CBE,U+80B2,U+9547,U+9662;
 }
 
 /* The community chapter inherits the existing homepage's colors and type. */
@@ -56,19 +56,92 @@
     background: var(--color-card-bg);
 }
 
+.community-gallery {
+    min-width: 0;
+    touch-action: pan-y pinch-zoom;
+}
+
+.community-work[hidden],
+.community-gallery-controls[hidden] {
+    display: none;
+}
+
 .community-work-link {
     display: block;
-    background: #13191b;
+    background: var(--color-card-bg);
+    aspect-ratio: 16 / 9;
 }
 
 .community-work img {
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: contain;
 }
 
 .community-work figcaption {
     padding: 1.25rem;
+    min-height: 13rem;
+}
+
+.community-gallery-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    margin-top: 0.5rem;
+}
+
+.community-gallery-controls button {
+    display: inline-grid;
+    place-items: center;
+    min-width: 44px;
+    min-height: 44px;
+    border: 0;
+    border-radius: var(--radius-full);
+    background: transparent;
+    color: var(--color-text);
+    cursor: pointer;
+    font: inherit;
+}
+
+.community-gallery-controls button:hover {
+    background: var(--color-card-bg);
+}
+
+.community-gallery-dots {
+    display: flex;
+    flex: 1;
+    max-width: 176px;
+    justify-content: center;
+}
+
+.community-gallery-dots button {
+    flex: 1;
+    min-width: 24px;
+    max-width: 44px;
+}
+
+.community-gallery-dots button::after {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: var(--radius-full);
+    background: var(--color-text-muted);
+    opacity: 0.4;
+}
+
+.community-gallery-dots button[aria-pressed="true"]::after {
+    width: 20px;
+    opacity: 1;
+    background: var(--color-accent);
+}
+
+.community-gallery-count {
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
 }
 
 .community-work-label {
@@ -127,6 +200,7 @@
 }
 
 .community a:focus-visible,
+.community button:focus-visible,
 .community-stage:focus-visible {
     outline: 2px solid var(--color-accent);
     outline-offset: 4px;

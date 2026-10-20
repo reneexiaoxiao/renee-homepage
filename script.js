@@ -29,6 +29,20 @@ const translations = {
         '看这次分享 ↗': 'Explore this session ↗',
         '看看群友在做什么 →': 'Explore the community →',
         '看最近一场回放 ↗': 'Watch the latest replay ↗',
+        '群友的真实作品 · 教育': 'A Member’s Project · Education',
+        '把空间关系，交给学生动手看': 'Explore geometry, hands on.',
+        '小四把立体几何做成交互课件，让学生在操作中理解空间关系。': 'Xiaosi made interactive geometry lessons that let students explore spatial relationships for themselves.',
+        '行业交流会 · 2026.10.12': 'Community Gathering · 2026.10.12',
+        '从一个微信群，聊到真实作品': 'From a group chat to real projects.',
+        '剧院选座、课堂小游戏、企业协作与「会里」，一起看看第一场的分享。': 'Theater seating, classroom games, team collaboration and Huili: highlights from our first gathering.',
+        '行业交流会 · 2026.10.19': 'Community Gathering · 2026.10.19',
+        '带着作品，继续一起聊': 'Bring your work. Keep talking.',
+        '第二场行业分享茶话会，继续交流各自在工作和生活里的 AI 实践。': 'Our second gathering continued the conversation about using AI in everyday work and life.',
+        '看交流会回放 ↗': 'Watch the gathering ↗',
+        '卷卷在行业交流会演示的剧院选座视角，包含舞台、栏杆和座席': 'Juanjuan’s theater seat-view demo, showing the stage, railings and seating.',
+        '小四分享的可操作立体几何课件': 'Xiaosi’s interactive geometry lesson.',
+        '第01期行业交流会精彩回顾封面': 'Highlights cover for the first community gathering.',
+        '第02期行业分享茶话会完整回放封面': 'Replay cover for the second community gathering.',
         '关于': 'About',
         '履历': 'Career',
         '公开分享': 'Speaking',
@@ -409,6 +423,79 @@ function applyStaticTranslations() {
     applyHtmlTranslations();
     translateTextNodes();
     updateLanguageToggle();
+    updateCommunityGalleryLabels();
+}
+
+function updateCommunityGalleryLabels() {
+    const gallery = document.querySelector('.community-gallery');
+    if (!gallery) return;
+    const english = currentLanguage === 'en';
+    gallery.setAttribute('aria-label', english ? 'Community projects and gatherings' : '群友作品与交流会');
+    gallery.setAttribute('aria-roledescription', english ? 'carousel' : '轮播');
+    gallery.querySelector('[data-community-prev]').setAttribute('aria-label', english ? 'Previous slide' : '上一张');
+    gallery.querySelector('[data-community-next]').setAttribute('aria-label', english ? 'Next slide' : '下一张');
+    gallery.querySelector('.community-gallery-dots').setAttribute('aria-label', english ? 'Choose a slide' : '选择配图');
+    gallery.querySelectorAll('[data-community-dot]').forEach((dot, index) => {
+        dot.setAttribute('aria-label', english ? `View slide ${index + 1}` : `查看第 ${index + 1} 张`);
+    });
+    gallery.querySelectorAll('img').forEach(img => {
+        if (!img.dataset.zhAlt) img.dataset.zhAlt = img.alt;
+        img.alt = t(img.dataset.zhAlt);
+    });
+}
+
+function initCommunityGallery() {
+    const gallery = document.querySelector('.community-gallery');
+    if (!gallery) return;
+    const slides = [...gallery.querySelectorAll('[data-community-slide]')];
+    const dots = [...gallery.querySelectorAll('[data-community-dot]')];
+    const count = gallery.querySelector('.community-gallery-count');
+    if (slides.length < 2) return;
+
+    let currentIndex = 0;
+    let touchStart = null;
+    let suppressClickUntil = 0;
+    const showSlide = index => {
+        currentIndex = (index + slides.length) % slides.length;
+        slides.forEach((slide, slideIndex) => { slide.hidden = slideIndex !== currentIndex; });
+        dots.forEach((dot, dotIndex) => {
+            dot.setAttribute('aria-pressed', String(dotIndex === currentIndex));
+        });
+        count.textContent = `${currentIndex + 1} / ${slides.length}`;
+    };
+
+    gallery.querySelector('.community-gallery-controls').hidden = false;
+    gallery.querySelector('[data-community-prev]').addEventListener('click', () => showSlide(currentIndex - 1));
+    gallery.querySelector('[data-community-next]').addEventListener('click', () => showSlide(currentIndex + 1));
+    dots.forEach((dot, index) => dot.addEventListener('click', () => showSlide(index)));
+    gallery.addEventListener('keydown', event => {
+        const target = { ArrowLeft: currentIndex - 1, ArrowRight: currentIndex + 1, Home: 0, End: slides.length - 1 }[event.key];
+        if (target === undefined) return;
+        event.preventDefault();
+        // Keep focus on a visible control if the active slide link is hidden.
+        showSlide(target);
+        dots[currentIndex].focus({ preventScroll: true });
+    });
+    gallery.addEventListener('pointerdown', event => {
+        if (event.pointerType === 'touch') touchStart = { x: event.clientX, y: event.clientY };
+    });
+    gallery.addEventListener('pointercancel', () => { touchStart = null; });
+    gallery.addEventListener('pointerup', event => {
+        if (event.pointerType !== 'touch' || !touchStart) return;
+        const dx = event.clientX - touchStart.x;
+        const dy = event.clientY - touchStart.y;
+        touchStart = null;
+        if (Math.abs(dx) < 45 || Math.abs(dx) < Math.abs(dy) * 1.5) return;
+        showSlide(currentIndex + (dx < 0 ? 1 : -1));
+        suppressClickUntil = Date.now() + 500;
+    });
+    gallery.addEventListener('click', event => {
+        if (Date.now() < suppressClickUntil) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+    }, true);
+    showSlide(0);
 }
 
 function refreshLocalizedDynamicContent() {
@@ -2870,6 +2957,7 @@ document.addEventListener('keydown', (e) => {
 // Initialize digest gallery on page load
 document.addEventListener('DOMContentLoaded', () => {
     initLanguageToggle();
+    initCommunityGallery();
     updatePageProgress();
     updateActiveNavigation();
     initScreenPager();
