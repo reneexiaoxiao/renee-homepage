@@ -6668,3 +6668,20 @@ ul {
 /* Love Note project entry. */
 .project-preview-lovenote{background:#fbf5ef url('/lovenote/page-texture.jpg') center/cover}
 .project-preview-lovenote img{width:145px;height:145px;object-fit:contain;mix-blend-mode:multiply;mask-image:radial-gradient(ellipse,black 40%,transparent 72%)}
+
+/* Tongxing: original artwork and emblem from the SuKesong demo. */
+.project-preview-tongxing {
+    background: linear-gradient(145deg, #e6f3ec, #f5f8f0);
+}
+.project-preview-tongxing .tongxing-project-art {
+    width: min(90%, 15rem);
+    height: 8rem;
+    object-fit: contain;
+}
+.project-preview-tongxing .tongxing-project-emblem {
+    position: absolute;
+    top: 0.7rem;
+    left: 0.7rem;
+    width: 2rem;
+    height: 2rem;
+}

@@ -17,6 +17,11 @@ let currentLanguage = getStoredLanguage();
 
 const translations = {
     en: {
+        "演示作品": "Demo",
+        "AI 医疗健康": "AI Healthcare",
+        "同行 Tongxing": "Tongxing",
+        "打开同行 Tongxing 苏客松演示作品": "Open the Tongxing SuKesong demo",
+        "苏客松 · 信达生物命题：医药代表 AI 陪练、品牌内容迭代和患者健康陪伴，三个课题接在同一个演示产品里。": "A SuKesong project for Innovent: AI roleplay for medical representatives, brand content iteration and patient health support, connected in one demo product.",
         '小镇': 'Community',
         'Renee AI交流 · 八群': 'Renee AI Community · Group 8',
         '扫码加入八群 ↗': 'Join WeChat group 8 ↗',
