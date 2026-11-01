@@ -268,3 +268,13 @@
         padding: 0.65rem 1rem;
     }
 }
+
+/* Preserve the original invitation; contain the complete QR without cropping. */
+.community-work-qr .community-work-link {
+    height: min(360px, 44svh);
+    aspect-ratio: auto;
+    background: #1f1f1f;
+}
+.community-work-qr figcaption {
+    min-height: 0;
+}

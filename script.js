@@ -18,7 +18,13 @@ let currentLanguage = getStoredLanguage();
 const translations = {
     en: {
         '小镇': 'Community',
-        '我发起的社群 · 群友小镇': 'The Community I Host · Renee & Friends',
+        'Renee AI交流 · 八群': 'Renee AI Community · Group 8',
+        '扫码加入八群 ↗': 'Join WeChat group 8 ↗',
+        '加入八群，一起交流': 'Join the conversation',
+        '群二维码 · 11月7日前有效': 'Group QR · Valid before Nov 7',
+        '保存八群二维码 ↓': 'Save group QR code ↓',
+        'Renee AI交流八群二维码，11月7日前有效': 'Renee AI community group 8 QR code, valid before Nov 7',
+        '我发起的社群 · 群友小镇（2000+人）': 'The Community I Host · Renee & Friends (2,000+ members)',
         '看看 AI 在不同人的工作和生活里，怎样真正用起来。': 'See how people put AI to work in their own lives and industries.',
         '2026 年 9 月，一场和张咋啦的直播对谈后，我认识了一群来自不同行业、正在尝试用 AI 解决实际问题的朋友。我们从微信群里的交流，慢慢走到了带着作品、直接投屏的行业分享会。': 'After a livestream with Zara in September 2026, I met people from different industries trying to solve real problems with AI. Conversations in our WeChat groups grew into cross-industry gatherings where we share our screens and show what we have built.',
         '有人把剧院选座做成可以切换视角的演示，有人把立体几何做成学生能动手操作的课件。我也带来自己的「会里」和个人 Agent 实践。我们聊怎么做，也聊做完之后的难题：结果靠不靠谱，别人愿不愿意用，下一步怎么推进。': 'One member built a theater seat-view demo; another made interactive geometry lessons. I share my own Huili and personal-agent experiments, too. We discuss how to build, then what comes next: can we trust the results, will others use it, and how do we move it forward?',
