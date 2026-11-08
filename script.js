@@ -2107,6 +2107,24 @@ const speakingGalleryData = [
 
 const thinkingData = [
     {
+        id: 'product-and-life-logical-origin',
+        status: 'live',
+        statusLabel: '在线长文',
+        statusLabelEn: 'Live Essay',
+        title: '产品和人生都要有逻辑原点',
+        titleEn: 'Products and Life Need a Logical Starting Point',
+        desc: '从企业 AI 的选择性投入，谈到人生的价值取向：哪些值得亲自投入，哪些可以等待模型进步？把自己的逻辑原点，放回时间分配与产品创造之中。',
+        descEn: 'From selective investment in enterprise AI to personal values: what deserves our effort, and what can wait for better models? A reflection on how to spend time and build products from a starting point of our own.',
+        date: '2026-09-12',
+        format: '2026.09.12 / 思考手记',
+        formatEn: '2026.09.12 / Field Note',
+        topics: ['逻辑原点', '价值取向', 'Vibe Coding'],
+        topicsEn: ['First Principles', 'Personal Values', 'Vibe Coding'],
+        href: '/thoughts/product-and-life-logical-origin/',
+        cta: '阅读全文',
+        ctaEn: 'Read in Chinese'
+    },
+    {
         id: 'from-dropper-to-pipeline',
         status: 'live',
         statusLabel: '在线长文',
