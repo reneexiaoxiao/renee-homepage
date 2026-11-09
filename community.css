@@ -1,11 +1,11 @@
 /* Homepage glyphs missing from the regular CJK subset. */
 @font-face {
     font-family: 'ZhongHuaXinHuo';
-    src: url('./fonts/zhonghuaxinhuo-community.woff2?v=20261109-short-notes') format('woff2');
+    src: url('./fonts/zhonghuaxinhuo-community.woff2?v=20261109-note-art') format('woff2');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
-    unicode-range: U+4E59,U+5267,U+529F,U+5374,U+5377,U+542B,U+548B,U+5566,U+5C1D,U+5C24,U+5EA7,U+5F69,U+60F0,U+6562,U+6652,U+70C2,U+7701,U+77BB,U+7CBE,U+80B2,U+8FA9,U+9038,U+9547,U+9662,U+9A6C;
+    unicode-range: U+4E59,U+5267,U+529F,U+5374,U+5377,U+542B,U+548B,U+5566,U+5C1D,U+5C24,U+5D07,U+5EA7,U+5F69,U+60F0,U+6562,U+65C1,U+6652,U+70C2,U+7701,U+77BB,U+7CBE,U+80B2,U+8FA9,U+9012,U+9038,U+9547,U+9662,U+9A6C;
 }
 
 /* The community chapter inherits the existing homepage's colors and type. */

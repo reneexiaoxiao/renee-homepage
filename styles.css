@@ -2321,6 +2321,38 @@ ul {
     color: var(--color-text-muted);
 }
 
+.thinking-note-verbatim {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.modal-text .thinking-note-lead {
+    color: var(--color-text);
+    font-size: clamp(1.05rem, 1.7vw, 1.3rem);
+}
+
+.thinking-note-figure {
+    margin: 0 0 var(--spacing-lg);
+}
+
+.thinking-note-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+}
+
+.thinking-note-figure figcaption {
+    margin-top: var(--spacing-xs);
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+}
+
+.thinking-note-figure a {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
 .modal-text h3 {
     font-size: 1.25rem;
     margin: var(--spacing-lg) 0 var(--spacing-sm);

@@ -2107,93 +2107,102 @@ const speakingGalleryData = [
 
 const thinkingData = [
     {
-        id: 'interfaces-generated-for-the-task',
+        id: "interfaces-generated-for-the-task",
         status: 'live',
         statusLabel: '短手记',
         statusLabelEn: 'Short Note',
-        title: '界面应该按任务生成',
-        titleEn: 'Generate the Interface for the Task',
-        desc: 'AI 应该消灭需要人一步步操作的界面，再根据当前任务自动生成所需的界面。',
-        descEn: 'AI should get rid of interfaces people have to operate step by step and generate the interface they need for the task at hand.',
-        format: '产品设计',
-        formatEn: 'Product Design',
-        topics: ['交互', '生成式界面'],
-        topicsEn: ['Interaction', 'Generative Interfaces'],
+        title: "AI应该消灭需要操作的界面，然后构建自动生成的界面。",
+        format: "产品设计",
+        formatEn: "Product Design",
+        topics: ["交互","生成式界面"],
+        topicsEn: ["Interaction","Generative Interfaces"],
         cta: '展开手记',
-        ctaEn: 'Read Note',
-        expandDescription: true
+        ctaEn: 'Read in Chinese',
+        originalText: [
+            "AI应该消灭需要操作的界面，然后构建自动生成的界面。"
+        ],
+        illustration: {
+            src: "/images/thinking/task-generated-interface.jpg",
+            alt: "一叠操作面板收束成一个按任务生成的界面",
+            altEn: "Many operation panels resolve into one task-specific interface",
+            width: 1200,
+            height: 800
+        }
     },
     {
-        id: 'the-client-owns-the-ontology',
+        id: "the-client-owns-the-ontology",
         status: 'live',
         statusLabel: '短手记',
         statusLabelEn: 'Short Note',
-        title: '本体，得甲方自己做',
-        titleEn: 'The Client Has to Build Its Own Ontology',
-        desc: '本体很有价值，但得甲方自己做。甲方找乙方做，是战术上的懒惰；乙方去给甲方做，是战略上的懒惰。',
-        descEn: 'Ontologies are valuable, but the client has to build its own. For a client to hand it off to a vendor is tactical laziness. For the vendor to do it for the client is strategic laziness.',
-        format: '企业 AI',
-        formatEn: 'Enterprise AI',
-        topics: ['本体', '甲乙方协作'],
-        topicsEn: ['Ontology', 'Client–Vendor Collaboration'],
+        title: "我觉得本体是有很有价值的，但必须得甲方自己做，不是乙方做。",
+        desc: "甲方找乙方做是战术上的懒惰，乙方去给甲方做是战略上的懒惰",
+        format: "企业 AI",
+        formatEn: "Enterprise AI",
+        topics: ["本体","甲乙方协作"],
+        topicsEn: ["Ontology","Client–Vendor Collaboration"],
         cta: '展开手记',
-        ctaEn: 'Read Note',
-        expandDescription: true
+        ctaEn: 'Read in Chinese',
+        originalText: [
+            "我觉得本体是有很有价值的，但必须得甲方自己做，不是乙方做。\n甲方找乙方做是战术上的懒惰，乙方去给甲方做是战略上的懒惰"
+        ],
+        illustration: {
+            src: "/images/thinking/build-your-own-ontology.jpg",
+            alt: "一只手装入核心连接块，另一只手从旁递来量尺",
+            altEn: "One hand fits the central connector while another offers a ruler",
+            width: 1200,
+            height: 800
+        }
     },
     {
-        id: 'reinvest-the-time-ai-saves',
+        id: "reinvest-the-time-ai-saves",
         status: 'live',
         statusLabel: '短手记',
         statusLabelEn: 'Short Note',
-        title: '提高目标，不必花光省下的时间',
-        titleEn: 'Raise the Goal Without Spending All the Time You Saved',
-        desc: '「AI 省下来的时间，应该提高目标，还是留给员工？」这个辩题不够 MECE。目标可以提高，但不必把省下的时间再填进更多任务里。我更愿意用这段时间持续打磨组织、个人和 AI 的 Harness。',
-        descEn: 'Should the time AI saves go toward higher goals or back to employees? Those options are not MECE. We can raise the goal without filling all the time we saved with more tasks. I would rather keep improving the harnesses for the organization, the individual, and AI.',
-        format: '组织效率',
-        formatEn: 'Organizational Effectiveness',
-        topics: ['时间分配', 'Harness'],
-        topicsEn: ['Time Allocation', 'Harness'],
+        title: "AI省下来的时间，应该提高目标，还是留给员工？",
+        desc: "我觉得辩题不够MECE，应该是可以提高目标但不必要消耗省下来的时间，而是持续优化提升组织、个人和AI的harness",
+        format: "组织效率",
+        formatEn: "Organizational Effectiveness",
+        topics: ["时间分配","Harness"],
+        topicsEn: ["Time Allocation","Harness"],
         cta: '展开手记',
-        ctaEn: 'Read Note',
-        expandDescription: true
+        ctaEn: 'Read in Chinese',
+        originalText: [
+            "关于问题“AI省下来的时间，应该提高目标，还是留给员工？”，我觉得辩题不够MECE，应该是可以提高目标但不必要消耗省下来的时间，而是持续优化提升组织、个人和AI的harness"
+        ],
+        illustration: {
+            src: "/images/thinking/reinvest-time.jpg",
+            alt: "沙漏里的沙流向一组可重复使用的工作支架",
+            altEn: "Sand from an hourglass flows into a reusable working jig",
+            width: 1200,
+            height: 800
+        }
     },
     {
-        id: 'harness-ai-harness-self',
+        id: "harness-ai-harness-self",
         status: 'live',
         statusLabel: '短手记',
         statusLabelEn: 'Short Note',
-        title: 'Harness AI，也要 Harness Self',
-        titleEn: 'Harness AI, and Harness Self',
-        desc: '我尤其看重人类三角里的「体系」。人和 AI 可以相互增强；审美却总在往前跑，一种美刚被固化成范式，就可能被 AI 复制到烂大街。',
-        descEn: 'Of the three sides of the human triangle, I care most about having a system. People and AI can make each other stronger, while taste keeps moving. Once a kind of beauty becomes a recipe, AI can reproduce it until it is everywhere.',
-        format: '个人体系',
-        formatEn: 'Personal System',
-        topics: ['Harness Self', '审美'],
-        topicsEn: ['Harness Self', 'Taste'],
+        title: "个人觉得人类三角里面体系尤其重要。",
+        desc: "右边：harness AI\n左边：harness self",
+        format: "个人体系",
+        formatEn: "Personal System",
+        topics: ["Harness Self","审美"],
+        topicsEn: ["Harness Self","Taste"],
         cta: '展开手记',
-        ctaEn: 'Read Note',
-        fullText: `
-            <p>最近看到一张「人类三角 × AI 三角」的图：左边是创造力、审美和体系，右边是场景、基本功和数据。我把左边理解为 Harness Self，右边理解为 Harness AI。人变强了，能把 AI 用得更好；有了更强的 AI，又能帮人变强。两边相互增强，未来可能更偏马太效应。</p>
-            <p>在人类三角里，我尤其看重「体系」。审美有点逃逸性，门槛总在变。AI 努力向人靠近，所以这一波的「AI 味」，其实是上一波的「人味」：是模型从人身上学来的范式。</p>
-            <p>一种东西一旦被确认、固化为「美」，AI 很快就能把这种美做得烂大街。我更看重的 taste 要有一点前瞻性，敢于不同，也愿意继续创新。有点像哲学被转化成科学之前的那一段，还没有被写成可以照做的规则。</p>
-            <p>体系倒是我已经从中受益的东西。我把自己当一个大模型来打磨，持续更新和积累三层：</p>
-            <ul>
-                <li>人和 AI：有意识地积累自己的可插拔上下文。</li>
-                <li>人和自己：记录自己的学习和思考，复盘自己的学习体系。</li>
-                <li>人和人：建立自己的对外展示体系，持续更新个人主页和思考手记，也把社群团队的积累记录下来。</li>
-            </ul>
-        `,
-        fullTextEn: `
-            <p>I recently saw a diagram pairing a human triangle with an AI triangle. On the left were creativity, taste, and a system; on the right were use cases, fundamentals, and data. I read the left side as Harness Self and the right side as Harness AI. As people grow stronger, they get better at using AI. Stronger AI can help them grow in turn. I suspect that feedback loop will amplify the Matthew effect.</p>
-            <p>Of the three sides of the human triangle, I care most about having a system. Taste is harder to pin down: the bar keeps moving. AI tries to get closer to people, so what sounds like “AI voice” in this wave sounded human in the last one. It is a set of patterns the model learned from people.</p>
-            <p>Once something is recognized and fixed as beautiful, AI can reproduce it until it is everywhere. The taste I value looks ahead, dares to do things differently, and keeps inventing. It reminds me of philosophy before it turns into science, before there are rules to follow.</p>
-            <p>Having a system is something I already benefit from. I think of myself as a model to keep refining, across three kinds of interaction:</p>
-            <ul>
-                <li>With AI: deliberately build a set of personal context I can plug in as needed.</li>
-                <li>With myself: record what I learn and think, and revisit how I learn.</li>
-                <li>With other people: keep a way to share my work, update my homepage and notes, and record what we build together in the community.</li>
-            </ul>
-        `
+        ctaEn: 'Read in Chinese',
+        originalText: [
+            "最近看到一个图。个人觉得人类三角里面体系尤其重要。\n右边：harness AI\n左边：harness self",
+            "我理解是表达左右互相增强，人类三角和AI三角的结合，双方可以强者更强。 未来是更偏马太效应的。",
+            "但同时，我觉得审美是逃逸性的或者门槛不断提高的。 就像AI味，因为AI就是努力的靠近人，所以“AI味”其实是上一波的“人味”，是从人身上学来的一些范式。\n同理，这个“审美”，一旦有内容被确认固化为“美”，那么AI也能马上把这个美变得烂大街... 所以我理解所应该推崇的审美或者taste，应该是前瞻性的敢于不同且持续创新的品味，类似哲学被转化成科学之前的那一段。而其中体系我倒是挺认同的，且也确实在从中受益。 我觉得就是建立自己的harness，把自己当一个大模型来打磨，持续更新和积累三层：\n- 有意识的积累自己的可插拔的上下文（人-AI交互层）\n- 记录复盘自己的学习体系、思考（人-自己交互层）\n- 自己的对外展示体系，比如我建立了个人主页和会持续更新思考和社群团队积累（人-人交互层）"
+        ],
+        illustration: {
+            src: "/images/thinking/human-ai-triangles-original.jpg",
+            alt: "人类三角与AI三角互相增强的原图",
+            altEn: "Original diagram of the human and AI triangles reinforcing each other",
+            width: 2322,
+            height: 1280,
+            original: true
+        }
     },
     {
         id: 'product-and-life-logical-origin',
@@ -2775,8 +2784,8 @@ function renderThinkingCards() {
     grid.innerHTML = thinkingData.map(item => `
         <article class="thinking-card">
             <span class="thinking-card-status ${item.status}">${tItem(item, 'statusLabel')}</span>
-            <h3 class="thinking-card-title">${tItem(item, 'title')}</h3>
-            <p class="thinking-card-desc">${tItem(item, 'desc')}</p>
+            <h3 class="thinking-card-title"${item.originalText ? ' lang="zh-CN"' : ''}>${item.originalText ? item.title : tItem(item, 'title')}</h3>
+            ${item.desc ? `<p class="thinking-card-desc${item.originalText ? ' thinking-note-verbatim' : ''}"${item.originalText ? ' lang="zh-CN"' : ''}>${item.originalText ? item.desc : tItem(item, 'desc')}</p>` : ''}
             <div class="thinking-card-topics">
                 ${(item.topicsEn && currentLanguage === 'en' ? item.topicsEn : tList(item.topics)).map(topic => `<span class="thinking-card-topic">${topic}</span>`).join('')}
             </div>
@@ -2784,7 +2793,7 @@ function renderThinkingCards() {
                 <span class="thinking-card-format">${tItem(item, 'format')}</span>
                 ${item.href
                     ? `<a class="thinking-card-link" href="${item.href}" target="_blank" rel="noopener noreferrer">${tItem(item, 'cta')}</a>`
-                    : (item.fullText || item.expandDescription)
+                    : (item.fullText || item.originalText)
                         ? `<button class="thinking-card-link" type="button" onclick="openThinkingModal('${item.id}')">${tItem(item, 'cta')}</button>`
                         : item.cta ? `<span class="thinking-card-link is-disabled">${tItem(item, 'cta')}</span>` : ''
                 }
@@ -2798,23 +2807,33 @@ function renderThinkingCards() {
 
 function openThinkingModal(thinkingId) {
     const entry = thinkingData.find(item => item.id === thinkingId);
-    if (!entry || !(entry.fullText || entry.expandDescription)) return;
+    if (!entry || !(entry.fullText || entry.originalText)) return;
 
     const modal = document.getElementById('thinkingModal');
     const modalBody = document.getElementById('thinkingModalBody');
     if (!modal || !modalBody) return;
     const fullText = currentLanguage === 'en' && entry.fullTextEn ? entry.fullTextEn : entry.fullText;
+    const illustration = entry.illustration;
+    const figure = illustration ? `
+        <figure class="thinking-note-figure">
+            <img src="${illustration.src}" alt="${tItem(illustration, 'alt')}" width="${illustration.width}" height="${illustration.height}" loading="lazy" decoding="async">
+            ${illustration.original ? `<figcaption><a href="${illustration.src}" target="_blank" rel="noopener noreferrer">${currentLanguage === 'en' ? 'View Original Image' : '查看原图'}</a></figcaption>` : ''}
+        </figure>
+    ` : '';
+    const body = entry.originalText
+        ? entry.originalText.map((paragraph, i) => `<p class="thinking-note-verbatim${i === 0 ? ' thinking-note-lead' : ''}" lang="zh-CN">${paragraph}</p>${i === 0 ? figure : ''}`).join('')
+        : fullText;
 
     modalBody.innerHTML = `
         <div class="modal-header">
             <div class="modal-date">${tItem(entry, 'format')}</div>
-            <h2 class="modal-title">${tItem(entry, 'title')}</h2>
+            ${entry.originalText ? '' : `<h2 class="modal-title">${tItem(entry, 'title')}</h2>`}
             <div class="modal-tags">
                 ${(entry.topicsEn && currentLanguage === 'en' ? entry.topicsEn : tList(entry.topics)).map(topic => `<span class="digest-card-tag">${topic}</span>`).join('')}
             </div>
         </div>
         <div class="modal-text">
-            ${fullText || `<p>${tItem(entry, 'desc')}</p>`}
+            ${body}
         </div>
     `;
 
