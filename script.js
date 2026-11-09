@@ -2118,7 +2118,10 @@ const thinkingData = [
         format: '产品设计',
         formatEn: 'Product Design',
         topics: ['交互', '生成式界面'],
-        topicsEn: ['Interaction', 'Generative Interfaces']
+        topicsEn: ['Interaction', 'Generative Interfaces'],
+        cta: '展开手记',
+        ctaEn: 'Read Note',
+        expandDescription: true
     },
     {
         id: 'the-client-owns-the-ontology',
@@ -2132,7 +2135,10 @@ const thinkingData = [
         format: '企业 AI',
         formatEn: 'Enterprise AI',
         topics: ['本体', '甲乙方协作'],
-        topicsEn: ['Ontology', 'Client–Vendor Collaboration']
+        topicsEn: ['Ontology', 'Client–Vendor Collaboration'],
+        cta: '展开手记',
+        ctaEn: 'Read Note',
+        expandDescription: true
     },
     {
         id: 'reinvest-the-time-ai-saves',
@@ -2146,7 +2152,10 @@ const thinkingData = [
         format: '组织效率',
         formatEn: 'Organizational Effectiveness',
         topics: ['时间分配', 'Harness'],
-        topicsEn: ['Time Allocation', 'Harness']
+        topicsEn: ['Time Allocation', 'Harness'],
+        cta: '展开手记',
+        ctaEn: 'Read Note',
+        expandDescription: true
     },
     {
         id: 'harness-ai-harness-self',
@@ -2775,7 +2784,7 @@ function renderThinkingCards() {
                 <span class="thinking-card-format">${tItem(item, 'format')}</span>
                 ${item.href
                     ? `<a class="thinking-card-link" href="${item.href}" target="_blank" rel="noopener noreferrer">${tItem(item, 'cta')}</a>`
-                    : item.fullText
+                    : (item.fullText || item.expandDescription)
                         ? `<button class="thinking-card-link" type="button" onclick="openThinkingModal('${item.id}')">${tItem(item, 'cta')}</button>`
                         : item.cta ? `<span class="thinking-card-link is-disabled">${tItem(item, 'cta')}</span>` : ''
                 }
@@ -2789,11 +2798,12 @@ function renderThinkingCards() {
 
 function openThinkingModal(thinkingId) {
     const entry = thinkingData.find(item => item.id === thinkingId);
-    if (!entry || !entry.fullText) return;
+    if (!entry || !(entry.fullText || entry.expandDescription)) return;
 
     const modal = document.getElementById('thinkingModal');
     const modalBody = document.getElementById('thinkingModalBody');
     if (!modal || !modalBody) return;
+    const fullText = currentLanguage === 'en' && entry.fullTextEn ? entry.fullTextEn : entry.fullText;
 
     modalBody.innerHTML = `
         <div class="modal-header">
@@ -2804,7 +2814,7 @@ function openThinkingModal(thinkingId) {
             </div>
         </div>
         <div class="modal-text">
-            ${currentLanguage === 'en' && entry.fullTextEn ? entry.fullTextEn : entry.fullText}
+            ${fullText || `<p>${tItem(entry, 'desc')}</p>`}
         </div>
     `;
 
