@@ -2107,6 +2107,86 @@ const speakingGalleryData = [
 
 const thinkingData = [
     {
+        id: 'interfaces-generated-for-the-task',
+        status: 'live',
+        statusLabel: '短手记',
+        statusLabelEn: 'Short Note',
+        title: '界面应该按任务生成',
+        titleEn: 'Generate the Interface for the Task',
+        desc: 'AI 应该消灭需要人一步步操作的界面，再根据当前任务自动生成所需的界面。',
+        descEn: 'AI should get rid of interfaces people have to operate step by step and generate the interface they need for the task at hand.',
+        format: '产品设计',
+        formatEn: 'Product Design',
+        topics: ['交互', '生成式界面'],
+        topicsEn: ['Interaction', 'Generative Interfaces']
+    },
+    {
+        id: 'the-client-owns-the-ontology',
+        status: 'live',
+        statusLabel: '短手记',
+        statusLabelEn: 'Short Note',
+        title: '本体，得甲方自己做',
+        titleEn: 'The Client Has to Build Its Own Ontology',
+        desc: '本体很有价值，但得甲方自己做。甲方找乙方做，是战术上的懒惰；乙方去给甲方做，是战略上的懒惰。',
+        descEn: 'Ontologies are valuable, but the client has to build its own. For a client to hand it off to a vendor is tactical laziness. For the vendor to do it for the client is strategic laziness.',
+        format: '企业 AI',
+        formatEn: 'Enterprise AI',
+        topics: ['本体', '甲乙方协作'],
+        topicsEn: ['Ontology', 'Client–Vendor Collaboration']
+    },
+    {
+        id: 'reinvest-the-time-ai-saves',
+        status: 'live',
+        statusLabel: '短手记',
+        statusLabelEn: 'Short Note',
+        title: '提高目标，不必花光省下的时间',
+        titleEn: 'Raise the Goal Without Spending All the Time You Saved',
+        desc: '「AI 省下来的时间，应该提高目标，还是留给员工？」这个辩题不够 MECE。目标可以提高，但不必把省下的时间再填进更多任务里。我更愿意用这段时间持续打磨组织、个人和 AI 的 Harness。',
+        descEn: 'Should the time AI saves go toward higher goals or back to employees? Those options are not MECE. We can raise the goal without filling all the time we saved with more tasks. I would rather keep improving the harnesses for the organization, the individual, and AI.',
+        format: '组织效率',
+        formatEn: 'Organizational Effectiveness',
+        topics: ['时间分配', 'Harness'],
+        topicsEn: ['Time Allocation', 'Harness']
+    },
+    {
+        id: 'harness-ai-harness-self',
+        status: 'live',
+        statusLabel: '短手记',
+        statusLabelEn: 'Short Note',
+        title: 'Harness AI，也要 Harness Self',
+        titleEn: 'Harness AI, and Harness Self',
+        desc: '我尤其看重人类三角里的「体系」。人和 AI 可以相互增强；审美却总在往前跑，一种美刚被固化成范式，就可能被 AI 复制到烂大街。',
+        descEn: 'Of the three sides of the human triangle, I care most about having a system. People and AI can make each other stronger, while taste keeps moving. Once a kind of beauty becomes a recipe, AI can reproduce it until it is everywhere.',
+        format: '个人体系',
+        formatEn: 'Personal System',
+        topics: ['Harness Self', '审美'],
+        topicsEn: ['Harness Self', 'Taste'],
+        cta: '展开手记',
+        ctaEn: 'Read Note',
+        fullText: `
+            <p>最近看到一张「人类三角 × AI 三角」的图：左边是创造力、审美和体系，右边是场景、基本功和数据。我把左边理解为 Harness Self，右边理解为 Harness AI。人变强了，能把 AI 用得更好；有了更强的 AI，又能帮人变强。两边相互增强，未来可能更偏马太效应。</p>
+            <p>在人类三角里，我尤其看重「体系」。审美有点逃逸性，门槛总在变。AI 努力向人靠近，所以这一波的「AI 味」，其实是上一波的「人味」：是模型从人身上学来的范式。</p>
+            <p>一种东西一旦被确认、固化为「美」，AI 很快就能把这种美做得烂大街。我更看重的 taste 要有一点前瞻性，敢于不同，也愿意继续创新。有点像哲学被转化成科学之前的那一段，还没有被写成可以照做的规则。</p>
+            <p>体系倒是我已经从中受益的东西。我把自己当一个大模型来打磨，持续更新和积累三层：</p>
+            <ul>
+                <li>人和 AI：有意识地积累自己的可插拔上下文。</li>
+                <li>人和自己：记录自己的学习和思考，复盘自己的学习体系。</li>
+                <li>人和人：建立自己的对外展示体系，持续更新个人主页和思考手记，也把社群团队的积累记录下来。</li>
+            </ul>
+        `,
+        fullTextEn: `
+            <p>I recently saw a diagram pairing a human triangle with an AI triangle. On the left were creativity, taste, and a system; on the right were use cases, fundamentals, and data. I read the left side as Harness Self and the right side as Harness AI. As people grow stronger, they get better at using AI. Stronger AI can help them grow in turn. I suspect that feedback loop will amplify the Matthew effect.</p>
+            <p>Of the three sides of the human triangle, I care most about having a system. Taste is harder to pin down: the bar keeps moving. AI tries to get closer to people, so what sounds like “AI voice” in this wave sounded human in the last one. It is a set of patterns the model learned from people.</p>
+            <p>Once something is recognized and fixed as beautiful, AI can reproduce it until it is everywhere. The taste I value looks ahead, dares to do things differently, and keeps inventing. It reminds me of philosophy before it turns into science, before there are rules to follow.</p>
+            <p>Having a system is something I already benefit from. I think of myself as a model to keep refining, across three kinds of interaction:</p>
+            <ul>
+                <li>With AI: deliberately build a set of personal context I can plug in as needed.</li>
+                <li>With myself: record what I learn and think, and revisit how I learn.</li>
+                <li>With other people: keep a way to share my work, update my homepage and notes, and record what we build together in the community.</li>
+            </ul>
+        `
+    },
+    {
         id: 'product-and-life-logical-origin',
         status: 'live',
         statusLabel: '在线长文',
@@ -2697,7 +2777,7 @@ function renderThinkingCards() {
                     ? `<a class="thinking-card-link" href="${item.href}" target="_blank" rel="noopener noreferrer">${tItem(item, 'cta')}</a>`
                     : item.fullText
                         ? `<button class="thinking-card-link" type="button" onclick="openThinkingModal('${item.id}')">${tItem(item, 'cta')}</button>`
-                        : `<span class="thinking-card-link is-disabled">${tItem(item, 'cta')}</span>`
+                        : item.cta ? `<span class="thinking-card-link is-disabled">${tItem(item, 'cta')}</span>` : ''
                 }
             </div>
         </article>
